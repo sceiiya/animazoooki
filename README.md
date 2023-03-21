@@ -7,7 +7,8 @@ I have not updated this repository and the live site, but the updated site is sh
 
 The puspose of this website is to create a platform for a D2C type of business; apparel business and cater transactions of the said business.<br /><br />
 
-Sitemap: https://www.bit.ly/AnimazookiM <br /><br />
+Sitemap: https://www.bit.ly/AnimazookiM <br />
+Live @: https://www.bit.ly/AnimazookiS <br />
 
 This is the full timeline of the creation of this website since, idea drafting:: <br /><br />
 
@@ -31,99 +32,99 @@ Feb 28, 2023<br />
 -finished in product card template<br />
 -finisged in card sidepop template<br />
 
-Mar 1
--Featured collection hero
--modify articles hero
--By series hero
--by category hero
--by series page
--by category page
--all products page
+Mar 1<br />
+-Featured collection hero<br />
+-modify articles hero<br />
+-By series hero<br />
+-by category hero<br />
+-by series page<br />
+-by category page<br />
+-all products page<br />
 
-Mar 2
--login page(layout)
--vouchers page (layout)
--product page (layout)
--personal info page (layout)
+Mar 2<br />
+-login page(layout)<br />
+-vouchers page (layout)<br />
+-product page (layout)<br />
+-personal info page (layout)<br />
 
-Mar 3
--article home list page
--article page
--color re-management for whole site
+Mar 3<br />
+-article home list page<br />
+-article page<br />
+-color re-management for whole site<br />
 
-Mar 4
--vouchers page
--reorganization for template footer n header
--login page
--signup page
--backend log-in
+Mar 4<br />
+-vouchers page<br />
+-reorganization for template footer n header<br />
+-login page<br />
+-signup page<br />
+-backend log-in<br />
 
-March 5
--personal info page 
+March 5<br />
+-personal info page <br />
 
-March 6
--sitemap 
--product page (layout)
--profile cart page (layout)
+March 6<br />
+-sitemap <br />
+-product page (layout)<br />
+-profile cart page (layout)<br />
 
-===nav n headnav n footer fix===
----homepage
----profile login
----admin login
----articles
----articles page
----profile sign up
----vouchers
----all products series
----all products category
----all products
+===nav n headnav n footer fix=== <br />
+---homepage<br />
+---profile login<br />
+---admin login<br />
+---articles<br />
+---articles page<br />
+---profile sign up<br />
+---vouchers<br />
+---all products series<br />
+---all products category<br />
+---all products<br />
 
-March 7
--check out page(initialized)
--cart(initialized)
--back end dashboard(kulang pa)
+March 7<br />
+-check out page(initialized)<br />
+-cart(initialized)<br />
+-back end dashboard(not enough)<br />
 
-March 8
--media query mobile and tablet
--fixed head code
--fixed 2 head navbars links and code
--css debug
--footer header finalized
+March 8<br />
+-media query mobile and tablet<br />
+-fixed head code<br />
+-fixed 2 head navbars links and code<br />
+-css debug<br />
+-footer header finalized<br />
 
-March 9 
--3 products page
--3 article page
--aside-r insert content (links)
--suggestion cards for all (3 products & 3 articles)
--right aside finalized
--css debug
--articles list page content integrated
--series page content integrated
--homepage insert content 60%
--cart content integrated
--checkout content integrated
+March 9 <br />
+-3 products page<br />
+-3 article page<br />
+-aside-r insert content (links)<br />
+-suggestion cards for all (3 products & 3 articles)<br />
+-right aside finalized<br />
+-css debug<br />
+-articles list page content integrated<br />
+-series page content integrated<br />
+-homepage insert content 60%<br />
+-cart content integrated<br />
+-checkout content integrated<br />
 
-March 10 
+March 10 <br />
 
--content generate pictures and medias for categories and series
--categories page content integrated
--mobile cards css fixed
--fixed sitemap
--fixed wireframe
--12 Category
--visual presentation
+-content generate pictures and medias for categories and series<br />
+-categories page content integrated<br />
+-mobile cards css fixed<br />
+-fixed sitemap<br />
+-fixed wireframe<br />
+-12 Category<br />
+-visual presentation<br />
 
-To do list
--backend products + generate new product
--presentation with video(?)
+To do list<br />
+-backend products + generate new product<br />
+-presentation with video(?)<br />
 
-To do next time
--all functions and some fixings
--product application database and backend
--backend UI
--backend chat
--filter options..include saall products, by series, at by category
+To do next time<br />
+-all functions and some fixings<br />
+-product application database and backend<br />
+-backend UI<br />
+-backend chat<br />
+-filter options..include saall products, by series, at by category<br />
 
 
-Started: Feb 26
+Started: Feb 26<br />
 Ended: March 10
