@@ -1,23 +1,23 @@
-# animazooki
+# animazooki<br />
 
-This website is designed and developed by Sceiiya.
+This website is designed and developed by Sceiiya.<br />
 
-Limitations: This project is developed to cater only the design/UI/UX of the website and lack function yet.
-I have not updated this repository and the live site, but the updated site is should now be in php instead of html files. Navbars and Footer are now migrated in php to cater easy edit and code neatness as well as to some elements integrated and deemed as 'repeating for most of the pages in website.
+Limitations: This project is developed to cater only the design/UI/UX of the website and lack function yet.<br />
+I have not updated this repository and the live site, but the updated site is should now be in php instead of html files. Navbars and Footer are now migrated in php to cater easy edit and code neatness as well as to some elements integrated and deemed as 'repeating for most of the pages in website.<br /><br />
 
-The puspose of this website is to create a platform for a D2C type of business; apparel business and cater transactions of the said business.
+The puspose of this website is to create a platform for a D2C type of business; apparel business and cater transactions of the said business.<br /><br />
 
-Sitemap: https://www.figma.com/file/TkYzdi52qJXHMeRyxPRkv9/ANIMAZOOKI-SITEMAP-by-Scheidj-Villados-a.k.a-Sceiiya-(Public-Copy)?t=n0UNUUSzhVvShCZA-1
+Sitemap: https://www.bit.ly/AnimazookiM <br /><br />
 
-This is the full timeline of the creation of this website since, idea drafting::
+This is the full timeline of the creation of this website since, idea drafting:: <br /><br />
 
-Feb 26, 2023
--rough sketch of homepage, 
--generation of idea and details of the whole site. Idea of site map.
--information/template outsourcing ideas
+Feb 26, 2023<br />
+-rough sketch of homepage, <br />
+-generation of idea and details of the whole site. Idea of site map.<br />
+-information/template outsourcing ideas<br />
 -content ideas
 
-Feb 27, 2023
+Feb 27, 2023<br/>
 -Start of the website development
 -downloading icons, fixing logos
 -homepage development.. 
