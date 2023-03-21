@@ -15,21 +15,21 @@ Feb 26, 2023<br />
 -rough sketch of homepage, <br />
 -generation of idea and details of the whole site. Idea of site map.<br />
 -information/template outsourcing ideas<br />
--content ideas
+-content ideas<br />
 
 Feb 27, 2023<br/>
--Start of the website development
--downloading icons, fixing logos
--homepage development.. 
--product card development..
--header nav
+-Start of the website development<br />
+-downloading icons, fixing logos<br />
+-homepage development.. <br />
+-product card development..<br />
+-header nav<br />
 
-Feb 28, 2023
--finished in header nav
--finishwd in footer
--finished in homepage hero
--finished in product card template
--finisged in card sidepop template
+Feb 28, 2023<br />
+-finished in header nav<br />
+-finishwd in footer<br />
+-finished in homepage hero<br />
+-finished in product card template<br />
+-finisged in card sidepop template<br />
 
 Mar 1
 -Featured collection hero
