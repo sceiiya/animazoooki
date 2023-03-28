@@ -370,7 +370,7 @@ nav{
 }
 /* -----------------nav header-------------- */
 
-/*--------------------- hero ---------------*/
+/*--------------------- carousel hero marketing ad ---------------*/
 .carousel-caption{
     text-shadow: 0px 0px 4px black !important;
 }
@@ -399,6 +399,10 @@ nav{
    height: 100% !important;
    width: auto;
    object-fit: cover;
+}
+
+.carousel_animazooki_hero, .carousel-inner{
+    height: 30vh !important;
 }
 /*--------------------- hero ---------------*/
 
