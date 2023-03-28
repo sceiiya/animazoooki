@@ -392,6 +392,10 @@ nav{
    height: 100% !important;
    width: auto;
 }
+
+.carousel_animazooki_hero, .carousel-inner{
+    height: 30vh !important;
+}
 /*--------------------- hero ---------------*/
 
 /*----------------- side sections -------------*/
