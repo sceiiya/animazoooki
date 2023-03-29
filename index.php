@@ -825,7 +825,7 @@
                 </section>
             </section>
 
-            <!----------- by series collection heree ------------>
+            <!----------- end of by series collection heree ------------>
 
             <section class="sec-divider">
                 <hr />
@@ -931,12 +931,13 @@
                 </section>
             </section>
 
-            <!----------- by categories collection heree ------------>
+            <!----------- end of by categories collection heree ------------>
 
             <section class="sec-divider">
                 <hr />
             </section>
 
+            <!----------- article collection heree ------------>
 
             <section class="my-hero-home">
                 <section class="my-hero-title">
@@ -1072,11 +1073,14 @@
                 </section>
             </section>
 
+            <!----------- end of article collection heree ------------>
 
 
             <section class="sec-divider">
                 <hr />
             </section>
+
+            <!----------- picks for you collection heree ------------>
 
             <section class="my-hero-home">
                 <section class="my-hero-title">
@@ -1264,6 +1268,7 @@
                 </section>
             </section>
 
+            <!----------- end of picks for you collection heree ------------>
 
 
             <section class="sec-divider">
