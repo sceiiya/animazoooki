@@ -3,13 +3,14 @@
 
 <head>
     <!-- head -->
-    
+    <?php include("includes\head.php"); ?>
     <title>Animazooki Merch Co. | Homepage</title>
 </head>
 
 <body class="bg-light">
 
 <!-- messenger -->
+<?php include("includes/messenger_plugin.php"); ?>
 
 <!-- back to top -->
 
