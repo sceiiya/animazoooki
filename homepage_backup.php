@@ -1,20 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <!-- head -->
-    <?php include("includes\head.php"); ?>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/img/animazooki-b.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/assets/img/animazooki-b.png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/animazooki-b.png" />
+    <link rel="icon" href="/assets/img/animazooki-b.png" sizes="any">
+    <link rel="icon" href="/assets/img/animazooki-b.png" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen and (min-device-width: 1200px)" href="/assets/css/desktop-style.css" />
+    <link rel="stylesheet" media='screen and (min-width: 800px) and (max-width: 1199px)' href='/assets/css/medium-style.css' />
+    <link rel="stylesheet" media='screen and (min-width: 100px) and (max-width: 799px)' href='/assets/css/mobile-style.css' />
+    <link rel="stylesheet" href="assets/css/styles.css"/>
     <title>Animazooki Merch Co. | Homepage</title>
 </head>
 
 <body class="bg-light">
 
-<!-- messenger -->
-<?php include("includes/messenger_plugin.php"); ?>
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
 
-<!-- back to top -->
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
 
-<!-- promo -->
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "116411434719925");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
 
-<!-- header -->
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v16.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+    <div class="animazooki-top-anchor" id="animazooki-top-anchor"></div>
+
+    <a href="#animazooki-top-anchor"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-up-fill go-to-top" viewBox="0 0 16 16">
+            <path class=" txt-light"
+                d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+        </svg></a>
+
+    <!-- <a class="" href="#animazooki-top-anchor">
+        <i class="fa-solid fa-circle-arrow-up go-to-top">^</i>
+        </a> -->
+
+    <!--     
+    <audio src="myCoolTrack.mp3"></audio>
+    <button data-playing="false" role="switch" aria-checked="false">
+        <span>Play/Pause</span>
+      </button> -->
+
+    <div class="txt promo">
+        <div class="sliding-text-promo p-1 bg-light-inv">GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF
+            VOUCHER FOR YOUR
+            FIRST TIME ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME
+            ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET
+            10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF
+            VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | </div>
+    </div>
+
+
+        <div class="sticky-top navic-cont ic-l">
+            <a class="navbar-brand px-2" href="#">
+                <!-- light-mode -->
+
+                <img src="/assets/img/animazooki-b.png" alt="Animazooki" style="max-height: 40px" class="mt-1 pb-1">
+
+
+                <!-- dark-mode -->
+                <!-- <img src="/assets/img/animazooki-w.svg" alt="" style="max-height: 40px">
+                 -->
+
+            </a>
+        </div>
+        <div class="sticky-top navic-cont ic-r px-2"> <!-- <i class="bi bi-moon"></i> -->
+            <a class="nav-button" id="mode-toggle"><i class="fas fa-moon mx-2 txt-light-inv"></i></button>
+            <a class="nav-button"><i class="fas fa-search mx-2 txt-light-inv" type="button" class="" data-bs-toggle="modal" data-bs-target="#searchmodal"></i></a>
+            <a class="nav-button" href="/profile/cart/"><i class="fas fa-shopping-cart mx-2 txt-light-inv"></i></a>
+            <a class="nav-button" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle mx-2 txt-light-inv"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item txt-light-inv" href="/log-in/">Log in</a></li>
+                            <li><a class="dropdown-item txt-light-inv" href="/sign-up/">Sign up</a></li>
+                            <li><a class="dropdown-item txt-light-inv" href="/profile/">My Profile</a></li>
+                            <li><a class="dropdown-item txt-light-inv" href="#" onclick="popdev()">Log out</a></li>
+                        </ul>
+        </div>
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade bg-light-in" id="searchmodal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <input class="w100" placeholder="search">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn btn-secondary" onclick="popdev()" data-bs-dismiss="modal"><i
+                        class="fas fa-search mx-2"></i></button>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <!-- main hero -->
     <div id="carouselExampleDark" class="carousel carousel-light slide carousel_animazooki_hero" data-bs-ride="carousel">
@@ -95,7 +202,48 @@
     <!-- main hero -->
 
     <!-- navigation bar heading -->
-
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-light-in" style="top:29px">
+        <div class="container-fluid">
+            <a class="navbar-brand ps-5" href="#">
+                <!-- light-mode -->
+                <img src="/assets/img/n-logo-b.png" alt="Animazooki" style="max-height: 30px" class="pb-1">
+                <!-- dark-mode -->
+                <!-- <img src="/assets/img/n-logo-w.png" alt="" style="max-height: 35px"> -->
+            </a>
+            <button class="burger-toggler navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-light-in" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active txt-light-inv" aria-current="page" href="#">Home &nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link txt-light-inv" href="/vouchers/">Vouchers &nbsp; </a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle txt-light-inv" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop By &nbsp;</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item txt-light-inv" href="/all-products/category/">Category</a></li>
+                            <li><a class="dropdown-item txt-light-inv" href="/all-products/series/">Series</a></li>
+                            <li><a class="dropdown-item txt-light-inv" href="#" onclick="popdev()">Trend</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link txt-light-inv" href="#" onclick="popdev()">New Arrivals &nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link txt-light-inv" href="#" onclick="popdev()">Upcoming Merchandise &nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link txt-light-inv" href="/all-products/">All Products &nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link txt-light-inv" href="/articles/">Articles &nbsp; </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!-- navigation bar heading -->
 
 
@@ -825,7 +973,7 @@
                 </section>
             </section>
 
-            <!----------- end of by series collection heree ------------>
+            <!----------- by series collection heree ------------>
 
             <section class="sec-divider">
                 <hr />
@@ -931,13 +1079,12 @@
                 </section>
             </section>
 
-            <!----------- end of by categories collection heree ------------>
+            <!----------- by categories collection heree ------------>
 
             <section class="sec-divider">
                 <hr />
             </section>
 
-            <!----------- article collection heree ------------>
 
             <section class="my-hero-home">
                 <section class="my-hero-title">
@@ -1073,14 +1220,11 @@
                 </section>
             </section>
 
-            <!----------- end of article collection heree ------------>
 
 
             <section class="sec-divider">
                 <hr />
             </section>
-
-            <!----------- picks for you collection heree ------------>
 
             <section class="my-hero-home">
                 <section class="my-hero-title">
@@ -1268,7 +1412,6 @@
                 </section>
             </section>
 
-            <!----------- end of picks for you collection heree ------------>
 
 
             <section class="sec-divider">
@@ -1285,17 +1428,110 @@
         <aside class="side-r ">
             <aside class="side-sec-t">
 
-<!-- suggest top product container here -->
+                <section class="suggest-cards-container">
+                    <div class="suggest-card-cont-attr">
 
+                        <a class="suggest-card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/" title="Shalltear Bloodfallen OVERLORD Anime Series inspired T-shirt">
+                            <div class="suggest-item-img-cont">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/1.jpg" class="suggest-item-img-main" alt="">
+                            </div>
+                            <div class=" suggest-item-inf-cont">
+                                <div class="suggest-item-inf-tex-cont">
+                                    <p class="suggest-item-name txt-light-inv">
+                                        Shalltear Bloodfallen OVERLORD Anime Series inspired T-shirt
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="suggest-card-attr" href="/all-products/minato-aqua-scale-figurine/" title="Minato Aqua: Aqua Iro Super Dream Ver. 1/7 Scale Figure">
+                            <div class="suggest-item-img-cont">
+                                <img src="/all-products/minato-aqua-scale-figurine/1.jpg" class="suggest-item-img-main" alt="">
+                            </div>
+                            <div class=" suggest-item-inf-cont">
+                                <div class="suggest-item-inf-tex-cont">
+                                    <p class="suggest-item-name txt-light-inv">
+                                        Minato Aqua: Aqua Iro Super Dream Ver. 1/7 Scale Figure
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="suggest-card-attr"  href="/all-products/Enna-Alouette_t-shirt/" title="Enna Alouette NIJISANJI EN inspired T-shirt">
+                            <div class="suggest-item-img-cont">
+                                <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="suggest-item-img-main" alt="">
+                            </div>
+                            <div class=" suggest-item-inf-cont">
+                                <div class="suggest-item-inf-tex-cont">
+                                    <p class="suggest-item-name txt-light-inv">
+                                        Enna Alouette NIJISANJI EN inspired T-shirt
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </section>
             </aside>
-
             <aside class="side-sec-b">
 
-<!-- suggest bottom article container here -->
+                <section class="article-cards-container">
+                    <div class="article-card-cont-attr">
 
+
+
+
+                        <a class="article-card-attr" href="/articles/Mushoku-Tensei-2-stage-at-Anime-Japan-2023-anime-news-3/" target="_blank" title="Mushoku Tensei 2 stage at Anime Japan 2023">
+                            <div class="article-item-img-cont">
+                                <img src="https://staticg.sportskeeda.com/editor/2023/02/871d9-16757938399220-1920.jpg" class="suggest-item-img-main" alt="Mushoku Tensei 2 stage at Anime Japan 2023">
+                            </div>
+                            <div class=" article-item-inf-cont">
+                                <div class="article-item-inf-tex-cont">
+                                    <p class="article-item-name txtred">
+                                        Mushoku Tensei 2 stage at Anime Japan 2023
+                                    </p>
+                                </div>
+
+                            </div>
+                        </a>
+
+                        <a class="article-card-attr" href="/articles/NIJISANJI-EN-Announces-Ethyria-anime-news-2/" target="_blank" title="NIJISANJI EN Announces 3rd Virtual YouTuber Group 'Ethyria'">
+                            <div class="article-item-img-cont">
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1254/1891/files/y7DTwXkaDymgZyEA7Nkf.jpg?v=1664945493" class="suggest-item-img-main" alt="NIJISANJI EN Announces 3rd Virtual YouTuber Group 'Ethyria'">
+                            </div>
+                            <div class=" article-item-inf-cont">
+                                <div class="article-item-inf-tex-cont">
+                                    <p class="article-item-name txtred">
+                                        NIJISANJI EN Announces 3rd Virtual YouTuber Group "Ethyria"
+                                    </p>
+                                </div>
+
+                            </div>
+                        </a>
+
+                        <a class="article-card-attr" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank" title="That Time I Got Reincarnated as a Slime Film to be Released Worldwde">
+                            <div class="article-item-img-cont">
+                                <img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" class="suggest-item-img-main" alt="That Time I Got Reincarnated as a Slime Film to be Released Worldwde">
+                            </div>
+                            <div class=" article-item-inf-cont">
+                                <div class="article-item-inf-tex-cont">
+                                    <p class="article-item-name txtred">
+                                        That Time I Got Reincarnated as a Slime Film to be Released Worldwde
+                                    </p>
+                                </div>
+
+                            </div>
+                        </a>
+
+
+
+
+                    </div>
+                </section>
             </aside>
         </aside>
-        <!--end of right side of the main--->
+        <!--right side of the main--->
+
     </section>
 
 
