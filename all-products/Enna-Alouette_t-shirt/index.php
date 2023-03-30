@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- still on debugging mode -sceiiya -->
+    <!-- head meta tags and css links -->
     <?php include("../../includes/head.php"); ?>
     <title>Enna Alouette T-shirt | Animazoooki Merch Co.</title>
 </head>

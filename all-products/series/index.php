@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-<!-- head meta tags and css link here  -->
+    <!-- head meta tags and css links -->
     <?php include("../../includes/head.php"); ?>
-    <title>Animazooki | All Series</title>
+    <title>Animazoooki | All Series</title>
 </head>
 
 <body class="bg-light">

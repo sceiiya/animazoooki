@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <!-- still on debugging mode -sceiiya -->
+    <!-- head meta tags and css links -->
     <?php include("../../includes/head.php"); ?>
     <title>Minato Aqua 1/7 Scale Figurine | Animazoooki Merch Co.</title>
 </head>

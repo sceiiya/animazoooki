@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <!-- still on debugging mode -sceiiya -->
+    <!-- head meta tags and css links -->
     <?php include("../../includes/head.php"); ?>
-    <title>Animazooki | Checkout</title>
+    <title>Animazoooki | Checkout</title>
 </head>
 
 <body class="bg-light">
@@ -24,6 +24,7 @@
     <!-- navigation bar heading -->
     <?php include("../../includes/main_navbar_header.php"); ?>
     <!-- navigation bar heading -->
+    
     <section class="wrapper">
         <!--left side of the main--->
         <aside class="side-l"> </aside> <!--left side of the main--->

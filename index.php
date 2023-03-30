@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- head -->
+    <!-- head meta tags and css links -->
     <?php include("includes/head.php"); ?>
     <title>Animazoooki Merch Co. | Homepage</title>
 </head>
