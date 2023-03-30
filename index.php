@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <!-- head -->
@@ -8,14 +10,14 @@
 <body class="bg-light">
 
 <!-- messenger -->
-<?php include("includes/messenger_plugin.php"); ?>
+    <?php include("includes/messenger_plugin.php"); ?>
 
 <!-- back to top -->
-
+    <?php include("includes/back_to_top.php"); ?>
 <!-- promo -->
-
+    <?php include("includes/promo_animation.php"); ?>
 <!-- header -->
-
+    <?php include("includes/headers.php"); ?>
     <!-- main hero -->
     <div id="carouselExampleDark" class="carousel carousel-light slide carousel_animazooki_hero" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -95,10 +97,8 @@
     <!-- main hero -->
 
     <!-- navigation bar heading -->
-
-    <!-- navigation bar heading -->
-
-
+    <?php include("includes/main_navbar_header.php"); ?>
+    <!-- end of navigation bar heading -->
 
     <section class="wrapper">
         <!--left side of the main--->
@@ -1284,15 +1284,13 @@
         <!--right side of the main--->
         <aside class="side-r ">
             <aside class="side-sec-t">
-
 <!-- suggest top product container here -->
-
+                <?php include("includes/right_top_suggest_side.php"); ?>
             </aside>
 
             <aside class="side-sec-b">
-
 <!-- suggest bottom article container here -->
-
+                <?php include("includes/right_bottom_suggest_side.php"); ?>
             </aside>
         </aside>
         <!--end of right side of the main--->

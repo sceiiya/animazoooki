@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <?php include("includes/head.php"); ?>
+    <!-- still on debugging mode -sceiiya -->
+    <?php include("/includes/head.php"); ?>
     <title>Usada Pekora T-shirt | Animazooki Merch Co.</title>
 </head>
 
