@@ -4,14 +4,13 @@
 <head>
     <!-- head -->
     <?php include("includes/head.php"); ?>
-    <title>Animazooki Merch Co. | Homepage</title>
+    <title>Animazoooki Merch Co. | Homepage</title>
 </head>
 
 <body class="bg-light">
 
 <!-- messenger -->
     <?php include("includes/messenger_plugin.php"); ?>
-
 <!-- back to top -->
     <?php include("includes/back_to_top.php"); ?>
 <!-- promo -->
@@ -20,6 +19,7 @@
     <?php include("includes/headers.php"); ?>
 <!-- login modal -->
     <?php include("includes/login_modal.php"); ?>
+    
     <!-- main hero -->
     <div id="carouselExampleDark" class="carousel carousel-light slide carousel_animazooki_hero" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -1277,11 +1277,8 @@
                 <hr />
             </section>
 
-
-
-
         </main>
-        <!--content of the main--->
+        <!-- end of content for the main--->
 
         <!--right side of the main--->
         <aside class="side-r ">
@@ -1329,7 +1326,7 @@
                         <h5 class="m-0 ms-2 txt-light">Email: &nbsp;&nbsp;</h5>
                     </div>
                     <div class="in-footer-mailinput">
-                        <input class="crnrclean" type="email" id="email" name="email" placeholder="animazooki@gmail.com"
+                        <input class="crnrclean" type="email" id="email" name="email" placeholder="animazoooki@gmail.com"
                             style="width: auto;">
                     </div>
                     <div class="in-footer-mail-button txtc">
@@ -1403,21 +1400,21 @@
                 <h5>Customer Service</h5>
             </div>
             <div class="in-footer-cs-list w100 txtc">
-                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazooki-FAQ" role="button"
+                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazoooki-FAQ" role="button"
                     aria-expanded="false" aria-controls="collapseExample">FAQ</a> &nbsp;|&nbsp;
-                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazooki-tracking"
+                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazoooki-tracking"
                     role="button" aria-expanded="false" aria-controls="collapseExample">Order Tracking</a> &nbsp;|&nbsp;
-                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazooki-RnR" role="button"
+                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazoooki-RnR" role="button"
                     aria-expanded="false" aria-controls="collapseExample">Return & Refund</a> &nbsp;|&nbsp;
-                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazooki-TnC" role="button"
+                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazoooki-TnC" role="button"
                     aria-expanded="false" aria-controls="collapseExample">Terms & Conditions</a> &nbsp;|&nbsp;
-                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazooki-privacy-policy"
+                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazoooki-privacy-policy"
                     role="button" aria-expanded="false" aria-controls="collapseExample">Privacy Policy</a> &nbsp;|&nbsp;
-                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazooki-contact-us"
+                <a class="footer-cs-list-i txt-light" data-bs-toggle="collapse" href="#animazoooki-contact-us"
                     role="button" aria-expanded="false" aria-controls="collapseExample">Contact Us</a>
             </div>
             <div class="footer-cs-collapse clflx w100"> <!--- collapse --->
-                <div class="collapse" id="animazooki-FAQ">
+                <div class="collapse" id="animazoooki-FAQ">
                     <div class="card card-body txtl ps-4 bg-light-inv">
                         Frequently Asked Question<br />
                         <div class="in-footer-cs-list clflx w100 txtl">
@@ -1464,7 +1461,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="collapse" id="animazooki-tracking">
+                <div class="collapse" id="animazoooki-tracking">
                     <div class="card card-body bg-light-inv txtl ps-4">
                         You may go to your order-page and see the tracking status of your merch.<br />
                         &nbsp;In addition, here our our freight partners the you might ask about the status of your
@@ -1472,7 +1469,7 @@
                         &nbsp;Copy the Tracking Number in your order-page and paste it in their tracking app.
                     </div>
                 </div>
-                <div class="collapse" id="animazooki-RnR">
+                <div class="collapse" id="animazoooki-RnR">
                     <div class="card card-body bg-light-inv txtl ps-4">
                         For Return and Refund, you may contact our customer service in the chat.<br />
                         <p>&nbsp;Please read the Terms and
@@ -1480,23 +1477,23 @@
                             return/refund.
                     </div>
                 </div>
-                <div class="collapse" id="animazooki-TnC">
+                <div class="collapse" id="animazoooki-TnC">
                     <div class="card card-body bg-light-inv txtl ps-4">
                         <p>You may read our whole <strong>T&C</strong> on the other page by clicking <a href="#"
                                 target="_blank" onclick="popdev()">here.</a>
                     </div>
                 </div>
-                <div class="collapse" id="animazooki-privacy-policy">
+                <div class="collapse" id="animazoooki-privacy-policy">
                     <div class="card card-body bg-light-inv txtl ps-4">
                         <p>In accordance to Republic Act No. 10173, otherwise known as the Data Privacy Act,<br />you
                             may read our whole <strong>Privacy Policy</strong> on the other page by clicking <a href="#"
                                 target="_blank" onclick="popdev()">here.</a>
                     </div>
                 </div>
-                <div class="collapse" id="animazooki-contact-us">
+                <div class="collapse" id="animazoooki-contact-us">
                     <div class="card card-body bg-light-inv txtl ps-4">
                         You may reach us out here!<br />
-                        &nbsp;&nbsp;E-mail: animazooki@gmail.com<br />
+                        &nbsp;&nbsp;E-mail: animazoooki@gmail.com<br />
                         &nbsp;&nbsp;Phone number:+6399 999 9999<br />
                         &nbsp;&nbsp;Fax: 999 999 999
 
@@ -1526,7 +1523,7 @@
                     <a class="footer-cs-list-i txt-light" href="">Sign-in</a>
                     <a class="footer-cs-list-i txt-light" href="" onclick="popdev()">Refer a friend</a>
                     <a class="footer-cs-list-i txt-light" href="" onclick="popdev()">News</a>
-                    <a class="footer-cs-list-i txt-light" href="" onclick="popdev()">More about animazooki. . .</a>
+                    <a class="footer-cs-list-i txt-light" href="" onclick="popdev()">More about animazoooki. . .</a>
                     <a class="footer-cs-list-i txt-light" href="" onclick="popdev()">Collab with us!</a>
                 </div>
             </div>
@@ -1550,9 +1547,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0de39995d2.js" crossorigin="anonymous"></script>
     <script src="assets/js/jquery-3.6.3.min.js"></script>
     <script src="assets/js/script.js"></script>

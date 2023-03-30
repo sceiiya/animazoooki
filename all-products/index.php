@@ -1,13 +1,13 @@
-<?php
-    ob_start();
+<?php $path = require_once($_SERVER['DOCUMENT_ROOT'] . "/index.php"); 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
         <!-- still on debugging mode -sceiiya -->
-    <?php include("../includes/head.php"); ?>
-    <title>Animazooki | All Products</title>
+    <?php include("/includes/head.php"); ?>
+    <title>Animazoooki | All Products</title>
 </head>
 
 <body class="bg-light">
@@ -1458,8 +1458,3 @@
 </body>
 
 </html>
-
-<?php
-    $content = ob_get_clean();
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/index.php')
-?>
