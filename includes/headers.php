@@ -17,8 +17,8 @@
             <a class="nav-button" href="/profile/cart/"><i class="fas fa-shopping-cart mx-2 txt-light-inv header_floater"></i></a>
             <a class="nav-button" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle mx-2 txt-light-inv header_floater"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item txt-light-inv" onclick="loginModal()">Log in</a></li>
-                            <li><a class="dropdown-item txt-light-inv" onclick="signupModal()">Sign up</a></li>
+                            <li><a class="dropdown-item txt-light-inv btn-login">Log in</a></li>
+                            <li><a class="dropdown-item txt-light-inv btn-signup">Sign up</a></li>
                             <li><a class="dropdown-item txt-light-inv" href="/profile/">My Profile</a></li>
                             <li><a class="dropdown-item txt-light-inv" href="#" onclick="popdev()">Log out</a></li>
                         </ul>

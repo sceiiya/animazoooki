@@ -55,8 +55,8 @@
                     </label>
                 </div>
 
-                <p class="text-center text-muted mb-0">Already have an account? <a onclick="loginModal()"
-                        class="text-body txtred"><u>Login here</u></a></p>
+                <p class="text-center text-muted mb-0">Already have an account? <a 
+                        class="text-body txtred btn-login"><u>Login here</u></a></p>
 
             </form>
 

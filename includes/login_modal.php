@@ -47,7 +47,7 @@
 
         <!-- Register buttons -->
         <div class="text-center">
-          <p>Not a member? <a onclick="signupModal()" class="txtred">Create account</a></p>
+          <p>Not a member? <a class="txtred btn-signup">Create account</a></p>
           <p>or sign up with:</p>
           <button type="button" class="btn btn-link btn-floating mx-1">
             <i class="fab fa-facebook-f txtred" onclick="popdev()"></i>
