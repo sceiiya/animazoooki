@@ -3,7 +3,7 @@
 
 <head>
     <!-- head -->
-    <?php include("includes\head.php"); ?>
+    <?php include("includes/head.php"); ?>
     <title>Animazooki Merch Co. | Homepage</title>
 </head>
 
@@ -18,6 +18,8 @@
     <?php include("includes/promo_animation.php"); ?>
 <!-- header -->
     <?php include("includes/headers.php"); ?>
+<!-- login modal -->
+    <?php include("includes/login_modal.php"); ?>
     <!-- main hero -->
     <div id="carouselExampleDark" class="carousel carousel-light slide carousel_animazooki_hero" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -1552,7 +1554,8 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0de39995d2.js" crossorigin="anonymous"></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="assets/js/jquery-3.6.3.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

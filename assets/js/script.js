@@ -64,3 +64,36 @@ new Chart(document.getElementById("horizontalBar"), {
 
 //   var button = document.getElementById("mode-toggle");
 // button.addEventListener("click", toggleMode);
+
+
+//Function for modal
+function loginModal() {
+
+  $('#myLoginModal').modal('show');
+
+  $('#login').on('click', (e) => {
+    e.preventDefault();
+    var sEmail = document.getElementById("form2Example1").value;
+    var sPassword = document.getElementById("form2Example2").value;
+
+    var sJsonData = {
+        email: sEmail,
+        password: sPassword,
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: "controllers/login.php",
+        data: sJsonData,
+        success: (result) => {
+                if( result == "Login Success") {
+                  $('#myLoginModal').modal('hide');
+                } else {
+                    console.log(result);
+                }   
+        }
+    });
+
+  })
+
+}
