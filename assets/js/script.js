@@ -68,7 +68,7 @@ new Chart(document.getElementById("horizontalBar"), {
 
 //Function for modal
 function loginModal() {
-
+  $('#mySignupModal').modal('hide');
   $('#myLoginModal').modal('show');
 
   $('#login').on('click', (e) => {
@@ -88,6 +88,42 @@ function loginModal() {
         success: (result) => {
                 if( result == "Login Success") {
                   $('#myLoginModal').modal('hide');
+                } else {
+                    console.log(result);
+                }   
+        }
+    });
+
+  })
+
+}
+
+function signupModal() {
+  $('#myLoginModal').modal('hide');
+  $('#mySignupModal').modal('show');
+
+  $('#createAcc').on('click', (e) => {
+    e.preventDefault();
+    var sName = document.getElementById("form3Example1cg").value;
+    var sEmail = document.getElementById("form3Example3cg").value;
+    var sPassword = document.getElementById("form3Example4cg").value;
+    var sConfirmPass= document.getElementById("form3Example4cdg").value;
+
+    var sJsonData = {
+        name: sName,
+        email: sEmail,
+        password: sPassword,
+        confirmpassword: sConfirmPass
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: "controllers/signup.php",
+        data: sJsonData,
+        success: (result) => {
+                if( result == "Sign-up Success") {
+                  $('#mySignupModal').modal('hide');
+                  $('#myLoginModal').modal('show');
                 } else {
                     console.log(result);
                 }   
