@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>HMTL FOOTER</title> -->
-    <link rel="stylesheet" href="assets/css/desktop-style.css">
-    <link rel="stylesheet" href="assets/css/medium-style.css">
-    <link rel="stylesheet" href="assets/css/mobile-style.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/desktop-style.css">
-    <link rel="stylesheet" href="../assets/css/medium-style.css">
-    <link rel="stylesheet" href="../assets/css/mobile-style.css">
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-</head>
-<body>
 <footer class="p-0 m-0 bg-cloud">
         <div class="footer-socmed-mail rwflx w100 p-3 py-2 footer-box">
             <div class="in-footer-socmed rwflx w50 txtr ">
@@ -266,5 +247,3 @@
             <h6 class="author">&nbsp;Designed and Developed by Scheidj Villados</h6>
         </div>
     </footer>
-</body>
-</html>
