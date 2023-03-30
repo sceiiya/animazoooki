@@ -7,7 +7,7 @@
         $sPassword = $_POST['password'];
         $_SESSION['email'] = $sEmail;
         try {
-            $qSelect = "SELECT `password` FROM `database_name`.`table` WHERE `username` = '$sEmail'";
+            $qSelect = "SELECT `password` FROM `database_name`.`table_name` WHERE `username` = '$sEmail'";
             $eSelect = mysqli_query($connectionName, $qSelect); // update this for connection name
             $rows = mysqli_fetch_assoc($eSelect);
             $nTotalRows = mysqli_num_rows($eSelect);
