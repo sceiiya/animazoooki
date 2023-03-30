@@ -72,7 +72,7 @@
             </div>
 
             <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4 inbg-red rwflx txtc"><a class="txt-light" href="https://sceiiya.wd49p.com/animazooki/">Log in</a></button>
+            <button type="button" id= "login" class="btn btn-primary btn-block mb-4 inbg-red rwflx txtc"><a class="txt-light" href="https://sceiiya.wd49p.com/animazooki/">Log in</a></button>
 
             <!-- Register buttons -->
             <div class="text-center">
