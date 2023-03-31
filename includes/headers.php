@@ -13,12 +13,12 @@
         </div>
         <div class="sticky-top navic-cont ic-r px-2"> <!-- <i class="bi bi-moon"></i> -->
             <a class="nav-button" id="mode-toggle"><i class="fas fa-moon mx-2 txt-light-inv header_floater"></i></button>
-            <a class="nav-button"><i class="fas fa-search mx-2 txt-light-inv header_floater" type="button" class="" data-bs-toggle="modal" data-bs-target="#searchmodal"></i></a>
+            <a class="nav-button"><i class="fas fa-search mx-2 txt-light-inv header_floater" type="button" id="btn-search"></i></a>
             <a class="nav-button" href="/profile/cart/"><i class="fas fa-shopping-cart mx-2 txt-light-inv header_floater"></i></a>
             <a class="nav-button" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle mx-2 txt-light-inv header_floater"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item txt-light-inv" href="#" onclick="loginModal()">Log in</a></li>
-                            <li><a class="dropdown-item txt-light-inv" href="/sign-up/">Sign up</a></li>
+                            <li><a class="dropdown-item txt-light-inv btn-login">Log in</a></li>
+                            <li><a class="dropdown-item txt-light-inv btn-signup">Sign up</a></li>
                             <li><a class="dropdown-item txt-light-inv" href="/profile/">My Profile</a></li>
                             <li><a class="dropdown-item txt-light-inv" href="#" onclick="popdev()">Log out</a></li>
                         </ul>
@@ -26,9 +26,9 @@
 
     <!-- Button trigger modal -->
 
-
+    <!-- class="" data-bs-toggle="modal" data-bs-target="#searchmodal" -->
     <!-- Modal -->
-    <div class="modal fade bg-light-in" id="searchmodal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <!-- <div class="modal fade bg-light-in" id="searchmodal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
@@ -40,4 +40,4 @@
             </div>
         </div>
     </div>
-    </div>
+    </div> -->
