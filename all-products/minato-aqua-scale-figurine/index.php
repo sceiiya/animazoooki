@@ -19,9 +19,10 @@
     <?php include("../../includes/headers.php"); ?>
 <!-- login modal -->
     <?php include("../../includes/login_modal.php"); ?>
-    <!-- navigation bar heading -->
+<!-- signup modal -->
+    <?php include("../../includes/signup_modal.php"); ?>
+<!-- navigation bar heading -->
     <?php include("../../includes/main_navbar_header.php"); ?>
-    <!-- navigation bar heading -->
 
     <section class="wrapper">
         <!--left side of the main--->
