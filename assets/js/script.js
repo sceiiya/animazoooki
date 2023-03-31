@@ -67,7 +67,7 @@ if (toastTrigger) {
 // button.addEventListener("click", toggleMode);
 
 
-//Function for modal
+//Function for login modal
 $('.btn-login').on('click', () => {
   $('#mySignupModal').modal('hide');
   $('#myLoginModal').modal('show');
@@ -99,37 +99,7 @@ $('.btn-login').on('click', () => {
 
 })
 
-// function loginModal() {
-//   $('#mySignupModal').modal('hide');
-//   $('#myLoginModal').modal('show');
-
-//   $('#login').on('click', (e) => {
-//     e.preventDefault();
-//     var sEmail = document.getElementById("form2Example1").value;
-//     var sPassword = document.getElementById("form2Example2").value;
-
-//     var sJsonData = {
-//         email: sEmail,
-//         password: sPassword,
-//     }
-
-//     $.ajax({
-//         type: 'POST',
-//         url: "controllers/login.php",
-//         data: sJsonData,
-//         success: (result) => {
-//                 if( result == "Login Success") {
-//                   $('#myLoginModal').modal('hide');
-//                 } else {
-//                     console.log(result);
-//                 }   
-//         }
-//     });
-
-//   })
-
-// }
-
+//Function for signup modal
 $('.btn-signup').on('click', () => { 
   $('#myLoginModal').modal('hide');
   $('#mySignupModal').modal('show');
@@ -166,38 +136,7 @@ $('.btn-signup').on('click', () => {
 
 })
 
-// function signupModal() {
-//   $('#myLoginModal').modal('hide');
-//   $('#mySignupModal').modal('show');
-
-//   $('#createAcc').on('click', (e) => {
-//     e.preventDefault();
-//     var sName = document.getElementById("form3Example1cg").value;
-//     var sEmail = document.getElementById("form3Example3cg").value;
-//     var sPassword = document.getElementById("form3Example4cg").value;
-//     var sConfirmPass= document.getElementById("form3Example4cdg").value;
-
-//     var sJsonData = {
-//         name: sName,
-//         email: sEmail,
-//         password: sPassword,
-//         confirmpassword: sConfirmPass
-//     }
-
-//     $.ajax({
-//         type: 'POST',
-//         url: "controllers/signup.php",
-//         data: sJsonData,
-//         success: (result) => {
-//                 if( result == "Sign-up Success") {
-//                   $('#mySignupModal').modal('hide');
-//                   $('#myLoginModal').modal('show');
-//                 } else {
-//                     console.log(result);
-//                 }   
-//         }
-//     });
-
-//   })
-
-// }
+//Function for signup modal
+$('#btn-search').on('click', () => {
+  $('#searchModal').modal('show');
+})

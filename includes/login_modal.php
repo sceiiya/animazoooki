@@ -2,19 +2,8 @@
   <div class="modal-dialog">
     <div class="modal-content bg-transparent border-0">
 
-      <!-- Modal Header -->
-      <!-- <div class="modal-header"> -->
-      <!-- <h4 class="modal-title">EDIT</h4> -->
-
-      <!-- </div> -->
-
-      <!-- Modal body -->
-      <!-- <div class="modal-body"> -->
-      <!-- <input id="indexer" style="display: none;"> -->
-      <!-- <main class="w100 clflx"> -->
-
       <form class="animazooki-log-cont txtc bg-light-in">
-        <!-- <button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal"></button> -->
+
         <h3 class="txtc mb-4">Log in</h3>
         <!-- Email input -->
         <div class="form-outline mb-4">
@@ -43,7 +32,8 @@
         </div>
 
         <!-- Submit button -->
-        <button type="button" id="login" class="btn btn-primary btn-block mb-4 inbg-red rwflx txtc"><a class="txt-light">Log in</a></button>
+        <button type="button" id="login" class="btn btn-primary btn-block mb-4 inbg-red rwflx txtc"><a
+            class="txt-light">Log in</a></button>
 
         <!-- Register buttons -->
         <div class="text-center">
@@ -62,18 +52,6 @@
           </button>
         </div>
       </form>
-
-      <!-- </main> -->
-
-      <!-- </div> -->
-
-      <!-- Modal footer -->
-      <!-- <div class="modal-footer">
-        <div class="">
-                          <button class="btn btn-primary" id="edit">Modify</button>
-                        </div>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div> -->
 
     </div>
   </div>
