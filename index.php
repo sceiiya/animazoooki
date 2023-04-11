@@ -21,6 +21,8 @@
     <?php include("includes/login_modal.php"); ?>
 <!-- signup modal -->
     <?php include("includes/signup_modal.php"); ?>
+<!-- search modal -->
+    <?php include("includes/search_modal.php"); ?>
 
     
     <!-- main hero -->
@@ -104,8 +106,6 @@
     <!-- navigation bar heading -->
     <?php include("includes/main_navbar_header.php"); ?>
     <!-- end of navigation bar heading -->
-    <!-- search modal -->
-    <?php include("includes/search_modal.php"); ?>
 
     <section class="wrapper">
         <!--left side of the main--->

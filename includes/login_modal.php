@@ -1,8 +1,8 @@
 <div class="modal" id="myLoginModal">
-  <div class="modal-dialog">
-    <div class="modal-content bg-transparent border-0">
+  <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
+    <div class="modal-content bg-transparent">
 
-      <form class="animazooki-log-cont txtc bg-light-in">
+      <form class="animazooki-log-cont txtc bg-light-in ">
 
         <h3 class="txtc mb-4">Log in</h3>
         <!-- Email input -->
