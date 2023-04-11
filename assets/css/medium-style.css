@@ -1364,7 +1364,7 @@ footer>*>*{
     box-sizing: content-box;
     align-self: center;
     margin: 150px;
-    margin-top: 60px !important;
+    /* margin-top: 60px !important; */
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
     background-color: #fff !important;
@@ -1388,7 +1388,7 @@ footer>*>*{
     box-sizing: content-box;
     align-self: center;
     margin: 150px;
-    margin-top: 60px !important;
+    /* margin-top: 60px !important; */
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
     background-color: #fff !important;
@@ -1847,3 +1847,4 @@ z-index: 4;
 .header_floater{
     text-shadow: 0px 0px 2px #fffbf2;
 }
+
