@@ -1365,6 +1365,8 @@ a:hover{
 
 .footer-links-list{
     width: 90% !important ;
+    flex-flow: row wrap;
+    white-space: nowrap;    
 }
 
 .in-footer-socmed-mail, .in-footer-links, .in-footer-debug, .in-footer-abt-shop{
