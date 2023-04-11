@@ -1,6 +1,6 @@
 <div class="modal" id="myLoginModal">
   <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
-    <!-- <div class="modal-content bg-transparent"> -->
+    <div class="modal-content bg-transparent">
 
       <form class="animazooki-log-cont txtc bg-light-in ">
 
@@ -53,6 +53,6 @@
         </div>
       </form>
 
-    <!-- </div> -->
+    </div>
   </div>
 </div>
