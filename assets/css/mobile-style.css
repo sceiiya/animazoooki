@@ -1475,7 +1475,7 @@ a:hover{
 
 /*----- log page -----*/
 .animazooki-log-cont{
-    width: 350px;
+    width: 240px !important;
     padding: 30px;
     box-sizing: content-box;
     align-self: center;
@@ -1499,7 +1499,7 @@ a:hover{
 }
 
 .animazooki-sign-up-cont{
-    width: 350px;
+    width: 240px !important;
     padding: 30px;
     box-sizing: content-box;
     align-self: center;
