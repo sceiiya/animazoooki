@@ -10,7 +10,7 @@
 <body class="bg-light">
 
 <!-- messenger -->
-<?php include('../../includes/messenger_plugin.php'); ?>
+    <?php include('../../includes/messenger_plugin.php'); ?>
 <!-- toaster -->
     <?php include("../../includes/cart_toaster.php"); ?>
 <!-- back to top -->
@@ -21,9 +21,10 @@
     <?php include("../../includes/headers.php"); ?>
 <!-- login modal -->
     <?php include("../../includes/login_modal.php"); ?>
-    <!-- navigation bar heading -->
+<!-- signup modal -->
+    <?php include("../../includes/signup_modal.php"); ?>
+<!-- navigation bar heading -->
     <?php include("../../includes/main_navbar_header.php"); ?>
-    <!-- navigation bar heading -->
 
     <section class="wrapper">
         <!--left side of the main--->
@@ -173,7 +174,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0de39995d2.js" crossorigin="anonymous"></script>
-    <script src="assets/js/jquery-3.6.3.min.js"></script>
     <script src="/assets/js/script.js"></script>
 </body>
 

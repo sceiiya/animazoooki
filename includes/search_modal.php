@@ -1,4 +1,4 @@
-<div class="modal fade" id="searchModal">
+<!-- <div class="modal fade" id="searchModal">
   <div class="modal-dialog modal-xl">
         <div class="modal-content bg-transparent">
 
@@ -7,4 +7,4 @@
 
         </div>
     </div>
-</div>
+</div> -->
