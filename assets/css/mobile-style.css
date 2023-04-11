@@ -1477,12 +1477,12 @@ a:hover{
 
 /*----- log page -----*/
 .animazooki-log-cont{
-    width: 350px;
+    width: 240px !important;
     padding: 30px;
     box-sizing: content-box;
     align-self: center;
-    margin: 150px;
-    margin-top: 60px !important;
+    /* margin: 150px;
+    margin-top: 60px !important; */
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
     background-color: #fff !important;
@@ -1501,12 +1501,12 @@ a:hover{
 }
 
 .animazooki-sign-up-cont{
-    width: 350px;
+    width: 240px !important;
     padding: 30px;
     box-sizing: content-box;
     align-self: center;
-    margin: 150px;
-    margin-top: 60px !important;
+    /* margin: 150px;
+    margin-top: 60px !important; */
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
     background-color: #fff !important;
