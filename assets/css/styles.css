@@ -1,3 +1,22 @@
 /* dito po yung mga bagong elements na lalagyan ng design */
 
+/* this is for the main container of legal pages */
+
+.legal_main{
+    min-height: 80vh;
+    width: 72%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0px 0px 0px rgba(255, 255, 255, 0), 0 -15px 16px 8px #0000006b, 0px 0 0px 0px #ffffff00, 0 -15px 16px 8px #2020206b;
+    box-sizing: border-box;
+    text-align: center;
+    /* background-color: #fffbf2; */
+    /* z-index: 4; */
+}
+
+footer{
+    padding-top: 0;
+    bottom: 0;
+}
 /* .. */
