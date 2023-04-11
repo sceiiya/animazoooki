@@ -140,3 +140,23 @@ $('.btn-signup').on('click', () => {
 $('#btn-search').on('click', () => {
   $('#searchModal').modal('show');
 })
+
+// ============== js footer collapse ==============
+//  txt-light collapsed
+// const cs_list = document.querySelectorAll('.footer_cs_list_i')
+
+// cs_list.forEach(panel => {
+//   footer_cs_list_i.addEventListener('click', () => {
+//         removeActiveClasses()
+//         footer_cs_list_i.attr("aria-expanded","true");
+//         // footer_cs_list_i.classList.add('collapsed')
+//         $("button").attr("aria-expanded","true");
+//     })
+// })
+
+// function removeActiveClasses() {
+//   cs_list.forEach(footer_cs_list_i => {
+//     footer_cs_list_i.attr("aria-expanded","false");
+//       // footer_cs_list_i.classList.remove('collapsed')
+//     })
+// }
