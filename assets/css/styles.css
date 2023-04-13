@@ -156,7 +156,7 @@ body {
   }
 
   /* main */
-  .main {
+  .mainAdmin {
     position: absolute;
     width: calc(100% - 300px);
     left: 300px;
@@ -165,7 +165,7 @@ body {
     transition: 0.5s;
   }
 
-  .main.active {
+  .mainAdmin.active {
     width: calc(100% - 80px);
     left: 80px;
   }

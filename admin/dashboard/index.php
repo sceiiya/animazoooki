@@ -66,7 +66,7 @@
         </div>
 
 <!-- main -->
-        <div class="main">
+        <div class="mainAdmin">
             <div class="topbar">
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
