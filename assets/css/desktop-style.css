@@ -1330,7 +1330,7 @@ a{
     border: 0;
     background: #a50113;
     color: #fffbf2;
-    padding: 0 3px !important;
+    padding: 10px;
     border-radius: 5px;
     align-self: flex-start;
 }
