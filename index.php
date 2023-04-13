@@ -1308,7 +1308,6 @@
     
     
     <footer>
-        <!-- footer  DANIEL -->
         <?php include("includes/footer.php"); ?>
     </footer>
 
