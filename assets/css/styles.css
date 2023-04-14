@@ -495,3 +495,25 @@ body {
         color: var(--white);
     } */
 }
+
+
+/* this is for the card attr*/
+.card_light{
+    background-color: #fffbf2;
+}
+.card_dark{
+    background-color: #2e2e2e;    
+}
+/* this is for the card attr*/
+
+.txt-light-invb{
+    color: #211D21 !important;
+}
+
+.txt-dark-invb{
+    color: #fffbf2 !important;
+}
+
+.txt-dark-invb:hover{
+    color: #010A10 !important;
+}

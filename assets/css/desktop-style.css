@@ -1777,3 +1777,7 @@ input:disabled{
 .header_floater{
     text-shadow: 0px 0px 2px #fffbf2;
 }
+
+.header_floater_d{
+    text-shadow: 0px 0px 2px #0c0c0c;
+}
