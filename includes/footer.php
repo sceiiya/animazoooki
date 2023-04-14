@@ -46,7 +46,7 @@
                     <h5>Helpful Links</h5>
                 </div>
                 <div class="footer-links-list rwflx txtc foot-txt">
-                    <a class="footer_cs_list_i txt-light mx-2" href="">Sign-in</a>
+                    <a class="footer_cs_list_i txt-light mx-2" id="futsign">Sign-in</a>
                     <a class="footer_cs_list_i txt-light mx-2" href="/legal/shipping_info.php">Shipping Info</a>
                     <a class="footer_cs_list_i txt-light mx-2" href="/legal/customer_service.php">Customer Service</a>
                     <a class="footer_cs_list_i txt-light mx-2" href="" onclick="popdev()">Refer a friend</a>

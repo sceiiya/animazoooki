@@ -42,7 +42,7 @@
 
                 <section class="article-list-cont">
 
-                    <a class="article-list-content-cont p-1 bg-dark-inv" href="/articles/Mushoku-Tensei-2-stage-at-Anime-Japan-2023-anime-news-3/" target="_blank">
+                    <a class="article-list-content-cont p-1 bg-light-in" href="/articles/Mushoku-Tensei-2-stage-at-Anime-Japan-2023-anime-news-3/" target="_blank">
                         <img class="article-list-img" src="https://staticg.sportskeeda.com/editor/2023/02/871d9-16757938399220-1920.jpg" alt="Rudeus Greyrat">
                         <div class="article-list-subtitle-cont p-2">
                             <h3 class="article-title mb-1">Mushoku Tensei 2 stage at Anime Japan 2023</h3>
@@ -61,7 +61,7 @@
                         </div>
                     </a>
 
-                    <a class="article-list-content-cont p-1 bg-dark-inv" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
+                    <a class="article-list-content-cont p-1 bg-light-in" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
                         <img class="article-list-img" src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" alt="Tensura Cover">
                         <div class="article-list-subtitle-cont p-2">
                             <h3 class="article-title mb-1">Tensura Film to be Released Worldwde</h3>
@@ -78,7 +78,7 @@
                         </div>
                     </a>
 
-                    <a class="article-list-content-cont p-1 bg-dark-inv" href="/articles/NIJISANJI-EN-Announces-Ethyria-anime-news-2/" target="_blank">
+                    <a class="article-list-content-cont p-1 bg-light-in" href="/articles/NIJISANJI-EN-Announces-Ethyria-anime-news-2/" target="_blank">
                         <img class="article-list-img" src="https://cdn.shopify.com/s/files/1/0577/1254/1891/files/y7DTwXkaDymgZyEA7Nkf.jpg?v=1664945493" alt='NIJISANJI EN Announces 3rd Virtual YouTuber Group "Ethyria"'>
                         <div class="article-list-subtitle-cont p-2">
                             <h3 class="article-title mb-1">NIJISANJI EN Announces 3rd Virtual YouTuber Group "Ethyria"</h3>
@@ -98,7 +98,7 @@
                     </a>
 
                     
-                    <a class="article-list-content-cont p-1 bg-dark-inv" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
+                    <a class="article-list-content-cont p-1 bg-light-in" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
                         <img class="article-list-img" src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" alt="Tensura Cover">
                         <div class="article-list-subtitle-cont p-2">
                             <h3 class="article-title mb-1">Tensura Film to be Released Worldwde</h3>
@@ -115,7 +115,7 @@
                         </div>
                     </a>
 
-                    <a class="article-list-content-cont p-1 bg-dark-inv" href="/articles/Mushoku-Tensei-2-stage-at-Anime-Japan-2023-anime-news-3/" target="_blank">
+                    <a class="article-list-content-cont p-1 bg-light-in" href="/articles/Mushoku-Tensei-2-stage-at-Anime-Japan-2023-anime-news-3/" target="_blank">
                         <img class="article-list-img" src="https://staticg.sportskeeda.com/editor/2023/02/871d9-16757938399220-1920.jpg" alt="Rudeus Greyrat">
                         <div class="article-list-subtitle-cont p-2">
                             <h3 class="article-title mb-1">Mushoku Tensei 2 stage at Anime Japan 2023</h3>
@@ -134,7 +134,7 @@
                         </div>
                     </a>
 
-                    <a class="article-list-content-cont p-1 bg-dark-inv" href="/articles/NIJISANJI-EN-Announces-Ethyria-anime-news-2/" target="_blank">
+                    <a class="article-list-content-cont p-1 bg-light-in" href="/articles/NIJISANJI-EN-Announces-Ethyria-anime-news-2/" target="_blank">
                         <img class="article-list-img" src="https://cdn.shopify.com/s/files/1/0577/1254/1891/files/y7DTwXkaDymgZyEA7Nkf.jpg?v=1664945493" alt='NIJISANJI EN Announces 3rd Virtual YouTuber Group "Ethyria"'>
                         <div class="article-list-subtitle-cont p-2">
                             <h3 class="article-title mb-1">NIJISANJI EN Announces 3rd Virtual YouTuber Group "Ethyria"</h3>
