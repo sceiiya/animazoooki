@@ -21,6 +21,8 @@
     <?php include("includes/login_modal.php"); ?>
 <!-- signup modal -->
     <?php include("includes/signup_modal.php"); ?>
+<!-- search modal -->
+    <?php include("includes/search_modal.php"); ?>
 
     
     <!-- main hero -->
@@ -104,8 +106,6 @@
     <!-- navigation bar heading -->
     <?php include("includes/main_navbar_header.php"); ?>
     <!-- end of navigation bar heading -->
-    <!-- search modal -->
-    <?php include("includes/search_modal.php"); ?>
 
     <section class="wrapper">
         <!--left side of the main--->
@@ -135,7 +135,7 @@
                 <section class="content-cards-container">
                     <div class="card-cont-attr">
 
-                        <a class="card-attr" href="/all-products/Usada-Pekora_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Usada-Pekora_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="...">
                             </div>
@@ -163,7 +163,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/all-products/minato-aqua-scale-figurine/">
+                        <a class="card-attr card_light" href="/all-products/minato-aqua-scale-figurine/">
                             <div class="item-img-cont">
                                 <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="...">
                             </div>
@@ -191,7 +191,7 @@
                             </div>
                         </a>
                         
-                        <a class="card-attr" href="/all-products/Enna-Alouette_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Enna-Alouette_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="...">
                             </div>
@@ -219,7 +219,7 @@
                             </div>
                         </a>
                         
-                        <a class="card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
                             </div>
@@ -247,7 +247,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
                             </div>
@@ -275,7 +275,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
                             </div>
@@ -339,7 +339,7 @@
                             </div>
                             <div class="card-cont-attr-featured-coll">
 
-                                <a class="card-attr-featured-coll" href="/all-products/Usada-Pekora_t-shirt/">
+                                <a class="card-attr-featured-coll card_light" href="/all-products/Usada-Pekora_t-shirt/">
                                     <div class="item-img-cont">
                                         <img src="/all-products/Usada-Pekora_t-shirt/3.jpg" class="item-img-main" alt="...">
                                     </div>
@@ -367,7 +367,7 @@
                                     </div>
                                 </a>
 
-                                <a class="card-attr-featured-coll" href="/all-products/minato-aqua-scale-figurine/">
+                                <a class="card-attr-featured-coll card_light" href="/all-products/minato-aqua-scale-figurine/">
                                     <div class="item-img-cont">
                                         <img src="/all-products/minato-aqua-scale-figurine/0.jpg" class="item-img-main" alt="...">
                                     </div>
@@ -395,7 +395,7 @@
                                     </div>
                                 </a>
 
-                                <a class="card-attr-featured-coll" href="/all-products/Usada-Pekora_t-shirt/">
+                                <a class="card-attr-featured-coll card_light" href="/all-products/Usada-Pekora_t-shirt/">
                                     <div class="item-img-cont">
                                         <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="...">
                                     </div>
@@ -433,7 +433,7 @@
                             </div>
                             <div class="card-cont-attr-featured-coll">
 
-                                <a class="card-attr-featured-coll" href="">
+                                <a class="card-attr-featured-coll card_light" href="">
                                     <div class="item-img-cont">
                                         <img src="/all-products/mock/1.jpg" class="item-img-main" alt="...">
                                     </div>
@@ -461,7 +461,7 @@
                                     </div>
                                 </a>
 
-                                <a class="card-attr-featured-coll" href="">
+                                <a class="card-attr-featured-coll card_light" href="">
                                     <div class="item-img-cont">
                                         <img src="/all-products/mock/2.jpg" class="item-img-main" alt="...">
                                     </div>
@@ -489,7 +489,7 @@
                                     </div>
                                 </a>
 
-                                <a class="card-attr-featured-coll" href="">
+                                <a class="card-attr-featured-coll card_light" href="">
                                     <div class="item-img-cont">
                                         <img src="/all-products/mock/3.jpg" class="item-img-main" alt="...">
                                     </div>
@@ -554,7 +554,7 @@
                 <section class="content-cards-container">
                     <div class="card-cont-attr">
 
-                        <a class="card-attr" href="/all-products/Usada-Pekora_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Usada-Pekora_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Usada-Pekora_t-shirt/4.jpg" class="item-img-main" alt="...">
                             </div>
@@ -582,7 +582,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/all-products/minato-aqua-scale-figurine/">
+                        <a class="card-attr card_light" href="/all-products/minato-aqua-scale-figurine/">
                             <div class="item-img-cont">
                                 <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="...">
                             </div>
@@ -610,7 +610,7 @@
                             </div>
                         </a>
                         
-                        <a class="card-attr" href="/all-products/Enna-Alouette_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Enna-Alouette_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="...">
                             </div>
@@ -638,7 +638,7 @@
                             </div>
                         </a>
                         
-                        <a class="card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
                             </div>
@@ -666,7 +666,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
                             </div>
@@ -694,7 +694,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
                             </div>
@@ -749,7 +749,7 @@
                 <section class="content-cards-container">
                     <div class="card-cont-attr">
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="series-img-cont">
                                 <img src="/all-products/series/mock/7.jpg" class="series-img-main" alt="...">
                             </div>
@@ -762,7 +762,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="series-img-cont">
                                 <img src="/all-products/series/mock/8.jpg" class="series-img-main" alt="...">
                             </div>
@@ -775,7 +775,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="series-img-cont">
                                 <img src="/all-products/series/mock/10.jpg" class="series-img-main" alt="...">
                             </div>
@@ -788,7 +788,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="series-img-cont">
                                 <img src="/all-products/series/mock/3.jpg" class="series-img-main" alt="...">
                             </div>
@@ -801,7 +801,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="series-img-cont">
                                 <img src="/all-products/series/mock/2.jpg" class="series-img-main" alt="...">
                             </div>
@@ -814,7 +814,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="series-img-cont">
                                 <img src="/all-products/series/mock/4.jpg" class="series-img-main" alt="...">
                             </div>
@@ -856,7 +856,7 @@
                 <section class="content-cards-container">
                     <div class="card-cont-attr">
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="category-img-cont">
                                 <img src="/all-products/category/mock/1.jpg" class="series-img-main" alt="...">
                             </div>
@@ -869,7 +869,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="category-img-cont">
                                 <img src="/all-products/category/mock/6.jpg" class="series-img-main" alt="...">
                             </div>
@@ -882,7 +882,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="category-img-cont">
                                 <img src="/all-products/category/mock/2.jpg" class="series-img-main" alt="...">
                             </div>
@@ -895,7 +895,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="category-img-cont">
                                 <img src="/all-products/category/mock/4.jpg" class="series-img-main" alt="...">
                             </div>
@@ -908,7 +908,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="category-img-cont">
                                 <img src="/all-products/category/mock/3.jpg" class="series-img-main" alt="...">
                             </div>
@@ -921,7 +921,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr">
+                        <a class="card-attr card_light">
                             <div class="category-img-cont">
                                 <img src="/all-products/category/mock/7.jpg" class="series-img-main" alt="...">
                             </div>
@@ -961,7 +961,7 @@
                     <div class="card-cont-attr">
 
 
-                        <a class="card-attr" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
+                        <a class="card-attr card_light" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
                             <div class="item-img-cont">
                                 <img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" class="item-img-main" alt="...">
                             </div>
@@ -980,7 +980,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/articles/Mushoku-Tensei-2-stage-at-Anime-Japan-2023-anime-news-3/" target="_blank">
+                        <a class="card-attr card_light" href="/articles/Mushoku-Tensei-2-stage-at-Anime-Japan-2023-anime-news-3/" target="_blank">
                             <div class="item-img-cont">
                                 <img src="https://staticg.sportskeeda.com/editor/2023/02/871d9-16757938399220-1920.jpg" class="item-img-main" alt="">
                             </div>
@@ -999,7 +999,7 @@
                             </div>
                         </a>
 <!-- article card template -->
-                        <a class="card-attr" href="/articles/NIJISANJI-EN-Announces-Ethyria-anime-news-2/" target="_blank">
+                        <a class="card-attr card_light" href="/articles/NIJISANJI-EN-Announces-Ethyria-anime-news-2/" target="_blank">
                             <div class="item-img-cont">
                                 <img src="https://cdn.shopify.com/s/files/1/0577/1254/1891/files/y7DTwXkaDymgZyEA7Nkf.jpg?v=1664945493" class="item-img-main" alt="">
                             </div>
@@ -1018,7 +1018,7 @@
                             </div>
                         </a>
 <!-- article card template -->
-                        <a class="card-attr" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
+                        <a class="card-attr card_light" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
                             <div class="item-img-cont">
                                 <img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" class="item-img-main" alt="...">
                             </div>
@@ -1037,7 +1037,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/articles/Mushoku-Tensei-2-stage-at-Anime-Japan-2023-anime-news-3/" target="_blank">
+                        <a class="card-attr card_light" href="/articles/Mushoku-Tensei-2-stage-at-Anime-Japan-2023-anime-news-3/" target="_blank">
                             <div class="item-img-cont">
                                 <img src="https://staticg.sportskeeda.com/editor/2023/02/871d9-16757938399220-1920.jpg" class="item-img-main" alt="">
                             </div>
@@ -1056,7 +1056,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/articles/NIJISANJI-EN-Announces-Ethyria-anime-news-2/" target="_blank">
+                        <a class="card-attr card_light" href="/articles/NIJISANJI-EN-Announces-Ethyria-anime-news-2/" target="_blank">
                             <div class="item-img-cont">
                                 <img src="https://cdn.shopify.com/s/files/1/0577/1254/1891/files/y7DTwXkaDymgZyEA7Nkf.jpg?v=1664945493" class="item-img-main" alt="">
                             </div>
@@ -1103,7 +1103,7 @@
                 <section class="content-cards-container">
                     <div class="card-cont-attr">
 
-                        <a class="card-attr" href="/all-products/Usada-Pekora_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Usada-Pekora_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="...">
                             </div>
@@ -1131,7 +1131,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/all-products/minato-aqua-scale-figurine/">
+                        <a class="card-attr card_light" href="/all-products/minato-aqua-scale-figurine/">
                             <div class="item-img-cont">
                                 <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="...">
                             </div>
@@ -1159,7 +1159,7 @@
                             </div>
                         </a>
                         
-                        <a class="card-attr" href="/all-products/Enna-Alouette_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Enna-Alouette_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="...">
                             </div>
@@ -1187,7 +1187,7 @@
                             </div>
                         </a>
                         
-                        <a class="card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Shalltear-Bloodfallen_t-shirt/3.jpg" class="item-img-main" alt="...">
                             </div>
@@ -1215,7 +1215,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Shalltear-Bloodfallen_t-shirt/2.jpg" class="item-img-main" alt="...">
                             </div>
@@ -1243,7 +1243,7 @@
                             </div>
                         </a>
 
-                        <a class="card-attr" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
+                        <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
                                 <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
                             </div>
@@ -1308,7 +1308,6 @@
     
     
     <footer>
-        <!-- footer  DANIEL -->
         <?php include("includes/footer.php"); ?>
     </footer>
 

@@ -1365,6 +1365,8 @@ a:hover{
 
 .footer-links-list{
     width: 90% !important ;
+    flex-flow: row wrap;
+    white-space: nowrap;    
 }
 
 .in-footer-socmed-mail, .in-footer-links, .in-footer-debug, .in-footer-abt-shop{
@@ -1414,7 +1416,7 @@ a:hover{
     padding: .5rem !important;
 }
 
-.footer-cs-list-i{
+.footer_cs_list_i{
     font-size: .6rem;
 }
 
@@ -1475,12 +1477,12 @@ a:hover{
 
 /*----- log page -----*/
 .animazooki-log-cont{
-    width: 350px;
+    width: 240px !important;
     padding: 30px;
     box-sizing: content-box;
     align-self: center;
-    margin: 150px;
-    margin-top: 60px !important;
+    /* margin: 150px;
+    margin-top: 60px !important; */
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
     background-color: #fff !important;
@@ -1499,12 +1501,12 @@ a:hover{
 }
 
 .animazooki-sign-up-cont{
-    width: 350px;
+    width: 240px !important;
     padding: 30px;
     box-sizing: content-box;
     align-self: center;
-    margin: 150px;
-    margin-top: 60px !important;
+    /* margin: 150px;
+    margin-top: 60px !important; */
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
     background-color: #fff !important;
@@ -1974,4 +1976,8 @@ input:disabled{
 
 .header_floater{
     text-shadow: 0px 0px 2px #fffbf2;
+}
+
+.header_floater_d{
+    text-shadow: 0px 0px 2px #0c0c0c;
 }

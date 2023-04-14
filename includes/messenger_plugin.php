@@ -1,4 +1,4 @@
-<!-- Messenger Chat Plugin Code -->
+<!--===== Messenger Chat Plugin Code =====-->
 <div id="fb-root"></div>
 
 <!-- Your Chat Plugin code -->
@@ -11,7 +11,7 @@
   chatbox.setAttribute("attribution", "biz_inbox");
 </script>
 
-<!-- Your SDK code -->
+<!--===== Your SDK code =====-->
 <script>
   window.fbAsyncInit = function() {
     FB.init({
