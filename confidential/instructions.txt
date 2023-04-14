@@ -1,0 +1,8 @@
+this folder is for dbconnection and email credentials
+separate file but same folder 
+
+for inclusion
+
+every controllers with email system
+and every controllers that will connect to the database
+must not include the the credentials itslef but only include the files for security purposes 
