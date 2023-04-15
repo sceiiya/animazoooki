@@ -1664,7 +1664,91 @@ a:hover{
 /* *{
     background-color: #5c52ec42;
 } */
-/*----- product page -----*/
+
+/*----- cart page -----*/
+.cart-cont{
+    background-color: #fffbf2;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+}
+/*----- cart page -----*/
+
+
+
+/*----- checkout page -----*/
+
+/*----- checkout page -----*/
+
+.admin-nav{
+    top: 0;
+    left: 0;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+    padding: 8px;
+    /* position: fixed; */
+    box-sizing: border-box;
+}
+
+.admin-main{
+    overflow-wrap: break-word;
+    flex-wrap: wrap;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.admin-inners{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.admin-innerstat{
+    width: 350px;
+    height: 250px;
+    background-color: #242424;
+    color: #fff;
+}
+
+.admin-innerstat>label{
+    margin: 30px 10px 0 10px;
+    padding: 5px;
+    background-color: #a50113;
+    border-radius: 7px;
+    
+}
+
+.fas{
+    font-size: 2.5vh;
+}
+
+.rating-cont{
+    white-space: nowrap !important;
+}
+.fa-star{
+    font-size: small !important;
+}
+
+
+/* phase one clear */
+
+/* added in mp2 */
+
+.header_floater{
+    text-shadow: 0px 0px 2px #fffbf2;
+}
+
+.header_floater_d{
+    text-shadow: 0px 0px 2px #0c0c0c;
+}
+
+/* ================================= PHASE TWO optimizations ================================== */
+
+/*------------------------------- product page --------------------*/
 .ind-product-cont{
     background-color: #fffbf2;
     padding-left: 1.3rem;
@@ -1686,14 +1770,22 @@ a:hover{
     overflow: hidden;
     border: 2px solid #a50113;
     height: fit-content;
+    border-radius: 3px;
 }
 
 .product-img-main{
     width: 100%;
+    border-radius: 3px;
+}
+
+.product-img-main:hover{
+    cursor: zoom-in;
 }
 
 .product-img-sub-cont-holder{
     display: flex;
+    padding-left: 0;
+    list-style: none;
     flex-direction: row;
     gap: 5px;
     margin: 5px;
@@ -1706,17 +1798,22 @@ a:hover{
     border: 2px solid #a50113;
     overflow: hidden;
     object-fit: cover;
+    border-radius: 3px;
 }
 
+.product-img-sub-cont:hover{
+    cursor: pointer;
+}
 .product-img-sub{
     width: 100%;
     height: fit-content;
     transition: .3s all ease-out;
     object-fit: cover;
     aspect-ratio: 1;
+    border-radius: 3px;
 }
 
-.product-img-sub:hover{
+/* .product-img-sub:hover{
     position: fixed;
     overflow: hidden;
     top:80px;
@@ -1725,7 +1822,7 @@ a:hover{
     width: 65%;
     height: auto;
     object-fit: contain;
-}
+} */
 
 .product-inf-cont{
     width: 60%;
@@ -1897,87 +1994,6 @@ input:disabled{
     box-shadow: 0px 3px 3px -3px #1d1d1d;
     margin-bottom: 1rem;
 }
-/*----- product page -----*/
+/*------------------------------- product page --------------------*/
 
-
-
-/*----- cart page -----*/
-.cart-cont{
-    background-color: #fffbf2;
-    padding-left: 1.3rem;
-    padding-right: 1.3rem;
-}
-/*----- cart page -----*/
-
-
-
-/*----- checkout page -----*/
-
-/*----- checkout page -----*/
-
-.admin-nav{
-    top: 0;
-    left: 0;
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    height: 100% !important;
-    padding: 8px;
-    /* position: fixed; */
-    box-sizing: border-box;
-}
-
-.admin-main{
-    overflow-wrap: break-word;
-    flex-wrap: wrap;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-
-.admin-inners{
-    display: flex;
-    flex-flow: row wrap;
-    gap: 20px;
-}
-
-.admin-innerstat{
-    width: 350px;
-    height: 250px;
-    background-color: #242424;
-    color: #fff;
-}
-
-.admin-innerstat>label{
-    margin: 30px 10px 0 10px;
-    padding: 5px;
-    background-color: #a50113;
-    border-radius: 7px;
-    
-}
-
-.fas{
-    font-size: 2.5vh;
-}
-
-.rating-cont{
-    white-space: nowrap !important;
-}
-.fa-star{
-    font-size: small !important;
-}
-
-
-/* phase one clear */
-
-/* added in mp2 */
-
-.header_floater{
-    text-shadow: 0px 0px 2px #fffbf2;
-}
-
-.header_floater_d{
-    text-shadow: 0px 0px 2px #0c0c0c;
-}
+/* ================================= PHASE TWO optimizations ================================== */
