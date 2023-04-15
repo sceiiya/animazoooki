@@ -1,13 +1,13 @@
 // gumagana na to ng maayos.. need lang iset ng condition from database ayusing ko rin
 //for testing purpose muna ngayon.. activate once.. tapos after mavisit sa localhost browser..
 //paki comment out yung line na nasa baba.. save then shift refresh sa browser.. gumagana sya even maglipat ng pages
-// localStorage.setItem(
-//   "user", JSON.stringify(
-//     { 
-//       username: "guest",
-//       email: "guest",
-//       theme: "light"
-//     }));
+localStorage.setItem(
+  "user", JSON.stringify(
+    { 
+      username: "guest",
+      email: "guest",
+      theme: "light"
+    }));
 //for logging out this one should be included 
 // localStorage.clear();
 
