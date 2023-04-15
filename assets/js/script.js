@@ -12,11 +12,7 @@ localStorage.setItem(
 // localStorage.clear();
 
 
-
-// get data from LocaleStorage
-    // const userCred = JSON.parse(localStorage.getItem("user"));
-    // userCred.theme;
-
+// fetching the theme and updating depends on the user preference
 $(document).ready(function(){
   const userCred = JSON.parse(localStorage.getItem("user"));
   if (userCred.theme == "dark") {
@@ -26,57 +22,17 @@ $(document).ready(function(){
 }
 });
  
-  // localStorage.setItem('theme', 'light')
-  $('#Az_theme').click(function() {
-    // JSON.stringify(localStorage.setItem(user.theme = "dark"));
-    // UsetT.theme = "dark";
+ // localStorage.setItem('theme', 'light')
+$('#Az_theme').click(function() {
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  if (userCred.theme == "dark") {
+    AzsetLightTheme();
+  } else {
+    AzsetDarkTheme();
+}
+});
 
-    const userCred = JSON.parse(localStorage.getItem("user"));
-    // userCred.theme = "dark";
-    // localStorage.setItem("user", JSON.stringify(userCred));
-    // const themecheck = userCred.theme;
-    if (userCred.theme == "dark") {
-      AzsetLightTheme();
-    } else {
-      AzsetDarkTheme();
-  }
-  });
-  // // localStorage.setItem('theme', 'light')
-  // $('#Az_theme').click(function() {
-  //   // JSON.stringify(localStorage.setItem(user.theme = "dark"));
-  //   // UsetT.theme = "dark";
-
-  //   // const userCred = JSON.parse(localStorage.getItem("user"));
-
-  //   // const userCred = JSON.parse(localStorage.getItem("user"));
-  //   // userCred.theme = "dark";
-  //   // localStorage.setItem("user", JSON.stringify(userCred));
-  //   // const themecheck = userCred.theme;
-  //   if ((JSON.parse(localStorage.getItem("user"))).theme = "dark") {
-  //     $('.bg-dark').removeClass('bg-dark').addClass('bg-light');
-  //     $('.bg-dark-in').removeClass('bg-dark-in').addClass('bg-light-in');
-  //     $('.bg-dark-inv').removeClass('bg-dark-inv').addClass('bg-light-inv');
-  //     $('.fa-sun').removeClass('fa-sun').addClass('fa-moon');
-  //     $('.card_dark').removeClass('card_dark').addClass('card_light');
-  //     $('.txt-dark-inv').removeClass('txt-dark-inv').addClass('txt-light-inv');
-  //     (JSON.parse(localStorage.getItem("user"))).theme = "light";
-  //     localStorage.setItem("user", JSON.stringify(JSON.parse(localStorage.getItem("user"))));
-  //   } else {
-      
-  //   $('.bg-light').removeClass('bg-light').addClass('bg-dark');
-  //   $('.bg-light-in').removeClass('bg-light-in').addClass('bg-dark-in');
-  //   $('.bg-light-inv').removeClass('bg-light-inv').addClass('bg-dark-inv');
-  //   $('.fa-moon').removeClass('fa-moon').addClass('fa-sun');
-  //   $('.card_light').removeClass('card_light').addClass('card_dark');
-  //   $('.txt-light-inv').removeClass('txt-light-inv').addClass('txt-dark-inv');
-  //   (JSON.parse(localStorage.getItem("user"))).theme = "dark";
-  //   localStorage.setItem("user", JSON.stringify(JSON.parse(localStorage.getItem("user"))));
-  // }
-  // });
-
-
-
-// });
+//function for replacing class theme to light
 function AzsettingLightTheme(){
   $("#headAzlogo").attr("src", "/assets/img/animazooki-b.png");
   $("#headAznlogo").attr("src", "/assets/img/n-logo-b.png");
@@ -90,6 +46,8 @@ function AzsettingLightTheme(){
   $('.txt-dark-invb').removeClass('txt-dark-invb').addClass('txt-light-invb');
   $('.article-item-name').removeClass('txt-dark-inv').addClass('txtred');
 }
+
+//function for switching theme to light
 function AzsetLightTheme(){
   AzsettingLightTheme();
   const userCred = JSON.parse(localStorage.getItem("user"));
@@ -97,6 +55,7 @@ function AzsetLightTheme(){
   localStorage.setItem("user", JSON.stringify(userCred));
 }
 
+//function for replacing class theme to dark
 function AzsettingDarkTheme(){
   $("#headAzlogo").attr("src", "/assets/img/animazooki-w.png");
   $("#headAznlogo").attr("src", "/assets/img/n-logo-w.png");
@@ -110,6 +69,8 @@ function AzsettingDarkTheme(){
   $('.txt-light-invb').removeClass('txt-light-invb').addClass('txt-dark-invb');
   $('.article-item-name').removeClass('txtred').addClass('txt-dark-inv');
 }
+
+//function for switching theme to dark
 function AzsetDarkTheme(){
   AzsettingDarkTheme();
   const userCred = JSON.parse(localStorage.getItem("user"));
@@ -122,7 +83,7 @@ function popdev(){
   alert("This feature is currently on development                                                                                                                                                                                                                                                                                        -the developer");
 }
 
-
+// (needs a rework on toasters.. have to develop our own toasters)
 const toastTrigger = document.getElementById('liveToastBtn')
 const toastLiveExample = document.getElementById('liveToast')
 if (toastTrigger) {
