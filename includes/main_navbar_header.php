@@ -4,7 +4,7 @@
                 <img id="headAznlogo" src="/assets/img/n-logo-b.png" alt="Animazooki" style="max-height: 30px" class="pb-1">
             </a>
             <button class="burger-toggler navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon txt-light-in"></span>
             </button>
             <div class="collapse navbar-collapse bg-light-in" id="navbarNavDropdown">
                 <ul class="navbar-nav">
