@@ -698,6 +698,7 @@ hr{
     box-sizing: border-box;
     text-align: center;
     z-index: 4;
+    overflow: hidden;
 }
 
 .content-cards-container{

@@ -107,3 +107,6 @@ dist
 #animazooki files to not read by git
 connect_DB.php
 connect_Email.php
+
+
+zzzz.php
