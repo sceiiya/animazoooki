@@ -32,11 +32,13 @@ footer{
 }
 
 :root {
-    --blue: #287bff;
-    --white: #fff;
+    --red: #287bff;
+    --white: #fffbf2;
+    --white2: #fff;
     --grey: #f5f5f5;
     --black: #222;
     --black2: #999;
+    --red: #a50113;
 }
 
 body {
@@ -51,10 +53,11 @@ body {
 
 .navigation {
     position: fixed;
+    left: 0;
     width: 300px;
     height: 100%;
-    background: var(--blue);
-    border-left: 10px solid var(--blue);
+    background: var(--red);
+    border-left: 10px solid var(--red);
     transition: 0.5s;
     overflow-x: hidden;
 }
@@ -95,11 +98,12 @@ body {
     display: flex;
     text-decoration: none;
     color: var(--white);
+    cursor: pointer;
 }
 
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
-    color: var(--blue);
+    color: var(--red);
 }
 
 .navigation ul li a .icon {
@@ -138,7 +142,7 @@ body {
     background-color: transparent;
     border-radius: 50%;
     box-shadow: 35px 35px 0 10px var(--white);
-    pointer-events: none;
+    /* pointer-events: none; */
   }
 
   .navigation ul li:hover a::after,
@@ -152,14 +156,14 @@ body {
     background-color: transparent;
     border-radius: 50%;
     box-shadow: 35px -35px 0 10px var(--white);
-    pointer-events: none;
+    /* pointer-events: none; */
   }
 
   /* main */
   .mainAdmin {
     position: absolute;
-    width: calc(100% - 300px);
-    left: 300px;
+    width: calc(100% - 100px);
+    left: 200px;
     min-height: 100vh;
     background: var(--white);
     transition: 0.5s;
@@ -181,13 +185,18 @@ body {
 
   .toggle {
     position: relative;
-    width: 60px;
+    width: 200px;
     height: 60px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    font-size: 2.5em;
-    cursor: pointer;
+    font-size: 25px;
+    cursor: default;
+    padding-top: 30px;
+  }
+
+  .toggle h5 {
+    font-size: 20px !important;
   }
 
 .user {
@@ -224,15 +233,17 @@ body {
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
     box-shadow: 0 7px  25px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    cursor: default;
+    text-align: center;
 }
 
 .cardBox .card .numbers {
     position: relative;
     font-weight: 500;
     font-size: 2.5em;
-    color: var(--blue);
+    color: var(--red);
 }
 
 .cardBox .card .cardName {
@@ -246,15 +257,15 @@ body {
     color: var(--black2);
 }
 
-.cardBox .card:hover {
-    background: var(--blue);
+/* .cardBox .card:hover {
+    background: var(--red);
 }
 
 .cardBox .card:hover .numbers ,
 .cardBox .card:hover .cardName ,
 .cardBox .card:hover .iconBox {
     color: var(--white);
-}
+} */
 
 .details {
     position: relative;
@@ -283,13 +294,13 @@ body {
 
 .cardHeader h2 {
     font-weight: 600;
-    color: var(--blue);
+    color: var(--red);
 }
 
 .btn-csv {
     position: relative;
     padding: 5px 10px;
-    background: var(--blue);
+    background: var(--red);
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
@@ -315,7 +326,7 @@ body {
 }
 
 .details .recentOrders table tbody tr:hover {
-    background: var(--blue);
+    background: var(--red);
     color: var(--white);
 }
 
@@ -414,13 +425,64 @@ body {
 }
 
 .recentCustomers table tr:hover {
-    background: var(--blue);
+    background: var(--red);
     color: var(--white);
 }
 
 .recentCustomers table tr:hover td h4 span {
     color: var(--white);
 }
+
+/* TABLES */
+
+#admin_prod_tbl, #admin_cust_tbl, #admin_order_tbl, #admin_users_tbl {
+    margin-left: 60px !important;
+    margin-top: 50px !important;
+    width: 90%;
+}
+
+#admin_prod_tbl tr td img {
+    width: 140px;
+    height: 140px;
+}
+
+#addProduct{
+    background-color: var(--red);
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+    padding: 5px;
+}
+
+
+/* SPINNER */
+
+#adminSpinner {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    /* top: 340px;
+    left: 748px; */
+}
+
+.tab-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+/* ADMIN ACCESS CSS */
+
+#pills-login {
+    width: 30%;
+}
+
+/* MODALS */
+
+/* BREAKPOINTS */
 
 @media (max-width: 991px) {
     .navigation {
@@ -432,12 +494,12 @@ body {
         left: 0;
     }
 
-    .main {
+    .mainAdmin {
         width: 100%;
         left: 0;
     }
 
-    .main.active {
+    .mainAdmin.active {
         left: 300px;
     }
 
