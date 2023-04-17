@@ -350,7 +350,7 @@
                     </div>
 
                     <button type="button" id="saveProduct" class="btn btn-info btn-block mb-1 mt-3">Add Product</button>
-
+                    <button type="button" class="btn btn-danger mb-1 mt-3" data-bs-dismiss="modal">Close</button>
                     <!-- Register buttons -->
                     <div class="text-center">
                     </div>
@@ -360,7 +360,7 @@
         </div>
     </div>
 
-    <!-- MODIFY MODAL -->
+    <!-- MODIFY PRODUCT MODAL -->
 
     <div class="modal" id="modifyModal">
         <div class="modal-dialog">
@@ -456,6 +456,111 @@
 
                 <div class="modal-footer">
                     <button type="button" id="yes-delete" class="btn btn-info">YES</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CUSTOMER MODAL -->
+
+    <div class="modal" id="confirm-cusAct">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">ACTIVATE</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    Activate this user?
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" id="yes-activate" class="btn btn-info">YES</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="confirm-cusDeact">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">DEACTIVATE</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    Deactivate this user?
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" id="yes-deactivate" class="btn btn-info">YES</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN USERS MODAL -->
+
+    <div class="modal" id="confirm-admAct">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">ACTIVATE</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    Activate this admin user?
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" id="yes-admActivate" class="btn btn-info">YES</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="confirm-admDeact">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">DEACTIVATE</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    Deactivate this admin user?
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" id="yes-admDeactivate" class="btn btn-info">YES</button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
                 </div>
 

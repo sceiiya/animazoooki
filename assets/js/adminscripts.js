@@ -485,3 +485,164 @@ function modify(nId) {
     });
 
 }
+
+
+function cusAct(nId) {
+
+    $('#confirm-cusAct').modal('show');
+    $("#yes-activate").on('click', () => {
+
+        var nIndex = {
+            index: nId,
+            }
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/admin_cus_activate.php",
+            data: nIndex,
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Account Activated!") {
+                    customersFetch();
+                    $('#confirm-cusAct').modal('hide');
+                } else {
+                    console.log(result);
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+        });
+    })
+}
+
+function cusDeact(nId) {
+
+    $('#confirm-cusDeact').modal('show');
+    $("#yes-deactivate").on('click', () => {
+
+        var nIndex = {
+            index: nId,
+            }
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/admin_cus_deactivate.php",
+            data: nIndex,
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Account Deactivated!") {
+                    customersFetch();
+                    $('#confirm-cusDeact').modal('hide');
+                } else {
+                    console.log(result);
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+        });
+    })
+}
+
+function admAct(nId) {
+
+    $('#confirm-admAct').modal('show');
+    $("#yes-admActivate").on('click', () => {
+
+        var nIndex = {
+            index: nId,
+            }
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/admin_admuser_activate.php",
+            data: nIndex,
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Account Activated!") {
+                    adminusersFetch();
+                    $('#confirm-admAct').modal('hide');
+                } else {
+                    console.log(result);
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+        });
+    })
+}
+
+function admDeact(nId) {
+
+    $('#confirm-admDeact').modal('show');
+    $("#yes-admDeactivate").on('click', () => {
+
+        var nIndex = {
+            index: nId,
+            }
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/admin_admuser_deactivate.php",
+            data: nIndex,
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Account Deactivated!") {
+                    adminusersFetch();
+                    $('#confirm-admDeact').modal('hide');
+                } else {
+                    console.log(result);
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+        });
+    })
+}

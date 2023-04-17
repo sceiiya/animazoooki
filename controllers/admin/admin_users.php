@@ -29,8 +29,8 @@
                     <td>".$rows['date_created']."</td>
                     <td>".$rows['status']."</td>
                     <td>
-                        <button class='btn btn-info' onclick=activate('".$rows['adminid']."')>Activate</button>&nbsp;
-                        <button class='btn btn-danger' onclick=deactivate('".$rows['adminid']."')>Deactivate</button>
+                        <button class='btn btn-info' onclick=admAct('".$rows['adminid']."')>Activate</button>&nbsp;
+                        <button class='btn btn-danger' onclick=admDeact('".$rows['adminid']."')>Deactivate</button>
                     </td>
                 ";
         }
