@@ -1,5 +1,9 @@
 <?php
     include("../important/connect_DB.php");
+
+    session_start();
+
+    $index = $_SESSION['index'];
     
     if ($dbConnection == true) {
         $Pimg = $_FILES['image'];
@@ -14,7 +18,7 @@
                     $Pimgname = uniqid() . '.' . $ext;
                     move_uploaded_file($Pimg['tmp_name'], '../../admin/listing/product_img/' . $Pimgname);
         
-                    $qInsert = "UPDATE $dbDatabase.`products` SET `image` = '$Pimgname' WHERE `name` = '$Pname'";
+                    $qInsert = "UPDATE $dbDatabase.`products` SET `image` = '$Pimgname' WHERE `id` = '$index'";
         
                     $eInsert = mysqli_query($dbConnection, $qInsert);
                     
@@ -25,14 +29,11 @@
                             echo "Failed to save image!";
                             mysqli_close($dbConnection);
                         }
-                // }
             } catch(Exception $e) {
                 echo 'Error: ' .$e->getMessage();
                 mysqli_close($dbConnection);
             }
-
         }
-
     } else {
         echo "Connection Failed!";
     }

@@ -482,8 +482,8 @@ body {
 
 /* MODALS */
 
-#modalbg {
-    background: var(--white);
+.modalbg {
+    background: var(--white) !important;
 }
 
 /* BREAKPOINTS */

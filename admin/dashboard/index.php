@@ -310,7 +310,7 @@
 
     <div class="modal" id="addProductModal">
         <div class="modal-dialog">
-            <div id="modalbg" class="modal-content p-4 border-0">
+            <div class="modal-content p-4 border-0 modalbg">
 
                 <div class="add-list-cont">
                     <h3 class="txtc mb-4">Product Info</h3>
@@ -354,6 +354,109 @@
                     <!-- Register buttons -->
                     <div class="text-center">
                     </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MODIFY MODAL -->
+
+    <div class="modal" id="modifyModal">
+        <div class="modal-dialog">
+            <div class="modal-content modalbg">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Modify</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <input id="indexer" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+
+                            <div class="form-outline">
+                                <input type="text" id="productCat" name="productCat" class="form-control form-control-lg" />
+                                <label class="form-label" for="productCat">Product Category</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 mb-4">
+
+                            <div class="form-outline">
+                                <input type="text" id="productName" name="productName" class="form-control form-control-lg" />
+                                <label class="form-label" for="productName">Product Name</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-4 pb-2">
+
+                            <div class="form-outline">
+                                <input type="email" id="productPrice" name="productPrice" class="form-control form-control-lg" />
+                                <label class="form-label" for="productPrice">Product Price</label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4 pb-2">
+
+                            <div class="form-outline">
+                                <input type="email" id="productQuantity" name="productQuantity" class="form-control form-control-lg" />
+                                <label class="form-label" for="productQuantity">Product Quantity</label>
+                            </div>
+
+                        </div>
+
+                        <div class="form-outline mb-1">
+                            <label for="">Product Description</label>
+                            <textarea type="text" id="productDescription" rows="10" cols="50" class="form-control pDescription"></textarea>
+                        </div>
+
+                        <div class="form-outline mb-1">
+                            <label for="">Replace Image</label>
+                            <input type="file" id="productPhoto" class="form-control" accept="image/*" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <div class="">
+                        <button class="btn btn-primary" id="Modify">Modify</button>
+                    </div>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="confirm-delete">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">DELETE</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    Delete this product?
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" id="yes-delete" class="btn btn-info">YES</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
                 </div>
 
             </div>
