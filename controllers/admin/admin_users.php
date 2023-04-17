@@ -12,7 +12,8 @@
                         <th>Username</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Email</th>    
+                        <th>Email</th>
+                        <th>Access Level</th>     
                         <th>Date Registered</th>
                         <th>Status</th>
                         <th>Action</th>
@@ -26,6 +27,7 @@
                     <td>".$rows['adminfirstname']."</td>
                     <td>".$rows['adminlastname']."</td>
                     <td>".$rows['adminemail']."</td>
+                    <td>".$rows['accesslevel']."</td>
                     <td>".$rows['date_created']."</td>
                     <td>".$rows['status']."</td>
                     <td>

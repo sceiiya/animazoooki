@@ -298,7 +298,7 @@
 
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">YES</button>
+                    <button type="button" class="btn btn-info" id="yes-signout">YES</button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
                 </div>
 
@@ -561,6 +561,36 @@
 
                 <div class="modal-footer">
                     <button type="button" id="yes-admDeactivate" class="btn btn-info">YES</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ACCESS MODAL -->
+
+    <div class="modal" id="confirm-access">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">CHANGE ACCESS</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    WARNING! You are about to change the access level of this admin user.
+                    <br>
+                    <br>
+                    Are you sure of this change?
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" id="yes-access" class="btn btn-info">YES</button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
                 </div>
 

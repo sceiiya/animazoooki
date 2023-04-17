@@ -70,10 +70,10 @@ adminAccess.on('click', function (e) {
     loadContent('/controllers/admin/admin_access.php');
     e.preventDefault();
 });
-adminSignout.on('click', function (e) {
-    loadContent('/controllers/admin/admin_signout.php');
-    e.preventDefault();
-});
+// adminSignout.on('click', function (e) {
+//     loadContent('/controllers/admin/admin_signout.php');
+//     e.preventDefault();
+// });
 
 
 // FETCH
@@ -207,6 +207,36 @@ function adminusersFetch() {
 
 $('#adminSignout').on('click', () => {
     $('#signoutModal').modal('show');
+    $('#yes-signout').on('click', () => {
+
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/admin_signout.php",
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Signed out") {
+                    console.log(result);
+                } else {
+                    console.log(result);
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+        });
+    })
 })
 
 function addProduct() {
@@ -216,6 +246,7 @@ function addProduct() {
 
 // DATABASE RELATED
 
+// SAVE PRODUCT
 $("#saveProduct").on('click', () => {
     iCode = $("#adminProdCode").val();
     iName = $("#adminProdName").val();
@@ -310,6 +341,7 @@ $("#saveProduct").on('click', () => {
 
 });
 
+// REMOVE PRODUCT FROM LIST
 function archive(nId) {
 
     $('#confirm-delete').modal('show');
@@ -350,6 +382,7 @@ function archive(nId) {
     })
 }
 
+// MODIFY PRODUCT
 function modify(nId) {
     var hiddenIndex = $("#indexer").val(nId);
     console.log(hiddenIndex.val());
@@ -486,7 +519,7 @@ function modify(nId) {
 
 }
 
-
+// ACTIVATE CUSTOMER
 function cusAct(nId) {
 
     $('#confirm-cusAct').modal('show');
@@ -527,6 +560,7 @@ function cusAct(nId) {
     })
 }
 
+// DEACTIVATE CUSTOMER
 function cusDeact(nId) {
 
     $('#confirm-cusDeact').modal('show');
@@ -567,6 +601,7 @@ function cusDeact(nId) {
     })
 }
 
+// ACTIVATE ADMIN USER
 function admAct(nId) {
 
     $('#confirm-admAct').modal('show');
@@ -607,6 +642,7 @@ function admAct(nId) {
     })
 }
 
+// DEACTIVATE ADMIN USER
 function admDeact(nId) {
 
     $('#confirm-admDeact').modal('show');
@@ -631,6 +667,63 @@ function admDeact(nId) {
                 if (result == "Account Deactivated!") {
                     adminusersFetch();
                     $('#confirm-admDeact').modal('hide');
+                } else {
+                    console.log(result);
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+        });
+    })
+}
+
+// CHANGE ACCESS LEVEL TO ADMIN USER
+function changeaccess() {
+    $('#confirm-access').modal('show');
+    $("#yes-access").on('click', () => {
+
+        var sFname = $('#adminFirstName').val();
+        var sLname = $('#adminLastName').val();
+        var sUname = $('#adminUsername').val();
+        var sEmail = $('#adminEmail').val();
+        var sAccess = $('#accesslevel').val();
+
+        var objData = {
+            firstname: sFname,
+            lastname: sLname,
+            username: sUname,
+            email: sEmail,
+            access: sAccess
+            }
+
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/admin_access_change.php",
+            data: objData,
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Access Changed!") {
+                    $('#confirm-access').modal('hide');
+
+                    $('#adminFirstName').val("");
+                    $('#adminLastName').val("");
+                    $('#adminUsername').val("");
+                    $('#adminEmail').val("");
+                    $('#accesslevel').val("Access Level");
+                    alert(result);
                 } else {
                     console.log(result);
                 }

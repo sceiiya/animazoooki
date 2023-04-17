@@ -103,7 +103,7 @@ body {
 
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
-    color: var(--red);
+    color: var(--red) !important;
 }
 
 .navigation ul li a .icon {
@@ -455,6 +455,33 @@ body {
     bottom: 15px;
     right: 10px;
     padding: 5px;
+}
+
+/* LOGIN AND REGISTER */
+
+.admlogin-body {
+    height: 715px;
+    width: 100%;
+    background-color: var(--white);
+}
+
+.admlogin-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.admlogin-wrapper {
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: var(--red) !important;
+}
+
+.admlogin-wrapper a {
+    color: var(--white);
 }
 
 
