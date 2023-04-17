@@ -30,7 +30,7 @@
                     <td>".$rows['stocks']."</td>
                     <td>
                         <button class='btn btn-info' onclick=modify('".$rows['id']."')>Modify</button>&nbsp;
-                        <button class='btn btn-danger' onclick=archive('".$rows['id']."')>Archive</button>
+                        <button class='btn btn-danger' onclick=archive('".$rows['id']."')>Delete</button>
                     </td>
                 ";
         }
