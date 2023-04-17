@@ -43,7 +43,7 @@ imgMainCont.addEventListener("mousemove", (mouseEvent) => {
   const imgHeight = imgMainElm.clientHeight;
 
   imgMainElm.style.top = -(((imgHeight - imgMainCont.clientHeight) * yPos) / imgMainCont.clientHeight) + "px";
-  imgMainElm.style.left = -(((imgWidth - imgWidth) * xPos) / imgWidth) + "px";
+  imgMainElm.style.left = -(((imgWidth - imgMainCont.clientWidth) * xPos) / imgMainCont.clientWidth) + "px";
 });
 
 Array.from(imgSubCont.children).forEach((productElm, i, list) => {
