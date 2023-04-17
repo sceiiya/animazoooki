@@ -10,69 +10,70 @@
 
 // add hovered class on selected list items
 let list = document.querySelectorAll('.navigation li');
-    function activelink() {
-        list.forEach((item) =>
-            item.classList.remove('hovered'));
-        this.classList.add('hovered');
-    }
+function activelink() {
     list.forEach((item) =>
-        item.addEventListener('mouseover', activelink));
+        item.classList.remove('hovered'));
+    this.classList.add('hovered');
+}
+list.forEach((item) =>
+    item.addEventListener('mouseover', activelink));
 
 // ADMIN
 var container = $('.mainAdmin');
-var adminDashboard = document.querySelector('#adminDashboard');
-var adminProducts = document.querySelector('#adminProducts');
-var adminCustomers = document.querySelector('#adminCustomers');
-var adminOrders = document.querySelector('#adminOrders');
-var adminUsers = document.querySelector('#adminUsers');
-var adminAccess = document.querySelector('#adminAccess');
-var adminSignout = document.querySelector('#adminSignout');
+var adminDashboard = $('#adminDashboard');
+var adminProducts = $('#adminProducts');
+var adminCustomers = $('#adminCustomers');
+var adminOrders = $('#adminOrders');
+var adminUsers = $('#adminUsers');
+var adminAccess = $('#adminAccess');
+var adminSignout = $('#adminSignout');
 
-    function loadContent(content) {
-        // AJAX request in Javascript
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', content, true);
-        xhr.onload = function () {
-            var el = document.createElement('div');
-            el.innerHTML = this.result;
+function loadContent(content) {
+    $.ajax({
+        type: 'POST',
+        url: content,
+        success: (result) => {
+            var element = $('<div/>');
+            element.html(result);
             container.empty();
-            container.prepend(el);
+            container.prepend(element);
         }
-        xhr.send();
-    }
+    })
 
-    adminDashboard.addEventListener('click', function (e) {
-        loadContent('/controllers/admin/admin_dashboard.php');
-        e.preventDefault();
-    });
-    adminProducts.addEventListener('click', function (e) {
-        loadContent('/controllers/admin/admin_products.php');
-        e.preventDefault();
-        productsFetch();
-    });
-    adminCustomers.addEventListener('click', function (e) {
-        loadContent('/controllers/admin/admin_customers.php');
-        e.preventDefault();
-        customersFetch();
-    });
-    adminOrders.addEventListener('click', function (e) {
-        loadContent('/controllers/admin/admin_orders.php');
-        e.preventDefault();
-        ordersFetch();
-    });
-    adminUsers.addEventListener('click', function (e) {
-        loadContent('/controllers/admin/admin_users.php');
-        e.preventDefault();
-        adminusersFetch()
-    });
-    adminAccess.addEventListener('click', function (e) {
-        loadContent('/controllers/admin/admin_access.php');
-        e.preventDefault();
-    });
-    adminSignout.addEventListener('click', function (e) {
-        loadContent('/controllers/admin/admin_signout.php');
-        e.preventDefault();
-    });
+}
+
+adminDashboard.on('click', function (e) {
+    loadContent('/controllers/admin/admin_dashboard.php');
+    e.preventDefault();
+});
+adminProducts.on('click', function (e) {
+    loadContent('/controllers/admin/admin_products.php');
+    e.preventDefault();
+    productsFetch();
+});
+adminCustomers.on('click', function (e) {
+    loadContent('/controllers/admin/admin_customers.php');
+    e.preventDefault();
+    customersFetch();
+});
+adminOrders.on('click', function (e) {
+    loadContent('/controllers/admin/admin_orders.php');
+    e.preventDefault();
+    ordersFetch();
+});
+adminUsers.on('click', function (e) {
+    loadContent('/controllers/admin/admin_users.php');
+    e.preventDefault();
+    adminusersFetch();
+});
+adminAccess.on('click', function (e) {
+    loadContent('/controllers/admin/admin_access.php');
+    e.preventDefault();
+});
+adminSignout.on('click', function (e) {
+    loadContent('/controllers/admin/admin_signout.php');
+    e.preventDefault();
+});
 
 
 // FETCH
@@ -221,31 +222,31 @@ $("#saveProduct").on('click', () => {
     iPrice = $("#adminProdPrice").val();
     iQty = $("#adminProdQty").val();
     iDescription = $("#adminProdDesc").val();
-  
-  var sJsonProduct = {
+
+    var sJsonProduct = {
         code: iCode,
         name: iName,
         price: iPrice,
         qty: iQty,
         description: iDescription,
     };
-  
+
     $.ajax({
         type: 'POST',
         url: "/controllers/admin/admin_save_products.php",
         data: sJsonProduct,
         success: (result) => {
-            if( result == "Product info saved!") {          
-              $('#addProductModal').modal('hide');
-              alert(result)
-            //   console.log(result);  
-            } else if ( result == "Incomplete") {
+            if (result == "Product info saved!") {
+                $('#addProductModal').modal('hide');
+                alert(result)
+                //   console.log(result);  
+            } else if (result == "Incomplete") {
                 alert("Please fill out all fields");
-            } else if ( result == "Failed to save!") {
+            } else if (result == "Failed to save!") {
                 alert(result);
-            }else {
+            } else {
                 console.log(result);
-            }  
+            }
         }
     });
 
@@ -253,26 +254,26 @@ $("#saveProduct").on('click', () => {
     var form_data = new FormData();
     form_data.append('name', iName);
     form_data.append('image', iImage);
-  
+
     $.ajax({
-      url: '/controllers/admin/admin_save_products_img.php',
-      type: 'POST',
-      data: form_data,
-      contentType: false,
-      processData: false,
-      success: (result) => {
-        if (result == "Missing image file!") {
-          alert(result);
-        } else if (result == "Image file saved!"){
-            productsFetch();
-          console.log(result);
-        }else if (result == "Failed to save!"){
-          alert(result);
-          console.log(result);
-        }else{
-          console.log(result);
+        url: '/controllers/admin/admin_save_products_img.php',
+        type: 'POST',
+        data: form_data,
+        contentType: false,
+        processData: false,
+        success: (result) => {
+            if (result == "Missing image file!") {
+                alert(result);
+            } else if (result == "Image file saved!") {
+                productsFetch();
+                console.log(result);
+            } else if (result == "Failed to save!") {
+                alert(result);
+                console.log(result);
+            } else {
+                console.log(result);
+            }
         }
-      }
     });
-  
-  });
+
+});

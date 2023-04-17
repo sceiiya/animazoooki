@@ -310,7 +310,7 @@
 
     <div class="modal" id="addProductModal">
         <div class="modal-dialog">
-            <div class="modal-content p-4 border-0">
+            <div id="modalbg" class="modal-content p-4 border-0">
 
                 <div class="add-list-cont">
                     <h3 class="txtc mb-4">Product Info</h3>

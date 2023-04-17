@@ -482,6 +482,10 @@ body {
 
 /* MODALS */
 
+#modalbg {
+    background: var(--white);
+}
+
 /* BREAKPOINTS */
 
 @media (max-width: 991px) {
