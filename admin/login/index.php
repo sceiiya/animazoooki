@@ -33,7 +33,7 @@
             </form>
             <!-- Submit button -->
             <div class="d-flex justify-content-center">
-            <button type="button" id="loginClient" class="btn btn-info btn-block mb-4">Log In</button>
+            <button type="button" id="loginClient">Log In</button>
             </div>
             <div class="text-center">
                 <p>No account? <a href="/admin/login/register.php">Register here</a></p>

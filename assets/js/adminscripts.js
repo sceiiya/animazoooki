@@ -205,40 +205,6 @@ function adminusersFetch() {
 
 // MODALS
 
-$('#adminSignout').on('click', () => {
-    $('#signoutModal').modal('show');
-    $('#yes-signout').on('click', () => {
-
-        $.ajax({
-            type: 'POST',
-            url: "/controllers/admin/admin_signout.php",
-            beforeSend: function () {
-                var x = document.querySelector('#adminSpinner');
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            },
-            success: (result) => {
-                if (result == "Signed out") {
-                    console.log(result);
-                } else {
-                    console.log(result);
-                }
-            },
-            complete: function () {
-                var x = document.querySelector('#adminSpinner');
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            },
-        });
-    })
-})
-
 function addProduct() {
     $('#addProductModal').modal('show');
 }
@@ -739,3 +705,69 @@ function changeaccess() {
         });
     })
 }
+
+// LOGIN AND REGISTER
+
+
+$("#loginClient").on('click', () => {
+    var sUsername = $("#admLoginUsername").val();
+    var sPassword = $("#admLoginPassword").val();
+
+    var sJsonData = {
+        username: sUsername,
+        password: sPassword,
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: "/controllers/admin/admin_login.php",
+        data: sJsonData,
+        success: (result) => {
+                if( result == "Login Success") {
+                    window.location = "/admin/dashboard/index.php";
+                } else {
+                    alert(result);
+                }  
+        }
+    });
+});
+
+
+
+// SIGNOUT
+
+$('#adminSignout').on('click', () => {
+    $('#signoutModal').modal('show');
+    $('#yes-signout').on('click', () => {
+
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/admin_signout.php",
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Signed out") {
+                    console.log(result);
+                    $('#signoutModal').modal('hide');
+                    window.location = "/admin/login/index.php";
+                } else {
+                    console.log(result);
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+        });
+    })
+})
