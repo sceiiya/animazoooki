@@ -27,10 +27,10 @@
                     <td>".$rows['l_name']."</td>
                     <td>".$rows['email']."</td>
                     <td>".$rows['date_added']."</td>
-                    <td>".$rows['status']."</td>
+                    <td id='cusStatus".$rows['id']."' >".$rows['status']."</td>
                     <td>
-                        <button class='btn btn-info' onclick=activate('".$rows['id']."')>Activate</button>&nbsp;
-                        <button class='btn btn-danger' onclick=deactivate('".$rows['id']."')>Deactivate</button>
+                        <button class='btn btn-info' onclick=cusAct('".$rows['id']."')>Activate</button>&nbsp;
+                        <button class='btn btn-danger' onclick=cusDeact('".$rows['id']."')>Deactivate</button>
                     </td>
                 ";
         }
