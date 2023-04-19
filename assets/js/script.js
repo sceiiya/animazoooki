@@ -166,16 +166,19 @@ $('.btn-signup').on('click', () => {
         success: (result) => {
           if( result == "Sign-up Success") {
             $('#mySignupModal').modal('hide');
+            $('#myLoginModal').modal('show');
           }else if(result == "Sign-up Failed"){
             alert("failed registration");
           }else if(result == "error registering"){
             alert("register error"); 
           }else if(result == "error validating"){
             alert("validation error"); 
+          }else if(result == "This Email is Already Used"){
+            alert("This Email is Already Used"); 
           }else if(result == "Username Already Used"){
             alert("Choose your Unique Username"); 
           }else {
-            console.log(result);
+              console.log(result);
           }   
         }
       });

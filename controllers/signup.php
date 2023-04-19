@@ -9,9 +9,16 @@
             $column = "username";
             $value = $_POST['username'];
             $valid = $ConDB->ValidateExist($eCon, 'clients', $column, $value);
+
+            $columnE = "email";
+            $valueE = $_POST['email'];
+            $validE = $ConDB->ValidateExist($eCon, 'clients', $columnE, $valueE);
+
             // print_r($valid);
             if($valid["result"] == "true"){
                 echo "Username Already Used";
+            }elseif($validE["result"] == "true"){
+                echo "This Email is Already Used";
             }else{
                 try{                    
                     $_SESSION['email'] = $sEmail;
