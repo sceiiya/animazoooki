@@ -42,14 +42,14 @@
 
                 <!-- Password input -->
                 <div class="form-outline mb-3">
-                    <input type="password" id="passwordClient" class="form-control" />
+                    <input type="password" id="regPassword" class="form-control" />
                     <label class="form-label mt-2 ms-1" for="form2Example5">Password</label>
                 </div>
 
             </form>
             <!-- Submit button -->
             <div class="d-flex justify-content-center">
-            <button type="button" id="registerClient" class="btn btn-info btn-block mb-4">Register</button>
+            <button type="button" id="registerClient">Register</button>
             </div>
             <div class="text-center">
                 <p>Already registered? <a href="/admin/login/index.php">Login here</a></p>

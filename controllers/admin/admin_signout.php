@@ -3,4 +3,5 @@
 session_start();
 
 session_destroy();
-header('location: /admin/login/index.php');
+
+echo "Signed out";

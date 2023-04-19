@@ -1,7 +1,7 @@
 <?php
     include("../important/connect_DB.php");
 
-    $qSelect = "SELECT * FROM $dbDatabase .`orders` ORDER BY `orderid` ASC";
+    $qSelect = "SELECT * FROM $dbDatabase .`orders` ORDER BY `orderid` DESC";
     $eSelect = mysqli_query($dbConnection, $qSelect);
 
     if ($eSelect == true) {

@@ -5,7 +5,7 @@
         $index = $_POST['index'];
 
         $dateTime = date("Y-m-d H:i:s");
-        $qUpdate = "UPDATE $dbDatabase .`adminusers` SET `date_modified` = '{$dateTime}', `status` = 'Active' WHERE `adminid` = '{$index}'";
+        $qUpdate = "UPDATE $dbDatabase .`adminusers` SET `date_reactivated` = '{$dateTime}', `status` = 'Active' WHERE `adminid` = '{$index}'";
         $eUpdate = mysqli_query($dbConnection, $qUpdate);
 
         if ($eUpdate == true) {

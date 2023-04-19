@@ -1,7 +1,7 @@
 <?php
     include("../important/connect_DB.php");
 
-    $qSelect = "SELECT * FROM $dbDatabase .`adminusers` ORDER BY `adminid` ASC";
+    $qSelect = "SELECT * FROM $dbDatabase .`adminusers` ORDER BY `adminid` DESC";
     $eSelect = mysqli_query($dbConnection, $qSelect);
 
     if ($eSelect == true) {
@@ -37,7 +37,9 @@
                 ";
         }
 
-        $adLPCode .= "</table>";
+        $adLPCode .= "</table>
+                <button id='addAdmin' onclick='addAdmin()'>Add Admin</button>
+                ";
         
         echo $adLPCode;
     } else {
