@@ -41,10 +41,10 @@ footer{
     --red: #a50113;
 }
 
-body {
+/* body {
     min-height: 100vh;
     overflow-x: hidden;
-}
+} */
 
 .container {
     position: relative;

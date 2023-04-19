@@ -50,8 +50,10 @@ include("connect_DB.php");
 
             if ($Result == 1){
                 return "true";
+                mysqli_close($mysql);
             }else{
                 return "false";
+                mysqli_close($mysql);
             }
         }
 
@@ -96,6 +98,7 @@ include("connect_DB.php");
 
             //return the data value from query
             return $dResult;
+            mysqli_close($mysql);
 
         }
 
@@ -122,8 +125,10 @@ include("connect_DB.php");
                 $Result = mysqli_query($mysql, $update);
                 if ($Result == 1){
                     return "true";
+                    mysqli_close($mysql);
                 }else{
                     return "false";
+                    mysqli_close($mysql);
                 }
             }
 
@@ -137,29 +142,34 @@ include("connect_DB.php");
 
             //execute the query
             $Result = mysqli_query($mysql, $qSelect);
-
             $nTotalRows = mysqli_num_rows($Result);
             // while($rows = mysqli_fetch_assoc($Result)){
             //     //store the data value
             //     $dResult[] = $rows;
             // }
             // print_r($dResult);
-            echo "<br/>";
-            echo $nTotalRows;
+            // echo "<br/>";
+            // echo $nTotalRows;
             $dResult = [
                 'result' => "true",
                 'total' => $nTotalRows
             ];
+            $dnResult = [
+                'result' => "false",
+                'total' => $nTotalRows
+            ];
             if($nTotalRows > 0){
                 return $dResult;
+                mysqli_close($mysql);
             } else{
-                return "false";
+                return $dnResult;
+                mysqli_close($mysql);
             }
         }
 
         //check if the name is guest or not
         public function ValidateGuest(){
-            
+
         }
 
     }

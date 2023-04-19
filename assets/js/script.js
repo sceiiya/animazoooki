@@ -135,13 +135,15 @@ $('.btn-signup').on('click', () => {
 
   $('#createAcc').on('click', (e) => {
     e.preventDefault();
-    var sName = document.getElementById("form3Example1cg").value;
-    var sEmail = document.getElementById("form3Example3cg").value;
-    var sPassword = document.getElementById("form3Example4cg").value;
-    var sConfirmPass= document.getElementById("form3Example4cdg").value;
+    var sName = document.getElementById("NewName").value;
+    var sUsername = document.getElementById("NewUsername").value;
+    var sEmail = document.getElementById("NewEmail").value;
+    var sPassword = document.getElementById("NewPass").value;
+    var sConfirmPass= document.getElementById("NewVPass").value;
 
     var sJsonData = {
         name: sName,
+        username: sUsername,
         email: sEmail,
         password: sPassword,
         confirmpassword: sConfirmPass
@@ -155,7 +157,15 @@ $('.btn-signup').on('click', () => {
                 if( result == "Sign-up Success") {
                   $('#mySignupModal').modal('hide');
                   $('#myLoginModal').modal('show');
-                } else {
+                }else if(result == "Sign-up Failed"){
+                  alert("failed registration");
+                }else if(result == "error registering"){
+                  alert("register error"); 
+                }else if(result == "error validating"){
+                  alert("validation error"); 
+                }else if(result == "Username Already Used"){
+                  alert("Choose your Unique Username"); 
+                }else {
                     console.log(result);
                 }   
         }
