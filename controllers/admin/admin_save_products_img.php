@@ -1,5 +1,13 @@
 <?php
     include("../important/connect_DB.php");
+
+    session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+    }
     
     if ($dbConnection == true) {
         $Pimg = $_FILES['image'];

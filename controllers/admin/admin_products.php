@@ -1,6 +1,14 @@
 <?php
     include("../important/connect_DB.php");
 
+    session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+    }
+
     $qSelect = "SELECT * FROM $dbDatabase .`products` WHERE `date_archived` IS NULL ORDER BY `id` DESC";
     $eSelect = mysqli_query($dbConnection, $qSelect);
 
@@ -41,5 +49,5 @@
         
         echo $sHtml;
     } else {
-        echo "not connected";
+        echo "Failed to connect, please call system administrator!";
     }

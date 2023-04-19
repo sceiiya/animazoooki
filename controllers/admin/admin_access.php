@@ -1,3 +1,14 @@
+<?php 
+    session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+    }
+?>
+
 <div class="tab-content">
     <div class="cpborder" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
         <form>

@@ -1,7 +1,22 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+        $admId = $_SESSION['admid'];    
+        $admFirstName = $_SESSION['admfirstname'];
+        $admLastName = $_SESSION['admlastname'];
+        $admEmail = $_SESSION['admemail'];
+    }
+?>
+
 <div class="topbar">
     <div class="toggle">
         <!-- <ion-icon name="menu-outline"></ion-icon> -->
-        <p>Admin</p>
+        <p>Welcome! <?php echo $admUsername; ?></p>
     </div>
     <div class="user">
         <img src="/assets/img/profile.png" alt="userimage">

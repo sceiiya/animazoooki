@@ -1,6 +1,11 @@
 <?php
     include("../important/connect_DB.php");
 
+    session_start();
+
+        $admUsername = $_SESSION['admusername'];
+
+
 if ($dbConnection == true) {
     $index = $_POST['index'];
     $sPcat = $_POST['pcat'];
@@ -17,7 +22,7 @@ if ($dbConnection == true) {
         try {
             $dateTime = date("Y-m-d H:i:s");
             $qUpdate = "UPDATE $dbDatabase .`products` 
-            SET `category` = '{$sPcat}', `name` = '{$sPname}', `price` = '{$sPprice}', `stocks` = '{$sPquantity}', `description` = '{$sPdescription}', `image` = '{$sPphoto}', `date_modified` = '{$dateTime}'
+            SET `category` = '{$sPcat}', `name` = '{$sPname}', `price` = '{$sPprice}', `stocks` = '{$sPquantity}', `description` = '{$sPdescription}', `image` = '{$sPphoto}', `date_modified` = '{$dateTime}', `modified_by` = '{$admUsername}'
             WHERE `id` = '{$index}'
             ";
 

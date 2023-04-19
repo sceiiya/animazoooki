@@ -3,6 +3,13 @@
     
     session_start();
 
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+    }
+
     if ($dbConnection == true) {
         $sFirstName = addslashes($_POST['regfirstname']);
         $sLastName = addslashes($_POST['reglastname']);
@@ -27,9 +34,9 @@
                     mysqli_close($dbConnection);
                 } else {
                     $qInsert = "INSERT INTO $dbDatabase.`adminusers` 
-                        (`adminfirstname`, `adminlastname`, `accesslevel`, `adminusername`, `adminemail`, `adminpassword`, `status` ,`date_created`) 
+                        (`adminfirstname`, `adminlastname`, `accesslevel`, `adminusername`, `adminemail`, `adminpassword`, `status` ,`date_created`, `created_by`) 
                         VALUES 
-                        ('{$sFirstName}', '{$sLastName}', 'Agent', '{$sUsername}', '{$sEmail}', '{$nPassword}', 'Active', '".date("Y-m-d H:i:s")."')";        
+                        ('{$sFirstName}', '{$sLastName}', 'Agent', '{$sUsername}', '{$sEmail}', '{$nPassword}', 'Active', '".date("Y-m-d H:i:s")."', '{$admUsername}')";        
                     $eInsert = mysqli_query($dbConnection, $qInsert);
 
                     if ($eInsert == true) {
@@ -48,7 +55,7 @@
                         $mail->SMTPSecure = 'ssl';
                         $mail->Port 	  = 465;                        
                         
-                        $mail->AddAddress("{$sEmail}", "{$sFirstName}");
+                        $mail->AddAddress($sEmail, $sFirstName);
                     
                         $mail->Subject = "New admin user";
                         $mail->Body = nl2br("
@@ -71,6 +78,12 @@
                         ");
                         
                         $mail->IsHTML(true);
+
+                        // if(!$mail->Send()) {
+                        //     echo "not sent";
+                        // } else {
+                        //     echo "sent";
+                        // }
 
                         mysqli_close($dbConnection);
                     } else {

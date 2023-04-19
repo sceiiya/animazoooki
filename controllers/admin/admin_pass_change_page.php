@@ -20,7 +20,7 @@
 
                     <div class="form-outline mb-3 w-75 ms-5">
                         <label for="">Current Password</label>
-                        <input type="password" id="admOldPass" class="form-control" />
+                        <input type="text" id="admOldPass" class="form-control" />
                     </div>
 
                     <div class="form-outline mb-3 w-75 ms-5">
@@ -34,7 +34,7 @@
                         <span id='admPassMessage'></span>
                     </div>
                     <div class="flex-row d-flex justify-content-center">
-                        <button type="button" id="admSaveNewPass" onclick="admSaveNewPass()" class="btn btn-info mb-1 mt-3">Save</button>
+                        <button type="button" onclick="admSaveNewPass()" class="btn btn-info mb-1 mt-3">Save</button>
                     </div>
                 </div>
 

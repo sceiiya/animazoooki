@@ -3,7 +3,13 @@
 
     session_start();
 
-    $index = $_SESSION['index'];
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+        $index = $_SESSION['index'];
+    }
     
     if ($dbConnection == true) {
         $Pimg = $_FILES['image'];

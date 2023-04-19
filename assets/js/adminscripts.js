@@ -45,6 +45,12 @@ function loadContent(content) {
 
 $(document).ready(function () {
     loadContent('/controllers/admin/admin_dashboard.php');
+    var access = $('#accessChecker').val();
+    if(access != "System Admin") {
+        adminAccess.css('display', 'none');
+    } else {
+        adminAccess.css('display', 'default');
+    }
 });
 adminDashboard.on('click', function (e) {
     loadContent('/controllers/admin/admin_dashboard.php');
@@ -687,6 +693,10 @@ function addAdmin() {
                 if (result == "Admin Added!") {
                     alert(result);
                     $('#addAdminModal').modal('hide');
+                    $('#admRegFirstName').val("");
+                    $('#admRegLastName').val("");
+                    $('#admRegUserame').val("");
+                    $('#admRegEmail').val("");
                     adminusersFetch();
                 } else {
                     alert(result);
@@ -746,7 +756,7 @@ function changeaccess() {
                     $('#accesslevel').val("Access Level");
                     alert(result);
                 } else {
-                    console.log(result);
+                    alert(result);
                 }
             },
             complete: function () {
@@ -791,10 +801,10 @@ function admSaveNewPass () {
             },
             success: (result) => {
                 if( result == "Password saved!") {
+                    $('#admChangePassModal').modal('hide');
                     $('#admOldPass').val("");
                     $('#admNewPass').val("");
                     $('#admConfirmPass').val("");
-                    $('#admChangePassModal').modal('hide');
                     alert(result);
                 } else {
                     $('#admChangePassModal').modal('hide');
