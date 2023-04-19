@@ -1,6 +1,14 @@
 <?php
     include("../important/connect_DB.php");
 
+    session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+    }
+
     $qSelect = "SELECT * FROM $dbDatabase .`orders` ORDER BY `orderid` DESC";
     $eSelect = mysqli_query($dbConnection, $qSelect);
 

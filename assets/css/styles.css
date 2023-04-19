@@ -540,7 +540,7 @@ footer{
 .cpborder {
     border: 1px solid var(--red) !important;
     border-radius: 5px !important;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.30);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.30);   
 }
 
 /* BREAKPOINTS */

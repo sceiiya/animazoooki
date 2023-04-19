@@ -1,5 +1,14 @@
 <?php
     include("../important/connect_DB.php");
+
+    session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+    }
     
     if ($dbConnection == true) {
         $Pcode = $_POST['code'];  
@@ -14,9 +23,9 @@
         } else { 
             try {
                     $qInsert = "INSERT INTO $dbDatabase.`products` 
-                        (`category`, `name`, `price`, `stocks`, `description`, `date_added`) 
+                        (`category`, `name`, `price`, `stocks`, `description`, `date_added`, `added_by`) 
                         VALUES 
-                        ('{$Pcode}', '{$Pname}', '{$Pprice}', '{$Pqty}', '{$Pdesc}','".date("Y-m-d H:i:s")."')";
+                        ('{$Pcode}', '{$Pname}', '{$Pprice}', '{$Pqty}', '{$Pdesc}','".date("Y-m-d H:i:s")."', '{$admUsername}')";
         
                     $eInsert = mysqli_query($dbConnection, $qInsert);
                     
@@ -27,7 +36,6 @@
                             echo "Failed to save!";
                             mysqli_close($dbConnection);
                         }
-                // }
             } catch(Exception $e) {
                 echo 'Error: ' .$e->getMessage();
                 mysqli_close($dbConnection);
@@ -36,5 +44,5 @@
         }
 
     } else {
-        echo "Connection Failed!";
+        echo "Failed to connect, please call system administrator!";
     }

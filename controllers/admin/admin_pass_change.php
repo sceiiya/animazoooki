@@ -3,7 +3,7 @@
 
 session_start();
 
-    $sUsername = $_SESSION['admusername'];
+    $admUsername = $_SESSION['admusername'];
 
     if ($dbConnection == true) {
         $sCurrentPass = $_POST['currentpassword'];
@@ -11,21 +11,21 @@ session_start();
         $sConfirmPass = $_POST['confirmpassword'];
 
         try {
-            $qSelect = "SELECT `adminpassword` FROM $dbDatabase.`adminusers` WHERE `adminusername` = '$sUsername'";
+            $qSelect = "SELECT `adminpassword` FROM $dbDatabase.`adminusers` WHERE `adminusername` = '$admUsername'";
             $eSelect = mysqli_query($dbConnection, $qSelect);
             $rows = mysqli_fetch_assoc($eSelect);
 
-            if($rows['adminpassword'] != $sCurrentPass) {
-                echo "Incorrect Current Password!";
-                mysqli_close($dbConnection);
-            } else if($sCurrentPass == "" || $sNewPass == "" || $sConfirmPass == "") {
+            if($sCurrentPass == "" || $sNewPass == "" || $sConfirmPass == "") {
                 echo "Incomplete, please fill out all fields!";
                 mysqli_close($dbConnection);
             } else if ($sNewPass != $sConfirmPass){
                 echo "Passwords does not match!";
                 mysqli_close($dbConnection);
+            } else if($rows['adminpassword'] != $sCurrentPass) {
+                echo "Incorrect Current Password!";
+                mysqli_close($dbConnection);
             } else {
-                $qUpdate = "UPDATE $dbDatabase.`adminusers` SET `adminpassword` = '{$sNewPass}' WHERE `adminusername` = '{$sUsername}'";                
+                $qUpdate = "UPDATE $dbDatabase.`adminusers` SET `adminpassword` = '{$sNewPass}' WHERE `adminusername` = '{$admUsername}'";                
                 $eUpdate = mysqli_query($dbConnection, $qUpdate);
     
                 if ($eUpdate == true) {

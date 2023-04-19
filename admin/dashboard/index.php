@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+        $admId = $_SESSION['admid'];    
+        $admFirstName = $_SESSION['admfirstname'];
+        $admLastName = $_SESSION['admlastname'];
+        $admEmail = $_SESSION['admemail'];
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +29,7 @@
 </head>
 
 <body>
+    <input id="accessChecker" value="<?php echo $admAccess ?>" style="display: none;">
     <div class="container">
         <div class="navigation">
             <ul>

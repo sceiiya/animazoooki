@@ -1,6 +1,30 @@
 <?php
     include("../important/connect_DB.php");
 
+    session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+        $admId = $_SESSION['admid'];    
+        $admFirstName = $_SESSION['admfirstname'];
+        $admLastName = $_SESSION['admlastname'];
+        $admEmail = $_SESSION['admemail'];
+    }
+
+    $class = '';
+    $display = '';
+    if($admAccess == 'System Admin') {
+        $class = 'filler';
+        $display = '';
+    } else {
+        $class = 'disabled';
+        $display = 'none';
+
+    }
+
     $qSelect = "SELECT * FROM $dbDatabase .`adminusers` ORDER BY `adminid` DESC";
     $eSelect = mysqli_query($dbConnection, $qSelect);
 
@@ -31,17 +55,17 @@
                     <td>".$rows['date_created']."</td>
                     <td>".$rows['status']."</td>
                     <td>
-                        <button class='btn btn-info' onclick=admAct('".$rows['adminid']."')>Activate</button>&nbsp;
-                        <button class='btn btn-danger' onclick=admDeact('".$rows['adminid']."')>Deactivate</button>
+                        <button class='btn btn-info $class' onclick=admAct('".$rows['adminid']."')>Activate</button>&nbsp;
+                        <button class='btn btn-danger $class' onclick=admDeact('".$rows['adminid']."')>Deactivate</button>
                     </td>
                 ";
         }
 
         $adLPCode .= "</table>
-                <button id='addAdmin' onclick='addAdmin()'>Add Admin</button>
+                <button id='addAdmin' style='display: $display;' onclick='addAdmin()'>Add Admin</button>
                 ";
         
         echo $adLPCode;
     } else {
-        echo "not connected";
+        echo "Failed to connect, please call system administrator!";
     }

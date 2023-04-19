@@ -3,6 +3,13 @@
 
     session_start();
 
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+    }
+
 if ($dbConnection == true) {
     $index = $_POST['nid'];
     $qSelect = "SELECT `category`, `name`, `price`, `stocks`, `description`, `image` FROM $dbDatabase .`products` WHERE `id` = '{$index}'";

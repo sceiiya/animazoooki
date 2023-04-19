@@ -1,6 +1,16 @@
 <?php
     include("../important/connect_DB.php");
 
+    session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+
+    }
+
 if ($dbConnection == true) {
     $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
@@ -15,7 +25,7 @@ if ($dbConnection == true) {
         try {
             $dateTime = date("Y-m-d H:i:s");
             $qUpdate = "UPDATE $dbDatabase .`adminusers` 
-            SET `accesslevel` = '{$accessLevel}', `date_modified` = '{$dateTime}'
+            SET `accesslevel` = '{$accessLevel}', `date_modified` = '{$dateTime}', `modified_by` = '{$admUsername}'
             WHERE `adminfirstname` = '{$firstName}' AND `adminlastname` = '{$lastName}' AND `adminusername` = '{$userName}' AND `adminemail` = '{$email}'
             ";
 
