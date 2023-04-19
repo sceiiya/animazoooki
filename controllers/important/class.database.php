@@ -87,14 +87,17 @@ include("connect_DB.php");
 
             //execute the query
             $Result = mysqli_query($mysql, $qSelect);
-            while($rows = mysqli_fetch_assoc($Result)){
-                //store the data value
-                $dResult[] = $rows;
-            }
-            // while($rows = mysqli_fetch_array($Result)){
+            // while($rows = mysqli_fetch_assoc($Result)){
             //     //store the data value
             //     $dResult[] = $rows;
             // }
+            $rows = mysqli_fetch_array($Result);
+            //store the data value
+            $dResult = $rows;
+            
+
+            //return the data value from query
+            // return $rows['id'];
 
             //return the data value from query
             return $dResult;

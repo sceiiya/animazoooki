@@ -2,17 +2,17 @@
   <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
     <div class="modal-content bg-transparent">
 
-      <form class="animazooki-log-cont txtc bg-light-in ">
+      <form class="animazooki-log-cont txtc bg-light-in">
 
-        <h3 class="txtc mb-4">Log in</h3>
+        <h3 class="txtc mb-4 txt-light-in">Log in</h3>
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="email" id="form2Example1" class="form-control" placeholder="Email" />
+          <input type="username" id="LogUsername" class="form-control" placeholder="Username" />
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-0">
-          <input type="password" id="form2Example2" class="form-control" placeholder="Password" />
+          <input type="password" id="LogPass" class="form-control" placeholder="Password" />
         </div>
 
         <!-- 2 column grid layout for inline styling -->
@@ -32,7 +32,7 @@
         </div>
 
         <!-- Submit button -->
-        <button type="button" id="login" class="btn btn-primary btn-block mb-4 inbg-red rwflx txtc"><a
+        <button type="button" id="login__btn" class="btn btn-primary btn-block mb-4 inbg-red rwflx txtc"><a
             class="txt-light">Log in</a></button>
 
         <!-- Register buttons -->
