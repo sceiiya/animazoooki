@@ -50,8 +50,6 @@
     }
 
 
-
-
     // if ( $connectionName == true) { // update this for connection name
     //     $sName = $_POST['name'];
     //     $sEmail = $_POST['email'];

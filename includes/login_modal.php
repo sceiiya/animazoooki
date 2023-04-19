@@ -2,9 +2,9 @@
   <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
     <div class="modal-content bg-transparent">
 
-      <form class="animazooki-log-cont txtc bg-light-in ">
+      <form class="animazooki-log-cont txtc bg-light-in">
 
-        <h3 class="txtc mb-4">Log in</h3>
+        <h3 class="txtc mb-4 txt-light-in">Log in</h3>
         <!-- Email input -->
         <div class="form-outline mb-4">
           <input type="email" id="form2Example1" class="form-control" placeholder="Email" />

@@ -9,9 +9,9 @@ txt-bg-color{
 /* detect bug here  */
 /* below */
 
-*{
+/* *{
     background-color: #ff06c148;
-}
+} */
 
 *{
 font-family:'Ubuntu','Open Sans',Arial,sans-serif;
@@ -1246,7 +1246,6 @@ a{
     margin: 0px !important;
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
-    background-color: #fff !important;
 }
 
 .animazooki-log-admin{
@@ -1258,7 +1257,6 @@ a{
     margin-top: 60px !important;
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
-    background-color: #fff !important;
 }
 
 .animazooki-sign-up-cont{
@@ -1269,7 +1267,6 @@ a{
     margin: 0px !important;
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
-    background-color: #fff !important;
 }
 
 .txtred{

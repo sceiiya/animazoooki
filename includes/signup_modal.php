@@ -54,13 +54,13 @@
 
                 <div class="form-check d-flex justify-content-center mt-3 mb-0">
                     <input class="form-check-input me-2 inbg-red" type="checkbox" value="" id="form2Example3cg" />
-                    <label class="form-check-label cb-sgn-txt" for="form2Example3g">
-                        I agree to all statements in <a href="#!" class="text-body" onclick="popdev()"><u>Terms of
+                    <label class="form-check-label cb-sgn-txt txt-light-in" for="form2Example3g">
+                        I agree to all statements in <a href="#!" class="text-body txt-light-inv" onclick="popdev()"><u>Terms of
                                 service</u></a>
                     </label>
                 </div>
 
-                <p class="text-center text-muted mb-0">Already have an account? <a 
+                <p class="text-center text-muted mb-0 txt-light-inv">Already have an account? <a 
                         class="text-body txtred btn-login"><u>Login here</u></a></p>
 
             </form>
