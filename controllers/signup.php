@@ -13,36 +13,30 @@
             if($valid["result"] == "true"){
                 echo "Username Already Used";
             }else{
-                try{
-                    $sName = $_POST['name'];
-                    $sEmail = $_POST['email'];
-                    $sUsername = $_POST['username'];
-                    $sPassword = $_POST['password'];
-                    $sConfirmPass = $_POST['confirmpassword'];
-                    
+                try{                    
                     $_SESSION['email'] = $sEmail;
 
                     $data=[
-                        "name"=> $sName,
-                        "username"=> $sUsername,
-                        "email"=> $sEmail,
-                        "password"=> $sConfirmPass,
+                        "name"=> $_POST['name'],
+                        "username"=> $_POST['username'],
+                        "email"=> $_POST['email'],
+                        "password"=> $_POST['password'],
                         "date_added" => date("Y-m-d H:i:s"),
                         "otp_code" => rand(100000, 999999)
                     ];
 
                     $eInsert = $ConDB->Insert($eCon, "clients", $data, "");
                     if($eInsert == "true"){
-                        return "Sign-up Success";
+                        echo "Sign-up Success";
                     }else{
-                        return "Sign-up Failed";
+                        echo "Sign-up Failed";
                     }
                 }catch(Exception $e) {
-                    return "error registering";
+                    echo "error registering";
                 }
             }
         } catch(Exception $e) {
-            return "error validating";
+            echo "error validating";
         }
 
     }else{

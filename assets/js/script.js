@@ -101,28 +101,38 @@ $('.btn-login').on('click', () => {
   $('#mySignupModal').modal('hide');
   $('#myLoginModal').modal('show');
 
-  $('#login').on('click', (e) => {
+  $('#login__btn').on('click', (e) => {
     e.preventDefault();
-    var sEmail = document.getElementById("form2Example1").value;
-    var sPassword = document.getElementById("form2Example2").value;
-
-    var sJsonData = {
-        email: sEmail,
+    var sUsername = document.getElementById("LogUsername").value;
+    var sPassword = document.getElementById("LogPass").value;
+    if(sUsername != "" && sPassword !=""){
+      var sJsonData = {
+        username: sUsername,
         password: sPassword,
     };
 
     $.ajax({
         type: 'POST',
-        url: "controllers/login.php",
+        url: "/controllers/login.php",
         data: sJsonData,
         success: (result) => {
                 if( result == "Login Success") {
                   $('#myLoginModal').modal('hide');
-                } else {
+                } else if(result == "login failed"){
+                  alert("Log in Failed Successfully!");
+                }else {
                     console.log(result);
                 }   
         }
     });
+
+    }else if(sUsername != "" && sPassword ==""){
+      alert("Please input your password!");
+    }else if(sUsername == "" && sPassword !=""){
+      alert("Please input your email!");
+    }else{
+      alert("Please input your credentials!");
+    }
 
   });
 
@@ -140,37 +150,49 @@ $('.btn-signup').on('click', () => {
     var sEmail = document.getElementById("NewEmail").value;
     var sPassword = document.getElementById("NewPass").value;
     var sConfirmPass= document.getElementById("NewVPass").value;
-
-    var sJsonData = {
+    if(sName != "" && sUsername != "" && sEmail != "" && (sPassword != "" && sConfirmPass != "" && sPassword == sConfirmPass)){
+      var sJsonData = {
         name: sName,
         username: sUsername,
         email: sEmail,
         password: sPassword,
         confirmpassword: sConfirmPass
-    };
-
-    $.ajax({
+      };
+  
+      $.ajax({
         type: 'POST',
-        url: "controllers/signup.php",
+        url: "/controllers/signup.php",
         data: sJsonData,
         success: (result) => {
-                if( result == "Sign-up Success") {
-                  $('#mySignupModal').modal('hide');
-                  $('#myLoginModal').modal('show');
-                }else if(result == "Sign-up Failed"){
-                  alert("failed registration");
-                }else if(result == "error registering"){
-                  alert("register error"); 
-                }else if(result == "error validating"){
-                  alert("validation error"); 
-                }else if(result == "Username Already Used"){
-                  alert("Choose your Unique Username"); 
-                }else {
-                    console.log(result);
-                }   
+          if( result == "Sign-up Success") {
+            $('#mySignupModal').modal('hide');
+          }else if(result == "Sign-up Failed"){
+            alert("failed registration");
+          }else if(result == "error registering"){
+            alert("register error"); 
+          }else if(result == "error validating"){
+            alert("validation error"); 
+          }else if(result == "Username Already Used"){
+            alert("Choose your Unique Username"); 
+          }else {
+            console.log(result);
+          }   
         }
-    });
-
+      });
+    }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword != sConfirmPass){
+      alert("Please confirm your password!");
+    }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
+      alert("Please input your password!");
+    }else if(sName != "" && sUsername != "" && sEmail == "" && (sPassword == sConfirmPass || sPassword =="")){
+      alert("Please input your email!");
+    }else if(sName != "" && sUsername == "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
+      alert("Please input your username!");
+    }else if(sName == "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
+      alert("Please input your name!");
+    }else{
+      alert("Please input your credentials!");
+    }
+  
   });
 
 });
