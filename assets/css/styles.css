@@ -446,14 +446,14 @@ body {
     height: 140px;
 }
 
-#addProduct{
+#addProduct, #addAdmin{
     background-color: var(--red);
     border: 0;
     color: white;
     border-radius: 5px;
     position: fixed;
     bottom: 15px;
-    right: 10px;
+    right: 20px;
     padding: 5px;
 }
 
@@ -507,6 +507,7 @@ body {
     position: fixed;
     top: 40%;
     left: 50%;
+    z-index: 9999;
     /* top: 340px;
     left: 748px; */
 }
@@ -514,19 +515,32 @@ body {
 .tab-content {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 60px;
+
 }
 
 /* ADMIN ACCESS CSS */
 
 #pills-login {
     width: 30%;
+    padding: 20px;
 }
 
 /* MODALS */
 
 .modalbg {
     background: var(--white) !important;
+}
+
+#changePassContainer {
+    /* border: 1px solid var(--black) !important; */
+    margin-top: 50px;
+}
+
+.cpborder {
+    border: 1px solid var(--red) !important;
+    border-radius: 5px !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.30);
 }
 
 /* BREAKPOINTS */

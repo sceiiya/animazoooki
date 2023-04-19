@@ -31,12 +31,10 @@
                     $statRows = mysqli_fetch_assoc($eStatSelect);
 
                     if ($statRows['status'] == "Active") {
-                        $qSelect = "SELECT `accesslevel`, `adminid`, `adminfirstname`, `adminlastname`, `adminemail`, `adminpassword` FROM $dbDatabase.`adminusers` WHERE `adminusername` = '$sUsername'";
+                        $qSelect = "SELECT `accesslevel`, `adminid`, `adminfirstname`, `adminlastname`, `adminemail` FROM $dbDatabase.`adminusers` WHERE `adminusername` = '$sUsername'";
                         $eSelect = mysqli_query($dbConnection, $qSelect);
                         $rows2 = mysqli_fetch_assoc($eSelect);
-                        $nTotalRows = mysqli_num_rows($eSelect);
 
-                        if ($nTotalRows > 0 && $rows2['adminpassword'] == $sPassword) {
                             $_SESSION['admaccess'] = $rows2['accesslevel'];
                             $_SESSION['admusername'] = $sUsername;
                             $_SESSION['admid'] = $rows2['adminid'];    
@@ -45,18 +43,15 @@
                             $_SESSION['admemail'] = $rows2['adminemail'];
                             echo "Login Success";
                             mysqli_close($dbConnection);
-                        }else{
-                            echo "Login Failed";
-                            mysqli_close($dbConnection);
-                        }
+
                     } else {
-                        echo "Account Inactive";
+                        echo "Account Inactive/Disabled";
                         mysqli_close($dbConnection);
                     }
                 }
             }
         } catch(Exception $e) {
-            echo "error";
+            echo "Error";
         }
     } else {
         echo "Failed to connect, please call system administrator!";

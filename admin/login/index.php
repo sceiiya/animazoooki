@@ -36,12 +36,13 @@
             <button type="button" id="loginClient">Log In</button>
             </div>
             <div class="text-center">
-                <p>No account? <a href="/admin/login/register.php">Register here</a></p>
+                <p>No account? <a href="#">Contact system admin</a></p>
             </div>
         </div>
 
     </div>
 </section>
+<div id="adminSpinner" class="spinner-border text-danger" style="display: none;"></div>
 </body>
 
 </html>
