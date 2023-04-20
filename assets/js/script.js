@@ -147,6 +147,13 @@ $('.btn-login').on('click', () => {
                   $('#myLoginModal').modal('hide');
                   const userCred = JSON.parse(localStorage.getItem("user"));
                   toastr.success(`Welcome aboard ${userCred.username}!`,"Logged In!");
+                  $.ajax({
+                    type: 'POST',
+                    url: "/controllers/get_userCreds.php",
+                    success:(result)=>{
+                      return result;
+                    }
+                  })
                 }else if(result == "login failed"){
                   toastr.error("Please check your user credentials", "Log in Failed");
                 }else if(result == "wrong username"){
@@ -365,6 +372,28 @@ $('#SubmitEmail').on('click', ()=>{
 
 
 });
+
+
+//script for profile and cart
+function profileURL(){
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  const userName = userCred.username;
+  if (userCred.username == "" || (userName.search(/guest/i) == 0)) {
+    toastr.info("You have to log in first!");
+  } else {
+    window.location = "/profile/";
+}
+}
+// const userCred = JSON.parse(localStorage.getItem("user"));
+// userCred.username = "guest_test986";
+// localStorage.setItem("user", JSON.stringify(userCred));
+
+
+// const userName = userCred.username;
+// const bli = userName.search(/guest/i); //return 0 if wala
+// console.log("ucred = "+userCred);
+// console.log("uname = "+userName);
+// console.log("bli"+bli);
 
 // Display an toasterz
 // toastr.info('Are you the 6 fingered man?');
