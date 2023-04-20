@@ -6,27 +6,27 @@
                 <h3 class="txtc mb-4">Create Account</h3>
 
                 <div class="form-outline mb-4">
-                    <input type="text" id="NewName" class="form-control form-control"
+                    <input type="text" id="NewName" class="form-control"
                         placeholder="Enter Name" />
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="text" id="NewUsername" class="form-control form-control"
+                    <input type="text" id="NewUsername" class="form-control"
                         placeholder="Enter Username" />
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="email" id="NewEmail" class="form-control form-control"
+                    <input type="email" id="NewEmail" class="form-control"
                         placeholder="Enter Email" />
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="password" id="NewPass" class="form-control form-control"
+                    <input type="password" id="NewPass" class="form-control"
                         placeholder="Enter Password" />
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="password" id="NewVPass" class="form-control form-control"
+                    <input type="password" id="NewVPass" class="form-control"
                         placeholder="Re-enter Password" />
                 </div>
 
