@@ -143,6 +143,42 @@ $('.btn-signup').on('click', () => {
   $('#myLoginModal').modal('hide');
   $('#mySignupModal').modal('show');
 
+  $('#NewEmail').on('keyup', function() {
+    var email = $('#NewEmail').val();
+    var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!re.test(email)) {
+      $('#NewEmail').css('border-color', 'red');
+    } else {
+      $('#NewEmail').css('border-color', 'green');
+    }
+  });
+
+  $('#NewPass').on('keyup', function() {
+    var pass = $('#NewPass').val();
+    if (pass.length < 8) {
+      $('#NewPass').css('border-color', 'red');
+    } else {
+      $('#NewPass').css('border-color', 'green');
+    }
+    var passV = $('#NewVPass').val();
+    if (passV == pass) {
+      $('#NewVPass').css('border-color', 'green');
+    } else {
+      $('#NewVPass').css('border-color', 'red');
+    }
+
+  });
+
+  $('#NewVPass').on('keyup', function() {
+    var pass = $('#NewPass').val();
+    var passV = $('#NewVPass').val();
+    if (passV == pass) {
+      $('#NewVPass').css('border-color', 'green');
+    } else {
+      $('#NewVPass').css('border-color', 'red');
+    }
+  });
+
   $('#createAcc').on('click', (e) => {
     e.preventDefault();
     var sName = document.getElementById("NewName").value;
@@ -150,7 +186,12 @@ $('.btn-signup').on('click', () => {
     var sEmail = document.getElementById("NewEmail").value;
     var sPassword = document.getElementById("NewPass").value;
     var sConfirmPass= document.getElementById("NewVPass").value;
-    if(sName != "" && sUsername != "" && sEmail != "" && (sPassword != "" && sConfirmPass != "" && sPassword == sConfirmPass)){
+
+    var email = $('#NewEmail').val();
+    var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+
+    if(sName != "" && sUsername != "" && sEmail != "" && sPassword.length >= 8 &&(sPassword != "" && sConfirmPass != "" && sPassword == sConfirmPass && re.test(email))){
       var sJsonData = {
         name: sName,
         username: sUsername,
@@ -174,18 +215,24 @@ $('.btn-signup').on('click', () => {
           }else if(result == "error validating"){
             alert("validation error"); 
           }else if(result == "This Email is Already Used"){
+            $('#NewEmail').css('border-color', 'red');
             alert("This Email is Already Used"); 
           }else if(result == "Username Already Used"){
-            alert("Choose your Unique Username"); 
+            $('#NewUsername').css('border-color', 'red'); 
+            alert("Choose your Unique Username");
           }else {
               console.log(result);
           }   
         }
       });
+    }else if (!re.test(email)) {
+      alert("Invalid Email");
     }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword != sConfirmPass){
       alert("Please confirm your password!");
     }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
       alert("Please input your password!");
+    }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword.length > 8 && (sPassword == sConfirmPass || sPassword =="")){
+      alert("Password too short, atleast 8 characters");
     }else if(sName != "" && sUsername != "" && sEmail == "" && (sPassword == sConfirmPass || sPassword =="")){
       alert("Please input your email!");
     }else if(sName != "" && sUsername == "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
