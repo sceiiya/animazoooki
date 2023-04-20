@@ -2,16 +2,20 @@
     session_start(); 
 
     if(!isset($_SESSION['username'])){
-        $_SESSION['name'] = "guest";
+        echo '<script type="text/javascript">newguest();</script>';
+        // $_SESSION['name'] = "guest";
         // header('Location: /activity_website/register.php');
-    }else{
+        // echo 'the username is '.$_SESSION['username'].'<br/>';
+    }elseif(str_contains($_SESSION['username'], 'guest')){
+        // echo "is a guest";
+    }elseif(!str_contains($_SESSION['username'], 'guest')){
         $uUname = $_SESSION['username'];
         $uUid = $_SESSION['userid'];    
         $uName = $_SESSION['fullname'];
         $uEmail = $_SESSION['email'];
         $uStatus = $_SESSION['status'];
+        // echo "not a guest";
     }
-    print_r($_SESSION);
     ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,8 +31,6 @@
     <link rel="stylesheet" media='screen and (min-width: 800px) and (max-width: 1199px)' href='/assets/css/medium-style.css' />
     <link rel="stylesheet" media='screen and (min-width: 100px) and (max-width: 799px)' href='/assets/css/mobile-style.css' />
     <link rel="stylesheet" href='/assets/css/styles.css'/>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     
     <div class="position-absolute top-50 start-50 translate-middle" id="LoadingSpinner" style="display: none;">
     <div class="spinner-border text-danger"></div>

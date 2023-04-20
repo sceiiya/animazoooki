@@ -147,6 +147,7 @@ $('.btn-login').on('click', () => {
                   $('#myLoginModal').modal('hide');
                   const userCred = JSON.parse(localStorage.getItem("user"));
                   toastr.success(`Welcome aboard ${userCred.username}!`,"Logged In!");
+                  // get the userCred after login
                   $.ajax({
                     type: 'POST',
                     url: "/controllers/get_userCreds.php",
@@ -373,6 +374,7 @@ $('#SubmitEmail').on('click', ()=>{
 
 });
 
+// window.location.reload();
 
 //script for profile and cart
 function profileURL(){
@@ -381,7 +383,7 @@ function profileURL(){
   if (userCred.username == "" || (userName.search(/guest/i) == 0)) {
     toastr.info("You have to log in first!");
   } else {
-    window.location = "/profile/";
+    window.location = "/profile/";x
 }
 }
 // const userCred = JSON.parse(localStorage.getItem("user"));
