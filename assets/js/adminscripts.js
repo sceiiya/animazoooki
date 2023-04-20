@@ -40,7 +40,6 @@ function loadContent(content) {
             container.prepend(element);
         }
     })
-
 }
 
 $(document).ready(function () {
@@ -103,7 +102,7 @@ function productsFetch() {
         },
         success: (result) => {
             if (result == "error") {
-                alert("Please call system admnistrator");
+                alert("Please call system administrator");
             } else {
                 $(".mainAdmin").html(result);
             }
@@ -134,7 +133,7 @@ function customersFetch() {
         },
         success: (result) => {
             if (result == "error") {
-                alert("Please call system admnistrator");
+                alert("Please call system administrator");
             } else {
                 $(".mainAdmin").html(result);
             }
@@ -165,7 +164,7 @@ function ordersFetch() {
         },
         success: (result) => {
             if (result == "error") {
-                alert("Please call system admnistrator");
+                alert("Please call system administrator");
             } else {
                 $(".mainAdmin").html(result);
             }
@@ -196,7 +195,7 @@ function adminusersFetch() {
         },
         success: (result) => {
             if (result == "error") {
-                alert("Please call system admnistrator");
+                alert("Please call system administrator");
             } else {
                 $(".mainAdmin").html(result);
             }

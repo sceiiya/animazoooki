@@ -18,7 +18,7 @@
                 $nUserTotalRows = mysqli_num_rows($eUserSelect);
 
                 if($nUserTotalRows < 1) {
-                    echo "Username doesn't exist";
+                    echo "Invalid username or password";
                     mysqli_close($dbConnection);
                 } else if ($nUserTotalRows > 0){
                 // Check if password is correct
@@ -26,7 +26,7 @@
                     $eUserPassSelect = mysqli_query($dbConnection, $qUserPassSelect);
                     $userPassRows = mysqli_fetch_assoc($eUserPassSelect);
                     if($userPassRows['adminpassword'] != $sPassword){
-                        echo "Incorrect Password";
+                        echo "Invalid username or password";
                         mysqli_close($dbConnection);
                     } else if ($userPassRows['adminpassword'] == $sPassword){
                     // Check status of the account
