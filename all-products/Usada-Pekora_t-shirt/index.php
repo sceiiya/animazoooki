@@ -175,3 +175,4 @@
 <?php include("../../includes/scripts_library.php"); ?>
 <script src="/assets/js/script.js"></script>
 <script src="/assets/js/products.js"></script>
+<?php include("../../includes/validatorControl.php"); ?>
