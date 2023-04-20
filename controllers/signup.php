@@ -21,7 +21,7 @@
                 echo "This Email is Already Used";
             }else{
                 try{                    
-                    $_SESSION['email'] = $sEmail;
+                    $_SESSION['email'] = $_POST['email'];
 
                     $data=[
                         "name"=> addslashes($_POST['name']),

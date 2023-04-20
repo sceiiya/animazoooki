@@ -1,17 +1,46 @@
 // gumagana na to ng maayos.. need lang iset ng condition from database ayusing ko rin
 //for testing purpose muna ngayon.. activate once.. tapos after mavisit sa localhost browser..
 //paki comment out yung line na nasa baba.. save then shift refresh sa browser.. gumagana sya even maglipat ng pages
-// localStorage.setItem(
-//   "user", JSON.stringify(
-//     { 
-//       username: "guest",
-//       email: "guest",
-//       theme: "light"
-//     }));
+function defaultUserLS(){
+  localStorage.setItem(
+    "user", JSON.stringify(
+      { 
+        iuserid: "guest",
+        username: "guest",
+        fullname: "guest",
+        email: "guest",
+        theme: "light",
+        status: "spectating"
+      }));
+}
 //for logging out this one should be included 
 // localStorage.clear();
 
+toastr.options.progressBar = true;
+toastr.options.timeOut = 3000; // How long the toast will display without user interaction
+toastr.options.extendedTimeOut = 2000; // How long the toast will display after a user hovers over it
+toastr.options.closeButton = true;
+toastr.options.closeMethod = 'fadeOut';
+// toastr.options.closeDuration = 350;
+toastr.options.closeEasing = 'swing';
+toastr.options.newestOnTop = false;
+toastr.options.showEasing = 'swing';
+toastr.options.hideEasing = 'linear';
+toastr.options.closeEasing = 'linear';
 
+function ModalLoaderShow(){
+  // $('#LoadingSpinner').modal('show');
+  var x = document.querySelector('#LoadingSpinner');
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function ModalLoaderHide(){
+  $('#LoadingSpinner').modal('hide');
+}
 // fetching the theme and updating depends on the user preference
 $(document).ready(function(){
   const userCred = JSON.parse(localStorage.getItem("user"));
@@ -80,7 +109,7 @@ function AzsetDarkTheme(){
 
 // script of ongoing deevelopment message
 function popdev(){
-  alert("This feature is currently on development                                                                                                                                                                                                                                                                                        -the developer");
+  toastr.info('Development in Progress!');
 }
 
 // (needs a rework on toasters.. have to develop our own toasters)
@@ -118,20 +147,28 @@ $('.btn-login').on('click', () => {
         success: (result) => {
                 if( result == "Login Success") {
                   $('#myLoginModal').modal('hide');
-                } else if(result == "login failed"){
-                  alert("Log in Failed Successfully!");
-                }else {
+                  const userCred = JSON.parse(localStorage.getItem("user"));
+                  toastr.success(`Welcome aboard ${userCred.username}!`,"Logged In!");
+                }else if(result == "login failed"){
+                  toastr.error("Please check your user credentials", "Log in Failed");
+                }else if(result == "wrong username"){
+                  toastr.error("Kindly check your input", "Incorrect Username");
+                }else if(result == "wrong password"){
+                  toastr.error("Kindly check your input", "Incorrect Password");
+                }else if(result == "user does not exist"){
+                  toastr.error("Please create an account!", "User not Found");
+                }else{
                     console.log(result);
                 }   
         }
     });
 
     }else if(sUsername != "" && sPassword ==""){
-      alert("Please input your password!");
+      toastr.warning("Please input your password!");
     }else if(sUsername == "" && sPassword !=""){
-      alert("Please input your email!");
+      toastr.warning("Please input your email!");
     }else{
-      alert("Please input your credentials!");
+      toastr.error("Please input your credentials!");
     }
 
   });
@@ -208,39 +245,45 @@ $('.btn-signup').on('click', () => {
           if( result == "Sign-up Success") {
             $('#mySignupModal').modal('hide');
             $('#myLoginModal').modal('show');
+            toastr.success('Please log-in using your credentials!', 'New User Created');
           }else if(result == "Sign-up Failed"){
-            alert("failed registration");
+            toastr.error('Please contact support for info','Storage Error');
+            // alert("failed registration");
           }else if(result == "error registering"){
-            alert("register error"); 
+            // alert("register error"); 
+            toastr.error('Something went wrong', 'Execution Failed');
           }else if(result == "error validating"){
-            alert("validation error"); 
+            // alert("validation error"); 
+            toastr.error('Something went wrong','Validation Error');
           }else if(result == "This Email is Already Used"){
             $('#NewEmail').css('border-color', 'red');
-            alert("This Email is Already Used"); 
+            toastr.warning('Please check your account with the same email credentials','Duplicate Found');
+            // alert("This Email is Already Used"); 
           }else if(result == "Username Already Used"){
             $('#NewUsername').css('border-color', 'red'); 
-            alert("Choose your Unique Username");
+            toastr.warning('Please think of another unique Username','Duplicate Found');
+            // alert("Choose your Unique Username");
           }else {
               console.log(result);
           }   
         }
       });
     }else if (!re.test(email)) {
-      alert("Invalid Email");
+      toastr.error("Invalid Email");
     }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword != sConfirmPass){
-      alert("Please confirm your password!");
+      toastr.warning("Please confirm your password!");
     }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
-      alert("Please input your password!");
+      toastr.warning("Please input your password!");
     }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword.length > 8 && (sPassword == sConfirmPass || sPassword =="")){
-      alert("Password too short, atleast 8 characters");
+      toastr.error("Create a strong; atleast 8 characters", "Password Too Short");
     }else if(sName != "" && sUsername != "" && sEmail == "" && (sPassword == sConfirmPass || sPassword =="")){
-      alert("Please input your email!");
+      toastr.warning("Please input your email!");
     }else if(sName != "" && sUsername == "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
-      alert("Please input your username!");
+      toastr.warning("Please input your username!");
     }else if(sName == "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
-      alert("Please input your name!");
+      toastr.warning("Please input your name!");
     }else{
-      alert("Please input your credentials!");
+      toastr.error("Please input your credentials!");
     }
   
   });
@@ -255,23 +298,25 @@ $('#btn-search').on('click', () => {
 $('#futsign').on('click', () => {
   $('#mySignupModal').modal('show');
 });
-// ============== js footer collapse ==============
-//  txt-light collapsed
-// const cs_list = document.querySelectorAll('.footer_cs_list_i')
 
-// cs_list.forEach(panel => {
-//   footer_cs_list_i.addEventListener('click', () => {
-//         removeActiveClasses()
-//         footer_cs_list_i.attr("aria-expanded","true");
-//         // footer_cs_list_i.classList.add('collapsed')
-//         $("button").attr("aria-expanded","true");
-//     })
-// })
 
-// function removeActiveClasses() {
-//   cs_list.forEach(footer_cs_list_i => {
-//     footer_cs_list_i.attr("aria-expanded","false");
-//       // footer_cs_list_i.classList.remove('collapsed')
-//     })
-// }
+//logout function
+$('#logoutBttn').on('click', ()=>{
+  $.ajax({
+    type: 'POST',
+    url: '/controllers/logout.php',
+    success: (result) =>{
+      if(result == "logged out success"){
+        localStorage.clear();
+        defaultUserLS();
+        window.location = "/index.php";
+      }
+    }
+  })
+});
 
+// Display an toasterz
+// toastr.info('Are you the 6 fingered man?');
+// toastr.success('We do have the Kapua suite available.', 'Turtle Bay Resort', {timeOut: 5000});
+// toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!');
+// toastr.error('I do not think that word means what you think it means.', 'Inconceivable!');
