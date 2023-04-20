@@ -28,7 +28,7 @@ toastr.options.showEasing = 'swing';
 toastr.options.hideEasing = 'linear';
 toastr.options.closeEasing = 'linear';
 
-function ModalLoaderShow(){
+function ModalLoader(){
   // $('#LoadingSpinner').modal('show');
   var x = document.querySelector('#LoadingSpinner');
   if (x.style.display === "none") {
@@ -38,9 +38,6 @@ function ModalLoaderShow(){
   }
 }
 
-function ModalLoaderHide(){
-  $('#LoadingSpinner').modal('hide');
-}
 // fetching the theme and updating depends on the user preference
 $(document).ready(function(){
   const userCred = JSON.parse(localStorage.getItem("user"));
@@ -144,6 +141,7 @@ $('.btn-login').on('click', () => {
         type: 'POST',
         url: "/controllers/login.php",
         data: sJsonData,
+        beforeSend: ModalLoader,
         success: (result) => {
                 if( result == "Login Success") {
                   $('#myLoginModal').modal('hide');
@@ -160,7 +158,8 @@ $('.btn-login').on('click', () => {
                 }else{
                     console.log(result);
                 }   
-        }
+        },
+        complete: ModalLoader
     });
 
     }else if(sUsername != "" && sPassword ==""){
@@ -241,6 +240,7 @@ $('.btn-signup').on('click', () => {
         type: 'POST',
         url: "/controllers/signup.php",
         data: sJsonData,
+        beforeSend: ModalLoader,
         success: (result) => {
           if( result == "Sign-up Success") {
             $('#mySignupModal').modal('hide');
@@ -266,22 +266,23 @@ $('.btn-signup').on('click', () => {
           }else {
               console.log(result);
           }   
-        }
+        },
+        complete: ModalLoader
       });
     }else if (!re.test(email)) {
       toastr.error("Invalid Email");
-    }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword != sConfirmPass){
-      toastr.warning("Please confirm your password!");
-    }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
-      toastr.warning("Please input your password!");
-    }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword.length > 8 && (sPassword == sConfirmPass || sPassword =="")){
-      toastr.error("Create a strong; atleast 8 characters", "Password Too Short");
     }else if(sName != "" && sUsername != "" && sEmail == "" && (sPassword == sConfirmPass || sPassword =="")){
       toastr.warning("Please input your email!");
     }else if(sName != "" && sUsername == "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
       toastr.warning("Please input your username!");
     }else if(sName == "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
       toastr.warning("Please input your name!");
+    }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
+      toastr.warning("Please input your password!");
+    }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword.length < 8 && (sPassword != sConfirmPass || sPassword =="")){
+      toastr.error("Create a strong; atleast 8 characters", "Password Too Short");
+    }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword != sConfirmPass)){
+      toastr.warning("Please confirm your password!");
     }else{
       toastr.error("Please input your credentials!");
     }
@@ -305,14 +306,64 @@ $('#logoutBttn').on('click', ()=>{
   $.ajax({
     type: 'POST',
     url: '/controllers/logout.php',
+    beforeSend: ModalLoader,
     success: (result) =>{
       if(result == "logged out success"){
         localStorage.clear();
         defaultUserLS();
         window.location = "/index.php";
       }
-    }
+    },
+    complete: ModalLoader
   })
+});
+
+
+//script for email list
+$('#SubmitEmail').on('click', ()=>{
+  var Email = $('#Az_join_emaillist').val();
+  var joinElist ={
+    email: Email
+  }
+  var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  $('#NewEmail').on('keyup', function() {
+    if (!re.test(Email)) {
+      $('#Az_join_emaillist').css('border-color', 'red');
+    } else {
+      $('#Az_join_emaillist').css('border-color', 'green');
+    }
+  });
+
+
+  if(Email !="" && re.test(Email)){
+    $.ajax({
+      type: 'POST',
+      url: '/controllers/join_email_list.php',
+      data: joinElist,
+      beforeSend: ModalLoader,
+      success: (result) =>{
+          if(result == " added"){
+            toastr.success("Joined Newsletter Successfully","Congrats!");
+          }else if(result == " subcribed"){
+            toastr.warning("You are Already Subscribed", "Notice");
+          }else if(result == " failed"){
+            toastr.warning("Failed joining newsletter");
+          }else{
+            console.log(result);
+          }
+        },
+      complete: ModalLoader
+    })
+  }else if(Email ==""){
+    toastr.warning("Please enter your active email address");
+  }else if(!re.test(Email)){
+    toastr.error("Please enter a valid email address");
+  }else{
+    console.log('what is the error?');
+  }
+
+
 });
 
 // Display an toasterz

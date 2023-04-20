@@ -647,17 +647,17 @@ footer{
     height: 100%;
     top: 0;
     position: fixed !important;
-    z-index: 9999999;
+    z-index: 9999999999999999999999999;
     display: flex;
-    align-content: center;
-    align-items: center;
 }
 
 #LoadingSpinner div{
-    /* align-self: center;
-    vertical-align: middle; */
-    top: 50 !important;
-    left: 50 !important;
-    margin: auto !important;
-    transform: translateY(-500px);
+    align-self: center;
+    vertical-align: middle;
+    /* top: 50 !important; */
+    /* left: 50 !important; */
+    margin-top: 50vh !important;
+    /* transform: translateY(50vh); */
+    /* transition: none !important; */
+    /* animation: none !important; */
 }
