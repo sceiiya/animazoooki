@@ -15,7 +15,7 @@
     <ul class="dropdown-menu bg-light-in">
         <li><a class="dropdown-item txt-light-invb btn-login" id="loginBttn">Log in</a></li>
         <li><a class="dropdown-item txt-light-invb btn-signup" id="signupBttn">Sign up</a></li>
-        <li><a class="dropdown-item txt-light-invb" href="/profile/">My Profile</a></li>
+        <li><a class="dropdown-item txt-light-invb" id="myProfileBttn">My Profile</a></li>
         <li><a class="dropdown-item txt-light-invb" id="logoutBttn" >Log out</a></li>
     </ul>
 </div>

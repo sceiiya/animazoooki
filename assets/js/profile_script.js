@@ -23,6 +23,9 @@ function loadContent(content) {
 
 }
 
+$(document).ready(()=>{
+  loadContent('/profile/content/myprofile.php');
+});
 linkAccount.on('click', function(e){
   loadContent('/profile/content/myprofile.php');
   e.preventDefault() ;

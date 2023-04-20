@@ -1,3 +1,4 @@
+<?php include('../../controllers/forbidGuest.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -296,12 +297,11 @@
         <!--end of right side of the main--->
     </section>
 
-    <!-- footer -->
-    <?php include("../../includes/footer.php"); ?>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/0de39995d2.js" crossorigin="anonymous"></script>
-    <script src="/assets/js/script.js"></script>
+<!-- footer -->
+<?php include("../../includes/footer.php"); ?>
 </body>
-
 </html>
+<!-- scripts libries -->
+<?php include("../../includes/scripts_library.php"); ?>
+<script src="/assets/js/script.js"></script>
+<?php include("../../includes/validatorControl.php"); ?>

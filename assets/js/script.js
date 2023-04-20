@@ -1,18 +1,7 @@
 // gumagana na to ng maayos.. need lang iset ng condition from database ayusing ko rin
 //for testing purpose muna ngayon.. activate once.. tapos after mavisit sa localhost browser..
 //paki comment out yung line na nasa baba.. save then shift refresh sa browser.. gumagana sya even maglipat ng pages
-function defaultUserLS(){
-  localStorage.setItem(
-    "user", JSON.stringify(
-      { 
-        iuserid: "guest",
-        username: "guest",
-        fullname: "guest",
-        email: "guest",
-        theme: "light",
-        status: "spectating"
-      }));
-}
+
 //for logging out this one should be included 
 // localStorage.clear();
 
@@ -147,6 +136,14 @@ $('.btn-login').on('click', () => {
                   $('#myLoginModal').modal('hide');
                   const userCred = JSON.parse(localStorage.getItem("user"));
                   toastr.success(`Welcome aboard ${userCred.username}!`,"Logged In!");
+                  // get the userCred after login
+                  $.ajax({
+                    type: 'POST',
+                    url: "/controllers/get_userCreds.php",
+                    success:(result)=>{
+                      return result;
+                    }
+                  })
                 }else if(result == "login failed"){
                   toastr.error("Please check your user credentials", "Log in Failed");
                 }else if(result == "wrong username"){
@@ -310,7 +307,7 @@ $('#logoutBttn').on('click', ()=>{
     success: (result) =>{
       if(result == "logged out success"){
         localStorage.clear();
-        defaultUserLS();
+        // defaultUserLS();
         window.location = "/index.php";
       }
     },
@@ -365,6 +362,59 @@ $('#SubmitEmail').on('click', ()=>{
 
 
 });
+
+// window.location.reload();
+
+//script for profile and cart
+function profileURL(){
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  const userName = userCred.username;
+  if (userCred.username == "" || (userName.search(/guest/i) == 0)) {
+    toastr.info("You have to log in first!");
+  } else {
+    window.location = "/profile/";x
+}
+}
+
+
+$('#myProfileBttn').on('click', ()=>{
+  profileURL();
+})
+
+//generate guest creds
+function newguest(){
+  console.log('deving');
+  $.get('/controllers/newGuestCred.php', (data, status)=>{
+    if (status === "success"){
+      const guestCred = JSON.parse(data);
+        console.log(guestCred);
+        
+        localStorage.setItem(
+          "user", JSON.stringify(
+            { 
+              iuserid: guestCred.id,
+              username: guestCred.username,
+              fullname: guestCred.name,
+              email: guestCred.email,
+              theme: guestCred.theme,
+              status: guestCred.status,
+            }));
+      
+
+    }
+  });
+}
+
+// const userCred = JSON.parse(localStorage.getItem("user"));
+// userCred.username = "guest_test986";
+// localStorage.setItem("user", JSON.stringify(userCred));
+
+
+// const userName = userCred.username;
+// const bli = userName.search(/guest/i); //return 0 if wala
+// console.log("ucred = "+userCred);
+// console.log("uname = "+userName);
+// console.log("bli"+bli);
 
 // Display an toasterz
 // toastr.info('Are you the 6 fingered man?');
