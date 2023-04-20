@@ -4,9 +4,10 @@
     $guestUN = 'guest_';
     $guestN = 'zooki_';
     $guestNNN = substr(sha1(mt_rand()),17,6);
-    $nGuestUN = $guestUN += $guestNNN;
-    $nGuestN = $guestN += $guestNNN;
+    $nGuestUN = $guestUN.$guestNNN;
+    $nGuestN = $guestN.$guestNNN;
     $newGuest = [
+        'id' => '',
         'username' => $nGuestUN,
         'name' => $nGuestN,
         'email' => 'Register to Enter Email',
@@ -16,13 +17,14 @@
 
     $newGuestDB = [
         'username' => $newGuest['username'],
-        'name' =>  $newGuest[''],
-        'email' => $newGuest[''],
-        'theme' => $newGuest[''],
+        'name' =>  $newGuest['name'],
+        'email' => $newGuest['email'],
+        'theme' => $newGuest['theme'],
         'status' => $newGuest['status'],
-        'status' => $newGuest['status']
+        'date_added' => date("Y-m-d H:i:s")
     ];
-
+    echo json_encode($newGuestDB);
+    echo "<br/>";
     echo json_encode($newGuest);
 
     require_once("important/class.database.php");
