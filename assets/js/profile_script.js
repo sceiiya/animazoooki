@@ -59,3 +59,19 @@ function activelink() {
 }
 list.forEach((item) =>
 item.addEventListener('mouseover', activelink));
+
+
+
+// $(document).ready(function() {
+//   const myInput = $("#myInput");
+//   const removeButton = $("#removeReadonly");
+//   const restoreButton = $("#restoreReadonly");
+  
+//   removeButton.click(function() {
+//     myInput.prop("readonly", false);
+//   });
+  
+//   restoreButton.click(function() {
+//     myInput.prop("readonly", true);
+//   });
+// });

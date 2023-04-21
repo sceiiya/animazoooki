@@ -27,15 +27,7 @@ function ModalLoader(){
   }
 }
 
-// fetching the theme and updating depends on the user preference
-$(document).ready(function(){
-  const userCred = JSON.parse(localStorage.getItem("user"));
-  if (userCred.theme == "dark") {
-    AzsettingDarkTheme();
-  } else {
-    AzsettingLightTheme();
-}
-});
+
  
  // localStorage.setItem('theme', 'light')
 $('#Az_theme').click(function() {
@@ -111,6 +103,31 @@ toastTrigger.addEventListener('click', () => {
 // script of ongoing deevelopment message
 
 
+//generate guest creds
+function newguest(){
+  console.log('deving');
+  $.get('/controllers/newGuestCred.php', (data, status)=>{
+    if (status === "success"){
+      const guestCred = JSON.parse(data);
+      console.log(data);
+        localStorage.setItem(
+          "user", JSON.stringify(
+            { 
+              username: guestCred.username,
+              fullname: guestCred.name,
+              email: guestCred.email,
+              theme: guestCred.theme,
+              status: guestCred.status,
+              log: "new"
+            }));
+      
+            console.log(JSON.parse(localStorage.getItem('user')));
+
+    }
+  });
+  window.location.reload();
+}
+
 //Function for login modal
 $('.btn-login').on('click', () => {
   $('#mySignupModal').modal('hide');
@@ -134,8 +151,6 @@ $('.btn-login').on('click', () => {
         success: (result) => {
                 if( result == "Login Success") {
                   $('#myLoginModal').modal('hide');
-                  const userCred = JSON.parse(localStorage.getItem("user"));
-                  toastr.success(`Welcome aboard ${userCred.username}!`,"Logged In!");
                   // get the userCred after login
                   $.ajax({
                     type: 'POST',
@@ -144,19 +159,21 @@ $('.btn-login').on('click', () => {
                       return result;
                     }
                   })
-                }else if(result == "login failed"){
+                }else if(result == "login failed" || result == "user does not exist" || result == "wrong password" || result == "wrong username"){
                   toastr.error("Please check your user credentials", "Log in Failed");
-                }else if(result == "wrong username"){
-                  toastr.error("Kindly check your input", "Incorrect Username");
-                }else if(result == "wrong password"){
-                  toastr.error("Kindly check your input", "Incorrect Password");
-                }else if(result == "user does not exist"){
-                  toastr.error("Please create an account!", "User not Found");
+                // }else if(result == "wrong username"){
+                //   toastr.error("Kindly check your input", "Incorrect Username");
+                // }else if(result == "wrong password"){
+                //   toastr.error("Kindly check your input", "Incorrect Password");
+                // }else if(result == "user does not exist"){
+                //   toastr.error("Please create an account!", "User not Found");
+                  ModalLoader();
                 }else{
                     console.log(result);
                 }   
         },
-        complete: ModalLoader
+        complete: loginReload
+        
     });
 
     }else if(sUsername != "" && sPassword ==""){
@@ -169,6 +186,25 @@ $('.btn-login').on('click', () => {
 
   });
 
+})
+
+//logg reload function
+function loginReload(){
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  userCred.log = "logging";
+  localStorage.setItem("user", JSON.stringify(userCred));
+  window.location.reload();
+
+}
+
+//function for specific reloading after login
+$(document).ready(()=>{
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  if (userCred.log == "logging"){
+    setTimeout(toastr.success(`Welcome aboard ${userCred.username}!`,"Logged In!"), 2000);
+    userCred.log = "logged";
+    localStorage.setItem("user", JSON.stringify(userCred));
+  }
 })
 
 //Function for signup modal
@@ -365,45 +401,56 @@ $('#SubmitEmail').on('click', ()=>{
 
 // window.location.reload();
 
-//script for profile and cart
-function profileURL(){
+//script for profile
+// function profileURL(){
+//   const userCred = JSON.parse(localStorage.getItem("user"));
+//   const userName = userCred.username;
+//   if ((userName.search(/guest/i) == 1)) {
+//     toastr.info("You have to log in first!");
+//   } else {
+//     window.location = "/profile/";x
+// }
+// }
+
+function profileURL() {
   const userCred = JSON.parse(localStorage.getItem("user"));
   const userName = userCred.username;
-  if (userCred.username == "" || (userName.search(/guest/i) == 0)) {
+  if (userName.indexOf("guest") !== -1) {
     toastr.info("You have to log in first!");
   } else {
-    window.location = "/profile/";x
+    window.location = "/profile/";
+  }
 }
-}
-
 
 $('#myProfileBttn').on('click', ()=>{
   profileURL();
 })
 
-//generate guest creds
-function newguest(){
-  console.log('deving');
-  $.get('/controllers/newGuestCred.php', (data, status)=>{
-    if (status === "success"){
-      const guestCred = JSON.parse(data);
-        console.log(guestCred);
-        
-        localStorage.setItem(
-          "user", JSON.stringify(
-            { 
-              iuserid: guestCred.id,
-              username: guestCred.username,
-              fullname: guestCred.name,
-              email: guestCred.email,
-              theme: guestCred.theme,
-              status: guestCred.status,
-            }));
-      
-
-    }
-  });
+//script for cart
+function cartURL(){
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  const userName = userCred.username;
+  if ((userName.indexOf("guest") !== -1)) {
+    toastr.info("You have to log in first!");
+  } else {
+    window.location = "/profile/cart/";x
 }
+}
+
+
+$('#myCartBttn').on('click', ()=>{
+  cartURL();
+})
+
+// fetching the theme and updating depends on the user preference
+// $(document).ready(function(){
+//   const userCred = JSON.parse(localStorage.getItem("user"));
+//   if (userCred.theme == "dark") {
+//     AzsettingDarkTheme();
+//   } else {
+//     AzsettingLightTheme();
+// }
+// });
 
 // const userCred = JSON.parse(localStorage.getItem("user"));
 // userCred.username = "guest_test986";

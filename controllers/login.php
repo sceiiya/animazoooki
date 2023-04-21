@@ -17,6 +17,7 @@
 
             if($validU["result"] == "true" && $validP["result"] == "true"){
                 echo "Login Success";
+                    // session_destroy();
                     $getData = ['username' => $_POST['username']];
                     $Data = $ConDB->Select($eCon, 'clients', $getData);
                     

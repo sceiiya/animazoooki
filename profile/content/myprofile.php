@@ -8,7 +8,7 @@
         </div>
         <div class="mb-3 w-75 profile-data">
             <label>Name</label>
-            <input type="text" class="form-control" id="Name" value="<?php echo $_SESSION['name'];?>" readonly>
+            <input type="text" class="form-control" id="Name" value="<?php echo $_SESSION['fullname'];?>" readonly>
         </div>
         <div class="mb-3 w-75 profile-data">
             <label>Email Address</label>
