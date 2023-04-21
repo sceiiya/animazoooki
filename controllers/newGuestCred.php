@@ -39,21 +39,21 @@
     // echo "<br/>";
     echo json_encode($newGuest);
 
-    // require_once("important/class.database.php");
+    require_once("important/class.database.php");
 
-    // $ConDB = new ClassDbConn;
-    // $eCon = $ConDB->NewCon();
-    // if($eCon == true){
-    //     try{
-    //     $GenGuest = $ConDB->Insert($eCon, 'clients', $newGuestDB);
-    //         if ($GenGuest == true){
-    //             return 'new guest';
-    //         }else{
-    //             return $e->getMessage();
-    //         }
-    //     }catch(Exception $e){
-    //         return $e->getMessage();
-    //     }
-    // }else{
-    //     return "not connected";
-    // }
+    $ConDB = new ClassDbConn;
+    $eCon = $ConDB->NewCon();
+    if($eCon == true){
+        try{
+        $GenGuest = $ConDB->Insert($eCon, 'guest', $newGuestDB);
+            if ($GenGuest == true){
+                return 'new guest';
+            }else{
+                return $e->getMessage();
+            }
+        }catch(Exception $e){
+            return $e->getMessage();
+        }
+    }else{
+        return "not connected";
+    }

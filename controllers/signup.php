@@ -29,6 +29,9 @@
                         "email"=> $_POST['email'],
                         "password"=> $_POST['password'],
                         "date_added" => date("Y-m-d H:i:s"),
+                        "contactno" => '9999 999 9999',
+                        "billing_address" => "Enter your Billing Address",
+                        "default_shipping_address" => "Enter your Shipping Address",
                         "otp_code" => rand(100000, 999999)
                     ];
 
