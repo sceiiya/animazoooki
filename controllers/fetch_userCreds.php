@@ -26,6 +26,8 @@
 
             echo json_encode($UserData);
         }catch(Exception $e){
-            // echo $e->getMessage();
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: error_logger.php");
+            exit();
         }
     // }

@@ -1,8 +1,112 @@
 
 
 =======================================================
+Date: 2023-04-21 14:01:49
+Error:  
+=======================================================
 
-uhfkassadw
+
 
 =======================================================
+Date: 2023-04-21 14:03:49
+Error:  
+=======================================================
+
+
+
+=======================================================
+Date: 2023-04-21 14:04:08
+Error:  
+=======================================================
+
+
+
+=======================================================
+Date: 2023-04-21 22:09:20
+Error: hasfjdyfkwi 
+=======================================================
+
+
+
+=======================================================
+Date: 2023-04-21 22:53:04
+Error: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum sapien<br>quis odio molestie, a elementum nulla facilisis. Aliquam malesuada, lacus vitae<br>euismod consequat, tortor quam volutpat felis, nec varius ipsum tellus ac mi.<br>Sed eget tellus sapien. Maecenas feugiat nisi id vestibulum suscipit. Fusce<br>semper ultrices lectus nec malesuada. Donec posuere quis velit sit amet posuere. 
+=======================================================
+
+
+
+=======================================================
+Date: 2023-04-21 22:54:05
+Error: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum sapien<br>quis odio molestie, a elementum nulla facilisis. Aliquam malesuada, lacus vitae<br>euismod consequat, tortor quam volutpat felis, nec varius ipsum tellus ac mi.<br>Sed eget tellus sapien. Maecenas feugiat nisi id vestibulum suscipit. Fusce<br>semper ultrices lectus nec malesuada. Donec posuere quis velit sit amet posuere. 
+=======================================================
+
+
+
+=======================================================
+Date: 2023-04-21 22:54:34
+Error: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum sapien<br>quis odio molestie, a elementum nulla facilisis. Aliquam malesuada, lacus vitae<br>euismod consequat, tortor quam volutpat felis, nec varius ipsum tellus ac mi.<br>Sed eget tellus sapien. Maecenas feugiat nisi id vestibulum suscipit. Fusce<br>semper ultrices lectus nec malesuada. Donec posuere quis velit sit amet posuere. 
+=======================================================
+
+
+
+=======================================================
+Date: 2023-04-21 22:54:54
+Error: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum sapien
+quis odio molestie, a elementum nulla facilisis. Aliquam malesuada, lacus vitae
+euismod consequat, tortor quam volutpat felis, nec varius ipsum tellus ac mi.
+Sed eget tellus sapien. Maecenas feugiat nisi id vestibulum suscipit. Fusce
+semper ultrices lectus nec malesuada. Donec posuere quis velit sit amet posuere. 
+=======================================================
+
+
+
+================================================================================================
+Date: 2023-04-21 22:56:19
+Error: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum sapien
+quis odio molestie, a elementum nulla facilisis. Aliquam malesuada, lacus vitae
+euismod consequat, tortor quam volutpat felis, nec varius ipsum tellus ac mi.
+Sed eget tellus sapien. Maecenas feugiat nisi id vestibulum suscipit. Fusce
+semper ultrices lectus nec malesuada. Donec posuere quis velit sit amet posuere. 
+================================================================================================
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-21 22:58:05
+Error: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum sapien
+quis odio molestie, a elementum nulla facilisis. Aliquam malesuada, lacus vitae
+euismod consequat, tortor quam volutpat felis, nec varius ipsum tellus ac mi.
+Sed eget tellus sapien. Maecenas feugiat nisi id vestibulum suscipit. Fusce
+semper ultrices lectus nec malesuada. Donec posuere quis velit sit amet posuere. 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-21 23:43:20
+Error: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum sapien
+quis odio molestie, a elementum nulla facilisis. Aliquam malesuada, lacus vitae
+euismod consequat, tortor quam volutpat felis, nec varius ipsum tellus ac mi.
+Sed eget tellus sapien. Maecenas feugiat nisi id vestibulum suscipit. Fusce
+semper ultrices lectus nec malesuada. Donec posuere quis velit sit amet posuere. 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-21 23:44:11
+Error: "<br \/>\n<b>Fatal error<\/b>:  Uncaught mysqli_sql_exception: Access denied for
+user 'u955154186_animazoooki_D'@'180.191.23.152' (using password: YES) in
+C:\\laragon\\www\\animazooki\\controllers\\important\\connect_DB.php:29\nStack
+trace:\n#0
+C:\\laragon\\www\\animazooki\\controllers\\important\\connect_DB.php(29):
+mysqli_connect('animazoooki.wd4...', 'u955154186_anim...',
+'YoumUst_not_Us3...')\n#1
+C:\\laragon\\www\\animazooki\\controllers\\important\\class.database.php(5):
+include('C:\\\\laragon\\\\www\\\\...')\n#2
+C:\\laragon\\www\\animazooki\\controllers\\login.php(2):
+require_once('C:\\\\laragon\\\\www\\\\...')\n#3 {main}\n  thrown in
+<b>C:\\laragon\\www\\animazooki\\controllers\\important\\connect_DB.php<\/b> on
+line <b>29<\/b><br \/>\n" 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 

@@ -3,7 +3,7 @@
 //paki comment out yung line na nasa baba.. save then shift refresh sa browser.. gumagana sya even maglipat ng pages
 
 //for logging out this one should be included 
-// sessionStorage.clear();
+// localStorage.clear();
 
 toastr.options.progressBar = true;
 toastr.options.timeOut = 3000; // How long the toast will display without user interaction
@@ -27,9 +27,9 @@ function ModalLoader(){
   }
 }
  
- // sessionStorage.setItem('theme', 'light')
+ // localStorage.setItem('theme', 'light')
 $('#Az_theme').click(function() {
-  const userCred = JSON.parse(sessionStorage.getItem("user"));
+  const userCred = JSON.parse(localStorage.getItem("user"));
   if (userCred.theme == "dark") {
     AzsetLightTheme();
   } else {
@@ -55,9 +55,9 @@ function AzsettingLightTheme(){
 //function for switching theme to light
 function AzsetLightTheme(){
   AzsettingLightTheme();
-  const userCred = JSON.parse(sessionStorage.getItem("user"));
+  const userCred = JSON.parse(localStorage.getItem("user"));
   userCred.theme = "light";
-  sessionStorage.setItem("user", JSON.stringify(userCred));
+  localStorage.setItem("user", JSON.stringify(userCred));
 }
 
 //function for replacing class theme to dark
@@ -78,9 +78,9 @@ function AzsettingDarkTheme(){
 //function for switching theme to dark
 function AzsetDarkTheme(){
   AzsettingDarkTheme();
-  const userCred = JSON.parse(sessionStorage.getItem("user"));
+  const userCred = JSON.parse(localStorage.getItem("user"));
   userCred.theme = "dark";
-  sessionStorage.setItem("user", JSON.stringify(userCred));
+  localStorage.setItem("user", JSON.stringify(userCred));
 }
 
 // script of ongoing deevelopment message
@@ -107,7 +107,7 @@ function newguest(){
   $.get('/controllers/newGuestCred.php', (data, status)=>{
     if (status === "success"){
       const guestCred = JSON.parse(data);
-        sessionStorage.setItem(
+        localStorage.setItem(
           "user", JSON.stringify(
             { 
               username: guestCred.username,
@@ -117,7 +117,7 @@ function newguest(){
               status: guestCred.status,
               log: "new"
             }));
-            // console.log(JSON.parse(sessionStorage.getItem('user')));
+            // console.log(JSON.parse(localStorage.getItem('user')));
     }
   });
   // window.location.reload();
@@ -157,6 +157,8 @@ $('#login__btn').on('click', (e) => {
                     if(result == "success" ){
                     loginReload();
                     GETUserinfo();
+                    }else{
+                      ERROR_logger(JSON.stringify(result));
                     }
                   }
                 })
@@ -170,7 +172,8 @@ $('#login__btn').on('click', (e) => {
               // }else if(result == "user does not exist"){
               //   toastr.error("Please create an account!", "User not Found");
               }else{
-                  console.log(result);
+                  // console.log(result);
+                  ERROR_logger(result);
               }   
       },
       complete: ModalLoader
@@ -191,7 +194,7 @@ function GETUserinfo(){
 $.get('/controllers/fetch_userCreds.php', (data, status)=>{
   if (status === "success"){
     const guestCred = JSON.parse(data);
-      sessionStorage.setItem(
+      localStorage.setItem(
         "user", JSON.stringify(
           { 
             username: guestCred.username,
@@ -201,15 +204,15 @@ $.get('/controllers/fetch_userCreds.php', (data, status)=>{
             status: guestCred.status,
             log: guestCred.log
           }));
-          // console.log(JSON.parse(sessionStorage.getItem('user')));
+          // console.log(JSON.parse(localStorage.getItem('user')));
   }
 });
 }
 //logg reload function
 function loginReload(){
-  const userCred = JSON.parse(sessionStorage.getItem("user"));
+  const userCred = JSON.parse(localStorage.getItem("user"));
   userCred.log = "logging";
-  sessionStorage.setItem("user", JSON.stringify(userCred));
+  localStorage.setItem("user", JSON.stringify(userCred));
   reloadLog();
   // window.location.reload();
 
@@ -218,18 +221,18 @@ function loginReload(){
 //function for specific reloading after login
 // $(document).ready(()=>
 function reloadLog(){
-  const UserCred = JSON.parse(sessionStorage.getItem("user"));
+  const UserCred = JSON.parse(localStorage.getItem("user"));
   if (UserCred.log == "logging"){
     $.get('/controllers/fetch_userCreds.php', (data, status)=>{
       if (status === "success"){
         const userCred = JSON.parse(data);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-        sessionStorage.setItem("user", JSON.stringify({ username: userCred.username,}));
-        const UserrCred = JSON.parse(sessionStorage.getItem("user"));
+        localStorage.setItem("user", JSON.stringify({ username: userCred.username,}));
+        const UserrCred = JSON.parse(localStorage.getItem("user"));
         setTimeout(toastr.success(`Welcome aboard ${UserrCred.username}!`,"Logged In!"), 2000);
       }
     });
     UserCred.log = "logged";
-    sessionStorage.setItem("user", JSON.stringify(UserCred));
+    localStorage.setItem("user", JSON.stringify(UserCred));
   }
 };
 // );
@@ -324,7 +327,8 @@ $('#createAcc').on('click', (e) => {
           toastr.warning('Please think of another unique Username','Duplicate Found');
           // alert("Choose your Unique Username");
         }else {
-            console.log(result);
+            // console.log(result);
+            ERROR_logger(result);
         }   
       },
       complete: ModalLoader
@@ -367,9 +371,11 @@ $('#logoutBttn').on('click', ()=>{
     beforeSend: ModalLoader,
     success: (result) =>{
       if(result == "logged out success"){
-        sessionStorage.clear();
+        localStorage.clear();
         // defaultUserLS();
         window.location = "/index.php";
+      }else{
+        ERROR_logger(result);
       }
     },
     complete: ModalLoader
@@ -399,7 +405,8 @@ $('#SubmitEmail').on('click', ()=>{
           }else if(result == " failed"){
             toastr.warning("Failed joining newsletter");
           }else{
-            console.log(result);
+            // console.log(result);
+            ERROR_logger(result);
           }
         },
       complete: ModalLoader
@@ -427,7 +434,7 @@ $('#NewEmail').on('keyup', function() {
 
 //script for profile
 // function profileURL(){
-//   const userCred = JSON.parse(sessionStorage.getItem("user"));
+//   const userCred = JSON.parse(localStorage.getItem("user"));
 //   const userName = userCred.username;
 //   if ((userName.search(/guest/i) == 1)) {
 //     toastr.info("You have to log in first!");
@@ -437,7 +444,7 @@ $('#NewEmail').on('keyup', function() {
 // }
 
 function profileURL() {
-  const userCred = JSON.parse(sessionStorage.getItem("user"));
+  const userCred = JSON.parse(localStorage.getItem("user"));
   const userName = userCred.username;
   if (userName.indexOf("guest") !== -1) {
     toastr.info("You have to log in first!");
@@ -452,7 +459,7 @@ $('#myProfileBttn').on('click', ()=>{
 
 //script for cart
 function cartURL(){
-  const userCred = JSON.parse(sessionStorage.getItem("user"));
+  const userCred = JSON.parse(localStorage.getItem("user"));
   const userName = userCred.username;
   if ((userName.indexOf("guest") !== -1)) {
     toastr.info("You have to log in first!");
@@ -465,19 +472,62 @@ $('#myCartBttn').on('click', ()=>{
   cartURL();
 })
 
+// $(document).ready():
 // fetching the theme and updating depends on the user preference
-// $(document).ready(function(){
-//   const userCred = JSON.parse(sessionStorage.getItem("user"));
-//   if (userCred.theme == "dark") {
-//     AzsettingDarkTheme();
-//   } else {
-//     AzsettingLightTheme();
-// }
-// });
+$(document).ready(function(){
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  if (userCred.theme == "dark") {
+    AzsettingDarkTheme();
+  } else {
+    AzsettingLightTheme();
+}
+});
 
-// const userCred = JSON.parse(sessionStorage.getItem("user"));
+// function ERROR_logger(nERROR){
+//   var errrorr ={
+//     error: nERROR
+//   };
+//   $.post("/controllers/error_logger.php", errrorr,
+//   function(data, status){alert("Data: " + data + "\nStatus: " + status);}
+//   );
+// }
+
+// function ERROR_logger(nERROR){
+//   var errrorr ={
+//     error: nERROR
+//   };
+// $.ajax({
+//   type: 'POST',
+//   url: '/controllers/error_logger.php',
+//   data: errrorr,
+//   success: (result) =>{
+//     alert("Data: " + JSON.stringify(errrorr) + "\nStatus: " + result);
+//     },
+// })
+// };
+
+function ERROR_logger(nERROR){
+  var errrorr ={
+    error: nERROR
+  };
+  console.log("Error message: ", nERROR); // add this line to check if the function is being called
+  $.ajax({
+    type: 'POST',
+    url: '/controllers/error_logger.php',
+    data: errrorr,
+    success: (result) =>{
+      console.log("AJAX success: ", result); // add this line to check if the AJAX call is returning a success status
+      alert("Data: " + JSON.stringify(errrorr) + "\nStatus: " + result);
+    },
+    error: (xhr, status, error) => { // add this block to check for AJAX errors
+      console.log("AJAX error: ", error);
+    }
+  });
+}
+
+// const userCred = JSON.parse(localStorage.getItem("user"));
 // userCred.username = "guest_test986";
-// sessionStorage.setItem("user", JSON.stringify(userCred));
+// localStorage.setItem("user", JSON.stringify(userCred));
 
 
 // const userName = userCred.username;

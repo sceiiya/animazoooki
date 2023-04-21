@@ -1,4 +1,3 @@
-<?php include('../../controllers/forbidGuest.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -305,3 +304,4 @@
 <?php include("../../includes/scripts_library.php"); ?>
 <script src="/assets/js/script.js"></script>
 <?php include("../../includes/validatorControl.php"); ?>
+<?php include('../../controllers/forbidGuest.php'); ?>

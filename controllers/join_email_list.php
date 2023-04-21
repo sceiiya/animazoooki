@@ -24,17 +24,23 @@
                                 return false;
                             }
                         }catch(Exception $e) {
-                            echo $e->getMessage();
+                            $_SESSION['error'] = $e->getMessage();
+                            header("Location: error_logger.php");
+                            exit();
                         }
                     }else{
                         echo "failed";
                     }
                 }catch(Exception $e) {
-                    echo $e->getMessage();
+                    $_SESSION['error'] = $e->getMessage();
+                    header("Location: error_logger.php");
+                    exit();
                 }
             }
         }catch(Exception $e) {
-            echo $e->getMessage();
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: error_logger.php");
+            exit();
         }
 
 

@@ -43,10 +43,16 @@
                     }
                 }catch(Exception $e) {
                     echo "error registering";
+                    $_SESSION['error'] = $e->getMessage();
+                    header("Location: error_logger.php");
+                    exit();
                 }
             }
         } catch(Exception $e) {
             echo "error validating";
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: error_logger.php");
+            exit();
         }
 
     }else{

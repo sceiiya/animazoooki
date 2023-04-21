@@ -1,11 +1,10 @@
 <?php
-    require_once("important/class.database.php"); // update this for connection path
+    require_once("important/class.database.php");
     session_start();
-
+    
+    try{
     $ConDB = new ClassDbConn;
     $eCon = $ConDB->NewCon();
-    if($eCon == true){
-        try{
 
             $columnU = "username";
             $valueU = $_POST['username'];
@@ -42,13 +41,8 @@
             }else{
                 echo "user does not exist";
             }
-            // $data = [
-            //     'email' => 'email',
-            //     'password' => 'confirmpassword',
-            // ];
-            // $eSelect = $ConDB->Select($eCon, "clients", $data);
-            // print_r($eSelect);
         }catch(Exception $e){
-            echo "login failed";
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: error_logger.php");
+            exit();
         }
-    }

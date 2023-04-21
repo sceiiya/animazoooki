@@ -52,7 +52,9 @@
                 return $e->getMessage();
             }
         }catch(Exception $e){
-            return $e->getMessage();
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: error_logger.php");
+            exit();
         }
     }else{
         return "not connected";
