@@ -1,11 +1,11 @@
 <?php
 
-$wError = fopen("../errorlog/user_errorlog/errorlog.txt", "w+");
+$ERROR = "made";
+$wError = fopen("../errorlog/user_errorlog/errorlog.txt", "a");
 fwrite($wError,"\n
 =======================================================
-
-uhfkassadw
-
+Date: ".date('Y-m-d H:i:s')."
+Error: ".$ERROR." 
 =======================================================
 \n");
 fclose($wError);
