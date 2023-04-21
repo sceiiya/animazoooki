@@ -103,7 +103,7 @@ toastTrigger.addEventListener('click', () => {
 
 //generate guest creds
 function newguest(){
-  console.log('deving');
+  // console.log('deving');
   $.get('/controllers/newGuestCred.php', (data, status)=>{
     if (status === "success"){
       const guestCred = JSON.parse(data);
@@ -132,6 +132,7 @@ $('.btn-login').on('click', () => {
 
 //fucntion for login
 $('#login__btn').on('click', (e) => {
+  try{
   e.preventDefault();
   var sUsername = document.getElementById("LogUsername").value;
   var sPassword = document.getElementById("LogPass").value;
@@ -158,7 +159,7 @@ $('#login__btn').on('click', (e) => {
                     loginReload();
                     GETUserinfo();
                     }else{
-                      ERROR_logger(JSON.stringify(result));
+                      ERROR_logger(result);
                     }
                   }
                 })
@@ -188,9 +189,13 @@ $('#login__btn').on('click', (e) => {
     toastr.error("Please input your credentials!");
   }
 
+  }catch(error){
+    ERROR_logger(error);
+  }
 });
 
 function GETUserinfo(){
+try{
 $.get('/controllers/fetch_userCreds.php', (data, status)=>{
   if (status === "success"){
     const guestCred = JSON.parse(data);
@@ -207,20 +212,27 @@ $.get('/controllers/fetch_userCreds.php', (data, status)=>{
           // console.log(JSON.parse(localStorage.getItem('user')));
   }
 });
+}catch(error){
+  ERROR_logger(error);
+}
 }
 //logg reload function
 function loginReload(){
+  try{
   const userCred = JSON.parse(localStorage.getItem("user"));
   userCred.log = "logging";
   localStorage.setItem("user", JSON.stringify(userCred));
   reloadLog();
   // window.location.reload();
-
+  }catch(error){
+    ERROR_logger(error);
+  }
 }
 
 //function for specific reloading after login
 // $(document).ready(()=>
 function reloadLog(){
+  try{
   const UserCred = JSON.parse(localStorage.getItem("user"));
   if (UserCred.log == "logging"){
     $.get('/controllers/fetch_userCreds.php', (data, status)=>{
@@ -234,6 +246,9 @@ function reloadLog(){
     UserCred.log = "logged";
     localStorage.setItem("user", JSON.stringify(UserCred));
   }
+}catch(error){
+  ERROR_logger(error);
+}
 };
 // );
 
@@ -279,6 +294,7 @@ $('#NewVPass').on('keyup', function() {
 });
 
 $('#createAcc').on('click', (e) => {
+  try{
   e.preventDefault();
   var sName = document.getElementById("NewName").value;
   var sUsername = document.getElementById("NewUsername").value;
@@ -351,6 +367,9 @@ $('#createAcc').on('click', (e) => {
     toastr.error("Please input your credentials!");
   }
 
+  }catch(error){
+    ERROR_logger(error);
+  }
 });
 
 //Function for signup modal
@@ -365,6 +384,7 @@ $('#futsign').on('click', () => {
 
 //logout function
 $('#logoutBttn').on('click', ()=>{
+  try{
   $.ajax({
     type: 'POST',
     url: '/controllers/logout.php',
@@ -380,11 +400,15 @@ $('#logoutBttn').on('click', ()=>{
     },
     complete: ModalLoader
   })
+}catch(error){
+  ERROR_logger(error);
+}
 });
 
 
 //script for email list
 $('#SubmitEmail').on('click', ()=>{
+  try{
   var Email = $('#Az_join_emaillist').val();
   var joinElist ={
     email: Email
@@ -418,6 +442,9 @@ $('#SubmitEmail').on('click', ()=>{
   }else{
     console.log('what is the error?');
   }
+}catch(error){
+  ERROR_logger(error);
+}
 });
 
 $('#NewEmail').on('keyup', function() {
@@ -475,22 +502,26 @@ $('#myCartBttn').on('click', ()=>{
 // $(document).ready():
 // fetching the theme and updating depends on the user preference
 $(document).ready(function(){
+  try{
   const userCred = JSON.parse(localStorage.getItem("user"));
   if (userCred.theme == "dark") {
     AzsettingDarkTheme();
   } else {
     AzsettingLightTheme();
 }
+  }catch(error){
+    ERROR_logger(error);
+  }
 });
 
-// function ERROR_logger(nERROR){
-//   var errrorr ={
-//     error: nERROR
-//   };
-//   $.post("/controllers/error_logger.php", errrorr,
-//   function(data, status){alert("Data: " + data + "\nStatus: " + status);}
-//   );
-// }
+function ERROR_logger(nERROR){
+  var errrorr ={
+    error: nERROR
+  };
+  $.post("/controllers/error_logger.php", errrorr,
+  ()=>{toastr.error("Please Report this to our support", "Something went wrong");;}
+  );
+}
 
 // function ERROR_logger(nERROR){
 //   var errrorr ={
@@ -506,24 +537,24 @@ $(document).ready(function(){
 // })
 // };
 
-function ERROR_logger(nERROR){
-  var errrorr ={
-    error: nERROR
-  };
-  console.log("Error message: ", nERROR); // add this line to check if the function is being called
-  $.ajax({
-    type: 'POST',
-    url: '/controllers/error_logger.php',
-    data: errrorr,
-    success: (result) =>{
-      console.log("AJAX success: ", result); // add this line to check if the AJAX call is returning a success status
-      alert("Data: " + JSON.stringify(errrorr) + "\nStatus: " + result);
-    },
-    error: (xhr, status, error) => { // add this block to check for AJAX errors
-      console.log("AJAX error: ", error);
-    }
-  });
-}
+// function ERROR_logger(nERROR){
+//   var errrorr ={
+//     error: nERROR
+//   };
+//   console.log("Error message: ", nERROR); // add this line to check if the function is being called
+//   $.ajax({
+//     type: 'POST',
+//     url: '/controllers/error_logger.php',
+//     data: errrorr,
+//     success: (result) =>{
+//       console.log("AJAX success: ", result); // add this line to check if the AJAX call is returning a success status
+//       alert("Data: " + JSON.stringify(errrorr) + "\nStatus: " + result);
+//     },
+//     error: (xhr, status, error) => { // add this block to check for AJAX errors
+//       console.log("AJAX error: ", error);
+//     }
+//   });
+// }
 
 // const userCred = JSON.parse(localStorage.getItem("user"));
 // userCred.username = "guest_test986";

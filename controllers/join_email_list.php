@@ -1,5 +1,5 @@
  <?php
-    require_once("important/class.database.php"); // update this for connection path
+    require_once("important/class.database.php");
     session_start();
 
     $ConDB = new ClassDbConn;
