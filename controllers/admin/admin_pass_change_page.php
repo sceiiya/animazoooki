@@ -20,7 +20,7 @@
 
                     <div class="form-outline mb-3 w-75 ms-5">
                         <label for="">Current Password</label>
-                        <input type="text" id="admOldPass" class="form-control" />
+                        <input type="password" id="admOldPass" class="form-control" />
                     </div>
 
                     <div class="form-outline mb-3 w-75 ms-5">
@@ -31,6 +31,8 @@
                     <div class="form-outline mb-3 w-75 ms-5">
                         <label for="">Confim Password</label>
                         <input type="password" id="admConfirmPass" class="form-control mb-2" />
+                        <input type="checkbox" onclick="passViewer()"> Show Passwords
+                        <br>
                         <span id='admPassMessage'></span>
                     </div>
                     <div class="flex-row d-flex justify-content-center">
@@ -52,4 +54,20 @@
         } else
             $('#admPassMessage').html('Passwords does not match').css('color', 'red');
     });
+
+    function passViewer() {
+        var x = document.getElementById('admOldPass');
+        var y = document.getElementById('admNewPass');
+        var z = document.getElementById('admConfirmPass');
+
+        if(x.type === 'password' && y.type === 'password' && z.type === 'password') {
+            x.type = 'text';
+            y.type = 'text';
+            z.type = 'text';
+        } else {
+            x.type = 'password';
+            y.type = 'password';
+            z.type = 'text';
+        }
+    }
 </script>

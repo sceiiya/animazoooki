@@ -62,7 +62,7 @@
         }
 
         $adLPCode .= "</table>
-                <button id='addAdmin' style='display: $display;' onclick='addAdmin()'>Add Admin</button>
+                <button id='addAdmin' style='display: $display;' onclick='addAdmin()'>Add User</button>
                 ";
         
         echo $adLPCode;

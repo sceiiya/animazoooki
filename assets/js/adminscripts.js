@@ -40,7 +40,6 @@ function loadContent(content) {
             container.prepend(element);
         }
     })
-
 }
 
 $(document).ready(function () {
@@ -103,7 +102,7 @@ function productsFetch() {
         },
         success: (result) => {
             if (result == "error") {
-                alert("Please call system admnistrator");
+                alert("Please call system administrator");
             } else {
                 $(".mainAdmin").html(result);
             }
@@ -134,7 +133,7 @@ function customersFetch() {
         },
         success: (result) => {
             if (result == "error") {
-                alert("Please call system admnistrator");
+                alert("Please call system administrator");
             } else {
                 $(".mainAdmin").html(result);
             }
@@ -165,7 +164,7 @@ function ordersFetch() {
         },
         success: (result) => {
             if (result == "error") {
-                alert("Please call system admnistrator");
+                alert("Please call system administrator");
             } else {
                 $(".mainAdmin").html(result);
             }
@@ -196,7 +195,7 @@ function adminusersFetch() {
         },
         success: (result) => {
             if (result == "error") {
-                alert("Please call system admnistrator");
+                alert("Please call system administrator");
             } else {
                 $(".mainAdmin").html(result);
             }
@@ -747,16 +746,12 @@ function changeaccess() {
             },
             success: (result) => {
                 if (result == "Access Changed!") {
-                    $('#confirm-access').modal('hide');
-
-                    $('#adminFirstName').val("");
-                    $('#adminLastName').val("");
-                    $('#adminUsername').val("");
-                    $('#adminEmail').val("");
-                    $('#accesslevel').val("Access Level");
                     alert(result);
+                    $('#confirm-access').modal('hide');
+                    loadContent('/controllers/admin/admin_access.php');
                 } else {
                     alert(result);
+                    $('#confirm-access').modal('hide');
                 }
             },
             complete: function () {
@@ -801,14 +796,14 @@ function admSaveNewPass () {
             },
             success: (result) => {
                 if( result == "Password saved!") {
-                    $('#admChangePassModal').modal('hide');
-                    $('#admOldPass').val("");
-                    $('#admNewPass').val("");
-                    $('#admConfirmPass').val("");
                     alert(result);
+                    $('#admChangePassModal').modal('hide');
+                    loadContent('/controllers/admin/admin_pass_change_page.php');
+
                 } else {
-                    $('#admChangePassModal').modal('hide');
                     alert(result);
+                    $('#admChangePassModal').modal('hide');
+
                 }
             },
             complete: function () {
@@ -823,6 +818,7 @@ function admSaveNewPass () {
     })
 }
 
+// PASSWORD CHECKER IF MATCH
 
 $('#admNewPass, #admConfirmPass').on('keyup', function () {
     if ($('#admNewPass').val() == $('#admConfirmPass').val()) {
