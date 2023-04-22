@@ -26,16 +26,6 @@ function ModalLoader(){
     x.style.display = "none";
   }
 }
-
-// fetching the theme and updating depends on the user preference
-$(document).ready(function(){
-  const userCred = JSON.parse(localStorage.getItem("user"));
-  if (userCred.theme == "dark") {
-    AzsettingDarkTheme();
-  } else {
-    AzsettingLightTheme();
-}
-});
  
  // localStorage.setItem('theme', 'light')
 $('#Az_theme').click(function() {
@@ -111,181 +101,275 @@ toastTrigger.addEventListener('click', () => {
 // script of ongoing deevelopment message
 
 
+//generate guest creds
+function newguest(){
+  // console.log('deving');
+  $.get('/controllers/newGuestCred.php', (data, status)=>{
+    if (status === "success"){
+      const guestCred = JSON.parse(data);
+        localStorage.setItem(
+          "user", JSON.stringify(
+            { 
+              username: guestCred.username,
+              fullname: guestCred.name,
+              email: guestCred.email,
+              theme: guestCred.theme,
+              status: guestCred.status,
+              log: "new"
+            }));
+            // console.log(JSON.parse(localStorage.getItem('user')));
+    }
+  });
+  // window.location.reload();
+}
+
 //Function for login modal
 $('.btn-login').on('click', () => {
   $('#mySignupModal').modal('hide');
   $('#myLoginModal').modal('show');
 
-  $('#login__btn').on('click', (e) => {
-    e.preventDefault();
-    var sUsername = document.getElementById("LogUsername").value;
-    var sPassword = document.getElementById("LogPass").value;
-    if(sUsername != "" && sPassword !=""){
-      var sJsonData = {
-        username: sUsername,
-        password: sPassword,
-    };
+});
 
-    $.ajax({
-        type: 'POST',
-        url: "/controllers/login.php",
-        data: sJsonData,
-        beforeSend: ModalLoader,
-        success: (result) => {
-                if( result == "Login Success") {
-                  $('#myLoginModal').modal('hide');
-                  const userCred = JSON.parse(localStorage.getItem("user"));
-                  toastr.success(`Welcome aboard ${userCred.username}!`,"Logged In!");
-                  // get the userCred after login
-                  $.ajax({
-                    type: 'POST',
-                    url: "/controllers/get_userCreds.php",
-                    success:(result)=>{
-                      return result;
+//fucntion for login
+$('#login__btn').on('click', (e) => {
+  try{
+  e.preventDefault();
+  var sUsername = document.getElementById("LogUsername").value;
+  var sPassword = document.getElementById("LogPass").value;
+  if(sUsername != "" && sPassword !=""){
+    var sJsonData = {
+      username: sUsername,
+      password: sPassword,
+  };
+
+  $.ajax({
+      type: 'POST',
+      url: "/controllers/login.php",
+      data: sJsonData,
+      beforeSend: ModalLoader,
+      success: (result) => {
+              if( result == "Login Success") {
+                $('#myLoginModal').modal('hide');
+                // get the userCred after login
+                $.ajax({
+                  type: 'POST',
+                  url: "/controllers/get_userCreds.php",
+                  success:(result)=>{
+                    if(result == "success" ){
+                    loginReload();
+                    GETUserinfo();
+                    }else{
+                      ERROR_logger(result);
                     }
-                  })
-                }else if(result == "login failed"){
-                  toastr.error("Please check your user credentials", "Log in Failed");
-                }else if(result == "wrong username"){
-                  toastr.error("Kindly check your input", "Incorrect Username");
-                }else if(result == "wrong password"){
-                  toastr.error("Kindly check your input", "Incorrect Password");
-                }else if(result == "user does not exist"){
-                  toastr.error("Please create an account!", "User not Found");
-                }else{
-                    console.log(result);
-                }   
-        },
-        complete: ModalLoader
-    });
-
-    }else if(sUsername != "" && sPassword ==""){
-      toastr.warning("Please input your password!");
-    }else if(sUsername == "" && sPassword !=""){
-      toastr.warning("Please input your email!");
-    }else{
-      toastr.error("Please input your credentials!");
-    }
-
+                  }
+                })
+              }else if(result == "login failed" || result == "user does not exist" || result == "wrong password" || result == "wrong username"){
+                toastr.error("Please check your user credentials", "Log in Failed");
+                ModalLoader;
+              // }else if(result == "wrong username"){
+              //   toastr.error("Kindly check your input", "Incorrect Username");
+              // }else if(result == "wrong password"){
+              //   toastr.error("Kindly check your input", "Incorrect Password");
+              // }else if(result == "user does not exist"){
+              //   toastr.error("Please create an account!", "User not Found");
+              }else{
+                  // console.log(result);
+                  ERROR_logger(result);
+              }   
+      },
+      complete: ModalLoader
+      
   });
 
-})
+  }else if(sUsername != "" && sPassword ==""){
+    toastr.warning("Please input your password!");
+  }else if(sUsername == "" && sPassword !=""){
+    toastr.warning("Please input your email!");
+  }else{
+    toastr.error("Please input your credentials!");
+  }
+
+  }catch(error){
+    ERROR_logger(error);
+  }
+});
+
+function GETUserinfo(){
+try{
+$.get('/controllers/fetch_userCreds.php', (data, status)=>{
+  if (status === "success"){
+    const guestCred = JSON.parse(data);
+      localStorage.setItem(
+        "user", JSON.stringify(
+          { 
+            username: guestCred.username,
+            fullname: guestCred.name,
+            email: guestCred.email,
+            theme: guestCred.theme,
+            status: guestCred.status,
+            log: guestCred.log
+          }));
+          // console.log(JSON.parse(localStorage.getItem('user')));
+  }
+});
+}catch(error){
+  ERROR_logger(error);
+}
+}
+//logg reload function
+function loginReload(){
+  try{
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  userCred.log = "logging";
+  localStorage.setItem("user", JSON.stringify(userCred));
+  reloadLog();
+  // window.location.reload();
+  }catch(error){
+    ERROR_logger(error);
+  }
+}
+
+//function for specific reloading after login
+// $(document).ready(()=>
+function reloadLog(){
+  try{
+  const UserCred = JSON.parse(localStorage.getItem("user"));
+  if (UserCred.log == "logging"){
+    $.get('/controllers/fetch_userCreds.php', (data, status)=>{
+      if (status === "success"){
+        const userCred = JSON.parse(data);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        localStorage.setItem("user", JSON.stringify({ username: userCred.username,}));
+        const UserrCred = JSON.parse(localStorage.getItem("user"));
+        setTimeout(toastr.success(`Welcome aboard ${UserrCred.username}!`,"Logged In!"), 2000);
+      }
+    });
+    UserCred.log = "logged";
+    localStorage.setItem("user", JSON.stringify(UserCred));
+  }
+}catch(error){
+  ERROR_logger(error);
+}
+};
+// );
 
 //Function for signup modal
 $('.btn-signup').on('click', () => { 
   $('#myLoginModal').modal('hide');
   $('#mySignupModal').modal('show');
+});
 
-  $('#NewEmail').on('keyup', function() {
-    var email = $('#NewEmail').val();
-    var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!re.test(email)) {
-      $('#NewEmail').css('border-color', 'red');
-    } else {
-      $('#NewEmail').css('border-color', 'green');
-    }
-  });
+$('#NewEmail').on('keyup', function() {
+  var email = $('#NewEmail').val();
+  var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!re.test(email)) {
+    $('#NewEmail').css('border-color', 'red');
+  } else {
+    $('#NewEmail').css('border-color', 'green');
+  }
+});
 
-  $('#NewPass').on('keyup', function() {
-    var pass = $('#NewPass').val();
-    if (pass.length < 8) {
-      $('#NewPass').css('border-color', 'red');
-    } else {
-      $('#NewPass').css('border-color', 'green');
-    }
-    var passV = $('#NewVPass').val();
-    if (passV == pass) {
-      $('#NewVPass').css('border-color', 'green');
-    } else {
-      $('#NewVPass').css('border-color', 'red');
-    }
+$('#NewPass').on('keyup', function() {
+  var pass = $('#NewPass').val();
+  if (pass.length < 8) {
+    $('#NewPass').css('border-color', 'red');
+  } else {
+    $('#NewPass').css('border-color', 'green');
+  }
+  var passV = $('#NewVPass').val();
+  if (passV == pass) {
+    $('#NewVPass').css('border-color', 'green');
+  } else {
+    $('#NewVPass').css('border-color', 'red');
+  }
+});
 
-  });
+$('#NewVPass').on('keyup', function() {
+  var pass = $('#NewPass').val();
+  var passV = $('#NewVPass').val();
+  if (passV == pass) {
+    $('#NewVPass').css('border-color', 'green');
+  } else {
+    $('#NewVPass').css('border-color', 'red');
+  }
+});
 
-  $('#NewVPass').on('keyup', function() {
-    var pass = $('#NewPass').val();
-    var passV = $('#NewVPass').val();
-    if (passV == pass) {
-      $('#NewVPass').css('border-color', 'green');
-    } else {
-      $('#NewVPass').css('border-color', 'red');
-    }
-  });
+$('#createAcc').on('click', (e) => {
+  try{
+  e.preventDefault();
+  var sName = document.getElementById("NewName").value;
+  var sUsername = document.getElementById("NewUsername").value;
+  var sEmail = document.getElementById("NewEmail").value;
+  var sPassword = document.getElementById("NewPass").value;
+  var sConfirmPass= document.getElementById("NewVPass").value;
 
-  $('#createAcc').on('click', (e) => {
-    e.preventDefault();
-    var sName = document.getElementById("NewName").value;
-    var sUsername = document.getElementById("NewUsername").value;
-    var sEmail = document.getElementById("NewEmail").value;
-    var sPassword = document.getElementById("NewPass").value;
-    var sConfirmPass= document.getElementById("NewVPass").value;
-
-    var email = $('#NewEmail').val();
-    var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  var email = $('#NewEmail').val();
+  var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 
-    if(sName != "" && sUsername != "" && sEmail != "" && sPassword.length >= 8 &&(sPassword != "" && sConfirmPass != "" && sPassword == sConfirmPass && re.test(email))){
-      var sJsonData = {
-        name: sName,
-        username: sUsername,
-        email: sEmail,
-        password: sPassword,
-        confirmpassword: sConfirmPass
-      };
-  
-      $.ajax({
-        type: 'POST',
-        url: "/controllers/signup.php",
-        data: sJsonData,
-        beforeSend: ModalLoader,
-        success: (result) => {
-          if( result == "Sign-up Success") {
-            $('#mySignupModal').modal('hide');
-            $('#myLoginModal').modal('show');
-            toastr.success('Please log-in using your credentials!', 'New User Created');
-          }else if(result == "Sign-up Failed"){
-            toastr.error('Please contact support for info','Storage Error');
-            // alert("failed registration");
-          }else if(result == "error registering"){
-            // alert("register error"); 
-            toastr.error('Something went wrong', 'Execution Failed');
-          }else if(result == "error validating"){
-            // alert("validation error"); 
-            toastr.error('Something went wrong','Validation Error');
-          }else if(result == "This Email is Already Used"){
-            $('#NewEmail').css('border-color', 'red');
-            toastr.warning('Please check your account with the same email credentials','Duplicate Found');
-            // alert("This Email is Already Used"); 
-          }else if(result == "Username Already Used"){
-            $('#NewUsername').css('border-color', 'red'); 
-            toastr.warning('Please think of another unique Username','Duplicate Found');
-            // alert("Choose your Unique Username");
-          }else {
-              console.log(result);
-          }   
-        },
-        complete: ModalLoader
-      });
-    }else if (!re.test(email)) {
-      toastr.error("Invalid Email");
-    }else if(sName != "" && sUsername != "" && sEmail == "" && (sPassword == sConfirmPass || sPassword =="")){
-      toastr.warning("Please input your email!");
-    }else if(sName != "" && sUsername == "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
-      toastr.warning("Please input your username!");
-    }else if(sName == "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
-      toastr.warning("Please input your name!");
-    }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
-      toastr.warning("Please input your password!");
-    }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword.length < 8 && (sPassword != sConfirmPass || sPassword =="")){
-      toastr.error("Create a strong; atleast 8 characters", "Password Too Short");
-    }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword != sConfirmPass)){
-      toastr.warning("Please confirm your password!");
-    }else{
-      toastr.error("Please input your credentials!");
-    }
-  
-  });
+  if(sName != "" && sUsername != "" && sEmail != "" && sPassword.length >= 8 &&(sPassword != "" && sConfirmPass != "" && sPassword == sConfirmPass && re.test(email))){
+    var sJsonData = {
+      name: sName,
+      username: sUsername,
+      email: sEmail,
+      password: sPassword,
+      confirmpassword: sConfirmPass
+    };
 
+    $.ajax({
+      type: 'POST',
+      url: "/controllers/signup.php",
+      data: sJsonData,
+      beforeSend: ModalLoader,
+      success: (result) => {
+        if( result == "Sign-up Success") {
+          $('#mySignupModal').modal('hide');
+          $('#myLoginModal').modal('show');
+          toastr.success('Please log-in using your credentials!', 'New User Created');
+        }else if(result == "Sign-up Failed"){
+          toastr.error('Please contact support for info','Storage Error');
+          // alert("failed registration");
+        }else if(result == "error registering"){
+          // alert("register error"); 
+          toastr.error('Something went wrong', 'Execution Failed');
+        }else if(result == "error validating"){
+          // alert("validation error"); 
+          toastr.error('Something went wrong','Validation Error');
+        }else if(result == "This Email is Already Used"){
+          $('#NewEmail').css('border-color', 'red');
+          toastr.warning('Please check your account with the same email credentials','Duplicate Found');
+          // alert("This Email is Already Used"); 
+        }else if(result == "Username Already Used"){
+          $('#NewUsername').css('border-color', 'red'); 
+          toastr.warning('Please think of another unique Username','Duplicate Found');
+          // alert("Choose your Unique Username");
+        }else {
+            // console.log(result);
+            ERROR_logger(result);
+        }   
+      },
+      complete: ModalLoader
+    });
+  }else if (!re.test(email)) {
+    toastr.error("Invalid Email");
+  }else if(sName != "" && sUsername != "" && sEmail == "" && (sPassword == sConfirmPass || sPassword =="")){
+    toastr.warning("Please input your email!");
+  }else if(sName != "" && sUsername == "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
+    toastr.warning("Please input your username!");
+  }else if(sName == "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
+    toastr.warning("Please input your name!");
+  }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword == sConfirmPass || sPassword =="")){
+    toastr.warning("Please input your password!");
+  }else if(sName != "" && sUsername != "" && sEmail != "" && sPassword.length < 8 && (sPassword != sConfirmPass || sPassword =="")){
+    toastr.error("Create a strong; atleast 8 characters", "Password Too Short");
+  }else if(sName != "" && sUsername != "" && sEmail != "" && (sPassword != sConfirmPass)){
+    toastr.warning("Please confirm your password!");
+  }else{
+    toastr.error("Please input your credentials!");
+  }
+
+  }catch(error){
+    ERROR_logger(error);
+  }
 });
 
 //Function for signup modal
@@ -300,6 +384,7 @@ $('#futsign').on('click', () => {
 
 //logout function
 $('#logoutBttn').on('click', ()=>{
+  try{
   $.ajax({
     type: 'POST',
     url: '/controllers/logout.php',
@@ -309,29 +394,26 @@ $('#logoutBttn').on('click', ()=>{
         localStorage.clear();
         // defaultUserLS();
         window.location = "/index.php";
+      }else{
+        ERROR_logger(result);
       }
     },
     complete: ModalLoader
   })
+}catch(error){
+  ERROR_logger(error);
+}
 });
 
 
 //script for email list
 $('#SubmitEmail').on('click', ()=>{
+  try{
   var Email = $('#Az_join_emaillist').val();
   var joinElist ={
     email: Email
   }
   var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-  $('#NewEmail').on('keyup', function() {
-    if (!re.test(Email)) {
-      $('#Az_join_emaillist').css('border-color', 'red');
-    } else {
-      $('#Az_join_emaillist').css('border-color', 'green');
-    }
-  });
-
 
   if(Email !="" && re.test(Email)){
     $.ajax({
@@ -347,7 +429,8 @@ $('#SubmitEmail').on('click', ()=>{
           }else if(result == " failed"){
             toastr.warning("Failed joining newsletter");
           }else{
-            console.log(result);
+            // console.log(result);
+            ERROR_logger(result);
           }
         },
       complete: ModalLoader
@@ -359,51 +442,119 @@ $('#SubmitEmail').on('click', ()=>{
   }else{
     console.log('what is the error?');
   }
+}catch(error){
+  ERROR_logger(error);
+}
+});
 
-
+$('#NewEmail').on('keyup', function() {
+  var Email = $('#Az_join_emaillist').val();
+  var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!re.test(Email)) {
+    $('#Az_join_emaillist').css('border-color', 'red');
+  } else {
+    $('#Az_join_emaillist').css('border-color', 'green');
+  }
 });
 
 // window.location.reload();
 
-//script for profile and cart
-function profileURL(){
+//script for profile
+// function profileURL(){
+//   const userCred = JSON.parse(localStorage.getItem("user"));
+//   const userName = userCred.username;
+//   if ((userName.search(/guest/i) == 1)) {
+//     toastr.info("You have to log in first!");
+//   } else {
+//     window.location = "/profile/";x
+// }
+// }
+
+function profileURL() {
   const userCred = JSON.parse(localStorage.getItem("user"));
   const userName = userCred.username;
-  if (userCred.username == "" || (userName.search(/guest/i) == 0)) {
+  if (userName.indexOf("guest") !== -1) {
     toastr.info("You have to log in first!");
   } else {
-    window.location = "/profile/";x
+    window.location = "/profile/";
+  }
 }
-}
-
 
 $('#myProfileBttn').on('click', ()=>{
   profileURL();
 })
 
-//generate guest creds
-function newguest(){
-  console.log('deving');
-  $.get('/controllers/newGuestCred.php', (data, status)=>{
-    if (status === "success"){
-      const guestCred = JSON.parse(data);
-        console.log(guestCred);
-        
-        localStorage.setItem(
-          "user", JSON.stringify(
-            { 
-              iuserid: guestCred.id,
-              username: guestCred.username,
-              fullname: guestCred.name,
-              email: guestCred.email,
-              theme: guestCred.theme,
-              status: guestCred.status,
-            }));
-      
-
-    }
-  });
+//script for cart
+function cartURL(){
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  const userName = userCred.username;
+  if ((userName.indexOf("guest") !== -1)) {
+    toastr.info("You have to log in first!");
+  } else {
+    window.location = "/profile/cart/";x
 }
+}
+
+$('#myCartBttn').on('click', ()=>{
+  cartURL();
+})
+
+// $(document).ready():
+// fetching the theme and updating depends on the user preference
+$(document).ready(function(){
+  try{
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  if (userCred.theme == "dark") {
+    AzsettingDarkTheme();
+  } else {
+    AzsettingLightTheme();
+}
+  }catch(error){
+    ERROR_logger(error);
+  }
+});
+
+function ERROR_logger(nERROR){
+  var errrorr ={
+    error: nERROR
+  };
+  $.post("/controllers/error_logger.php", errrorr,
+  ()=>{toastr.error("Please Report this to our support", "Something went wrong");;}
+  );
+}
+
+// function ERROR_logger(nERROR){
+//   var errrorr ={
+//     error: nERROR
+//   };
+// $.ajax({
+//   type: 'POST',
+//   url: '/controllers/error_logger.php',
+//   data: errrorr,
+//   success: (result) =>{
+//     alert("Data: " + JSON.stringify(errrorr) + "\nStatus: " + result);
+//     },
+// })
+// };
+
+// function ERROR_logger(nERROR){
+//   var errrorr ={
+//     error: nERROR
+//   };
+//   console.log("Error message: ", nERROR); // add this line to check if the function is being called
+//   $.ajax({
+//     type: 'POST',
+//     url: '/controllers/error_logger.php',
+//     data: errrorr,
+//     success: (result) =>{
+//       console.log("AJAX success: ", result); // add this line to check if the AJAX call is returning a success status
+//       alert("Data: " + JSON.stringify(errrorr) + "\nStatus: " + result);
+//     },
+//     error: (xhr, status, error) => { // add this block to check for AJAX errors
+//       console.log("AJAX error: ", error);
+//     }
+//   });
+// }
 
 // const userCred = JSON.parse(localStorage.getItem("user"));
 // userCred.username = "guest_test986";

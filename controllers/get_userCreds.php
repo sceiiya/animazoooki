@@ -18,9 +18,12 @@
             $_SESSION['ttl_ordrs'] = $Data['total_orders'];
             $_SESSION['ttl_rvws'] = $Data['total_reviews'];
             
+            echo "success";
             // $_SESSION['status'] = $Data['status'];
         }catch(Exception $e){
-            echo $e->getMessage();
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: error_logger.php");
+            exit();
         }
     }else{
         echo "not connected";

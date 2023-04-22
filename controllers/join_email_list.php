@@ -1,5 +1,5 @@
  <?php
-    require_once("important/class.database.php"); // update this for connection path
+    require_once("important/class.database.php");
     session_start();
 
     $ConDB = new ClassDbConn;
@@ -24,17 +24,23 @@
                                 return false;
                             }
                         }catch(Exception $e) {
-                            echo $e->getMessage();
+                            $_SESSION['error'] = $e->getMessage();
+                            header("Location: error_logger.php");
+                            exit();
                         }
                     }else{
                         echo "failed";
                     }
                 }catch(Exception $e) {
-                    echo $e->getMessage();
+                    $_SESSION['error'] = $e->getMessage();
+                    header("Location: error_logger.php");
+                    exit();
                 }
             }
         }catch(Exception $e) {
-            echo $e->getMessage();
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: error_logger.php");
+            exit();
         }
 
 
