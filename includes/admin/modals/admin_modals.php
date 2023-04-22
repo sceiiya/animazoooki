@@ -77,6 +77,32 @@
     </div>
 </div>
 
+<div class="modal" id="confirm-addProd">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">ADD PRODUCT</h4>
+            </div>
+
+
+            <div class="modal-body">
+                Are you sure you want to add this product?
+                <br>
+                <br>
+            </div>
+
+
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-addProd" class="btn redbgwhitec">Yes</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">No</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <!-- MODIFY PRODUCT MODAL -->
 
 <div class="modal modal-xl" id="modifyModal">
@@ -153,6 +179,34 @@
         </div>
     </div>
 </div>
+
+<div class="modal" id="confirm-modProd">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">MODIFY PRODUCT</h4>
+            </div>
+
+
+            <div class="modal-body">
+                Are you sure you want to modify this product?
+                <br>
+                <br>
+            </div>
+
+
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-modProd" class="btn redbgwhitec">Yes</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">No</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- DELETE PRODUCT -->
 
 <div class="modal" id="confirm-delete">
     <div class="modal-dialog modal-sm">
@@ -320,6 +374,33 @@
                 <button type="button" id="btn-addAdmin" class="btn redbgwhitec mb-1 mt-3">Add Admin</button>
                 <button type="button" class="btn mb-1 mt-3" data-bs-dismiss="modal">Close</button>
                 </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="confirmAddUser">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">ADD USER</h4>
+            </div>
+
+
+            <div class="modal-body">
+                WARNING! You are about to add a user.
+                <br>
+                <br>
+                Are you sure?
+            </div>
+
+
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-addUser" class="btn redbgwhitec">YES</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
             </div>
 
         </div>

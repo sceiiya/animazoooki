@@ -57,5 +57,5 @@
         
         echo $sHtml;
     } else {
-        echo "not connected";
+        echo "Failed to connect, please call system administrator!";
     }
