@@ -69,11 +69,16 @@ if ($eCon == true){
 
 
         // for retrieval of array
-        $DataOf = ['id' => "33"];
+        $DataOf = ['id' => "41"];
         $ImgData = $ConDB->Select($eCon, 'products', $DataOf);
         // if($validU["result"] == "true" && $DData["password"] == $valueP){
-            echo "Images are: ".json_decode($ImgData['images']);
+            // $FFF;
+            foreach (json_decode($ImgData['images']) as $key => $value) {
+                echo "link is: ".$value."  from the  ".$key."<br/>";
+            }
+            // print_r( "Images are: ".$FFF);
                 // session_destroy();
+                echo "<br/>";
             foreach (json_decode($ImgData['images']) as $key => $value) {
                 echo "<img src='".$value."' width='500' height='500'>"."<br/>";
             }

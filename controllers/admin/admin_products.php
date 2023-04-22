@@ -25,6 +25,10 @@
 
     if ($eSelect == true) {
         try{ 
+            $rowsz = mysqli_fetch_array($eSelect);
+            $rowImgg = $rowsz['images'];
+            $rowImg = json_decode($rowImgg);
+            echo $rowImg[0];
             $sHtml = "
                     <table id='admin_prod_tbl' class='table table-striped table-hover'>
                         <tr>
@@ -39,11 +43,10 @@
                         </tr>
                 ";
             while($rows = mysqli_fetch_array($eSelect)) {
-
                 $sHtml .= "<tr>
                         <td style='display:none'>".$rows['id']."</td>
                         <td>".$rows['category']."</td>
-                        <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='../../admin/listing/product_img/".$rows['image']."' onerror='defaultimg(this);'></td>
+                        <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='".$rowImg[0]."' onerror='defaultimg(this);'></td>
                         <td>".$rows['name']."</td>
                         <td class='prod_desc'>".$rows['description']."</td>
                         <td>".$rows['price']."</td>
