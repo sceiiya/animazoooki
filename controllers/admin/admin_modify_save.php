@@ -3,7 +3,14 @@
 
     session_start();
 
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/index.php');
+    }else if( $_SESSION['admaccess'] == 'Agent') {
+        header('Location: /admin/index.php');
+    }else {
+        $admAccess = $_SESSION['admaccess'];
         $admUsername = $_SESSION['admusername'];
+    }
 
 
 if ($dbConnection == true) {

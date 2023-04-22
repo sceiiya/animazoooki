@@ -4,7 +4,7 @@
     session_start();
 
     if(!isset($_SESSION['admusername'])){
-        header('Location: /admin/login/index.php');
+        header('Location: /admin/index.php');
     }else{
         $admAccess = $_SESSION['admaccess'];
     }

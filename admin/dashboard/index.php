@@ -69,12 +69,12 @@ session_start();
                         <span class="title">Admin Users</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a id="adminAccess">
                         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                         <span class="title">Access</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a id="adminChangePass">
                         <span class="icon"><ion-icon name="key-outline"></ion-icon></span>

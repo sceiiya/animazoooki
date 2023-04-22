@@ -4,9 +4,20 @@
     session_start();
 
     if(!isset($_SESSION['admusername'])){
-        header('Location: /admin/login/index.php');
+        header('Location: /admin/index.php');
     }else{
         $admAccess = $_SESSION['admaccess'];
+    }
+
+    $class = '';
+    $display = '';
+    if($admAccess == 'System Admin' || $admAccess == 'Supervisor') {
+        $class = 'filler';
+        $display = 'default';
+    } else {
+        $class = 'disabled';
+        $display = 'none';
+
     }
 
     $qSelect = "SELECT * FROM $dbDatabase .`products` WHERE `date_archived` IS NULL ORDER BY `id` DESC";
@@ -32,20 +43,20 @@
                 $sHtml .= "<tr>
                         <td style='display:none'>".$rows['id']."</td>
                         <td>".$rows['category']."</td>
-                        <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='../../admin/listing/product_img/".$rows['image']."'></td>
+                        <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='../../admin/listing/product_img/".$rows['image']."' onerror='defaultimg(this);'></td>
                         <td>".$rows['name']."</td>
                         <td class='prod_desc'>".$rows['description']."</td>
                         <td>".$rows['price']."</td>
                         <td>".$rows['stocks']."</td>
                         <td>
-                            <button class='btn btn-info' onclick=modify('".$rows['id']."')>Modify</button>&nbsp;
-                            <button class='btn btn-danger' onclick=archive('".$rows['id']."')>Delete</button>
+                            <button class='btn btn-light $class' onclick=modify('".$rows['id']."')>Modify</button>&nbsp;
+                            <button class='btn $class redbgwhitec' onclick=archive('".$rows['id']."')>Delete</button>
                         </td>
                     ";
             }
 
             $sHtml .= "</table>
-                <button id='addProduct' onclick='addProduct()'>Add Product</button>
+                <button id='addProduct' style='display: $display;' onclick='addProduct()'>Add Product</button>
                 ";
             
             echo $sHtml;
