@@ -28,6 +28,10 @@
                 <div class="form-outline mb-3">
                     <input type="password" id="admLoginPassword" class="form-control" />
                     <label class="form-label mt-2 ms-1" for="form2Example2">Password</label>
+                    <br>
+                    <input type="checkbox" onclick="loginPassViewer()"> Show Password
+                    <br>
+                    <br>
                 </div>
 
             </form>

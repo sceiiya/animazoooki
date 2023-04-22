@@ -32,7 +32,7 @@ footer{
 }
 
 :root {
-    --red: #287bff;
+    --blue: #287bff;
     --white: #fffbf2;
     --white2: #fff;
     --grey: #f5f5f5;
@@ -79,6 +79,7 @@ footer{
     list-style: none;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
+    color: var(--white2);
 }
 
 .navigation ul li:hover,
@@ -455,6 +456,7 @@ footer{
     bottom: 15px;
     right: 20px;
     padding: 5px;
+    border: 1px solid var(--white);
 }
 
 /* LOGIN AND REGISTER */
@@ -541,6 +543,13 @@ footer{
     border: 1px solid var(--red) !important;
     border-radius: 5px !important;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.30);   
+}
+
+/* BUTTONS */
+
+.redbgwhitec {
+    background-color: var(--red) !important;
+    color: var(--white2) !important;
 }
 
 /* BREAKPOINTS */

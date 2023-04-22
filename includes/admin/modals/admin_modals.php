@@ -10,18 +10,19 @@
 
             <div class="modal-header">
                 <h4 class="modal-title">SIGN OUT</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
 
             <div class="modal-body">
                 Are you sure you want to sign out?
+                <br>
+                <br>
             </div>
 
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-info" id="yes-signout">YES</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" class="btn redbgwhitec" id="yes-signout">YES</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
             </div>
 
         </div>
@@ -67,9 +68,35 @@
                     <input type="file" id="adminProdImage" class="form-control" accept="image/*" />
                 </div>
                 <div class="flex-row d-flex justify-content-between">
-                <button type="button" id="saveProduct" class="btn btn-info mb-1 mt-3">Add Product</button>
-                <button type="button" class="btn btn-danger mb-1 mt-3" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="saveProduct" class="btn redbgwhitec mb-1 mt-3">Add Product</button>
+                <button type="button" class="btn mb-1 mt-3" data-bs-dismiss="modal">Close</button>
                 </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="confirm-addProd">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">ADD PRODUCT</h4>
+            </div>
+
+
+            <div class="modal-body">
+                Are you sure you want to add this product?
+                <br>
+                <br>
+            </div>
+
+
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-addProd" class="btn redbgwhitec">Yes</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">No</button>
             </div>
 
         </div>
@@ -78,18 +105,25 @@
 
 <!-- MODIFY PRODUCT MODAL -->
 
-<div class="modal" id="modifyModal">
-    <div class="modal-dialog">
+<div class="modal modal-xl" id="modifyModal">
+    <div class="modal-dialog ">
         <div class="modal-content modalbg">
 
             <div class="modal-header">
                 <h4 class="modal-title">Modify</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <div class="modal-body">
                 <input id="indexer" style="display: none;">
                 <div class="row">
+                    <div class="col-md-6 mb-4">
+
+                    <div class="form-outline">
+                        <input type="text" id="productName" name="productName" class="form-control form-control-lg" />
+                        <label class="form-label" for="productName">Product Name</label>
+                    </div>
+
+                    </div>
                     <div class="col-md-6 mb-4">
 
                         <div class="form-outline">
@@ -98,16 +132,8 @@
                         </div>
 
                     </div>
-                    <div class="col-md-6 mb-4">
 
-                        <div class="form-outline">
-                            <input type="text" id="productName" name="productName" class="form-control form-control-lg" />
-                            <label class="form-label" for="productName">Product Name</label>
-                        </div>
-
-                    </div>
                 </div>
-
 
                 <div class="row">
 
@@ -143,16 +169,44 @@
 
             </div>
 
-            <div class="modal-footer">
+            <div class="modal-footer flex-row d-flex justify-content-between">
                 <div class="">
-                    <button class="btn btn-primary" id="Modify">Modify</button>
+                    <button class="btn redbgwhitec" id="Modify">Modify</button>
                 </div>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
             </div>
 
         </div>
     </div>
 </div>
+
+<div class="modal" id="confirm-modProd">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">MODIFY PRODUCT</h4>
+            </div>
+
+
+            <div class="modal-body">
+                Are you sure you want to modify this product?
+                <br>
+                <br>
+            </div>
+
+
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-modProd" class="btn redbgwhitec">Yes</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">No</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- DELETE PRODUCT -->
 
 <div class="modal" id="confirm-delete">
     <div class="modal-dialog modal-sm">
@@ -170,9 +224,10 @@
             </div>
 
 
-            <div class="modal-footer">
-                <button type="button" id="yes-delete" class="btn btn-info">YES</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-delete" class="btn redbgwhitec">YES</button>
+                <input id="prodDelInd" style="display: none;">
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
             </div>
 
         </div>
@@ -190,7 +245,6 @@
 
             <div class="modal-header">
                 <h4 class="modal-title">ACTIVATE</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
 
@@ -199,9 +253,10 @@
             </div>
 
 
-            <div class="modal-footer">
-                <button type="button" id="yes-activate" class="btn btn-info">YES</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-activate" class="btn redbgwhitec">YES</button>
+                <input id="cusActInd" style="display: none;">
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
             </div>
 
         </div>
@@ -216,7 +271,6 @@
 
             <div class="modal-header">
                 <h4 class="modal-title">DEACTIVATE</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
 
@@ -225,9 +279,10 @@
             </div>
 
 
-            <div class="modal-footer">
-                <button type="button" id="yes-deactivate" class="btn btn-info">YES</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-deactivate" class="btn redbgwhitec">YES</button>
+                <input id="cusDeacInd" style="display: none;">
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
             </div>
 
         </div>
@@ -244,7 +299,6 @@
 
             <div class="modal-header">
                 <h4 class="modal-title">ACTIVATE</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
 
@@ -253,9 +307,10 @@
             </div>
 
 
-            <div class="modal-footer">
-                <button type="button" id="yes-admActivate" class="btn btn-info">YES</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-admActivate" class="btn redbgwhitec">YES</button>
+                <input id="userActInd" style="display: none;">
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
             </div>
 
         </div>
@@ -270,7 +325,6 @@
 
             <div class="modal-header">
                 <h4 class="modal-title">DEACTIVATE</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
 
@@ -279,9 +333,10 @@
             </div>
 
 
-            <div class="modal-footer">
-                <button type="button" id="yes-admDeactivate" class="btn btn-info">YES</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-admDeactivate" class="btn redbgwhitec">YES</button>
+                <input id="userDeacInd" style="display: none;">
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
             </div>
 
         </div>
@@ -316,9 +371,36 @@
                     <input type="text" id="admRegEmail" class="form-control" />
                 </div>
                 <div class="flex-row d-flex justify-content-between">
-                <button type="button" id="btn-addAdmin" class="btn btn-info mb-1 mt-3">Add Admin</button>
-                <button type="button" class="btn btn-danger mb-1 mt-3" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="btn-addAdmin" class="btn redbgwhitec mb-1 mt-3">Add Admin</button>
+                <button type="button" class="btn mb-1 mt-3" data-bs-dismiss="modal">Close</button>
                 </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="confirmAddUser">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">ADD USER</h4>
+            </div>
+
+
+            <div class="modal-body">
+                WARNING! You are about to add a user.
+                <br>
+                <br>
+                Are you sure?
+            </div>
+
+
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-addUser" class="btn redbgwhitec">YES</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
             </div>
 
         </div>
@@ -334,21 +416,22 @@
 
             <div class="modal-header">
                 <h4 class="modal-title">CHANGE ACCESS</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
 
             <div class="modal-body">
-                WARNING! You are about to change the access level of this admin user.
+                WARNING! You are about to change the access level of this user.
                 <br>
                 <br>
-                Are you sure of this change?
+                <label for="accessPass">Password:</label>
+                <input type="password" id="accessPass" name="accessPass">
             </div>
 
 
-            <div class="modal-footer">
-                <button type="button" id="yes-access" class="btn btn-info">YES</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="change-access" class="btn redbgwhitec">Change</button>
+                <input id="accInd" style="display: none;">
+                <button type="button" id="cancel-access" class="btn" data-bs-dismiss="modal">Cancel</button>
             </div>
 
         </div>
@@ -364,7 +447,6 @@
 
             <div class="modal-header">
                 <h4 class="modal-title">CHANGE PASSWORD</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
 
@@ -376,9 +458,9 @@
             </div>
 
 
-            <div class="modal-footer">
-                <button type="button" id="yes-changePass" class="btn btn-info">YES</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-changePass" class="btn redbgwhitec">YES</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
             </div>
 
         </div>

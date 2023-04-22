@@ -4,7 +4,7 @@
     session_start();
 
     if(!isset($_SESSION['admusername'])){
-        header('Location: /admin/login/index.php');
+        header('Location: /admin/index.php');
     }else{
         $admAccess = $_SESSION['admaccess'];
         $admUsername = $_SESSION['admusername'];
@@ -47,8 +47,8 @@
                     <td>".$rows['date_added']."</td>
                     <td id='cusStatus".$rows['id']."' >".$rows['status']."</td>
                     <td>
-                        <button class='btn btn-info $class' id='btn-custAct' onclick=cusAct('".$rows['id']."')>Activate</button>&nbsp;
-                        <button class='btn btn-danger $class' id='btn-custDeact' onclick=cusDeact('".$rows['id']."')>Deactivate</button>
+                        <button class='btn btn-light $class' id='btn-custAct' onclick=cusAct('".$rows['id']."')>Activate</button>&nbsp;
+                        <button class='btn redbgwhitec $class' id='btn-custDeact' onclick=cusDeact('".$rows['id']."')>Deactivate</button>
                     </td>
                 ";
         }
@@ -57,5 +57,5 @@
         
         echo $sHtml;
     } else {
-        echo "not connected";
+        echo "Failed to connect, please call system administrator!";
     }

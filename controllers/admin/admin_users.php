@@ -4,8 +4,10 @@
     session_start();
 
     if(!isset($_SESSION['admusername'])){
-        header('Location: /admin/login/index.php');
-    }else{
+        header('Location: /admin/index.php');
+    }else if($_SESSION['admaccess'] == 'Agent'){
+        header('Location: /admin/index.php');
+    }else {
         $admAccess = $_SESSION['admaccess'];
         $admUsername = $_SESSION['admusername'];
         $admId = $_SESSION['admid'];    
@@ -18,7 +20,7 @@
     $display = '';
     if($admAccess == 'System Admin') {
         $class = 'filler';
-        $display = '';
+        $display = 'default';
     } else {
         $class = 'disabled';
         $display = 'none';
@@ -51,12 +53,17 @@
                     <td>".$rows['adminfirstname']."</td>
                     <td>".$rows['adminlastname']."</td>
                     <td>".$rows['adminemail']."</td>
-                    <td>".$rows['accesslevel']."</td>
+                    <td><select class='form-select' $class id='accesslevel".$rows['adminid']."' onchange='changeaccess(".$rows['adminid'].");'>
+                        <option selected disabled>".$rows['accesslevel']."</option>
+                        <option value='Agent'>Agent</option>
+                        <option value='Supervisor'>Supervisor</option>
+                        <option value='System Admin'>System Admin</option>
+                        </select></td>
                     <td>".$rows['date_created']."</td>
                     <td>".$rows['status']."</td>
                     <td>
-                        <button class='btn btn-info $class' onclick=admAct('".$rows['adminid']."')>Activate</button>&nbsp;
-                        <button class='btn btn-danger $class' onclick=admDeact('".$rows['adminid']."')>Deactivate</button>
+                        <button class='btn btn-light $class' onclick=admAct('".$rows['adminid']."')>Activate</button>&nbsp;
+                        <button class='btn redbgwhitec $class' onclick=admDeact('".$rows['adminid']."')>Deactivate</button>
                     </td>
                 ";
         }

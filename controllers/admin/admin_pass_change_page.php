@@ -1,3 +1,17 @@
+<?php
+    include("../important/connect_DB.php");
+
+    session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +50,7 @@
                         <span id='admPassMessage'></span>
                     </div>
                     <div class="flex-row d-flex justify-content-center">
-                        <button type="button" onclick="admSaveNewPass()" class="btn btn-info mb-1 mt-3">Save</button>
+                        <button type="button" onclick="admSaveNewPass()" class="btn redbgwhitec mb-1 mt-3">Save</button>
                     </div>
                 </div>
 

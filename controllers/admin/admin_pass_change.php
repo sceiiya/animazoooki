@@ -1,9 +1,15 @@
 <?php
     include("../important/connect_DB.php");
 
-session_start();
+    session_start();
 
-    $admUsername = $_SESSION['admusername'];
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+    }
+
 
     if ($dbConnection == true) {
         $sCurrentPass = $_POST['currentpassword'];
@@ -22,7 +28,7 @@ session_start();
                 echo "Passwords does not match!";
                 mysqli_close($dbConnection);
             } else if($rows['adminpassword'] != $sCurrentPass) {
-                echo "Incorrect Current Password!";
+                echo "Invalid password!";
                 mysqli_close($dbConnection);
             } else {
                 $qUpdate = "UPDATE $dbDatabase.`adminusers` SET `adminpassword` = '{$sNewPass}' WHERE `adminusername` = '{$admUsername}'";                

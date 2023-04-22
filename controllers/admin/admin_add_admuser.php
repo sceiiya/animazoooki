@@ -4,8 +4,12 @@
     session_start();
 
     if(!isset($_SESSION['admusername'])){
-        header('Location: /admin/login/index.php');
-    }else{
+        header('Location: /admin/index.php');
+    }else if( $_SESSION['admaccess'] == 'Agent') {
+        header('Location: /admin/index.php');
+    }else if( $_SESSION['admaccess'] == 'Supervisor') {
+        header('Location: /admin/index.php');
+    }else {
         $admAccess = $_SESSION['admaccess'];
         $admUsername = $_SESSION['admusername'];
     }
@@ -40,7 +44,7 @@
                     $eInsert = mysqli_query($dbConnection, $qInsert);
 
                     if ($eInsert == true) {
-                        echo "Admin Added!";
+                        echo "User added!";
                         require_once('../../phpmailer/class.phpmailer.php');
 
                         $mail = new PHPMailer();
@@ -57,9 +61,9 @@
                         
                         $mail->AddAddress($sEmail, $sFirstName);
                     
-                        $mail->Subject = "New admin user";
+                        $mail->Subject = "New dashboard user";
                         $mail->Body = nl2br("
-                        New admin user account created!
+                        Dashboard user account created!
                         
                         Please take note of your credentials. You now have access to Animazooki Dashboard.
                         Be reminded that your access level is on Agent level. To change access level, 
@@ -71,23 +75,23 @@
                         Last Name: {$sLastName}
                         Username: {$sUsername}
                         Email: {$sEmail}
-                        Password: {$nPassword}
+                        Temporary Password: {$nPassword}
                     
-                        Click <a href='http://localhost/admin/login/index.php'>here<a> to log in.
+                        Click <a href='http://localhost/admin/index.php'>here<a> to log in.
 
                         ");
                         
                         $mail->IsHTML(true);
 
-                        // if(!$mail->Send()) {
-                        //     echo "not sent";
-                        // } else {
-                        //     echo "sent";
-                        // }
+                        if(!$mail->Send()) {
+                            echo " Email not sent!";
+                        } else {
+                            echo " Email sent!";
+                        }
 
                         mysqli_close($dbConnection);
                     } else {
-                        echo "Faile to add new admin";
+                        echo "Failed to add new user";
                         mysqli_close($dbConnection);
                     }
                 }
@@ -98,5 +102,5 @@
         }
 
     } else {
-        echo "Connection Failed!";
+        echo "Failed to connect, please call system administrator!";
     }

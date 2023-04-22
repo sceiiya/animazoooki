@@ -4,11 +4,12 @@
     session_start();
 
     if(!isset($_SESSION['admusername'])){
-        header('Location: /admin/login/index.php');
-    }else{
+        header('Location: /admin/index.php');
+    }else if( $_SESSION['admaccess'] == 'Agent') {
+        header('Location: /admin/index.php');
+    }else {
         $admAccess = $_SESSION['admaccess'];
         $admUsername = $_SESSION['admusername'];
-        $index = $_SESSION['index'];
     }
     
     if ($dbConnection == true) {
@@ -24,7 +25,7 @@
                     $Pimgname = uniqid() . '.' . $ext;
                     move_uploaded_file($Pimg['tmp_name'], '../../admin/listing/product_img/' . $Pimgname);
         
-                    $qInsert = "UPDATE $dbDatabase.`products` SET `image` = '$Pimgname' WHERE `id` = '$index'";
+                    $qInsert = "UPDATE $dbDatabase.`products` SET `image` = '$Pimgname' WHERE `name` = '$Pname'";
         
                     $eInsert = mysqli_query($dbConnection, $qInsert);
                     
@@ -41,5 +42,5 @@
             }
         }
     } else {
-        echo "Connection Failed!";
+        echo "Failed to connect, please call system administrator!";
     }

@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION['admusername'])){
-        header('Location: /admin/login/index.php');
+        header('Location: /admin/index.php');
     }else{
         $admAccess = $_SESSION['admaccess'];
         $admUsername = $_SESSION['admusername'];
@@ -10,6 +10,17 @@
         $admFirstName = $_SESSION['admfirstname'];
         $admLastName = $_SESSION['admlastname'];
         $admEmail = $_SESSION['admemail'];
+    }
+
+    $class = '';
+    $display = '';
+    if($admAccess == 'System Admin' || $admAccess == 'Supervisor') {
+        $class = 'filler';
+        $display = '';
+    } else {
+        $class = 'disabled';
+        $display = 'none';
+
     }
 ?>
 
@@ -67,9 +78,9 @@
     <div class="recentOrders">
         <div class="cardHeader">
             <h2>Recent Orders</h2>
-            <a href="#" class="btn-csv">Products CSV</a>
-            <a href="#" class="btn-csv">Sales CSV</a>
-            <a href="#" class="btn-csv">Customers CSV</a>
+            <a href="#" class="btn-csv" style='display:<?php echo $display?>;'>Products CSV</a>
+            <a href="#" class="btn-csv" style='display:<?php echo $display?>;'>Sales CSV</a>
+            <a href="#" class="btn-csv" style='display:<?php echo $display?>;'>Customers CSV</a>
         </div>
         <table>
             <thead>

@@ -4,52 +4,43 @@
     session_start();
 
     if(!isset($_SESSION['admusername'])){
-        header('Location: /admin/login/index.php');
-    }else{
+        header('Location: /admin/index.php');
+    }else if( $_SESSION['admaccess'] == 'Agent') {
+        header('Location: /admin/index.php');
+    }else {
         $admAccess = $_SESSION['admaccess'];
         $admUsername = $_SESSION['admusername'];
 
     }
 
 if ($dbConnection == true) {
-    $firstName = $_POST['firstname'];
-    $lastName = $_POST['lastname'];
-    $userName = $_POST['username'];
-    $email = $_POST['email'];
+    // $firstName = $_POST['firstname'];
+    // $lastName = $_POST['lastname'];
+    // $userName = $_POST['username'];
+    // $email = $_POST['email'];
+    $adminId = $_POST['index'];
     $accessLevel = $_POST['access'];
+    $accessPass = $_POST['accesspass'];
 
-    if ($firstName == "" || $lastName == "" || $userName == "" || $email == "" || $accessLevel == "Access Level") {
-        echo "Incomplete, please fill out all fields.";
-        
+    if ($accessPass == "") {
+        echo "Invalid password!";
+        mysqli_close($dbConnection);
     } else {
         try {
-            //Username checker if existing in database
-            $qUserSelect = "SELECT `adminusername` FROM $dbDatabase.`adminusers` WHERE `adminusername` = '$userName'";
+            //Password checker
+            $qUserSelect = "SELECT `adminpassword` FROM $dbDatabase.`adminusers` WHERE `adminusername` = '$admUsername'";
             $eUserSelect = mysqli_query($dbConnection, $qUserSelect);
             $nUserTotalRows = mysqli_num_rows($eUserSelect);
+            $userPassRows = mysqli_fetch_assoc($eUserSelect);
 
-            if($nUserTotalRows < 1) {
-                echo "Username doesn't exist";
+            if($userPassRows['adminpassword'] != $accessPass) {
+                echo "Invalid Password";
                 mysqli_close($dbConnection);
-            } else if ($nUserTotalRows > 0){
-                // Data checker bsed on username if correct
-                $qDataSelect = "SELECT `adminfirstname`, `adminlastname`, `adminemail` FROM $dbDatabase.`adminusers` WHERE `adminusername` = '$userName'";
-                $eDataSelect = mysqli_query($dbConnection, $qDataSelect);
-                $dataRows = mysqli_fetch_assoc($eDataSelect);
-                if($dataRows['adminfirstname'] != $firstName) {
-                    echo "Incorrect First Name!";
-                    mysqli_close($dbConnection);
-                } else if($dataRows['adminlastname'] != $lastName) {
-                    echo "Incorrect Last Name!";
-                    mysqli_close($dbConnection);
-                }else if($dataRows['adminemail'] != $email) {
-                    echo "Incorrect Email";
-                    mysqli_close($dbConnection);
-                } else {
+            } else if ($userPassRows['adminpassword'] == $accessPass){
                     $dateTime = date("Y-m-d H:i:s");
                     $qUpdate = "UPDATE $dbDatabase .`adminusers` 
                     SET `accesslevel` = '{$accessLevel}', `date_modified` = '{$dateTime}', `modified_by` = '{$admUsername}'
-                    WHERE `adminfirstname` = '{$firstName}' AND `adminlastname` = '{$lastName}' AND `adminusername` = '{$userName}' AND `adminemail` = '{$email}'";
+                    WHERE `adminid` = '{$adminId}'";
                     $eUpdate = mysqli_query($dbConnection, $qUpdate);
                     if ($eUpdate == true) {
                         echo "Access Changed!";
@@ -59,7 +50,7 @@ if ($dbConnection == true) {
                         mysqli_close($dbConnection);
                     }
                 }   
-            }
+            
         } catch (Exception $e) {
             echo "error";
         }
