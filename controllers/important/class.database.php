@@ -171,9 +171,9 @@ include("connect_DB.php");
         }
 
         //check if the name is guest or not
-        public function ValidateGuest(){
+        // public function ValidateGuest(){
 
-        }
+        // }
 
     }
 
