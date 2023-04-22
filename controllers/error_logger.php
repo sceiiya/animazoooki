@@ -47,6 +47,10 @@ switch (true) {
 
 // $ERROR = $_POST['error'];
 function log_ERROR($ERROR){
+$br = ['<br />', '<br>', '<b>', '</b>'];
+$spc = "\n";
+//wordwrap($string, character count(INT), $value to be replaced per 80 characters)
+//str_replace($toBeReplaced, $replace, $string)
 if(empty($ERROR)){
     return false;
 }else{
@@ -55,7 +59,7 @@ $wError = fopen("../errorlog/user_errorlog/errorlog.txt", "a");
 fwrite($wError,"\n
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Date: ".date('Y-m-d H:i:s')."
-Error: ".wordwrap($ERROR, 80, "\n")." 
+Error: ".wordwrap(str_replace($br, $spc, $ERROR), 80, "\n")." 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 \n");
 fclose($wError);

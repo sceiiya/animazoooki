@@ -441,3 +441,156 @@ require_once('C:\\laragon\\www\\...')
  
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-22 10:00:42
+Error: Access denied for user 'u955154186_animazoooki_D'@'180.191.23.152' (using
+password: YES) 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-22 10:01:19
+Error: Access denied for user 'u955154186_animazoooki_D'@'180.191.23.152' (using
+password: YES) 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-22 10:01:30
+Error: Access denied for user 'u955154186_animazoooki_D'@'180.191.23.152' (using
+password: YES) 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-22 10:02:07
+Error: php_network_getaddresses: getaddrinfo for animazoooki.wd49p.co failed: No such
+host is known.  
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-22 10:02:38
+Error: <br />
+<b>Warning</b>:  mysqli_connect(): php_network_getaddresses: getaddrinfo for
+animazoooki.wd49p.com failed: No such host is known.  in
+<b>C:\laragon\www\animazooki\controllers\important\connect_DB.php</b> on line
+<b>29</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught mysqli_sql_exception: php_network_getaddresses:
+getaddrinfo for animazoooki.wd49p.com failed: No such host is known.  in
+C:\laragon\www\animazooki\controllers\important\connect_DB.php:29
+Stack trace:
+#0 C:\laragon\www\animazooki\controllers\important\connect_DB.php(29):
+mysqli_connect('animazoooki.wd4...', 'u955154186_anim...', 'YoumUst_not_Us3...')
+#1 C:\laragon\www\animazooki\controllers\important\class.database.php(5):
+include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\animazooki\controllers\login.php(2):
+require_once('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in
+<b>C:\laragon\www\animazooki\controllers\important\connect_DB.php</b> on line
+<b>29</b><br />
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-22 10:02:57
+Error: 
+
+
+Warning
+:  mysqli_connect(): php_network_getaddresses: getaddrinfo for
+animazoooki.wd49p.com failed: No such host is known.  in 
+C:\laragon\www\animazooki\controllers\important\connect_DB.php
+ on line 
+29
+
+
+
+
+
+Fatal error
+:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for
+animazoooki.wd49p.com failed: No such host is known.  in
+C:\laragon\www\animazooki\controllers\important\connect_DB.php:29
+Stack trace:
+#0 C:\laragon\www\animazooki\controllers\important\connect_DB.php(29):
+mysqli_connect('animazoooki.wd4...', 'u955154186_anim...', 'YoumUst_not_Us3...')
+#1 C:\laragon\www\animazooki\controllers\important\class.database.php(5):
+include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\animazooki\controllers\login.php(2):
+require_once('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\important\connect_DB.php
+ on line 
+29
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-22 10:03:27
+Error: 
+
+
+Warning
+:  mysqli_connect(): php_network_getaddresses: getaddrinfo for
+animazoooki.wd49p.com failed: No such host is known.  in 
+C:\laragon\www\animazooki\controllers\important\connect_DB.php
+ on line 
+29
+
+
+
+
+
+Fatal error
+:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for
+animazoooki.wd49p.com failed: No such host is known.  in
+C:\laragon\www\animazooki\controllers\important\connect_DB.php:29
+Stack trace:
+#0 C:\laragon\www\animazooki\controllers\important\connect_DB.php(29):
+mysqli_connect('animazoooki.wd4...', 'u955154186_anim...', 'YoumUst_not_Us3...')
+#1 C:\laragon\www\animazooki\controllers\important\class.database.php(5):
+include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\animazooki\controllers\login.php(2):
+require_once('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\important\connect_DB.php
+ on line 
+29
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-22 10:03:57
+Error: Access denied for user 'u955154186_animazoooki_D'@'localhost' (using password:
+YES) 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-22 10:04:12
+Error: Access denied for user 'u955154186_animazoooki_D'@'180.191.23.152' (using
+password: NO) 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
