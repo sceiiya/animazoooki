@@ -35,7 +35,7 @@
                         "otp_code" => rand(100000, 999999)
                     ];
 
-                    $eInsert = $ConDB->Insert($eCon, "clients", $data, "");
+                    $eInsert = $ConDB->Insert($eCon, "clients", $data);
                     if($eInsert == "true"){
                         echo "Sign-up Success";
                     }else{
