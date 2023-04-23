@@ -103,7 +103,7 @@ toastTrigger.addEventListener('click', () => {
 
 //generate guest creds
 function newguest(){
-  // console.log('deving');
+try{
   $.get('/controllers/newGuestCred.php', (data, status)=>{
     if (status === "success"){
       const guestCred = JSON.parse(data);
@@ -120,7 +120,9 @@ function newguest(){
             // console.log(JSON.parse(localStorage.getItem('user')));
     }
   });
-  // window.location.reload();
+}catch(error){
+  ERROR_logger(error);
+}
 }
 
 //Function for login modal
@@ -527,16 +529,13 @@ $(document).ready(function(){
   }
 });
 
-
 // $(document).ready(function(){
 //   try{
-//     if(localStorage != null){
-//       const userCred = JSON.parse(localStorage.getItem("user"));
-//       if (userCred.theme == "dark") {
-//         AzsettingDarkTheme();
-//       } else {
-//         AzsettingLightTheme();
-//     }
+//   const userCred = JSON.parse(localStorage.getItem("user"));
+//   if (userCred.theme == "dark") {
+//     AzsettingDarkTheme();
+//   } else {
+//     AzsettingLightTheme();
 // }
 //   }catch(error){
 //     ERROR_logger(error);
@@ -601,12 +600,3 @@ function ERROR_logger(nERROR){
 // toastr.success('We do have the Kapua suite available.', 'Turtle Bay Resort', {timeOut: 5000});
 // toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!');
 // toastr.error('I do not think that word means what you think it means.', 'Inconceivable!');
-
-
-// no internet or slow connection
-// this will appear
-
-// function GetCDNFailed(){
-//   const screenBlocker = document.getElementById("SlownNoInternet");
-//   screenBlocker.style.display = "block";
-// }

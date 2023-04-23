@@ -25,8 +25,8 @@
 
 
 
-
-include("controllers/important/class.database.php");
+// require_once("connect_DB.php");
+require_once("../controllers/important/class.database.php");
 
 $ConDB = new ClassDbConn;
 $eCon = $ConDB->NewCon();
@@ -35,10 +35,10 @@ if ($eCon == true){
 
 
         $images = [
-            'https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/products/6443f7367fabc1.34613290.png',
-            'https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/products/6443f7378a8612.52425586.png',
-            'https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/products/6443f737bcba11.45704356.png',
-            'https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/products/6443f738857c13.35927131.png'
+            'https://d1k3w7ix829ymi.cloudfront.net/products/64456aed305683.36265286.png',
+            'https://d1k3w7ix829ymi.cloudfront.net/products/64456aee9ff4c2.72570646.png',
+            'https://d1k3w7ix829ymi.cloudfront.net/products/64456aee6ab892.71022988.png',
+            'https://d1k3w7ix829ymi.cloudfront.net/products/64456aee11b219.56588946.png'
         ];
         
         // method 1
@@ -58,18 +58,28 @@ if ($eCon == true){
         
         // echo $P_images;
         // echo strlen($P_images);
-        $data = [ "images" => json_encode($images)];
 
-        $eInsert = $ConDB->Insert($eCon, "products", $data);
-        if($eInsert == "true"){
-            echo "Sign-up Success";
-        }else{
-            echo "Sign-up Failed";
-        }
+
+
+        // $data = [ "images" => json_encode($images)];
+
+        // $eInsert = $ConDB->Insert($eCon, "products", $data);
+        // if($eInsert == "true"){
+        //     echo "upload to DB Success <br/>";
+        // }else{
+        //     echo "Sign-up Failed";
+        // }
+
 
 
         // for retrieval of array
-        $DataOf = ['id' => "41"];
+        $GetNum = $ConDB->FetchNum($eCon, 'products', 'products', 'date_archived', 'NULL');
+        $ProdNum = $GetNum['total'];
+        for ($i = 0; $i < $ProdNum; $i++) {
+            echo $i;
+        }
+        $DataOf = ['id' => $ProdNum];
+
         $ImgData = $ConDB->Select($eCon, 'products', $DataOf);
         // if($validU["result"] == "true" && $DData["password"] == $valueP){
             // $FFF;

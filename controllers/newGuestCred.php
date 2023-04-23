@@ -30,14 +30,15 @@
     $newGuestDB = [
         'username' =>  addslashes($newGuest['username']),
         'name' =>  addslashes($newGuest['name']),
-        'email' => $newGuest['email'],
-        'theme' => $newGuest['theme'],
-        'status' => $newGuest['status'],
-        'date_added' => date("Y-m-d H:i:s")
+        'email' => addslashes($newGuest['email']),
+        'theme' => addslashes($newGuest['theme']),
+        'status' => addslashes($newGuest['status']),
+        'date_added' => addslashes(date("Y-m-d H:i:s"))
     ];
     // echo json_encode($newGuestDB);
     // echo "<br/>";
-    echo json_encode($newGuest);
+    $ThrowData = json_encode($newGuest);
+    echo $ThrowData;
 
     require_once("important/class.database.php");
 
@@ -47,9 +48,9 @@
         try{
         $GenGuest = $ConDB->Insert($eCon, 'guest', $newGuestDB);
             if ($GenGuest == true){
-                return 'new guest';
+                return true;
             }else{
-                return $e->getMessage();
+                return false;
             }
         }catch(Exception $e){
             $_SESSION['error'] = $e->getMessage();

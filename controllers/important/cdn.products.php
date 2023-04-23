@@ -1,5 +1,5 @@
 <?php
-require_once('connect_DB.php');
+require_once('connect_AWS.php');
 
 use Aws\S3\S3Client;
 

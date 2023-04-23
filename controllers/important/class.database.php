@@ -2,7 +2,7 @@
 
 // date_default_timezone_set('Asia/Manila');
 
-include("connect_DB.php");
+require_once("connect_DB.php");
 
     class ClassDbConn extends DBCred{
          //mga properties
@@ -80,10 +80,12 @@ include("connect_DB.php");
                     
                     $x++;
                 }
+                //concatenate  the select and where clauses
+                $qSelect =$eSelect." WHERE ".$sWhere;
             }
 
-            //concatenate  the select and where clauses
-            $qSelect =$eSelect." WHERE ".$sWhere;
+            // //concatenate  the select and where clauses
+            // $qSelect =$eSelect." WHERE ".$sWhere;
 
             //execute the query
             $Result = mysqli_query($mysql, $qSelect);
@@ -103,6 +105,42 @@ include("connect_DB.php");
             return $dResult;
             mysqli_close($mysql);
 
+        }
+
+        //make a class pub func for thos type
+        // $qSelect = "SELECT * FROM $dbDatabase .`products` WHERE `date_archived` IS NULL ORDER BY `id` DESC";
+
+        //method update data
+        //requires 4 arguments
+        public function FetchNum($mysql, $table, $column, $value){
+            if(empty($column) and empty($value)){
+                $qSelect = "SELECT * FROM `".$table."`";
+            }elseif($value == "NULL"){
+                $qSelect = "SELECT * FROM `".$table."`  WHERE `".$column."` IS NULL";
+            }else{
+                $qSelect = "SELECT * FROM `".$table."`  WHERE `".$column."` = '".$value."'";
+            }
+            // echo $qSelect;
+
+            //execute the query
+            $Result = mysqli_query($mysql, $qSelect);
+            $nTotalRows = mysqli_num_rows($Result);
+
+            $dResult = [
+                'result' => "true",
+                'total' => $nTotalRows
+            ];
+            $dnResult = [
+                'result' => "false",
+                'total' => $nTotalRows
+            ];
+            if($nTotalRows > 0){
+                return $dResult;
+                mysqli_close($mysql);
+            } else{
+                return $dnResult;
+                mysqli_close($mysql);
+            }
         }
 
         //method update data
