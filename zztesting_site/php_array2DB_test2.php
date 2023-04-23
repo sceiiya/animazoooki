@@ -26,7 +26,7 @@
 
 
 
-include("../controllers/important/class.database.php");
+include("controllers/important/class.database.php");
 
 $ConDB = new ClassDbConn;
 $eCon = $ConDB->NewCon();
