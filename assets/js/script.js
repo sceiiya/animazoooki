@@ -503,16 +503,45 @@ $('#myCartBttn').on('click', ()=>{
 // fetching the theme and updating depends on the user preference
 $(document).ready(function(){
   try{
-  const userCred = JSON.parse(localStorage.getItem("user"));
-  if (userCred.theme == "dark") {
-    AzsettingDarkTheme();
-  } else {
-    AzsettingLightTheme();
-}
-  }catch(error){
+    const userCred = JSON.parse(localStorage.getItem("user"));
+    if (userCred) {
+      if (userCred.theme == "dark") {
+        AzsettingDarkTheme();
+      } else {
+        AzsettingLightTheme();
+      }
+    } else {
+      setTimeout(function() {
+        const userCred = JSON.parse(localStorage.getItem("user"));
+        if (userCred) {
+          if (userCred.theme == "dark") {
+            AzsettingDarkTheme();
+          } else {
+            AzsettingLightTheme();
+          }
+        }
+      }, 4000);
+    }
+  } catch(error) {
     ERROR_logger(error);
   }
 });
+
+
+// $(document).ready(function(){
+//   try{
+//     if(localStorage != null){
+//       const userCred = JSON.parse(localStorage.getItem("user"));
+//       if (userCred.theme == "dark") {
+//         AzsettingDarkTheme();
+//       } else {
+//         AzsettingLightTheme();
+//     }
+// }
+//   }catch(error){
+//     ERROR_logger(error);
+//   }
+// });
 
 function ERROR_logger(nERROR){
   var errrorr ={

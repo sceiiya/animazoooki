@@ -1307,6 +1307,5 @@
 </html>
 <!-- scripts libries -->
 <?php include("includes/scripts_library.php"); ?>
-<script src="https://kit.fontawesome.com/0de39995d2.js" crossorigin="anonymous"></script>
 <script src="/assets/js/script.js"></script>
 <?php include("includes/validatorControl.php"); ?>
