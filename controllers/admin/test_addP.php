@@ -6,7 +6,7 @@ session_start();
 $ConDB = new ClassDbConn;
 $eCon = $ConDB->NewCon();
 
-    $GetNum = $ConDB->FetchNum($eCon, 'products', 'products', 'date_archived', 'NULL');
+    $GetNum = $ConDB->FetchNum($eCon, 'products', 'date_archived', 'NULL');
     $ProdNum = $GetNum['total'];
     for ($i = 19; $i < $ProdNum+19; $i++) {
         $DataOf = ['id' => $ProdNum];
