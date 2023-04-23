@@ -8,12 +8,14 @@ $eCon = $ConDB->NewCon();
 
     $GetNum = $ConDB->FetchNum($eCon, 'products', 'date_archived', 'NULL');
     $ProdNum = $GetNum['total'];
-    for ($i = 0; $i < $ProdNum; $i++) {
-        $DataOf = ['id' => $ProdNum];
-
-        $DataName = $ConDB->Select($eCon, 'products', $DataOf);    
+    for ($i = 1; $i <= $ProdNum; $i++) {
+        $DataOf = ['id' => $i];
+        echo $DataOf['id']."<br/>";
+        $DataName = $ConDB->Select($eCon, 'products', $DataOf);  
+        $TitTLe = $DataName['name'];  
+        echo " ".$TitTLe;
         $Prod = new Product;
-        $AddProduct = $Prod->createPage($DataName['name']);
+        $AddProduct = $Prod->createPage($TitTLe);
     }
 
     // $DataOf = ['id' => $ProdNum];

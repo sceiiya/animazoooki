@@ -18,31 +18,33 @@ class Product{
     // }
 
     public function createPage($Title){
-        $Title = str_replace(' ', '-', $Title);
+        if(!empty($Title)){
+            $Title = str_replace(' ', '-', $Title);
 
-        // $parentDir = dirname(__DIR__); // get the parent directory of the current directory
-        // $newDir = $parentDir."/".$Title;
-        // Check if folder already exists
-        // if (!is_dir($Title)) {
-        if (!file_exists($Title)) {
-        // Create folder if it doesn't exist
-            mkdir(__DIR__ . "/../../all-products/" . $Title);
-
-            $newPage = fopen(__DIR__ . "/../../all-products/" . $Title . "/index.php", "w");
-            fwrite($newPage, "<br/>Date: " . date('Y-m-d H:i:s') . "<br/>Created file for " . $Title . "<br/>");
-            fclose($newPage);
-        
-
-
-            // mkdir("../../".$Title);
-
-            // $newPage = fopen("../all-products/".$Title."/index.php", "w");
-            // fwrite($newPage,"<br/>Date: ".date('Y-m-d H:i:s')."<br/>Created file for ".$Title." <br/>");
-            // fclose($newPage);
+            // $parentDir = dirname(__DIR__); // get the parent directory of the current directory
+            // $newDir = $parentDir."/".$Title;
+            // Check if folder already exists
+            // if (!is_dir($Title)) {
+            if (!file_exists($Title)) {
+            // Create folder if it doesn't exist
+                mkdir(__DIR__ . "/../../all-products/" . $Title);
+    
+                $newPage = fopen(__DIR__ . "/../../all-products/" . $Title . "/index.php", "w");
+                fwrite($newPage, "<br/>Date: " . date('Y-m-d H:i:s') . "<br/>Created file for " . $Title . "<br/>");
+                fclose($newPage);
             
-        } else {
-            // Folder already exists, do nothing
-            echo "Folder already exists, file creation skipped.";
+    
+    
+                // mkdir("../../".$Title);
+    
+                // $newPage = fopen("../all-products/".$Title."/index.php", "w");
+                // fwrite($newPage,"<br/>Date: ".date('Y-m-d H:i:s')."<br/>Created file for ".$Title." <br/>");
+                // fclose($newPage);
+                
+            } else {
+                // Folder already exists, do nothing
+                echo "Folder already exists, file creation skipped.";
+            }
         }
 
         // $folderName = "myFolder";
