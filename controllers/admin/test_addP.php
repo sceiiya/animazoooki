@@ -10,12 +10,12 @@ $eCon = $ConDB->NewCon();
     $ProdNum = $GetNum['total'];
     for ($i = 1; $i <= $ProdNum; $i++) {
         $DataOf = ['id' => $i];
-        echo $DataOf['id']."<br/>";
+        // echo $DataOf['id']."<br/>";
         $DataName = $ConDB->Select($eCon, 'products', $DataOf);  
-        $TitTLe = $DataName['name'];  
-        echo " ".$TitTLe;
+        // $TitTLe = $DataName['name'];  
+        // echo " ".$TitTLe;
         $Prod = new Product;
-        $AddProduct = $Prod->createPage($TitTLe);
+        $AddProduct = $Prod->createPage($DataName['name']);
     }
 
     // $DataOf = ['id' => $ProdNum];

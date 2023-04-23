@@ -39,37 +39,70 @@
                 <h3 class="txtc mb-4">Product Info</h3>
 
                 <div class="form-outline mb-3">
-                    <label for="">Product Code</label>
-                    <input type="text" id="adminProdCode" class="form-control" />
+                    <label for="">Product Name</label>
+                    <input type="text" id="adminProdName" class="form-control" maxlength="180"/>
+                </div>
+                
+                <div class="form-outline mb-3">
+                    <label for="">Product Category</label>
+                    <input type="text" id="adminProdCat" class="form-control" maxlength="30"/>
                 </div>
 
                 <div class="form-outline mb-3">
-                    <label for="">Product Name</label>
-                    <input type="text" id="adminProdName" class="form-control" />
+                    <label for="">Product Series</label>
+                    <input type="text" id="adminProdSer" class="form-control" maxlength="30"/>
                 </div>
+
 
                 <div class="form-outline mb-3">
                     <label for="">Product Price</label>
-                    <input type="number" id="adminProdPrice" class="form-control" />
+                    <input type="number" id="adminProdPrice" class="form-control" maxlength="6"/>
                 </div>
 
                 <div class="form-outline mb-3">
-                    <label for="">Product Quantity</label>
-                    <input type="number" id="adminProdQty" class="form-control" />
+                    <label for="">Product Stocks</label>
+                    <input type="number" id="adminProdQty" class="form-control" maxlength="6"/>
                 </div>
 
                 <div class="form-outline mb-3">
                     <label for="">Product Description</label>
-                    <textarea type="text" id="adminProdDesc" rows="10" cols="50" class="form-control pDescription"></textarea>
+                    <textarea type="text" id="adminProdDesc" rows="10" cols="50" class="form-control pDescription" maxlength="1000"></textarea>
                 </div>
 
-                <div class="form-outline mb-2">
+                <!-- <div class="form-outline mb-2">
                     <label for="">Product Image</label>
                     <input type="file" id="adminProdImage" class="form-control" accept="image/*" />
-                </div>
+                </div> -->
+
+                    <div class="preview-container">
+                        <div>
+                            <label for="file1">Choose an image:</label>
+                            <input type="file" name="file[]" id="prodimg1" accept="image/*" class="file-input" required>
+                            <div class="preview"><img src="animazoooki_onload.png"></div>
+                        </div>
+
+                        <div>
+                            <label for="file2">Choose an image:</label>
+                            <input type="file" name="file[]" id="prodimg2" accept="image/*" class="file-input">
+                            <div class="preview"><img src="animazoooki_onload.png"></div>
+                        </div>
+
+                        <div>
+                            <label for="file3">Choose an image:</label>
+                            <input type="file" name="file[]" id="prodimg3" accept="image/*" class="file-input">
+                            <div class="preview"><img src="animazoooki_onload.png"></div>
+                        </div>
+
+                        <div>
+                            <label for="file4">Choose an image:</label>
+                            <input type="file" name="file[]" id="prodimg4" accept="image/*" class="file-input">
+                            <div class="preview"><img src="animazoooki_onload.png"></div>
+                        </div>
+                    </div>
                 <div class="flex-row d-flex justify-content-between">
                 <button type="button" id="saveProduct" class="btn redbgwhitec mb-1 mt-3">Add Product</button>
                 <button type="button" class="btn mb-1 mt-3" data-bs-dismiss="modal">Close</button>
+
                 </div>
             </div>
 

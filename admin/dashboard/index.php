@@ -108,3 +108,4 @@ session_start();
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="/assets/js/jquery-3.6.3.min.js"></script>
 <script src="/assets/js/adminscripts.js"></script>
+<script src="/assets/js/admin_addProduct.js"></script>
