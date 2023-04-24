@@ -19,6 +19,7 @@
             $_SESSION['ttl_rvws'] = $Data['total_reviews'];
             
             echo "success";
+            // return "success";
             // $_SESSION['status'] = $Data['status'];
         }catch(Exception $e){
             $_SESSION['error'] = $e->getMessage();

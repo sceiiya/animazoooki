@@ -34,7 +34,7 @@
 <!-- form outie -->
 <form action="../../controllers/admin/admin_save_products.php" method="post" enctype="multipart/form-data">
 
-<div class="modal" id="addProductModal">
+<div class="modal modal-xl" id="addProductModal">
     <div class="modal-dialog">
         <div class="modal-content p-4 cpborder modalbg">
 

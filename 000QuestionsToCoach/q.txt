@@ -3,20 +3,28 @@
     REFER TO:
     file: 
     js: script.js line 427 - 431
-    php: 
+    php: join_email_list.php line 12, 17, 32
 
 
 >> why if used form/it redirects to the controller page/file?
-    >how to fixed
+    >how to fix
 
-    REFER TO:
+    REFER TO: php
     file: 
-    js: 
-    php: 
+    js: admin_addProducts.js line 42 - 137 [commented]
+    php: admin_modals.php line 
 
 >> when using printing methods, can't catch the error trough try catch block
 
     REFER TO:
+    file: includes/admin/modals/admin_modals.php && 
+    js: scripts.js 147>158
+    php: controllers/get_userCreds
+
+>> sa ajax, bakit pag return ginagamit hindi kinukuha yung return as a result sa success
+ >otherwies sa echo lang ang kinukuha
+
+    REFER TO:   
     file: 
     js: 
     php: 
@@ -28,4 +36,4 @@
     REFER TO:
     file: 
     js: 
-    php: 
+    php: includes/validatorControl.php line 17, 21

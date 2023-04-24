@@ -162,6 +162,7 @@ $('#login__btn').on('click', (e) => {
                     GETUserinfo();
                     }else{
                       ERROR_logger(result);
+                      toastr.error("Something went wrong", "Error Login");
                     }
                   }
                 })

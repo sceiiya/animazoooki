@@ -1,3 +1,8 @@
+
+
+
+
+
 const imgMainCont = document.querySelector(".product-img-cont");
 const imgMainElm = document.querySelector(".product-img-cont img");
 const imgSub = document.querySelector(".product-img-sub");
