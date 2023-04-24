@@ -29,6 +29,8 @@
     <section class="wrapper">
         <!--left side of the main--->
         <aside class="side-l">
+
+        <input type="number" id="pID" value="9" style="display: none;">
             <!-- <div class="chat-div">
             chat assistant
            </div> -->
@@ -79,7 +81,13 @@
                             <i class="fas fa-star rated"></i>
                             <i class="fas fa-star unrated"></i>
                             <i class="fas fa-star unrated"></i>
-                            &nbsp;&nbsp;|&nbsp;&nbsp; <em class="product-rating-count">253 reviews</em>
+                            &nbsp;&nbsp;|&nbsp;&nbsp; 
+                        <em class="product-rating-count">
+                            total reviews
+                        </em>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <em class="product-stocks-count txtred">
+                            sold count
+                        </em>
                         </div>
                     </div>
                     <div class="clflx txtl">
@@ -89,7 +97,8 @@
                     </div>
                     <div>&nbsp;</div>
                     <div class="txtl">
-                        <label>Category:</label>&nbsp;&nbsp;<label>Inspired T-shirt</label>
+                        <label id="pCateg">Category:</label>&nbsp;&nbsp;<label id="pCateg">Inspired T-shirt</label>
+                        <label id="pCateg">Series:</label>&nbsp;&nbsp;<label id="pSeries">Hololive</label>
                     </div>
 
                     <div class="clflx txtl">
@@ -114,9 +123,9 @@
                     </div>
                     <div class="rwflx txtl">
                         <div class="qty w100 mt-5 txtr me-1">
-                            <span class="minus">-</span>
+                            <!-- <span class="minus">-</span>
                             <input type="number" class="count" name="qty" value="1">
-                            <span class="plus">+</span>
+                            <span class="plus">+</span> -->
                             <button type="button" class="product cart-button" id="liveToastBtn">Add to Cart</button>
                             <button class="product buy-button"><a href="/all-products/checkout/">Buy Now</a></button>
                         </div>

@@ -70,7 +70,7 @@ class Product{
     }
 
     // public function fetch(){
-
+        
     // }
 
     // public function fetchALL(){
