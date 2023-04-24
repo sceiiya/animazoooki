@@ -13,6 +13,7 @@ $client = new S3Client([
     ],
 ]);
 
+$AllImgs = [];
 // Check if files are uploaded
 if(isset($_FILES['file'])) {
     $files = $_FILES['file'];
@@ -42,10 +43,15 @@ if(isset($_FILES['file'])) {
             // Generate the URL of the uploaded file
             $url = $result->get('ObjectURL');
 
-            echo 'File uploaded successfully. URL: <a href="' . $url . '">link<a/><br/>';
-            echo 'CDN URL: <a href="' . $distDomain .$s3Folder . $newFileName .'">cdn link</a><br/>';
-            echo $FinURL = $distDomain.$s3Folder.$newFileName;
-
+            // echo 'File uploaded successfully. URL: <a href="' . $url . '">link<a/><br/>';
+            // echo 'CDN URL: <a href="' . $distDomain .$s3Folder . $newFileName .'">cdn link</a><br/>';
+            // $FinURL = $distDomain.$s3Folder.$newFileName;
+            $FinURL = $distDomain.$s3Folder.$newFileName;
+            echo $FinURL. '<br/>';
+            $strFinURL = '"'.$FinURL.'"';
+            echo 'string is'.$strFinURL. '<br/>';
+            array_push($AllImgs, $strFinURL);
+            // $AllImgs = $FinURL;
         } else {
             echo 'Image for Variation '.$i.' is empty. Please put files by modifying the product<br/>';
             
@@ -53,6 +59,23 @@ if(isset($_FILES['file'])) {
         }
     }
 }
+    echo'raw is:  ';
+    print_r($AllImgs);
+    $O1 = json_encode($AllImgs);
+    echo'<br/>';
+    $O2 = json_encode($O1);
+    echo'json encode is:  ';
+    echo ($O2);
+    $O3 = json_decode($O2);
+    echo'<br/>';
+    echo'json decoded is:  ';
+    echo ($O3);
+    $O4 = implode(", ", $AllImgs);
+    echo'<br/>';
+    echo'implode is:  ';
+    echo $O4;
+    echo'<br/>';echo'<br/>';
+    echo $finale = "[".$O4."]";
 
 ?>
 
@@ -111,6 +134,18 @@ if(isset($_FILES['file'])) {
 </head>
 <body>
 <form action="cdn.products.php" method="post" enctype="multipart/form-data">
+
+                <div class="form-outline mb-3">
+                    <label for="">Product Series</label>
+                    <input type="text" id="adminProdSer" class="form-control" maxlength="30"/>
+                </div>
+
+
+                <div class="form-outline mb-3">
+                    <label for="">Product Price</label>
+                    <input type="number" id="adminProdPrice" class="form-control" max='9999999'/>
+                </div>
+
     <div class="preview-container">
         <div>
             <label for="file1">Choose an image:</label>

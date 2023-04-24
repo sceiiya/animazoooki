@@ -97,7 +97,7 @@ unset($_SESSION['error']);
             // try{
             //     //do something;
             // }catch(Exception $err){
-            //     $_SESSION['error'] = $err->getMessage();
+            //     $_SESSION['error'] = 'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$err->getMessage();
             //     header("Location: error_logger.php");
             //     exit();
             // }

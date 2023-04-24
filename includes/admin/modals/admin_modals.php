@@ -38,35 +38,57 @@
             <div class="add-list-cont">
                 <h3 class="txtc mb-4">Product Info</h3>
 
+                <!-- form outie -->
+                <form action="../../controllers/admin/admin_save_products.php" method="post" enctype="multipart/form-data">
                 <div class="form-outline mb-3">
                     <label for="">Product Name</label>
-                    <input type="text" id="adminProdName" class="form-control" maxlength="180"/>
+                    <input type="text" id="adminProdName" name='name' class="form-control" maxlength="150"/>
                 </div>
                 
                 <div class="form-outline mb-3">
                     <label for="">Product Category</label>
-                    <input type="text" id="adminProdCat" class="form-control" maxlength="30"/>
+                    <input type="text" id="adminProdCat" name='category' class="form-control" maxlength="30"/>
                 </div>
 
                 <div class="form-outline mb-3">
                     <label for="">Product Series</label>
-                    <input type="text" id="adminProdSer" class="form-control" maxlength="30"/>
+                    <input type="text" id="adminProdSer" name='series' class="form-control" maxlength="30"/>
                 </div>
 
 
                 <div class="form-outline mb-3">
                     <label for="">Product Price</label>
-                    <input type="number" id="adminProdPrice" class="form-control" maxlength="6"/>
+                    <input type="number" id="adminProdPrice" name='price' class="form-control" max='9999999'/>
                 </div>
 
                 <div class="form-outline mb-3">
                     <label for="">Product Stocks</label>
-                    <input type="number" id="adminProdQty" class="form-control" maxlength="6"/>
+                    <input type="number" id="adminProdQty" name='stocks' class="form-control" max='9999999'/>
+                </div>
+
+                <div class="form-outline mb-3">
+                    <label for="">Product Sizes</label>
+                    <input type="text" id="adminProdSizes" name='sizes' class="form-control" maxlength="200"/>
+                </div>
+
+                <div class="form-outline mb-3">
+                    <label for="">Product Variation</label>
+                    <input type="text" id="adminProdVar" name='variation' class="form-control" maxlength="200"/>
                 </div>
 
                 <div class="form-outline mb-3">
                     <label for="">Product Description</label>
-                    <textarea type="text" id="adminProdDesc" rows="10" cols="50" class="form-control pDescription" maxlength="1000"></textarea>
+                    <textarea type="text" id="adminProdDesc" name='description' rows="10" cols="50" class="form-control pDescription" maxlength="1000"></textarea>
+                </div>
+
+                <div class="form-outline mb-3">
+                    <label for="">Product Designer</label>
+                    <input type="text" id="adminProdDesig" name='designer' class="form-control" maxlength="40"/>
+                </div>
+
+                <div class="form-outline mb-3">
+                    <label for="">Product Manufacturer</label>
+                    <input type="text" id="adminProdManuf" name='manufacturer' class="form-control" maxlength="40"/>
                 </div>
 
                 <!-- <div class="form-outline mb-2">
@@ -78,30 +100,37 @@
                         <div>
                             <label for="file1">Choose an image:</label>
                             <input type="file" name="file[]" id="prodimg1" accept="image/*" class="file-input" required>
-                            <div class="preview"><img src="animazoooki_onload.png"></div>
+                            <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
                         </div>
 
                         <div>
-                            <label for="file2">Choose an image:</label>
+                            <!-- <label for="file2">Choose an image:</label> -->
                             <input type="file" name="file[]" id="prodimg2" accept="image/*" class="file-input">
-                            <div class="preview"><img src="animazoooki_onload.png"></div>
+                            <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
                         </div>
 
                         <div>
-                            <label for="file3">Choose an image:</label>
+                            <!-- <label for="file3">Choose an image:</label> -->
                             <input type="file" name="file[]" id="prodimg3" accept="image/*" class="file-input">
-                            <div class="preview"><img src="animazoooki_onload.png"></div>
+                            <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
                         </div>
 
                         <div>
-                            <label for="file4">Choose an image:</label>
+                            <!-- <label for="file4">Choose an image:</label> -->
                             <input type="file" name="file[]" id="prodimg4" accept="image/*" class="file-input">
-                            <div class="preview"><img src="animazoooki_onload.png"></div>
+                            <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
                         </div>
                     </div>
+
+
                 <div class="flex-row d-flex justify-content-between">
                 <button type="button" id="saveProduct" class="btn redbgwhitec mb-1 mt-3">Add Product</button>
                 <button type="button" class="btn mb-1 mt-3" data-bs-dismiss="modal">Close</button>
+                    
+                <!-- form button -->
+                <input type="submit" value="Upload">
+                </form>
+
 
                 </div>
             </div>

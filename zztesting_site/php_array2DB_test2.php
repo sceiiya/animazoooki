@@ -35,10 +35,10 @@ if ($eCon == true){
 
 
         $images = [
-            'https://d1k3w7ix829ymi.cloudfront.net/products/64456aed305683.36265286.png',
-            'https://d1k3w7ix829ymi.cloudfront.net/products/64456aee9ff4c2.72570646.png',
-            'https://d1k3w7ix829ymi.cloudfront.net/products/64456aee6ab892.71022988.png',
-            'https://d1k3w7ix829ymi.cloudfront.net/products/64456aee11b219.56588946.png'
+            'https://d1k3w7ix829ymi.cloudfront.net/products/64461627b2eb01.02324849.png',
+            'https://d1k3w7ix829ymi.cloudfront.net/products/64461628adab30.28009466.png',
+            'https://d1k3w7ix829ymi.cloudfront.net/products/64461628e4e223.24576466.png',
+            'https://d1k3w7ix829ymi.cloudfront.net/products/64461629227370.46007992.png'
         ];
         
         // method 1
@@ -73,25 +73,30 @@ if ($eCon == true){
 
 
         // for retrieval of array
-        $GetNum = $ConDB->FetchNum($eCon, 'products', 'products', 'date_archived', 'NULL');
-        $ProdNum = $GetNum['total'];
-        for ($i = 0; $i < $ProdNum; $i++) {
-            echo $i;
-        }
-        $DataOf = ['id' => $ProdNum];
+        $GetNum = $ConDB->FetchNum($eCon, 'products', 'date_archived', 'NULL');
+        
+        // for ($i = 0; $i < $ProdNum; $i++) {
+        //     echo $i;
+        // }
 
-        $ImgData = $ConDB->Select($eCon, 'products', $DataOf);
-        // if($validU["result"] == "true" && $DData["password"] == $valueP){
-            // $FFF;
-            foreach (json_decode($ImgData['images']) as $key => $value) {
-                echo "link is: ".$value."  from the  ".$key."<br/>";
-            }
-            // print_r( "Images are: ".$FFF);
-                // session_destroy();
-                echo "<br/>";
-            foreach (json_decode($ImgData['images']) as $key => $value) {
-                echo "<img src='".$value."' width='500' height='500'>"."<br/>";
-            }
+        if($GetNum['result']){
+            $ProdNum = $GetNum['total'];
+            echo $ProdNum;
+            $DataOf = ['id' => 4];
+
+            $ImgData = $ConDB->Select($eCon, 'products', $DataOf);
+            // if($validU["result"] == "true" && $DData["password"] == $valueP){
+                // $FFF;
+                foreach (json_decode($ImgData['images']) as $key => $value) {
+                    echo "link is: ".$value."  from the  ".($key+1)."<br/>";
+                }
+                // print_r( "Images are: ".$FFF);
+                    // session_destroy();
+                    echo "<br/>";
+                foreach (json_decode($ImgData['images']) as $key => $value) {
+                    echo "<img src='".$value."' width='500' height='500'>"."<br/>";
+                }
+        }
 
 
         // }else{
@@ -122,7 +127,7 @@ if ($eCon == true){
         echo "error";
         session_start();
         $_SESSION['error'] = $e->getMessage();
-        header("Location: controllers/error_logger.php");
+        header("Location: ../controllers/error_logger.php");
         exit();
     }
 
