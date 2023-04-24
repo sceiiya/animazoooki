@@ -1,0 +1,31 @@
+>> why does some php script/controlllers return the string with space in ajax?
+
+    REFER TO:
+    file: 
+    js: script.js line 427 - 431
+    php: 
+
+
+>> why if used form/it redirects to the controller page/file?
+    >how to fixed
+
+    REFER TO:
+    file: 
+    js: 
+    php: 
+
+>> when using printing methods, can't catch the error trough try catch block
+
+    REFER TO:
+    file: 
+    js: 
+    php: 
+
+>>  may updated php mailer na po ba na library?
+ > may nagamit po ako na latest php function v8.1
+ > need indi gumagana sa v.7
+ 
+    REFER TO:
+    file: 
+    js: 
+    php: 

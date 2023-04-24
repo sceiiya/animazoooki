@@ -60,7 +60,33 @@ footer{
     border-left: 10px solid var(--red);
     transition: 0.5s;
     overflow-x: hidden;
+    transition: width 0.3s ease-in-out;
 }
+
+.navigation.collapsed {
+    width: 100px;
+    transition: width 0.3s ease-in-out;
+}
+
+.ADMINheadNavs {
+    display: block;
+    /* transform: translateX(200px) !important; */
+    transition: all .5s ease-in-out;
+}
+
+.ADMINheadNavs.hidden {
+    /* display: none !important; */
+    transform: translateX(200px) !important;
+    transition: all 1s ease-in-out;
+}
+
+/* .ADMINNavCont-out{
+    width: 300px !important;
+}
+
+.ADMINheadNavs{
+    display: none;
+} */
 
 .navigation.active {
     width: 80px;

@@ -31,42 +31,42 @@ session_start();
 <body>
     <input id="accessChecker" value="<?php echo $admAccess ?>" style="display: none;">
     <div class="container">
-        <div class="navigation">
+        <div class="navigation ADMINNavCont ADMINNavCont-out">
             <ul>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                        <span class="title">Animazooki Admin</span>
+                    <a class='TOGicon' href="#">
+                        <span class="icon" style="z-index: 50;"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title ADMINheadNavs">Animazooki Admin</span>
                     </a>
                 </li>
                 <li>
                     <a id="adminDashboard">
                         <span class="icon"><ion-icon name="speedometer-outline"></ion-icon></span>
-                        <span class="title">Dashboard</span>
+                        <span class="title ADMINheadNavs">Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a id="adminProducts">
                         <span class="icon"><ion-icon name="layers-outline"></ion-icon></span>
-                        <span class="title">Products</span>
+                        <span class="title ADMINheadNavs">Products</span>
                     </a>
                 </li>
                 <li>
                     <a id="adminCustomers">
                         <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
-                        <span class="title">Customers</span>
+                        <span class="title ADMINheadNavs">Customers</span>
                     </a>
                 </li>
                 <li>
                     <a id="adminOrders">
                         <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
-                        <span class="title">Orders</span>
+                        <span class="title ADMINheadNavs">Orders</span>
                     </a>
                 </li>
                 <li>
                     <a id="adminUsers">
                         <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
-                        <span class="title">Admin Users</span>
+                        <span class="title ADMINheadNavs">Admin Users</span>
                     </a>
                 </li>
                 <!-- <li>
@@ -78,13 +78,13 @@ session_start();
                 <li>
                     <a id="adminChangePass">
                         <span class="icon"><ion-icon name="key-outline"></ion-icon></span>
-                        <span class="title">Change Password</span>
+                        <span class="title ADMINheadNavs">Change Password</span>
                     </a>
                 </li>
                 <li>
                     <a id="adminSignout">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                        <span class="title">Sign Out</span>
+                        <span class="title ADMINheadNavs">Sign Out</span>
                     </a>
                 </li>
             </ul>

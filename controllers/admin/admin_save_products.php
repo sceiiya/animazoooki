@@ -66,6 +66,8 @@
                 // echo 'string is'.$strFinURL. '<br/>';
                 array_push($AllImgs, $strFinURL);
             } else {
+                return false;
+                exit();
                 // echo 'no '.$i;
                 // echo 'Image for Variation '.$i.' is empty. Please put files by modifying the product<br/>';
                 
@@ -130,8 +132,12 @@
         if($eInsert == "true"){
             // echo $productData;
             // echo "Add Product Success";
+            // return "Add Product Success";
+            exit();
         }else{
-            echo "Add Product Failed";
+            // echo "Add Product Failed";
+            // return "Add Product Failed";
+            exit();
         }
     } catch(Exception $e) {
         $_SESSION['error'] = 'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getMessage();
@@ -140,6 +146,7 @@
     }
 
 
+    
 
     // $ConDB = new ClassDbConn;
     // $eCon = $ConDB->NewCon();

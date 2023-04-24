@@ -31,6 +31,9 @@
 
 <!-- PRODUCTS MODAL -->
 
+<!-- form outie -->
+<form action="../../controllers/admin/admin_save_products.php" method="post" enctype="multipart/form-data">
+
 <div class="modal" id="addProductModal">
     <div class="modal-dialog">
         <div class="modal-content p-4 cpborder modalbg">
@@ -39,7 +42,7 @@
                 <h3 class="txtc mb-4">Product Info</h3>
 
                 <!-- form outie -->
-                <form action="../../controllers/admin/admin_save_products.php" method="post" enctype="multipart/form-data">
+                <!-- <form action="../../controllers/admin/admin_save_products.php" method="post" enctype="multipart/form-data"> -->
                 <div class="form-outline mb-3">
                     <label for="">Product Name</label>
                     <input type="text" id="adminProdName" name='name' class="form-control" maxlength="150"/>
@@ -128,8 +131,8 @@
                 <button type="button" class="btn mb-1 mt-3" data-bs-dismiss="modal">Close</button>
                     
                 <!-- form button -->
-                <input type="submit" value="Upload">
-                </form>
+                <!-- <input type="submit" value="Upload">
+                </form> -->
 
 
                 </div>
@@ -157,13 +160,17 @@
 
 
             <div class="modal-footer flex-row d-flex justify-content-between">
-                <button type="button" id="yes-addProd" class="btn redbgwhitec">Yes</button>
+                <input type="submit" value="Yes" id="yes-modProd" class="btn redbgwhitec">
+                <!-- <button type="button" id="yes-addProd" class="btn redbgwhitec">Yes</button> -->
                 <button type="button" class="btn" data-bs-dismiss="modal">No</button>
             </div>
 
         </div>
     </div>
 </div>
+
+<!-- <input type="submit" value="Upload"> -->
+</form>
 
 <!-- MODIFY PRODUCT MODAL -->
 
@@ -267,6 +274,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- DELETE PRODUCT -->
 

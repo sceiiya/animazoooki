@@ -845,3 +845,14 @@ function defaultimg(img) {
     img.onerror = "";
     img.src ="/admin/listing/product_img/animazoooki_onload.png";
 }
+
+// Navigation toggle
+// $('.ADMINNavCont').click(function() {
+//     $('.ADMINheadNavs').toggle();
+//     $('.ADMINNavCont-out').toggle();
+// });
+// $('.TOGicon').click(function() {
+$('#adminDashboard').click(function() {
+    $('.ADMINheadNavs').toggleClass('hidden');
+    $('.navigation').toggleClass('collapsed');
+});
