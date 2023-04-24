@@ -28,9 +28,9 @@ session_start();
 
 </head>
 
-<body>
+<body style="display:flex; width: 100%; justify-content:space-between; flex-direction:row">
     <input id="accessChecker" value="<?php echo $admAccess ?>" style="display: none;">
-    <div class="container">
+    <div class="containerr">
         <div class="navigation ADMINNavCont ADMINNavCont-out">
             <ul>
                 <li>

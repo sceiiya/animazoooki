@@ -41,14 +41,19 @@ footer{
     --red: #a50113;
 }
 
-/* body {
+body {
     min-height: 100vh;
     overflow-x: hidden;
-} */
+    box-sizing: border-box;
+}
 
-.container {
-    position: relative;
+.containerr {
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
     width: 100%;
+    box-sizing: border-box;
+    margin:2px !important;
 }
 
 .navigation {
@@ -188,18 +193,25 @@ footer{
 
   /* main */
   .mainAdmin {
-    position: absolute;
-    width: calc(100% - 100px);
-    left: 200px;
+    display: block;
+    position: relative;
+    width: calc(100% - 300px);
+    left: 300px;
+    /* right: 1px !important; */
     min-height: 100vh;
     background: var(--white);
     transition: 0.5s;
   }
 
-  .mainAdmin.active {
+  .mainAdmin.collapsed{
+    width: calc(100% - 100px);
+    left: 100px;
+  }
+
+  /* .mainAdmin.active {
     width: calc(100% - 80px);
     left: 80px;
-  }
+  } */
 
   .topbar {
     width: 100%;
@@ -705,7 +717,7 @@ footer{
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    /* width: 100%; */
 }
 .preview-container div{
     display: flex;

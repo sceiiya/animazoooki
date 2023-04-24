@@ -36,7 +36,7 @@
 
 
 
-// $sizez = "XS, S, m, L, xL, xl sfd, saw, sad wd as, as";
+$sizez = "XS, S, m, L, xL, xl sfd, saw, sad wd as, as";
 // $sizez = explode(', ', strtoupper($sizez));
 // print_r($sizez);
 // // echo $sizez;
@@ -46,7 +46,7 @@
 // // echo $sizez;
 
 
-$sizez = "XS";
+// $sizez = "XS";
 // $sizez = explode(', ', strtoupper($sizez)); // split the string by ', ' delimiter
 // // $sizez = array_map('strtoupper', $sizez); // convert all elements to uppercase
 // // $sizez = array_map('trim', $sizez); // trim spaces from the beginning and end of each element

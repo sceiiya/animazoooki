@@ -45,45 +45,48 @@
                 <!-- <form action="../../controllers/admin/admin_save_products.php" method="post" enctype="multipart/form-data"> -->
                 <div class="form-outline mb-3">
                     <label for="">Product Name</label>
-                    <input type="text" id="adminProdName" name='name' class="form-control" maxlength="150"/>
+                    <input type="text" id="adminProdName" name='name' class="form-control" maxlength="150" required/>
                 </div>
-                
+                <!-- in div to row >>>>>-->
                 <div class="form-outline mb-3">
                     <label for="">Product Category</label>
-                    <input type="text" id="adminProdCat" name='category' class="form-control" maxlength="30"/>
+                    <input type="text" id="adminProdCat" name='category' class="form-control" maxlength="30" required/>
                 </div>
 
                 <div class="form-outline mb-3">
                     <label for="">Product Series</label>
-                    <input type="text" id="adminProdSer" name='series' class="form-control" maxlength="30"/>
+                    <input type="text" id="adminProdSer" name='series' class="form-control" maxlength="30" required/>
                 </div>
+                <!-- <<<<<<<<<<<<  out div to row -->
 
-
+                <!-- in div to row >>>>>>>>>>>-->
                 <div class="form-outline mb-3">
                     <label for="">Product Price</label>
-                    <input type="number" id="adminProdPrice" name='price' class="form-control" max='9999999'/>
+                    <input type="number" id="adminProdPrice" name='price' class="form-control" max='9999999' required/>
                 </div>
 
                 <div class="form-outline mb-3">
                     <label for="">Product Stocks</label>
-                    <input type="number" id="adminProdQty" name='stocks' class="form-control" max='9999999'/>
+                    <input type="number" id="adminProdQty" name='stocks' class="form-control" max='9999999' required/>
                 </div>
+                <!-- <<<<<<<<<<< out div to row -->
 
                 <div class="form-outline mb-3">
                     <label for="">Product Sizes</label>
-                    <input type="text" id="adminProdSizes" name='sizes' class="form-control" maxlength="200"/>
+                    <input type="text" id="adminProdSizes" name='sizes' class="form-control" maxlength="200" required/>
                 </div>
 
                 <div class="form-outline mb-3">
                     <label for="">Product Variation</label>
-                    <input type="text" id="adminProdVar" name='variation' class="form-control" maxlength="200"/>
+                    <input type="text" id="adminProdVar" name='variation' class="form-control" maxlength="200" required/>
                 </div>
 
                 <div class="form-outline mb-3">
                     <label for="">Product Description</label>
-                    <textarea type="text" id="adminProdDesc" name='description' rows="10" cols="50" class="form-control pDescription" maxlength="1000"></textarea>
+                    <textarea type="text" id="adminProdDesc" name='description' rows="10" cols="50" class="form-control pDescription" maxlength="1000" required></textarea>
                 </div>
 
+                <!-- in div to row >>>>>>>>>>>-->
                 <div class="form-outline mb-3">
                     <label for="">Product Designer</label>
                     <input type="text" id="adminProdDesig" name='designer' class="form-control" maxlength="40"/>
@@ -93,6 +96,7 @@
                     <label for="">Product Manufacturer</label>
                     <input type="text" id="adminProdManuf" name='manufacturer' class="form-control" maxlength="40"/>
                 </div>
+                <!-- <<<<<<<<<<< out div to row -->
 
                 <!-- <div class="form-outline mb-2">
                     <label for="">Product Image</label>
@@ -101,7 +105,7 @@
 
                     <div class="preview-container">
                         <div>
-                            <label for="file1">Choose an image:</label>
+                            <!-- <label for="file1">Choose an image:</label> -->
                             <input type="file" name="file[]" id="prodimg1" accept="image/*" class="file-input" required>
                             <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
                         </div>

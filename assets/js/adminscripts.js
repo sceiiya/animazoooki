@@ -855,4 +855,5 @@ function defaultimg(img) {
 $('#adminDashboard').click(function() {
     $('.ADMINheadNavs').toggleClass('hidden');
     $('.navigation').toggleClass('collapsed');
+    $('.mainAdmin').toggleClass('collapsed');
 });
