@@ -42,7 +42,36 @@ function loadContent(content) {
 }
 
 $(document).ready(function () {
-    loadContent('/controllers/admin/admin_dashboard.php');
+    var curTab = localStorage.getItem('ADMNavtab');
+    switch (true) {
+        case (curTab == 'dashboard'):
+            loadContent('/controllers/admin/admin_dashboard.php');
+            break;
+        case (curTab == 'products'):
+            loadContent('/controllers/admin/admin_products.php');
+            break;
+        case (curTab == 'customers'):
+            loadContent('/controllers/admin/admin_customers.php');
+            break;
+        case (curTab == 'orders'):
+            loadContent('/controllers/admin/admin_orders.php');
+            break;
+        case (curTab == 'users'):
+            loadContent('/controllers/admin/admin_users.php');
+            break;
+        default: loadContent('/controllers/admin/admin_dashboard.php');
+                localStorage.setItem('ADMNavtab', 'dashboard');
+            break;
+    }
+
+    var curSTab = localStorage.getItem('ADMNavStat');
+        if(curSTab == 'hidden'){
+            $('.ADMINheadNavs').toggleClass('hidden');
+            $('.navigation').toggleClass('collapsed');
+            $('.mainAdmin').toggleClass('collapsed');
+        }
+
+    // loadContent('/controllers/admin/admin_dashboard.php');
     var access = $('#accessChecker').val();
     console.log(access);
     if(access === "System Admin" || access === "Supervisor") {
@@ -52,25 +81,30 @@ $(document).ready(function () {
     }
 });
 adminDashboard.on('click', function (e) {
+    localStorage.setItem('ADMNavtab', 'dashboard');
     loadContent('/controllers/admin/admin_dashboard.php');
     e.preventDefault();
 });
 adminProducts.on('click', function (e) {
+    localStorage.setItem('ADMNavtab', 'products');
     loadContent('/controllers/admin/admin_products.php');
     e.preventDefault();
     productsFetch();
 });
 adminCustomers.on('click', function (e) {
+    localStorage.setItem('ADMNavtab', 'customers');
     loadContent('/controllers/admin/admin_customers.php');
     e.preventDefault();
     customersFetch();
 });
 adminOrders.on('click', function (e) {
+    localStorage.setItem('ADMNavtab', 'orders');
     loadContent('/controllers/admin/admin_orders.php');
     e.preventDefault();
     ordersFetch();
 });
 adminUsers.on('click', function (e) {
+    localStorage.setItem('ADMNavtab', 'users');
     loadContent('/controllers/admin/admin_users.php');
     e.preventDefault();
     adminusersFetch();
@@ -852,8 +886,16 @@ function defaultimg(img) {
 //     $('.ADMINNavCont-out').toggle();
 // });
 // $('.TOGicon').click(function() {
-$('#adminDashboard').click(function() {
+$('#adminDashboard').click(colADMtoggle);
+
+function colADMtoggle(){
     $('.ADMINheadNavs').toggleClass('hidden');
     $('.navigation').toggleClass('collapsed');
     $('.mainAdmin').toggleClass('collapsed');
-});
+    var curSTab = localStorage.getItem('ADMNavStat');
+    if(curSTab == 'hidden'){
+        localStorage.setItem('ADMNavStat', 'collapsed');
+    }else{
+        localStorage.setItem('ADMNavStat', 'hidden'); 
+    }
+}

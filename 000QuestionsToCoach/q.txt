@@ -1,5 +1,4 @@
 >> why does some php script/controlllers return the string with space in ajax?
-
     REFER TO:
     file: 
     js: script.js line 427 - 431
@@ -8,14 +7,12 @@
 
 >> why if used form/it redirects to the controller page/file?
     >how to fix
-
     REFER TO: php
     file: 
-    js: admin_addProducts.js line 42 - 137 [commented]
+    js: controllers/admin/admin_addProducts.js line 42 - 137 [commented]
     php: admin_modals.php line 
 
 >> when using printing methods, can't catch the error trough try catch block
-
     REFER TO:
     file: includes/admin/modals/admin_modals.php && 
     js: scripts.js 147>158
@@ -23,7 +20,6 @@
 
 >> sa ajax, bakit pag return ginagamit hindi kinukuha yung return as a result sa success
  >otherwies sa echo lang ang kinukuha
-
     REFER TO:   
     file: 
     js: 
@@ -32,7 +28,6 @@
 >>  may updated php mailer na po ba na library?
  > may nagamit po ako na latest php function v8.1
  > need indi gumagana sa v.7
- 
     REFER TO:
     file: 
     js: 
