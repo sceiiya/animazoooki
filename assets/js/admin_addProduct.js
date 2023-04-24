@@ -13,6 +13,15 @@
 //     }
 // });
 
+function ERROR_logger(nERROR){
+    var err={
+      error: nERROR
+    };
+    $.post("/controllers/admin/error_logger.php", err,
+    ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
+    );
+  }
+
 $('input[type="number"]').on('keydown input', function(e) {
     var max = parseInt($(this).attr('max'));
     var value = parseInt($(this).val());
@@ -38,6 +47,40 @@ function addProduct() {
 $("#saveProduct").on('click', () => {
     $('#confirm-addProd').modal('show');
 })
+
+// $("#SubmitNewProduct").on('submit', function(e){
+// // $("#addProductModal").on('submit', function(e){
+//   e.preventDefault(); // Prevent form from submitting normally
+  
+//   // Get form data
+//   var formData = new FormData(this);
+  
+//   // Send AJAX request
+//   $.ajax({
+//       url: '/controllers/admin/admin_save_products.php',
+//       type: 'POST',
+//       data: formData,
+//       dataType: 'json',
+//       cache: false,
+//       contentType: false,
+//       processData: false,
+//       success: function(response){
+//           // Handle success response
+//           ERROR_logger(response);
+//           console.log(response);
+//           ERROR_logger(formData);
+//           console.log(formData);
+//       },
+//       error: function(jqXHR, textStatus, errorThrown){
+//           // Handle error response
+//           console.log(textStatus, errorThrown);
+//           ERROR_logger(jqXHR + textStatus + errorThrown);
+//           ERROR_logger(formData);
+//           console.log(formData);
+//       }
+//   });
+// });
+
 
 // $("#yes-addProd").on('click', () => {
 //     iCode = $("#adminProdCode").val();
@@ -182,3 +225,151 @@ $(document).ready(function() {
       }
     });
   });
+
+
+
+
+
+  // MODIFY PRODUCT
+function modify(nId) {
+  $("#indexer").val(nId);
+
+  $.ajax({
+      type: 'POST',
+      url: "/controllers/admin/admin_modify_prod.php",
+      data: { nid: nId },
+      beforeSend: function () {
+          var x = document.querySelector('#adminSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      },
+      success: (result) => {
+          if (result == "error") {
+              alert("Please call system admnistrator");
+          } else {
+              var objRes = JSON.parse(result);
+              sPcat = $("#productCat").val(objRes.category);
+              sPname = $("#productName").val(objRes.name);
+              sPprice = $("#productPrice").val(objRes.price);
+              sPquantity = $("#productQuantity").val(objRes.stocks);
+              sPdescription = $("#productDescription").val(objRes.description);
+              sPphoto = $("productPhoto").val(objRes.image);
+
+              $('#modifyModal').modal('show');                
+          }
+      },
+      complete: function () {
+          var x = document.querySelector('#adminSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      },
+  });
+}
+
+// SAVE MODIFY PRODUCT
+$("#Modify").on('click', () => {
+//   $('#confirm-modProd').modal('show');
+// })
+
+// $("#yes-modProd").on('click', () => {
+
+//   var nIndex = $("#indexer").val();
+//   var sPcat = $("#productCat").val();
+//   var sPname = $("#productName").val();
+//   var sPprice = $("#productPrice").val();
+//   var sPquantity = $("#productQuantity").val();
+//   var sPdescription = $("#productDescription").val();
+//   var sPphoto = $("#productPhoto").val();
+
+//   var sJsonData = {
+//       index: nIndex,
+//       pcat: sPcat,
+//       pname: sPname,
+//       pprice: sPprice,
+//       pquantity: sPquantity,
+//       pdescription: sPdescription,
+//       pphoto: sPphoto
+//   }
+
+//   $.ajax({
+//       type: 'POST',
+//       url: "/controllers/admin/admin_modify_save.php",
+//       data: sJsonData,
+//       beforeSend: function () {
+//           var x = document.querySelector('#adminSpinner');
+//           if (x.style.display === "none") {
+//               x.style.display = "block";
+//           } else {
+//               x.style.display = "none";
+//           }
+//       },
+//       success: (result) => {
+//           if (result == "updated") {
+//               $('#confirm-modProd').modal('hide');
+//               $('#modifyModal').modal('hide');
+//               productsFetch();
+//           } else {
+//               alert(result);
+//               $('#confirm-modProd').modal('hide');
+//           }
+//       },
+//       complete: function () {
+//           var x = document.querySelector('#adminSpinner');
+//           if (x.style.display === "none") {
+//               x.style.display = "block";
+//           } else {
+//               x.style.display = "none";
+//           }
+//       },
+//   });
+
+
+
+  iImage = $("#productPhoto").prop('files')[0];
+  var form_data = new FormData();
+  form_data.append('name', sPname);
+  form_data.append('image', iImage);
+
+  $.ajax({
+      url: "/controllers/admin/admin_modify_save_img.php",
+      type: 'POST',
+      data: form_data,
+      contentType: false,
+      processData: false,
+      beforeSend: function () {
+          var x = document.querySelector('#adminSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      },
+      success: (result) => {
+          if (result == "Missing image file!") {
+              alert(result);
+          } else if (result == "Image file saved!") {
+              console.log(result);
+          } else if (result == "Failed to save image!") {
+              alert(result);
+              console.log(result);
+          } else {
+              console.log(result);
+          }
+      },
+      complete: function () {
+          var x = document.querySelector('#adminSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      },
+  });
+
+});

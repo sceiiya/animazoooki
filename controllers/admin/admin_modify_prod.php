@@ -14,7 +14,7 @@
 
 if ($dbConnection == true) {
     $index = $_POST['nid'];
-    $qSelect = "SELECT `category`, `name`, `price`, `stocks`, `description`, `image` FROM $dbDatabase .`products` WHERE `id` = '{$index}'";
+    $qSelect = "SELECT `name`, `category`, `series`, `price`, `stocks`, `description`, `designer`, `manufacturer`,`images` FROM $dbDatabase .`products` WHERE `id` = '{$index}'";
     $eSelect = mysqli_query($dbConnection, $qSelect);
 
     if ($eSelect == true) {

@@ -33,6 +33,7 @@
 
 <!-- form outie -->
 <form action="../../controllers/admin/admin_save_products.php" method="post" enctype="multipart/form-data">
+<!-- <form action="" method="post" id='SubmitNewProduct'enctype="multipart/form-data"> -->
 
 <div class="modal modal-xl" id="addProductModal">
     <div class="modal-dialog">
@@ -48,37 +49,43 @@
                     <input type="text" id="adminProdName" name='name' class="form-control" maxlength="150" required/>
                 </div>
                 <!-- in div to row >>>>>-->
-                <div class="form-outline mb-3">
+                <div class="row">
+                <div class="form-outline col-md-6 mb-4">
                     <label for="">Product Category</label>
                     <input type="text" id="adminProdCat" name='category' class="form-control" maxlength="30" required/>
                 </div>
 
-                <div class="form-outline mb-3">
+                <div class="form-outline col-md-6 mb-4">
                     <label for="">Product Series</label>
                     <input type="text" id="adminProdSer" name='series' class="form-control" maxlength="30" required/>
+                </div>
                 </div>
                 <!-- <<<<<<<<<<<<  out div to row -->
 
                 <!-- in div to row >>>>>>>>>>>-->
-                <div class="form-outline mb-3">
+                <div class="row">
+                <div class="form-outline col-md-6 mb-4">
                     <label for="">Product Price</label>
                     <input type="number" id="adminProdPrice" name='price' class="form-control" max='9999999' required/>
                 </div>
 
-                <div class="form-outline mb-3">
+                <div class="form-outline col-md-6 mb-4">
                     <label for="">Product Stocks</label>
                     <input type="number" id="adminProdQty" name='stocks' class="form-control" max='9999999' required/>
                 </div>
+                </div>
                 <!-- <<<<<<<<<<< out div to row -->
 
-                <div class="form-outline mb-3">
+                <div class="row">
+                <div class="form-outline col-md-6 mb-4">
                     <label for="">Product Sizes</label>
                     <input type="text" id="adminProdSizes" name='sizes' class="form-control" maxlength="200" required/>
                 </div>
 
-                <div class="form-outline mb-3">
+                <div class="form-outline col-md-6 mb-4">
                     <label for="">Product Variation</label>
                     <input type="text" id="adminProdVar" name='variation' class="form-control" maxlength="200" required/>
+                </div>
                 </div>
 
                 <div class="form-outline mb-3">
@@ -87,14 +94,16 @@
                 </div>
 
                 <!-- in div to row >>>>>>>>>>>-->
-                <div class="form-outline mb-3">
+                <div class="row">
+                <div class="form-outline col-md-6 mb-4">
                     <label for="">Product Designer</label>
                     <input type="text" id="adminProdDesig" name='designer' class="form-control" maxlength="40"/>
                 </div>
 
-                <div class="form-outline mb-3">
+                <div class="form-outline col-md-6 mb-4">
                     <label for="">Product Manufacturer</label>
                     <input type="text" id="adminProdManuf" name='manufacturer' class="form-control" maxlength="40"/>
+                </div>
                 </div>
                 <!-- <<<<<<<<<<< out div to row -->
 
@@ -164,7 +173,7 @@
 
 
             <div class="modal-footer flex-row d-flex justify-content-between">
-                <input type="submit" value="Yes" id="yes-modProd" class="btn redbgwhitec">
+                <input type="submit" value="Yes" id="yes-addProd" class="btn redbgwhitec">
                 <!-- <button type="button" id="yes-addProd" class="btn redbgwhitec">Yes</button> -->
                 <button type="button" class="btn" data-bs-dismiss="modal">No</button>
             </div>
@@ -177,6 +186,9 @@
 </form>
 
 <!-- MODIFY PRODUCT MODAL -->
+<!-- form outie -->
+<!-- <form action="../../controllers/admin/admin_modify_save.php" method="post" enctype="multipart/form-data"> -->
+<form action="" method="post" enctype="multipart/form-data">
 
 <div class="modal modal-xl" id="modifyModal">
     <div class="modal-dialog ">
@@ -188,20 +200,26 @@
 
             <div class="modal-body">
                 <input id="indexer" style="display: none;">
+
+                    <div class="form-outline mb-3">
+                        <input type="text" id="productName" name="productName" class="form-control form-control-lg" maxlength="150" required/>
+                        <label class="form-label" for="productName">Product Name</label>
+                    </div>
+
                 <div class="row">
                     <div class="col-md-6 mb-4">
 
-                    <div class="form-outline">
-                        <input type="text" id="productName" name="productName" class="form-control form-control-lg" />
-                        <label class="form-label" for="productName">Product Name</label>
-                    </div>
+                        <div class="form-outline">
+                            <input type="text" id="productCat" name="productCat" class="form-control form-control-lg" maxlength="30" required/>
+                            <label class="form-label" for="productCat">Product Category</label>
+                        </div>
 
                     </div>
                     <div class="col-md-6 mb-4">
 
                         <div class="form-outline">
-                            <input type="text" id="productCat" name="productCat" class="form-control form-control-lg" />
-                            <label class="form-label" for="productCat">Product Category</label>
+                            <input type="text" id="productSer" name="productSer" class="form-control form-control-lg" maxlength="30" required/>
+                            <label class="form-label" for="productSer">Product Series</label>
                         </div>
 
                     </div>
@@ -213,7 +231,7 @@
                     <div class="col-md-6 mb-4 pb-2">
 
                         <div class="form-outline">
-                            <input type="email" id="productPrice" name="productPrice" class="form-control form-control-lg" />
+                            <input type="email" id="productPrice" name="productPrice" class="form-control form-control-lg" max='9999999' required/>
                             <label class="form-label" for="productPrice">Product Price</label>
                         </div>
 
@@ -222,21 +240,72 @@
                     <div class="col-md-6 mb-4 pb-2">
 
                         <div class="form-outline">
-                            <input type="email" id="productQuantity" name="productQuantity" class="form-control form-control-lg" />
-                            <label class="form-label" for="productQuantity">Product Quantity</label>
+                            <input type="email" id="productQuantity" name="productQuantity" class="form-control form-control-lg" max='9999999' required/>
+                            <label class="form-label" for="productQuantity">Product Stocks</label>
                         </div>
 
                     </div>
 
-                    <div class="form-outline mb-1">
-                        <label for="">Product Description</label>
-                        <textarea type="text" id="productDescription" rows="10" cols="50" class="form-control pDescription"></textarea>
+                    <div class="row">
+                        <div class="form-outline col-md-6 mb-4">
+                            <label for="">Product Sizes</label>
+                            <input type="text" id="productSizes" name='sizes' class="form-control" maxlength="200" required/>
+                        </div>
+
+                        <div class="form-outline col-md-6 mb-4">
+                            <label for="">Product Variation</label>
+                            <input type="text" id="productVar" name='variation' class="form-control" maxlength="200" required/>
+                        </div>
                     </div>
 
                     <div class="form-outline mb-1">
+                        <label for="">Product Description</label>
+                        <textarea type="text" id="productDescription" rows="10" cols="50" class="form-control pDescription" maxlength="1000" required></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-outline col-md-6 mb-4">
+                            <label for="">Product Designer</label>
+                            <input type="text" id="productDesig" name='designer' class="form-control" maxlength="40"/>
+                        </div>
+
+                        <div class="form-outline col-md-6 mb-4">
+                            <label for="">Product Manufacturer</label>
+                            <input type="text" id="productManuf" name='manufacturer' class="form-control" maxlength="40"/>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-outline mb-1">
                         <label for="">Replace Image</label>
                         <input type="file" id="productPhoto" class="form-control" accept="image/*" />
+                    </div> -->
+                    <!-- must edit this for modification -->
+                    <div class="preview-container">
+                        <div>
+                            <!-- <label for="file1">Choose an image:</label> -->
+                            <input type="file" name="file[]" id="modprodimg1" accept="image/*" class="file-input" required>
+                            <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
+                        </div>
+
+                        <div>
+                            <!-- <label for="file2">Choose an image:</label> -->
+                            <input type="file" name="file[]" id="modprodimg2" accept="image/*" class="file-input">
+                            <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
+                        </div>
+
+                        <div>
+                            <!-- <label for="file3">Choose an image:</label> -->
+                            <input type="file" name="file[]" id="modprodimg3" accept="image/*" class="file-input">
+                            <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
+                        </div>
+
+                        <div>
+                            <!-- <label for="file4">Choose an image:</label> -->
+                            <input type="file" name="file[]" id="modprodimg4" accept="image/*" class="file-input">
+                            <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
+                        </div>
                     </div>
+                    <!-- must edit this for modification -->
 
                 </div>
 
@@ -271,14 +340,15 @@
 
 
             <div class="modal-footer flex-row d-flex justify-content-between">
-                <button type="button" id="yes-modProd" class="btn redbgwhitec">Yes</button>
+                <input type="submit" value="Yes" id="yes-modProd" class="btn redbgwhitec">
+                <!-- <button type="button" id="yes-modProd" class="btn redbgwhitec">Yes</button> -->
                 <button type="button" class="btn" data-bs-dismiss="modal">No</button>
             </div>
 
         </div>
     </div>
 </div>
-
+</form>
 
 <!-- DELETE PRODUCT -->
 

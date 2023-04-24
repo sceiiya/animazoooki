@@ -133,10 +133,14 @@
             // echo $productData;
             // echo "Add Product Success";
             // return "Add Product Success";
+            header('http://localhost/admin/dashboard/index.php');
+            // header('../../admin/dashboard/index.php');
             exit();
         }else{
             // echo "Add Product Failed";
             // return "Add Product Failed";
+            header('http://localhost/admin/dashboard/index.php');
+            // header('../../admin/dashboard/index.php');
             exit();
         }
     } catch(Exception $e) {

@@ -8,6 +8,8 @@
 //     main.classList.toggle('active');
 // }
 
+// fetch dashboard average stats
+
 // add hovered class on selected list items
 let list = document.querySelectorAll('.navigation li');
 function activelink() {
@@ -288,146 +290,7 @@ $("#yes-delete").on('click', () => {
     });
 })
 
-// MODIFY PRODUCT
-function modify(nId) {
-    $("#indexer").val(nId);
 
-    $.ajax({
-        type: 'POST',
-        url: "/controllers/admin/admin_modify_prod.php",
-        data: { nid: nId },
-        beforeSend: function () {
-            var x = document.querySelector('#adminSpinner');
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        },
-        success: (result) => {
-            if (result == "error") {
-                alert("Please call system admnistrator");
-            } else {
-                var objRes = JSON.parse(result);
-                sPcat = $("#productCat").val(objRes.category);
-                sPname = $("#productName").val(objRes.name);
-                sPprice = $("#productPrice").val(objRes.price);
-                sPquantity = $("#productQuantity").val(objRes.stocks);
-                sPdescription = $("#productDescription").val(objRes.description);
-                sPphoto = $("productPhoto").val(objRes.image);
-
-                $('#modifyModal').modal('show');                
-            }
-        },
-        complete: function () {
-            var x = document.querySelector('#adminSpinner');
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        },
-    });
-}
-
-$("#Modify").on('click', () => {
-    $('#confirm-modProd').modal('show');
-})
-
-$("#yes-modProd").on('click', () => {
-
-    var nIndex = $("#indexer").val();
-    var sPcat = $("#productCat").val();
-    var sPname = $("#productName").val();
-    var sPprice = $("#productPrice").val();
-    var sPquantity = $("#productQuantity").val();
-    var sPdescription = $("#productDescription").val();
-    var sPphoto = $("#productPhoto").val();
-
-    var sJsonData = {
-        index: nIndex,
-        pcat: sPcat,
-        pname: sPname,
-        pprice: sPprice,
-        pquantity: sPquantity,
-        pdescription: sPdescription,
-        pphoto: sPphoto
-    }
-
-    $.ajax({
-        type: 'POST',
-        url: "/controllers/admin/admin_modify_save.php",
-        data: sJsonData,
-        beforeSend: function () {
-            var x = document.querySelector('#adminSpinner');
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        },
-        success: (result) => {
-            if (result == "updated") {
-                $('#confirm-modProd').modal('hide');
-                $('#modifyModal').modal('hide');
-                productsFetch();
-            } else {
-                alert(result);
-                $('#confirm-modProd').modal('hide');
-            }
-        },
-        complete: function () {
-            var x = document.querySelector('#adminSpinner');
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        },
-    });
-
-    iImage = $("#productPhoto").prop('files')[0];
-    var form_data = new FormData();
-    form_data.append('name', sPname);
-    form_data.append('image', iImage);
-
-    $.ajax({
-        url: "/controllers/admin/admin_modify_save_img.php",
-        type: 'POST',
-        data: form_data,
-        contentType: false,
-        processData: false,
-        beforeSend: function () {
-            var x = document.querySelector('#adminSpinner');
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        },
-        success: (result) => {
-            if (result == "Missing image file!") {
-                alert(result);
-            } else if (result == "Image file saved!") {
-                console.log(result);
-            } else if (result == "Failed to save image!") {
-                alert(result);
-                console.log(result);
-            } else {
-                console.log(result);
-            }
-        },
-        complete: function () {
-            var x = document.querySelector('#adminSpinner');
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        },
-    });
-
-});
 
 // ACTIVATE CUSTOMER
 function cusAct(nId) {

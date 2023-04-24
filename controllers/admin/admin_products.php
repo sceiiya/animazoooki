@@ -34,9 +34,9 @@
                         <tr>
                             <th style='display:none'>Product ID</th>  
                             <th>Product Category</th>
+                            <th>Product Series</th>
                             <th>Product Image</th>
                             <th>Product Name</th>    
-                            <th>Product Description</th>
                             <th>Price</th>
                             <th>Stocks</th>
                             <th>Action</th>
@@ -52,9 +52,9 @@
                 $sHtml .= "<tr>
                         <td style='display:none'>".$rows['id']."</td>
                         <td>".$rows['category']."</td>
+                        <td class='prod_desc'>".$rows['series']."</td>
                         <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='".$rowImg[0]."' onerror='defaultimg(this);'></td>
                         <td>".$rows['name']."</td>
-                        <td class='prod_desc'>".$rows['description']."</td>
                         <td class='autoNumeric'>".$rows['price']."</td>
                         <td class='autoNumeric'>".$rows['stocks']."</td>
                         <td>

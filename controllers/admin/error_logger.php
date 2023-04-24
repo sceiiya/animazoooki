@@ -54,6 +54,8 @@ $spc = "\n";
 if(empty($ERROR)){
     return false;
 }else{
+    $admAccess = $_SESSION['admaccess'];
+    $admUsername = $_SESSION['admusername'];
 date_default_timezone_set('Asia/Manila');
 $wError = fopen("../../errorlog/admin_errorlog/errorlog.txt", "a");
 fwrite($wError,"\n
@@ -66,8 +68,9 @@ fclose($wError);
 }
 unset($_SESSION['error']);
 }
-
-
+header('../../admin/dashboard/index.php');
+exit();
+// Level : ".$admAccess."\nAdmin User : ".$admUsername."\n
 //param
 // get from javascript
     //for try catch type of script

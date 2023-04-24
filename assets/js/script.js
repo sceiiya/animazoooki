@@ -547,8 +547,7 @@ function ERROR_logger(nERROR){
   var errrorr ={
     error: nERROR
   };
-  $.post("/controllers/error_logger.php", errrorr,
-  ()=>{toastr.error("Please Report this to our support", "Something went wrong");;}
+  $.post("/controllers/error_logger.php", errrorr, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
   );
 }
 
