@@ -251,11 +251,16 @@ function modify(nId) {
               alert("Please call system admnistrator");
           } else {
               var objRes = JSON.parse(result);
+            //   console.log(JSON.parse(objRes.sizes).join(', '));
               sPcat = $("#productCat").val(objRes.category);
               sPname = $("#productName").val(objRes.name);
               sPprice = $("#productPrice").val(objRes.price);
               sPquantity = $("#productQuantity").val(objRes.stocks);
+              sPsizes = $('#productSizes').val(JSON.parse(objRes.sizes).join(', '));
+              sPvar = $('#productVar').val(JSON.parse(objRes.variation).join(', '));
               sPdescription = $("#productDescription").val(objRes.description);
+              sPdesign = $('#productDesig').val(objRes.designer);
+              sPmanu = $('#productManuf').val(objRes.manufacturer);
               sPphoto = $("productPhoto").val(objRes.image);
 
               $('#modifyModal').modal('show');                

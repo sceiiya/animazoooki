@@ -86,6 +86,7 @@ adminDashboard.on('click', function (e) {
     localStorage.setItem('ADMNavtab', 'dashboard');
     loadContent('/controllers/admin/admin_dashboard.php');
     e.preventDefault();
+    dashboardFetch();
 });
 adminProducts.on('click', function (e) {
     localStorage.setItem('ADMNavtab', 'products');
@@ -118,6 +119,37 @@ adminChangePass.on('click', function (e) {
 
 
 // FETCH
+
+function dashboardFetch() {
+
+    $.ajax({
+        type: 'POST',
+        url: "/controllers/admin/admin_dashboard.php",
+        beforeSend: function () {
+            var x = document.querySelector('#adminSpinner');
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        },
+        success: (result) => {
+            if (result == "error") {
+                alert("Please call system administrator");
+            } else {
+                $(".mainAdmin").html(result);
+            }
+        },
+        complete: function () {
+            var x = document.querySelector('#adminSpinner');
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        },
+    });
+}
 
 function productsFetch() {
 
@@ -749,7 +781,7 @@ function defaultimg(img) {
 //     $('.ADMINNavCont-out').toggle();
 // });
 // $('.TOGicon').click(function() {
-$('#adminDashboard').click(colADMtoggle);
+$('#TOGicon').click(colADMtoggle);
 
 function colADMtoggle(){
     $('.ADMINheadNavs').toggleClass('hidden');

@@ -120,7 +120,7 @@ body {
 
 .navigation ul li:nth-child(1) {
     margin-bottom: 40px;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .navigation ul li a {
@@ -378,14 +378,14 @@ body {
 }
 
 .details .recentOrders table tr td:nth-child(2) {
-    text-align: end;
+    text-align: center;
 }
 
 .details .recentOrders table tr td:nth-child(3) {
     text-align: center;
 }
 
-.status.delivered {
+.status.Delivered {
     padding: 2px 4px;
     background: #8de02c;
     color: var(--white);
@@ -394,7 +394,7 @@ body {
     font-weight: 500;
 }
 
-.status.pending {
+.status.Pending {
     padding: 2px 4px;
     background: #f9ca3f;
     color: var(--white);
@@ -403,7 +403,7 @@ body {
     font-weight: 500;
 }
 
-.status.return {
+.status.Return {
     padding: 2px 4px;
     background: #f00;
     color: var(--white);
@@ -412,7 +412,7 @@ body {
     font-weight: 500;
 }
 
-.status.inprogress {
+.status.Shipping {
     padding: 2px 4px;
     background: #1795ce;
     color: var(--white);
