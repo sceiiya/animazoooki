@@ -20,7 +20,7 @@ try{
                 $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
             }
             $sugHTML.= '
-            <a class="suggest-card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/" title="'.$imageFile.'">
+            <a class="suggest-card-attr card_light" href="/all-products/product_in_dynamic_template/index.php?id='.$rows['id'].'" title="'.$imageFile.'">
             <div class="suggest-item-img-cont">
                 <img src="'.$imageFile.'" class="suggest-item-img-main"  onerror="DEFOimgPlaceholder(this)" alt="">
             </div>
