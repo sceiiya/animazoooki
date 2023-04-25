@@ -43,6 +43,7 @@
                             <th>Action</th>
                         </tr>
                 ";
+                // print_r( $rows = mysqli_fetch_array($eSelect));
             while($rows = mysqli_fetch_array($eSelect)) {
                 try{
                 // $rowsz = mysqli_fetch_array($eSelect);

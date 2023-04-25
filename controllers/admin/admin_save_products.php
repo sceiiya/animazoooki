@@ -77,16 +77,16 @@
     }
     } catch (Aws\S3\Exception\S3Exception $e) {
         if ($e->getAwsErrorCode() === 'RequestTimeTooSkewed') {
-            $_SESSION['error'] = 'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.'RequestTimeTooSkewed'.'<br>'.'Your device time is behind, Please update to real time or sync time'.'<br>'.$e->getAwsErrorCode();
+            $_SESSION['error'] = '<br>'.'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.'Request Time Too Skewed'.'<br>'.'Your device time is behind, Please update to real time or sync time'.'<br>'.$e->getAwsErrorCode();
             header("Location: error_logger.php");
             exit();
         } else {
-            $_SESSION['error'] = 'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getAwsErrorCode();
+            $_SESSION['error'] = '<br>'.'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getAwsErrorCode();
             header("Location: error_logger.php");
             exit();
         }
     }catch(Exception $err){
-        $_SESSION['error'] = 'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$err->getMessage();
+        $_SESSION['error'] = '<br>'.'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$err->getMessage();
         header("Location: error_logger.php");
         exit();
     }
@@ -133,18 +133,22 @@
             // echo $productData;
             // echo "Add Product Success";
             // return "Add Product Success";
-            header('http://localhost/admin/dashboard/index.php');
+            // header('http://localhost/admin/dashboard/index.php');
+            header('Location: ../../admin/dashboard/index.php');
+
             // header('../../admin/dashboard/index.php');
             exit();
         }else{
             // echo "Add Product Failed";
             // return "Add Product Failed";
-            header('http://localhost/admin/dashboard/index.php');
+            // header('http://localhost/admin/dashboard/index.php');
+            header('Location: ../../admin/dashboard/index.php');
+
             // header('../../admin/dashboard/index.php');
             exit();
         }
     } catch(Exception $e) {
-        $_SESSION['error'] = 'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getMessage();
+        $_SESSION['error'] = '<br>'.'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getMessage();
         header("Location: error_logger.php");
         exit();
     }
