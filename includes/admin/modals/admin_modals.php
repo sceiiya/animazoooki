@@ -610,3 +610,33 @@
         </div>
     </div>
 </div>
+
+<!-- SEND REPORT MODAL -->
+
+<div class="modal" id="confirm-sendRep">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">SEND REPORT</h4>
+            </div>
+
+
+            <div class="modal-body">
+                Report will be sent to your registered email.
+                <br>
+                <br>
+                Continue?
+                <br>
+            </div>
+
+
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-sendRep" class="btn redbgwhitec">YES</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">No</button>
+            </div>
+
+        </div>
+    </div>
+</div>

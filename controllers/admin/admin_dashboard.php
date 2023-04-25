@@ -50,7 +50,7 @@ if ($dbConnection == true) {
             <div class='topbar'>
                 <div class='toggle'>
                     <!-- <ion-icon name='menu-outline'></ion-icon> -->
-                    <p>Welcome! $admUsername</p>
+                    <p>Welcome!&nbsp</p><p style='color:black;'> $admUsername</p>
                 </div>
                 <div class='user'>
                     <img src='/assets/img/profile.png' alt='userimage'>
@@ -103,9 +103,19 @@ if ($dbConnection == true) {
                 <div class='recentOrders'>
                     <div class='cardHeader'>
                         <h2>Recent Orders</h2>
-                        <a href='#' class='btn-csv' style='display: $display;'>Products CSV</a>
-                        <a href='#' class='btn-csv' style='display: $display;'>Sales CSV</a>
-                        <a href='#' class='btn-csv' style='display: $display;'>Customers CSV</a>
+                        <div class='reportCon container col-md-8 d-flex flex-row justify-content-between align-items-center'>                      
+                          <select class='form-select' id='reportList' style='display: $display'>
+                            <option selected disabled value='Select Report'>Select Report</option>
+                            <option value='Products CSV'>Products CSV</option>
+                            <option value='Customers CSV'>Customers CSV</option>
+                            <option value='Orders CSV'>Orders CSV</option>
+                            <option value='Products PDF'>Products PDF</option>
+                            <option value='Customers PDF'>Customers PDF</option>
+                            <option value='Orders PDF'>Orders PDF</option>
+                          </select>
+                          <br>
+                          <button type='submit' onclick='sendReport();' style='display: $display' class='btn ms-2 redbgwhitec'>Send</button>
+                      </div>
                     </div>
              ";
     // FOR DATA IN RECENT ORDERS

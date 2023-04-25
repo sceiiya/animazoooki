@@ -329,9 +329,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    /* border: 1px solid black; */
 }
 
-.cardHeader h2 {
+.reportCon select {
+    margin-left: 215px !important;
+    width: 170px !important;
+}
+
+.cardHeader h2, .toggle p {
     font-weight: 600;
     color: var(--red);
 }
