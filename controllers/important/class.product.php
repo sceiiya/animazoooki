@@ -1,7 +1,7 @@
 <?php
 
 require_once('class.database.php');
-require_once('connect_AWS.php');
+// require_once('connect_AWS.php');
 
 
 // $hostname = getenv('HTTP_HOST');
@@ -14,7 +14,7 @@ class Product{
     // creating folder with index.php from database
 
     // public function add(){
-
+    private $Table = 'products';
     // }
 
     public function createPage($Title){
@@ -69,9 +69,22 @@ class Product{
 
     }
 
-    // public function fetch(){
+    public function fetch($PID){
         
-    // }
+        try{
+            $ConDB = new ClassDbConn;
+            $eCon = $ConDB->NewCon();
+            if($eCon == true){
+                $Pid = [ 'id' => $PID];
+               $PJSON = $ConDB->Select($eCon, $this->Table, $Pid);
+               return $PJSON; 
+            }
+        }catch(Exception $e){
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: ../..all-products/error_logger.php");
+            exit();
+        }
+    }
 
     // public function fetchALL(){
 
@@ -97,7 +110,27 @@ class Product{
 
     // }
 
-    
+    public function fetchRandN($N){
+       
+        // SELECT * FROM products WHERE date_archived IS NULL ORDER BY RAND() LIMIT 3;
+        try{
+            $ConDB = new ClassDbConn;
+            $eCon = $ConDB->NewCon();
+            if($eCon == true){
+                $ord = ['rand'];
+                // $ord = ['name'=>'asC'];
+                $that = ["date_archived" => 'NULL'];
+                // ($mysql, $table, $where, $order, $limit)
+               $PJSON = $ConDB->GSelect($eCon, $this->Table, $that, $ord, $N);
+            //    echo json_encode($PJSON); 
+               return $PJSON; 
+            }
+        }catch(Exception $e){
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: ../..all-products/error_logger.php");
+            exit();
+        }
+    }
 }
 
 // $wError = fopen("../errorlog/user_errorlog/errorlog.txt", "a");

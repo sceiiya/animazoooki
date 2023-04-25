@@ -717,7 +717,8 @@ hr{
     padding: 2px 0px 2px 0px;
     align-items: center;
     justify-content: center;
-
+    align-items: stretch !important;
+    align-content: stretch;
 }
 
 .card-cont-attr-featured-coll{
@@ -731,6 +732,8 @@ hr{
     padding: 2px 0px 2px 0px;
     align-items: center;
     justify-content: center;
+    align-items: stretch !important;
+    align-content: stretch;
 }
 
 /*----------------- product carde here ------------*/
@@ -749,8 +752,8 @@ hr{
     vertical-align: top;
     max-width: 189px !important;
     margin-right: 7px;
-    /* min-height: 189px; */
-    height: 100% !important;
+    min-height:inherit;
+    /* height: 100% ; */
     background-color: #fffbf2;
 }
 

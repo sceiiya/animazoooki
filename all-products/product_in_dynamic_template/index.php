@@ -4,7 +4,55 @@
 <head>
     <!-- head meta tags and css links -->
     <?php include("../../includes/head.php"); ?>
-    <title id="PRODUCT_TITLE">Usada Pekora T-shirt | Animazoooki Merch Co.</title>
+    <?php 
+
+        require_once('../../controllers/important/class.product.php');
+        
+        try{          
+            if($_GET['id']){
+                $GET_PInfo = new Product;
+                $prodInfo = $GET_PInfo->fetch($_GET['id']);
+            }else{
+                header('Location: ../');
+            }
+        }catch(Exception $e){
+            $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
+            header("Location: ../error_logger.php");
+            exit();
+        } 
+            // $('#').val() = prodInfo.id;
+            // $('#PRODUCT_TITLE').text(prodInfo.name + ' | Animazoooki Merch Co.');
+            // $prodInfo['id'];
+            // prodInfo[name];
+            // prodInfo[name];
+            // prodInfo[category];
+            // prodInfo[series];
+            // prodInfo[price];
+            // prodInfo[images];
+            // prodInfo[stocks];
+            // prodInfo[reviews];
+            // prodInfo[ratings];
+            // prodInfo[sizes];
+            // prodInfo[variation];
+            // prodInfo[sold];
+            // prodInfo[description];
+            // prodInfo[designer];
+            // prodInfo[manufacturer];
+    
+    ?>
+
+
+
+    <?php
+
+
+    // try{echo $prodInfo['name'];
+    // }catch(Exception $e){
+    //     $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
+    //     header("Location: ../error_logger.php");
+    //     exit();} 
+    //     ?>
+    <title id="PRODUCT_TITLE"><?php try{echo $prodInfo['name'].' | Animazoooki Merch Co.';}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?></title>
 </head>
 
 <body class="bg-light">
@@ -30,7 +78,7 @@
         <!--left side of the main--->
         <aside class="side-l">
 
-        <input type="number" id="pID" value="9" style="display: none;">
+        <input type="number" id="pID" value="<?php try{echo $prodInfo['id'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>" style="display: none;">
             <!-- <div class="chat-div">
             chat assistant
            </div> -->
@@ -44,35 +92,52 @@
             <div class="product-main-inf">
                 <div class="product-imgs-cont">
                     <div class="product-img-cont">
-                        <img class="product-img-main" src="/all-products/Usada-Pekora_t-shirt/1.jpg"
-                            alt="">
+                        <img class="product-img-main" loading='lazy' src="<?php try{echo json_decode($prodInfo['images'])[0];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header('Location: ../error_logger.php');exit();} ?>"
+                            alt="" onerror="ProdimgPlaceholder(this);">
                     </div>
-                    <ul class="product-img-sub-cont-holder">
-                        <li class="product-img-sub-cont active">
-                            <img class="product-img-sub" src="/all-products/Usada-Pekora_t-shirt/1.jpg"
-                                alt="">
+                    <!-- <ul class="product-img-sub-cont-holder"> -->
+                    <?php try{
+                        $subIMG = '<ul class="product-img-sub-cont-holder">';
+                        foreach(json_decode($prodInfo['images']) as $key => $value) {
+                            $activeClass = $key == 0 ? ' active' : '';
+                            $subIMG .=
+                                '<li class="product-img-sub-cont' . $activeClass . '">
+                            <img class="product-img-sub" loading="lazy" src="'.$value.'"
+                            alt="" onerror="ProdimgPlaceholder(this);">
+                            </li>';
+                        }
+                        echo $subIMG;
+                        // echo json_decode($prodInfo['images'])[1];
+                        }catch(Exception $e){
+                            $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
+                            header('Location: ../error_logger.php');
+                            exit();
+                        } ?>
+                        <!-- <li class="product-img-sub-cont active">
+                            <img class="product-img-sub" loading='lazy' src="php script here"
+                                alt="" onerror="ProdimgPlaceholder(this);">
                         </li>
                         <li class="product-img-sub-cont">
-                            <img class="product-img-sub" src="/all-products/Usada-Pekora_t-shirt/2.jpg"
-                                alt="">
+                            <img class="product-img-sub" loading='lazy' src="/all-products/Usada-Pekora_t-shirt/2.jpg"
+                                alt="" onerror="ProdimgPlaceholder(this);">
                         </li>
                         <li class="product-img-sub-cont">
-                            <img class="product-img-sub" src="/all-products/Usada-Pekora_t-shirt/3.jpg"
-                                alt="">
+                            <img class="product-img-sub" loading='lazy' src="/all-products/Usada-Pekora_t-shirt/3.jpg"
+                                alt="" onerror="ProdimgPlaceholder(this);">
                         </li>
                         <li class="product-img-sub-cont">
-                            <img class="product-img-sub" src="/all-products/Usada-Pekora_t-shirt/4.jpg"
-                                alt="">
-                        </li>
+                            <img class="product-img-sub" loading='lazy' src="/all-products/Usada-Pekora_t-shirt/4.jpg"
+                                alt="" onerror="ProdimgPlaceholder(this);">
+                        </li> -->
                     </ul>
                 </div>
                 <div class="product-inf-cont">
                     <div class="product-name txtl">
-                        Usada Pekora HOLOLIVE JP inspired T-shirt
+                    <?php try{echo $prodInfo['name'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                     </div>
                     <div class="product-headinf-cont my-1">
                         <em class="product-sold-count">
-                            486 sold
+                        <?php try{echo $prodInfo['sold'].' sold';}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                         </em>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
                         <div class="product-rating-cont txtc">
@@ -83,10 +148,10 @@
                             <i class="fas fa-star unrated"></i>
                             &nbsp;&nbsp;|&nbsp;&nbsp; 
                         <em class="product-rating-count">
-                            total reviews
+                        <?php try{echo number_format($prodInfo['reviews']).' reviews';}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                         </em>&nbsp;&nbsp;|&nbsp;&nbsp;
                         <em class="product-stocks-count txtred">
-                            sold count
+                        <?php try{echo number_format($prodInfo['stocks']).' in stock';}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                         </em>
                         </div>
                     </div>
@@ -97,28 +162,60 @@
                     </div>
                     <div>&nbsp;</div>
                     <div class="txtl">
-                        <label id="pCateg">Category:</label>&nbsp;&nbsp;<label id="pCateg">Inspired T-shirt</label>
-                        <label id="pCateg">Series:</label>&nbsp;&nbsp;<label id="pSeries">Hololive</label>
+                        <label id="pCateg">Category:</label>&nbsp;&nbsp;
+                        <label id="pCateg">
+                        <?php try{echo $prodInfo['category'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
+                        </label>
+                        <label id="pCateg">Series:</label>&nbsp;&nbsp;
+                        <label id="pSeries">
+                        <?php try{echo $prodInfo['series'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
+                        </label>
                     </div>
 
                     <div class="clflx txtl">
                         <div>
                             Variation:
                         </div>
-                        <div class="rwflx">
-                            <button class="product-variation"><label for="product-name">White n Black v1</label></button>
+                        <!-- <div class="rwflx"> -->
+                        <?php try{
+                        $pVars = '<div class="rwflx">';
+                        foreach(json_decode($prodInfo['variation']) as $key => $value) {
+                            $pVars .=
+                            '<button class="product-variation"><label for="product-name">'.$value.'</label></button>';
+                        }
+                        echo $pVars;
+                        // echo json_decode($prodInfo['images'])[1];
+                        }catch(Exception $e){
+                            $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
+                            header('Location: ../error_logger.php');
+                            exit();
+                        } ?>
+                            <!-- <button class="product-variation"><label for="product-name">White n Black v1</label></button>
                             <button class="product-variation"><label for="product-name">White n Black v2</label></button>
                             <button class="product-variation"><label for="product-name">Black n White v1</label></button>
-                            <button class="product-variation"><label for="product-name">Red n White v2</label></button>
+                            <button class="product-variation"><label for="product-name">Red n White v2</label></button> -->
                         </div>
                         <div>
                             Size:
                         </div>
-                        <div class="rwflx">
-                            <button class="product-variation"><label for="product-name">Small</label></button>
+                        <!-- <div class="rwflx"> -->
+                        <?php try{
+                        $pSizes = '<div class="rwflx">';
+                        foreach(json_decode($prodInfo['sizes']) as $key => $value) {
+                            $pSizes .=
+                            '<button class="product-variation"><label for="product-name">'.$value.'</label></button>';
+                        }
+                        echo $pSizes;
+                        // echo json_decode($prodInfo['images'])[1];
+                        }catch(Exception $e){
+                            $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
+                            header('Location: ../error_logger.php');
+                            exit();
+                        } ?>
+                            <!-- <button class="product-variation"><label for="product-name">Small</label></button>
                             <button class="product-variation"><label for="product-name">Medium</label></button>
                             <button class="product-variation"><label for="product-name">Large</label></button>
-                            <button class="product-variation"><label for="product-name">XXL</label></button>
+                            <button class="product-variation"><label for="product-name">XXL</label></button> -->
                         </div>
                     </div>
                     <div class="rwflx txtl">
@@ -135,14 +232,14 @@
             <div class="product-desc txtl pt-3 ps-2">
                 Product Name: Usada Pekora HOLOLIVE JP inspired T-shirt<br/><br/>
 
-                Series: hololive production<br/>
-                Manufacturer: Animazooki Company<br/>
-                Designer: Sceiiya<br/>
+                Series: <?php try{echo $prodInfo['series'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
+                <br/>
+                Manufacturer: <?php try{echo $prodInfo['manufacturer'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
+                <br/>
+                Designer: <?php try{echo $prodInfo['designer'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
+                <br/>
                 Specifications: Cotton<br/>
                 <br/>
-                Order Limit: 10 per person<br/>
-                <br/>
-                “Kon-pepko kon-peko kon-peko!”<br/>
                 <br/><br/>
 
             </div>

@@ -39,3 +39,16 @@
     <div class="position-absolute top-50 start-50 translate-middle" id="LoadingSpinner" style="display: none;">
     <div class="spinner-border text-danger"></div>
     </div>
+    <script>
+        //for product img error prod
+        async function ProdimgPlaceholder(img) {
+          img.onerror = "";
+          img.src ="/all-products/animazoooki_onload.png";
+        }
+
+        //for product img error in outer pgs
+            async function DEFOimgPlaceholder(img) {
+          img.onerror = "";
+          img.src ="/animazoooki_onload.png";
+        }
+    </script>

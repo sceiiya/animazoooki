@@ -750,7 +750,8 @@ hr{
     max-width: 189px !important;
     margin-right: 7px;
     /* min-height: 189px; */
-    height: fit-content !important;
+    min-height:inherit;
+    /* height: fit-content !important; */
     background-color: #fffbf2;
 }
 

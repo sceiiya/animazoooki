@@ -39,14 +39,14 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="4000">
-                <img src="/assets/img/tensura-cover.png" class="d-block w-100" alt="...">
+                <img src="/assets/img/tensura-cover.png" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series One</h5>
                     <p>This is some featured series.</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="8000">
-                <img src="https://media.tenor.com/iMeKS77VlEgAAAAd/anime.gif" class="d-block w-100" alt="...">
+                <img src="https://media.tenor.com/iMeKS77VlEgAAAAd/anime.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Two</h5>
                     <p>This is some featured series.</p>
@@ -55,7 +55,7 @@
             </div>
             <!-- template here -->
             <div class="carousel-item" data-bs-interval="12000">
-                <img src="https://media.tenor.com/9_ygK1r8OFkAAAAd/d4dj-meme.gif" class="d-block w-100" alt="...">
+                <img src="https://media.tenor.com/9_ygK1r8OFkAAAAd/d4dj-meme.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Three</h5>
                     <p>This is some featured series.</p>
@@ -63,28 +63,28 @@
             </div>
             <!-- template here -->
             <div class="carousel-item" data-bs-interval="16000">
-                <img src="https://media.tenor.com/7EVOYN2fDOcAAAAC/haikyuu-anime.gif" class="d-block w-100" alt="...">
+                <img src="https://media.tenor.com/7EVOYN2fDOcAAAAC/haikyuu-anime.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Four</h5>
                     <p>This is some featured series.</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="20000">
-                <img src="https://media.tenor.com/wEko9Isabc8AAAAd/nijisanji-vtuber.gif" class="d-block w-100" alt="...">
+                <img src="https://media.tenor.com/wEko9Isabc8AAAAd/nijisanji-vtuber.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Five</h5>
                     <p>This is some featured series.</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="24000">
-                <img src="https://media.tenor.com/MzTypOGKvlEAAAAd/toradora-minecraft.gif" class="d-block w-100" alt="...">
+                <img src="https://media.tenor.com/MzTypOGKvlEAAAAd/toradora-minecraft.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Six</h5>
                     <p>This is some featured series.</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="28000">
-                <img src="https://media.tenor.com/cz7GtnlG7M8AAAAd/lazulight-nijisanji.gif" class="d-block w-100" alt="...">
+                <img src="https://media.tenor.com/cz7GtnlG7M8AAAAd/lazulight-nijisanji.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Seven</h5>
                     <p>This is some featured series.</p>
@@ -137,7 +137,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Usada-Pekora_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -165,7 +165,7 @@
 
                         <a class="card-attr card_light" href="/all-products/minato-aqua-scale-figurine/">
                             <div class="item-img-cont">
-                                <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -193,7 +193,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Enna-Alouette_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -221,7 +221,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -249,7 +249,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -277,7 +277,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -341,7 +341,7 @@
 
                                 <a class="card-attr-featured-coll card_light" href="/all-products/Usada-Pekora_t-shirt/">
                                     <div class="item-img-cont">
-                                        <img src="/all-products/Usada-Pekora_t-shirt/3.jpg" class="item-img-main" alt="...">
+                                        <img src="/all-products/Usada-Pekora_t-shirt/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                                     </div>
                                     <div class=" item-inf-cont">
                                         <div class="item-inf-tex-cont">
@@ -369,7 +369,7 @@
 
                                 <a class="card-attr-featured-coll card_light" href="/all-products/minato-aqua-scale-figurine/">
                                     <div class="item-img-cont">
-                                        <img src="/all-products/minato-aqua-scale-figurine/0.jpg" class="item-img-main" alt="...">
+                                        <img src="/all-products/minato-aqua-scale-figurine/0.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                                     </div>
                                     <div class=" item-inf-cont">
                                         <div class="item-inf-tex-cont">
@@ -397,7 +397,7 @@
 
                                 <a class="card-attr-featured-coll card_light" href="/all-products/Usada-Pekora_t-shirt/">
                                     <div class="item-img-cont">
-                                        <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="...">
+                                        <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                                     </div>
                                     <div class=" item-inf-cont">
                                         <div class="item-inf-tex-cont">
@@ -435,7 +435,7 @@
 
                                 <a class="card-attr-featured-coll card_light" href="">
                                     <div class="item-img-cont">
-                                        <img src="/all-products/mock/1.jpg" class="item-img-main" alt="...">
+                                        <img src="/all-products/mock/1.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                                     </div>
                                     <div class=" item-inf-cont">
                                         <div class="item-inf-tex-cont">
@@ -463,7 +463,7 @@
 
                                 <a class="card-attr-featured-coll card_light" href="">
                                     <div class="item-img-cont">
-                                        <img src="/all-products/mock/2.jpg" class="item-img-main" alt="...">
+                                        <img src="/all-products/mock/2.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                                     </div>
                                     <div class=" item-inf-cont">
                                         <div class="item-inf-tex-cont">
@@ -491,7 +491,7 @@
 
                                 <a class="card-attr-featured-coll card_light" href="">
                                     <div class="item-img-cont">
-                                        <img src="/all-products/mock/3.jpg" class="item-img-main" alt="...">
+                                        <img src="/all-products/mock/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                                     </div>
                                     <div class=" item-inf-cont">
                                         <div class="item-inf-tex-cont">
@@ -556,7 +556,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Usada-Pekora_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Usada-Pekora_t-shirt/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Usada-Pekora_t-shirt/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -584,7 +584,7 @@
 
                         <a class="card-attr card_light" href="/all-products/minato-aqua-scale-figurine/">
                             <div class="item-img-cont">
-                                <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -612,7 +612,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Enna-Alouette_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -640,7 +640,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -668,7 +668,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -696,7 +696,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -751,7 +751,7 @@
 
                         <a class="card-attr card_light">
                             <div class="series-img-cont">
-                                <img src="/all-products/series/mock/7.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/series/mock/7.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="series-name-cont">
@@ -764,7 +764,7 @@
 
                         <a class="card-attr card_light">
                             <div class="series-img-cont">
-                                <img src="/all-products/series/mock/8.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/series/mock/8.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="series-name-cont">
@@ -777,7 +777,7 @@
 
                         <a class="card-attr card_light">
                             <div class="series-img-cont">
-                                <img src="/all-products/series/mock/10.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/series/mock/10.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="series-name-cont">
@@ -790,7 +790,7 @@
 
                         <a class="card-attr card_light">
                             <div class="series-img-cont">
-                                <img src="/all-products/series/mock/3.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/series/mock/3.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="series-name-cont">
@@ -803,7 +803,7 @@
 
                         <a class="card-attr card_light">
                             <div class="series-img-cont">
-                                <img src="/all-products/series/mock/2.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/series/mock/2.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="series-name-cont">
@@ -816,7 +816,7 @@
 
                         <a class="card-attr card_light">
                             <div class="series-img-cont">
-                                <img src="/all-products/series/mock/4.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/series/mock/4.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="series-name-cont">
@@ -858,7 +858,7 @@
 
                         <a class="card-attr card_light">
                             <div class="category-img-cont">
-                                <img src="/all-products/category/mock/1.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/category/mock/1.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="category-name-cont">
@@ -871,7 +871,7 @@
 
                         <a class="card-attr card_light">
                             <div class="category-img-cont">
-                                <img src="/all-products/category/mock/6.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/category/mock/6.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="category-name-cont">
@@ -884,7 +884,7 @@
 
                         <a class="card-attr card_light">
                             <div class="category-img-cont">
-                                <img src="/all-products/category/mock/2.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/category/mock/2.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="category-name-cont">
@@ -897,7 +897,7 @@
 
                         <a class="card-attr card_light">
                             <div class="category-img-cont">
-                                <img src="/all-products/category/mock/4.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/category/mock/4.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="category-name-cont">
@@ -910,7 +910,7 @@
 
                         <a class="card-attr card_light">
                             <div class="category-img-cont">
-                                <img src="/all-products/category/mock/3.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/category/mock/3.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="category-name-cont">
@@ -923,7 +923,7 @@
 
                         <a class="card-attr card_light">
                             <div class="category-img-cont">
-                                <img src="/all-products/category/mock/7.jpg" class="series-img-main" alt="...">
+                                <img src="/all-products/category/mock/7.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="category-name-cont">
@@ -963,7 +963,7 @@
 
                         <a class="card-attr card_light" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
                             <div class="item-img-cont">
-                                <img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" class="item-img-main" alt="...">
+                                <img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -1020,7 +1020,7 @@
 <!-- article card template -->
                         <a class="card-attr card_light" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
                             <div class="item-img-cont">
-                                <img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" class="item-img-main" alt="...">
+                                <img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -1105,7 +1105,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Usada-Pekora_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -1133,7 +1133,7 @@
 
                         <a class="card-attr card_light" href="/all-products/minato-aqua-scale-figurine/">
                             <div class="item-img-cont">
-                                <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -1161,7 +1161,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Enna-Alouette_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -1189,7 +1189,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/3.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -1217,7 +1217,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/2.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/2.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -1245,7 +1245,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
