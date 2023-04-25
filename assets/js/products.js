@@ -156,3 +156,10 @@ function cngeHeight() {
 
 cngeHeight();
 window.addEventListener('resize', cngeHeight);
+
+
+//for product img error
+function ProdimgPlaceholder(img) {
+  img.onerror = "";
+  img.src ="/all-products/animazoooki_onload.png";
+}

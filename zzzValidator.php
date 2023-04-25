@@ -36,7 +36,7 @@
 
 
 
-$sizez = "XS, S, m, L, xL, xl sfd, saw, sad wd as, as";
+// $sizez = "XS, S, m, L, xL, xl sfd, saw, sad wd as, as";
 // $sizez = explode(', ', strtoupper($sizez));
 // print_r($sizez);
 // // echo $sizez;
@@ -54,9 +54,9 @@ $sizez = "XS, S, m, L, xL, xl sfd, saw, sad wd as, as";
 // // echo $sizez;
 // print_r($sizez);
 
-$sizez = explode(', ', strtoupper($sizez)); // split the string by ', ' delimiter
-$sizez = json_encode($sizez); // encode the array as a JSON string
-print_r($sizez);
+// $sizez = explode(', ', strtoupper($sizez)); // split the string by ', ' delimiter
+// $sizez = json_encode($sizez); // encode the array as a JSON string
+// print_r($sizez);
 
 
 // $sizez = "XS, S, m, L, xL, xl sfd, saw, sad wd as, as";
@@ -65,3 +65,17 @@ print_r($sizez);
 // echo $sizez;
 
 // ["XS", "S", "m", "L", "xL", "xl sfd", "saw", "sad wd as", "as"]
+class Product{
+    public function fetch($i){
+        if($i == 5){
+            return 'is five';
+        }else{
+            return 'nonce';
+        }
+    }
+}
+
+// CONST GET_PINFO = new Product;
+define('GET_PINFO', new Product);
+$PRODINFO = GET_PINFO->fetch(5);
+echo $PRODINFO;

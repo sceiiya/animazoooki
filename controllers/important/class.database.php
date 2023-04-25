@@ -23,7 +23,6 @@ require_once("connect_DB.php");
         public function NewCon(){
             $connect = mysqli_connect($this->Host, $this->UName, $this->Pass, $this->DBName);
             return $connect; //true or false
-
                         // true or false
                         // if ($connect == true){
                         //     return "true";

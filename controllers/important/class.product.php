@@ -69,9 +69,22 @@ class Product{
 
     }
 
-    // public function fetch(){
+    public function fetch($PID){
         
-    // }
+        try{
+            $ConDB = new ClassDbConn;
+            $eCon = $ConDB->NewCon();
+            if($eCon == true){
+                $Pid = [ 'id' => $PID];
+               $PJSON = $ConDB->Select($eCon, 'products', $Pid);
+               return $PJSON; 
+            }
+        }catch(Exception $e){
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: ../..all-products/error_logger.php");
+            exit();
+        }
+    }
 
     // public function fetchALL(){
 
