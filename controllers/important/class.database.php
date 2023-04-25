@@ -57,52 +57,153 @@ require_once("connect_DB.php");
         }
 
         //method select value
-        //requires 3 arguments
-        public function Select($mysql, $table, $where){
+        //requires 5 arguments
+        public function GSelect($mysql, $table, $where, $order, $limit){
+            try{
+                $dResult = [];
+                $eSelect = "SELECT * FROM `".$table."`";
 
-            $dResult = [];
-            $eSelect = "SELECT * FROM `".$table."`";
+                $sWhere = "";
 
-            $sWhere = "";
-            //check if the where param is empty or not
-            if (empty($where)){
-                $qSelect = $eSelect;
-            }else{
-                $x = 1;
-                //print all the where value given
-                foreach($where as $colname => $value){
-                    if ($x < sizeof($where)){
-                        $sWhere .= " `$colname` = '$value' AND";
-                    }else{
-                        $sWhere .= " `$colname` = '$value'";
+                //check if the where param is empty or not
+                if (empty($where)){
+                    $qSelect = $eSelect;
+                }else{
+                    // $x = 1;
+                    //print all the where value given
+                    foreach($where as $colname => $value){
+                        if(strtoupper($value) == 'NULL'){
+                            $sWhere .= " `".$colname."` IS NULL AND";
+                        }elseif(strtoupper($value) == 'NOT NULL'){
+                            $sWhere .= " `".$colname."` IS NOT NULL AND";
+                        }else{
+                            $sWhere .= " `".$colname."` = '".$value."' AND";
+                        }
+                        $sWhere = substr($sWhere,0,-3);
+                        // $x++;
                     }
-                    
-                    $x++;
+                    //concatenate  the select and where clauses
+                    $qSelect = $eSelect." WHERE ".$sWhere;
                 }
-                //concatenate  the select and where clauses
-                $qSelect =$eSelect." WHERE ".$sWhere;
+
+                $sOrder = "";
+                if (!empty($order)){
+                    foreach($order as $colname => $value){
+                        switch (true) {
+                            case (strtoupper($value) == 'RAND'):
+                                $sOrder .= ' ORDER BY RAND() ';
+                                break;
+                            case (strtoupper($value) == 'LEN'):
+                                $sOrder .= ' ORDER BY LENGTH('.$colname.') ';
+                                break;
+                            case (strtoupper($value) == 'DESC'):
+                                $sOrder .= ' ORDER BY ('.$colname.') DESC ';
+                            break;   
+                            case (strtoupper($value) == 'ASC'):
+                                $sOrder .= ' ORDER BY ('.$colname.') ASC ';
+                                break;    
+                            case (strtoupper($value) == 'DATE'):
+                                $sOrder .= ' ORDER BY DATE('.$colname.') ';
+                                break;  
+                            case (strtoupper($value) == 'TIME'):
+                                $sOrder .= ' ORDER BY TIME('.$colname.') ';
+                                break;  
+                            case (strtoupper($value) == 'YEAR'):
+                                $sOrder .= ' ORDER BY YEAR('.$colname.') ';
+                                break;  
+                            case (strtoupper($value) == 'ABS'):
+                                $sOrder .= ' ORDER BY ABS('.$colname.') ';
+                                break;  
+                            default: exit();
+                                break;
+                        }
+                    }
+                    $qSelect .= $sOrder;
+                }else{
+                    exit();
+                }
+
+                if(!empty($limit)){
+                    $qSelect .=" LIMIT ".$limit;
+                }else{
+                    exit();
+                }
+
+                // echo $qSelect;
+                // execute the query
+                $Result = mysqli_query($mysql, $qSelect);
+
+                //store the data value
+                $rows = mysqli_fetch_array($Result);
+                
+                //store the data value
+                $dResult = $rows;
+
+                //return the data value from query
+                return $dResult;
+                mysqli_close($mysql);
+            }catch(Exception $err){
+                $_SESSION['error'] = $err->getMessage();
+                mysqli_close($mysql);
+                header("Location: error_logger.php");
+                exit();
             }
 
-            // //concatenate  the select and where clauses
-            // $qSelect =$eSelect." WHERE ".$sWhere;
+        }
 
-            //execute the query
-            $Result = mysqli_query($mysql, $qSelect);
-            // while($rows = mysqli_fetch_assoc($Result)){
-            //     //store the data value
-            //     $dResult[] = $rows;
-            // }
-            $rows = mysqli_fetch_array($Result);
-            //store the data value
-            $dResult = $rows;
-            
+        //method select value
+        //requires 3 arguments
+        public function Select($mysql, $table, $where){
+            try{
+                $dResult = [];
+                $eSelect = "SELECT * FROM `".$table."`";
 
-            //return the data value from query
-            // return $rows['id'];
+                $sWhere = "";
+                //check if the where param is empty or not
+                if (empty($where)){
+                    $qSelect = $eSelect;
+                }else{
+                    $x = 1;
+                    //print all the where value given
+                    foreach($where as $colname => $value){
+                        if ($x < sizeof($where)){
+                            $sWhere .= " `".$colname."` = '".$value."' AND";
+                        }else{
+                            $sWhere .= " `".$colname."` = '".$value."'";
+                        }
 
-            //return the data value from query
-            return $dResult;
-            mysqli_close($mysql);
+                        $x++;
+                    }
+                    //concatenate  the select and where clauses
+                    $qSelect =$eSelect." WHERE ".$sWhere;
+                }
+
+                // //concatenate  the select and where clauses
+                // $qSelect =$eSelect." WHERE ".$sWhere;
+
+                //execute the query
+                $Result = mysqli_query($mysql, $qSelect);
+                // while($rows = mysqli_fetch_assoc($Result)){
+                //     //store the data value
+                //     $dResult[] = $rows;
+                // }
+                $rows = mysqli_fetch_array($Result);
+                //store the data value
+                $dResult = $rows;
+                
+
+                //return the data value from query
+                // return $rows['id'];
+
+                //return the data value from query
+                return $dResult;
+                mysqli_close($mysql);
+            }catch(Exception $err){
+                $_SESSION['error'] = $err->getMessage();
+                mysqli_close($mysql);
+                header("Location: error_logger.php");
+                exit();
+            }
 
         }
 

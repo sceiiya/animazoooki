@@ -551,10 +551,7 @@ function ERROR_logger(nERROR){
   );
 }
 
-function DEFOimgPlaceholder(img) {
-  img.onerror = "";
-  img.src ="/animazoooki_onload.png";
-}
+
 
 // function ERROR_logger(nERROR){
 //   var errrorr ={

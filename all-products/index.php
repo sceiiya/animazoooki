@@ -6,7 +6,6 @@
     <?php include("../includes/head.php"); ?>
     <title>Animazoooki | All Products</title>
 </head>
-
 <body class="bg-light">
 
 <!-- messenger -->
@@ -55,7 +54,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Usada-Pekora_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/64436b3b558bc1.10286844.jpg" class="item-img-main" alt="...">
+                                <img src="https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/64436b3b558bc1.10286844.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -83,7 +82,7 @@
 
                         <a class="card-attr card_light" href="/all-products/minato-aqua-scale-figurine/">
                             <div class="item-img-cont">
-                                <img src="https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/64436b3b558bc1.10286844.jpg" class="item-img-main" alt="...">
+                                <img src="https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/64436b3b558bc1.10286844.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -111,7 +110,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Enna-Alouette_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/64436b3b558bc1.10286844.jpg" class="item-img-main" alt="...">
+                                <img src="https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/64436b3b558bc1.10286844.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -139,7 +138,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/64436b3b558bc1.10286844.jpg" class="item-img-main" alt="...">
+                                <img src="https://animazoooki-img.s3.ap-southeast-1.amazonaws.com/64436b3b558bc1.10286844.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -167,7 +166,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/1.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/1.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -195,7 +194,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/2.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/2.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -236,7 +235,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/3.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -264,7 +263,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -292,7 +291,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/5.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/5.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -320,7 +319,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/6.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/6.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -348,7 +347,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/7.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/7.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -376,7 +375,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/8.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/8.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -418,7 +417,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/9.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/9.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -446,7 +445,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/10.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/10.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -474,7 +473,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/11.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/11.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -502,7 +501,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/12.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/12.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -530,7 +529,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/5.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/5.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -558,7 +557,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/9.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/9.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -600,7 +599,7 @@
 
                         <a class="card-attr card_light" href="/all-products/Usada-Pekora_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -628,7 +627,7 @@
 
                         <a class="card-attr card_light" href="/all-products/minato-aqua-scale-figurine/">
                             <div class="item-img-cont">
-                                <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/minato-aqua-scale-figurine/2.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -656,7 +655,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Enna-Alouette_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -684,7 +683,7 @@
                         
                         <a class="card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/">
                             <div class="item-img-cont">
-                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/3.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/Shalltear-Bloodfallen_t-shirt/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this);">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -712,7 +711,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/1.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/1.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -740,7 +739,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/2.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/2.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -777,7 +776,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/3.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/3.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -805,7 +804,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/4.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/4.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -833,7 +832,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/5.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/5.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -861,7 +860,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/6.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/6.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -889,7 +888,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/7.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/7.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">
@@ -917,7 +916,7 @@
 
                         <a class="card-attr card_light" href="">
                             <div class="item-img-cont">
-                                <img src="/all-products/mock/8.jpg" class="item-img-main" alt="...">
+                                <img src="/all-products/mock/8.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
                             </div>
                             <div class=" item-inf-cont">
                                 <div class="item-inf-tex-cont">

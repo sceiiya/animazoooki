@@ -103,7 +103,7 @@ function myProfileEdit() {
           var iCell = $("#contactNo").val();
           var iDefSA = $("#shippingAdd").val();
           var iDefBA = $("#billingAdd").val();
-          var iDUn = $("#profile-uname").val();
+          // var iDUn = $("#profile-uname").text();
         
           var UserUpdate = {
             username: iUn,
@@ -121,7 +121,7 @@ function myProfileEdit() {
             if(result == "updated"){
             toastr.success("Profile Updated");
             editBTN.text("EDIT");
-            $("#profile-uname").val() = iUn;
+            $(".profile-uname").text(iUn);
           }else{
             ERROR_logger(result);
           }

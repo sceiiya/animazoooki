@@ -65,17 +65,24 @@
 // echo $sizez;
 
 // ["XS", "S", "m", "L", "xL", "xl sfd", "saw", "sad wd as", "as"]
-class Product{
-    public function fetch($i){
-        if($i == 5){
-            return 'is five';
-        }else{
-            return 'nonce';
-        }
-    }
-}
+// class Product{
+//     public function fetch($i){
+//         if($i == 5){
+//             return 'is five';
+//         }else{
+//             return 'nonce';
+//         }
+//     }
+// }
 
-// CONST GET_PINFO = new Product;
-define('GET_PINFO', new Product);
-$PRODINFO = GET_PINFO->fetch(5);
-echo $PRODINFO;
+// // CONST GET_PINFO = new Product;
+// define('GET_PINFO', new Product);
+// $PRODINFO = GET_PINFO->fetch(5);
+// echo $PRODINFO;
+
+$samp = ['a','b','c','d','e'];
+
+// $rowImg = json_decode($rows['images']);
+// $randomIndex = rand(0, count($rowImg) - 1);
+echo rand(0,count($samp)-1);
+// echo count($samp)-1;
