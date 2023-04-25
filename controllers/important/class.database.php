@@ -134,13 +134,15 @@ require_once("connect_DB.php");
                 $Result = mysqli_query($mysql, $qSelect);
 
                 //store the data value
-                $rows = mysqli_fetch_array($Result);
+                $rows = mysqli_fetch_assoc($Result);
+                // $rows = mysqli_fetch_array($Result);
                 
                 //store the data value
                 $dResult = $rows;
 
                 //return the data value from query
                 return $dResult;
+                // return $rows;
                 mysqli_close($mysql);
             }catch(Exception $err){
                 $_SESSION['error'] = $err->getMessage();
@@ -189,7 +191,7 @@ require_once("connect_DB.php");
                 // }
                 $rows = mysqli_fetch_array($Result);
                 //store the data value
-                $dResult = $rows;
+                $dResult[] = $rows;
                 
 
                 //return the data value from query

@@ -68,7 +68,7 @@ fclose($wError);
 }
 unset($_SESSION['error']);
 }
-header('../../admin/dashboard/index.php');
+header('Location: ../../admin/dashboard/index.php');
 exit();
 // Level : ".$admAccess."\nAdmin User : ".$admUsername."\n
 //param
