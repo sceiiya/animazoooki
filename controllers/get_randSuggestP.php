@@ -20,7 +20,7 @@ try{
                 $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
             }
             $sugHTML.= '
-            <a class="suggest-card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/" title="Shalltear Bloodfallen OVERLORD Anime Series inspired T-shirt">
+            <a class="suggest-card-attr card_light" href="/all-products/Shalltear-Bloodfallen_t-shirt/" title="'.$imageFile.'">
             <div class="suggest-item-img-cont">
                 <img src="'.$imageFile.'" class="suggest-item-img-main"  onerror="DEFOimgPlaceholder(this)" alt="">
             </div>
