@@ -34,7 +34,7 @@ session_start();
         <div class="navigation ADMINNavCont ADMINNavCont-out">
             <ul>
                 <li>
-                    <a class='TOGicon' href="#">
+                    <a id='TOGicon' href="#">
                         <span class="icon" style="z-index: 50;"><ion-icon name="settings-outline"></ion-icon></span>
                         <span class="title ADMINheadNavs">Animazooki Admin</span>
                     </a>
