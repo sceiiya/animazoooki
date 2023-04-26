@@ -1,7 +1,8 @@
 <?php
 
 require_once('class.database.php');
-// require_once('connect_AWS.php');
+
+require_once('connect_AWS.php');
 
 
 // $hostname = getenv('HTTP_HOST');
@@ -76,7 +77,7 @@ class Product{
             $eCon = $ConDB->NewCon();
             if($eCon == true){
                 $Pid = [ 'id' => $PID];
-               $PJSON = $ConDB->Select($eCon, $this->Table, $Pid);
+               $PJSON = $ConDB->GSelect($eCon, $this->Table, $Pid, '', '');
                return $PJSON; 
             }
         }catch(Exception $e){

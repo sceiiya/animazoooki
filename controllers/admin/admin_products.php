@@ -62,7 +62,11 @@
                         <td style='display:none'>".$rows['id']."</td>
                         <td>".$rows['category']."</td>
                         <td class='prod_desc'>".$rows['series']."</td>      
+ testBranch_develop
                         <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='".$imageFile."' onerror='defaultimg(this);'></td>
+
+                        <td class='adPListImgCont'><a href='/all-products/product/index.php?id=".$rows['id']."' target='_blank' ><img class='adPListImg' loading='lazy' id='imgtest' src='".$rowImg[rand(0,count(($rowImg))-1)]."' onerror='defaultimg(this);'><a></td>
+testBranch_develop
                         <td>".$rows['name']."</td>
                         <td class='autoNumeric'>".$rows['price']."</td>
                         <td class='autoNumeric'>".$rows['stocks']."</td>
