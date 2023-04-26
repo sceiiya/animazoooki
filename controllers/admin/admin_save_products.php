@@ -2,9 +2,11 @@
     session_start();
 
     if(!isset($_SESSION['admusername'])){
-        header('Location: /admin/index.php');
+        header('Location: /admin/');
+        exit();
     }else if( $_SESSION['admaccess'] == 'Agent') {
-        header('Location: /admin/index.php');
+        header('Location: /admin/');
+        exit();
     }else {
         $admAccess = $_SESSION['admaccess'];
         $admUsername = $_SESSION['admusername'];
@@ -13,6 +15,8 @@
     include("../important/class.database.php");
     require_once '../../vendor/autoload.php';
     require_once('../important/connect_AWS.php');
+    
+
     
     use Aws\S3\S3Client;
     
@@ -67,8 +71,8 @@
                 // echo 'string is'.$strFinURL. '<br/>';
                 array_push($AllImgs, $strFinURL);
             } else {
-                return false;
-                exit();
+                // return false;
+                // exit();
                 // echo 'no '.$i;
                 // echo 'Image for Variation '.$i.' is empty. Please put files by modifying the product<br/>';
                 
@@ -130,7 +134,7 @@
         ];
 
         $eInsert = $ConDB->Insert($eCon, "products", $productData);
-        if($eInsert == "true"){
+        if($eInsert == 'true'){
             // echo $productData;
             // echo "Add Product Success";
             // return "Add Product Success";
@@ -152,6 +156,8 @@
             // header('../../admin/dashboard/index.php');
             exit();
         }
+        header('Location: ../../admin/dashboard/?status=success');
+
     } catch(Exception $e) {
         $_SESSION['error'] = '<br>'.'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getMessage();
         header("Location: error_logger.php");
