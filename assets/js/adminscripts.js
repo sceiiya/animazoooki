@@ -11,13 +11,13 @@
 // fetch dashboard average stats
 
 // add hovered class on selected list items
-let list = document.querySelectorAll('.navigation li');
+let navlist = document.querySelectorAll('.navigation li');
 function activelink() {
-    list.forEach((item) =>
+    navlist.forEach((item) =>
         item.classList.remove('hovered'));
     this.classList.add('hovered');
 }
-list.forEach((item) =>
+navlist.forEach((item) =>
     item.addEventListener('mouseover', activelink));
 
 // ADMIN
@@ -75,7 +75,7 @@ $(document).ready(function () {
 
     // loadContent('/controllers/admin/admin_dashboard.php');
     var access = $('#accessChecker').val();
-    console.log(access);
+    // console.log(access);
     if(access === "System Admin" || access === "Supervisor") {
         adminUsers.css('display', 'default');
     } else {
@@ -507,6 +507,12 @@ $('#yes-addUser').on('click', () => {
     var sLname = $('#admRegLastName').val();
     var sUname = $('#admRegUserame').val();
     var sEmail = $('#admRegEmail').val();
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(!re.test(sEmail)){
+        alert('Invalid email format');
+        $('#confirmAddUser').modal('hide');
+        return false;
+    }
 
     var objData = {
         regfirstname: sFname,
@@ -752,6 +758,7 @@ $('#adminSignout').on('click', () => {
                     console.log(result);
                     $('#signoutModal').modal('hide');
                     window.location = "/admin/index.php";
+                    localStorage.clear();
                 } else {
                     console.log(result);
                 }
@@ -781,7 +788,7 @@ function defaultimg(img) {
 //     $('.ADMINNavCont-out').toggle();
 // });
 // $('.TOGicon').click(function() {
-$('#TOGicon').click(colADMtoggle);
+$('#TOGicon').on('click',colADMtoggle);
 
 function colADMtoggle(){
     $('.ADMINheadNavs').toggleClass('hidden');
@@ -794,3 +801,113 @@ function colADMtoggle(){
         localStorage.setItem('ADMNavStat', 'hidden'); 
     }
 }
+
+// REPORTS
+
+function sendReport() {
+    $('#confirm-sendRep').modal('show');
+}
+
+$('#yes-sendRep').on('click', () => {
+    var sReport = $('#reportList').val();
+    if (sReport == "Products CSV") {
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/csv_products.php",
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == " Email sent!") {
+                    alert(result);
+                    $('#confirm-sendRep').modal('hide');
+                    $('#reportList').val("Select Report");
+                    dashboardFetch();
+                } else {
+                    alert(result);
+                    $('#confirm-sendRep').modal('hide');
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        });
+    } else if (sReport == "Customers CSV") {
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/csv_customers.php",
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Email sent!") {
+                    alert(result);
+                    $('#confirm-sendRep').modal('hide');
+                    $('#reportList').val("Select Report");
+                    dashboardFetch();
+                } else {
+                    alert(result);
+                    $('#confirm-sendRep').modal('hide');
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        });
+    } else if (sReport == "Orders CSV") {
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/csv_orders.php",
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Email sent!") {
+                    alert(result);
+                    $('#confirm-sendRep').modal('hide');
+                    $('#reportList').val("Select Report");
+                    dashboardFetch();
+                } else {
+                    alert("Unknown: " + result);
+                    $('#confirm-sendRep').modal('hide');
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        });
+    } else {
+        alert("Please select a report");
+        $('#confirm-sendRep').modal('hide');
+    }
+})
