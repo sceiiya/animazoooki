@@ -1,0 +1,11 @@
+Order ID, User ID, Product Code, Product Name, Order Total, Product Quantity, Payment Method, Shipping Method, date_ordered, Order Status, Date Delivered
+"10","10","costume","costume1","1000","2","PAYPAL","","2023-04-16 22:39:02","Shipping",""
+"9","4","toy","toy 3","600","3","BANK","","2023-04-16 22:38:10","Delivered","2023-04-26 06:43:03"
+"8","3","toy","toy2","400","2","CASH ON DELIVERY","","2023-04-16 22:37:06","Delivered","2023-04-26 06:43:01"
+"7","2","toy","toy1","200","1","PAYPAL","","2023-04-16 22:36:27","Pending",""
+"6","5","cap","cap3","300","1","BANK","","2023-04-16 22:31:52","Pending",""
+"5","6","cap","cap2","300","1","BANK","","2023-04-16 22:31:51","Pending",""
+"4","7","cap","cap1","300","1","BANK","","2023-04-16 22:31:50","Pending",""
+"3","8","tshirt","tshirt3","100","1","BANK","","2023-04-16 22:31:50","Pending",""
+"2","9","tshirt","tshirt2","100","1","BANK","","2023-04-16 22:31:49","Pending",""
+"1","1","tshirt","tshirt1","100","1","BANK","","2023-04-16 22:31:48","Pending",""

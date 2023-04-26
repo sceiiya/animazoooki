@@ -49,13 +49,24 @@
                 // $rowsz = mysqli_fetch_array($eSelect);
                 // $rowImgg = $rowsz['images'];
                 $rowImg = json_decode($rows['images']);
+                if($rowImg == NULL)  {
+                    $imageFile = "/admin/listing/product_img/animazoooki_onload.png";
+                } else {
+                    // $rowImg = $rowImg;
+                    $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
+                }
                 // print_r($rowImg[0]);
+
                 
                 $sHtml .= "<tr>
                         <td style='display:none'>".$rows['id']."</td>
                         <td>".$rows['category']."</td>
                         <td class='prod_desc'>".$rows['series']."</td>      
+ testBranch_develop
+                        <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='".$imageFile."' onerror='defaultimg(this);'></td>
+
                         <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='".$rowImg[rand(0,count(($rowImg))-1)]."' onerror='defaultimg(this);'></td>
+testBranch_develop
                         <td>".$rows['name']."</td>
                         <td class='autoNumeric'>".$rows['price']."</td>
                         <td class='autoNumeric'>".$rows['stocks']."</td>
