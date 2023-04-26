@@ -107,9 +107,24 @@ class Product{
 
     // }
 
-    // public function fetchReview(){
 
-    // }
+    public function fetchReview($PID){
+        try{
+            $ConDB = new ClassDbConn;
+            $eCon = $ConDB->NewCon();
+            if($eCon == true){
+                $Q = 'SELECT u.username, r.rating, r.rating_comment, r.date_reviewed FROM reviews r JOIN products p ON r.product_id = p.id JOIN clients u ON r.user_id = u.id WHERE p.id = '.$PID;
+                // ($mysql, $table, $where, $order, $limit)
+               $PJSON = $ConDB->General($eCon, $Q);
+                //echo json_encode($PJSON); 
+               return $PJSON; 
+            }
+        }catch(Exception $e){
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: ../..all-products/error_logger.php");
+            exit();
+        }
+    }
 
     public function fetchRandN($N){
        

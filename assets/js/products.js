@@ -156,3 +156,24 @@ function cngeHeight() {
 
 cngeHeight();
 window.addEventListener('resize', cngeHeight);
+
+
+
+
+
+$(document).ready(async()=>{
+  similarItems();
+});
+
+
+async function similarItems(){
+    try{
+      $.get('/controllers/get_randSimilar.php', (data, status)=>{
+        if (status === "success"){
+            $('#sim-prods').append(data);
+        }
+      });
+    }catch(error){
+      ERROR_logger(error);
+    }
+    }

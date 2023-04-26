@@ -20,38 +20,8 @@
             header("Location: ../error_logger.php");
             exit();
         } 
-            // $('#').val() = prodInfo.id;
-            // $('#PRODUCT_TITLE').text(prodInfo.name + ' | Animazoooki Merch Co.');
-            // $prodInfo['id'];
-            // prodInfo[name];
-            // prodInfo[name];
-            // prodInfo[category];
-            // prodInfo[series];
-            // prodInfo[price];
-            // prodInfo[images];
-            // prodInfo[stocks];
-            // prodInfo[reviews];
-            // prodInfo[ratings];
-            // prodInfo[sizes];
-            // prodInfo[variation];
-            // prodInfo[sold];
-            // prodInfo[description];
-            // prodInfo[designer];
-            // prodInfo[manufacturer];
     
     ?>
-
-
-
-    <?php
-
-
-    // try{echo $prodInfo['name'];
-    // }catch(Exception $e){
-    //     $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
-    //     header("Location: ../error_logger.php");
-    //     exit();} 
-    //     ?>
     <title id="PRODUCT_TITLE"><?php try{echo $prodInfo['name'].' | Animazoooki Merch Co.';}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?></title>
 </head>
 
@@ -167,7 +137,7 @@
                         </div>
                     </div>
                     <div class="clflx txtl">
-                        <strong><label class="item-price">$69</label></strong>
+                        <strong><label class="item-price">$<?php try{echo number_format($prodInfo['price']);}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?></label></strong>
                         <div><label>Shipping:</label>&nbsp;&nbsp;<label>From Overseas</label></div>
                         <div><label>Availability:</label>&nbsp;&nbsp;<label>In-stock</label></div>
                     </div>
@@ -176,9 +146,9 @@
                         <label id="pCateg">Category:</label>&nbsp;&nbsp;
                         <label id="pCateg">
                         <?php try{echo $prodInfo['category'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
-                        </label>
+                        </label>&nbsp;&nbsp;|&nbsp;&nbsp; 
                         <label id="pCateg">Series:</label>&nbsp;&nbsp;
-                        <label id="pSeries">
+                        <label id="pCateg">
                         <?php try{echo $prodInfo['series'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                         </label>
                     </div>
@@ -195,21 +165,16 @@
                             '<button class="product-variation"><label for="product-name">'.$value.'</label></button>';
                         }
                         echo $pVars;
-                        // echo json_decode($prodInfo['images'])[1];
                         }catch(Exception $e){
                             $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
                             header('Location: ../error_logger.php');
                             exit();
                         } ?>
-                            <!-- <button class="product-variation"><label for="product-name">White n Black v1</label></button>
-                            <button class="product-variation"><label for="product-name">White n Black v2</label></button>
-                            <button class="product-variation"><label for="product-name">Black n White v1</label></button>
-                            <button class="product-variation"><label for="product-name">Red n White v2</label></button> -->
                         </div>
                         <div>
                             Size:
                         </div>
-                        <!-- <div class="rwflx"> -->
+
                         <?php try{
                         $pSizes = '<div class="rwflx">';
                         foreach(json_decode($prodInfo['sizes']) as $key => $value) {
@@ -217,16 +182,13 @@
                             '<button class="product-variation"><label for="product-name">'.$value.'</label></button>';
                         }
                         echo $pSizes;
-                        // echo json_decode($prodInfo['images'])[1];
-                        }catch(Exception $e){
+
+                    }catch(Exception $e){
                             $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
                             header('Location: ../error_logger.php');
                             exit();
                         } ?>
-                            <!-- <button class="product-variation"><label for="product-name">Small</label></button>
-                            <button class="product-variation"><label for="product-name">Medium</label></button>
-                            <button class="product-variation"><label for="product-name">Large</label></button>
-                            <button class="product-variation"><label for="product-name">XXL</label></button> -->
+
                         </div>
                     </div>
                     <div class="rwflx txtl">
@@ -241,7 +203,8 @@
                 </div>
             </div>
             <div class="product-desc txtl pt-3 ps-2">
-                Product Name: Usada Pekora HOLOLIVE JP inspired T-shirt<br/><br/>
+                Product Description:<br/>
+                Product Name: <?php try{echo $prodInfo['name'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?><br/><br/>
 
                 Series: <?php try{echo $prodInfo['series'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                 <br/>
@@ -250,20 +213,40 @@
                 Designer: <?php try{echo $prodInfo['designer'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                 <br/>
                 Specifications: Cotton<br/>
-                <br/>
+                <br/><br/>
+                <?php try{echo wordwrap($prodInfo['description'], 120, "<br/>");}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                 <br/><br/>
 
             </div>
             <br/><br/><br/>
             <div class="product-foot-div">
+
                 Customer Reviews
             </div>
-            <p>Customer #1 - Great Merch! 5 out of 5!</p>
-            <br/>
-            <p>Customer #2 - Good Merch! 4 out of 5! had problem with shipping</p>
-            <br/><br/>
+            <?php 
+            try{
+                $RevInfo = $GET_PInfo->fetchReview($prodInfo['id']);
+
+                $rvHTML = "</div>";
+                    if($RevInfo->num_rows != 0 ){
+                        foreach($RevInfo as $RevInfo){
+                            $rvHTML .= "<p><strong>".$RevInfo['username']."</strong>- ".$RevInfo['rating_comment']."<br/>".$RevInfo['date_reviewed']." > ".$RevInfo['rating']." out of 5!</p><br/><br/>";
+                        }
+                    }else{
+                        $rvHTML .= "<br/><br/>No Reviews Yet<br/><br/>";
+                    }
+                echo $rvHTML;
+            }catch(Exception $e){
+            $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
+                header("Location: ../error_logger.php");
+                exit();
+                } 
+            ?>
             <div class="product-foot-div">
                 Similar Products
+            </div>
+            <div id="sim-prods">
+
             </div>
 
         </main>

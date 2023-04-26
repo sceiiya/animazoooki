@@ -105,15 +105,27 @@ require_once("connect_DB.php");
                             case (strtoupper($value) == 'DATE'):
                                 $sOrder .= ' ORDER BY DATE('.$colname.') ';
                                 break;  
+                            case (strtoupper($value) == 'DDATE'):
+                                $sOrder .= ' ORDER BY DATE('.$colname.') DESC ';
+                                break;  
                             case (strtoupper($value) == 'TIME'):
                                 $sOrder .= ' ORDER BY TIME('.$colname.') ';
+                                break;  
+                            case (strtoupper($value) == 'DTIME'):
+                                $sOrder .= ' ORDER BY TIME('.$colname.') DESC ';
                                 break;  
                             case (strtoupper($value) == 'YEAR'):
                                 $sOrder .= ' ORDER BY YEAR('.$colname.') ';
                                 break;  
+                            case (strtoupper($value) == 'DYEAR'):
+                                $sOrder .= ' ORDER BY YEAR('.$colname.') DESC ';
+                                break;  
                             case (strtoupper($value) == 'ABS'):
                                 $sOrder .= ' ORDER BY ABS('.$colname.') ';
                                 break;  
+                            case (strtoupper($value) == 'DABS'):
+                                $sOrder .= ' ORDER BY ABS('.$colname.') DESC ';
+                                break; 
                             default: exit();
                                 break;
                         }
@@ -191,9 +203,9 @@ require_once("connect_DB.php");
                 // }
                 $rows = mysqli_fetch_array($Result);
                 //store the data value
-                $dResult[] = $rows;
+                // $dResult[] = $rows;
+                $dResult[] = $Result;
                 
-
                 //return the data value from query
                 // return $rows['id'];
 
@@ -314,6 +326,24 @@ require_once("connect_DB.php");
         // public function ValidateGuest(){
 
         // }
+
+
+        public function General($mysql, $Query){
+            $Result = mysqli_query($mysql, $Query);
+
+            //store the data value
+            // $rows = mysqli_fetch_assoc($Result);
+            // $rows = mysqli_fetch_array($Result);
+            
+            //store the data value
+            // $dResult = $rows;
+            $dResult = $Result;
+
+            //return the data value from query
+            return $dResult;
+            mysqli_close($mysql);
+
+        }
 
     }
 

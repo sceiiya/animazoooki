@@ -141,11 +141,22 @@
                         </em>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
                         <div class="product-rating-cont txtc">
-                            <i class="fas fa-star rated"></i>
-                            <i class="fas fa-star rated"></i>
-                            <i class="fas fa-star rated"></i>
-                            <i class="fas fa-star unrated"></i>
-                            <i class="fas fa-star unrated"></i>
+                        <?php try{
+                            switch ($prodInfo['ratings']) {
+                                case '5': echo '<i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i>';
+                                    break;
+                                case '4': echo '<i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star unrated"></i>';
+                                    break;
+                                case '3': echo '<i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i>';
+                                    break;
+                                case '2': echo '<i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i>';
+                                    break;
+                                case '1': echo '<i class="fas fa-star rated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i>';
+                                    break;
+                                default: echo '<i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i>';
+                                    break;
+                            }                        
+                        }catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                             &nbsp;&nbsp;|&nbsp;&nbsp; 
                         <em class="product-rating-count">
                         <?php try{echo number_format($prodInfo['reviews']).' reviews';}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>

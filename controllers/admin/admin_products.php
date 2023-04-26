@@ -52,7 +52,7 @@
                 if($rowImg == NULL)  {
                     $imageFile = "/admin/listing/product_img/animazoooki_onload.png";
                 } else {
-                    // $rowImg = $rowImg;
+                    // $rowImg = $rowImg;ERRpsuc()
                     $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
                 }
                 // print_r($rowImg[0]);
@@ -62,11 +62,7 @@
                         <td style='display:none'>".$rows['id']."</td>
                         <td>".$rows['category']."</td>
                         <td class='prod_desc'>".$rows['series']."</td>      
- testBranch_develop
-                        <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='".$imageFile."' onerror='defaultimg(this);'></td>
-
-                        <td class='adPListImgCont'><img class='adPListImg' loading='lazy' id='imgtest' src='".$rowImg[rand(0,count(($rowImg))-1)]."' onerror='defaultimg(this);'></td>
-testBranch_develop
+                        <td><a class='adPListImgCont' href='/all-products/product/?id=".$rows['id']."' target='_blank'><img class='adPListImg' loading='lazy' id='imgtest' src='".$imageFile."' onerror='defaultimg(this);'></td>
                         <td>".$rows['name']."</td>
                         <td class='autoNumeric'>".$rows['price']."</td>
                         <td class='autoNumeric'>".$rows['stocks']."</td>
