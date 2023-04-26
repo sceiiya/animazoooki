@@ -46,7 +46,7 @@
             <section class="article-page-cont">
         
         
-                <div class="article-page-cont p-1 bg-dark-inv">
+                <div class="article-page-cont p-1 bg-light-in">
         
                     <div class="article-list-subtitle-cont p-2">
                         <h3 class="article-title mb-1">
