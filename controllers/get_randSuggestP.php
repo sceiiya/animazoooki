@@ -9,10 +9,9 @@ try{
     $eSelect = mysqli_query($dbConnection, $qSelect);
 
     $sugHTML = "";
-    $rowImg;
-    $imageFile;
     while($rows = mysqli_fetch_array($eSelect)) {
-
+        $rowImg='';
+        $imageFile='';
         try{
             $rowImg = json_decode($rows['images']);
             // json_decode($RANDITEM['images']);
@@ -23,7 +22,7 @@ try{
                 $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
             }
             $sugHTML.= '
-            <a class="suggest-card-attr card_light" href="/all-products/product/index.php?id='.$rows['id'].'" title="'.$rows['name'].'">
+            <a class="suggest-card-attr card_light" href="/all-products/product/?id='.$rows['id'].'" title="'.$rows['name'].'">
             <div class="suggest-item-img-cont">
                 <img src="'.$imageFile.'" class="suggest-item-img-main" loading="lazy" onerror="DEFOimgPlaceholder(this)" alt="">
             </div>

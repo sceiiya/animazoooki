@@ -14,6 +14,31 @@ session_start();
     }
 
 ?>
+<script></script>
+<?php
+
+try{          
+    if($_GET['status']){
+        switch ($_GET['status']) {
+            case 'value':
+                echo '';
+                break;
+            default: exit();
+                break;
+        }
+        $GET_PInfo = new Product;
+        $prodInfo = $GET_PInfo->fetch($_GET['id']);
+    }else{
+        exit();
+        // header('Location: ../');
+    }
+}catch(Exception $e){
+    $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
+    header("Location: ../error_logger.php");
+    exit();
+} 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
