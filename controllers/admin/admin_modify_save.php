@@ -15,7 +15,8 @@
     include("../important/class.database.php");
     require_once '../../vendor/autoload.php';
     require_once('../important/connect_AWS.php');
-    
+    include("../important/class.product.php");
+
 
     
     use Aws\S3\S3Client;
@@ -129,48 +130,19 @@
         $ChangeInfo = $ChangeProduct->modify($of, $productData);
         // $eInsert = $ConDB->Update($eCon, "products", $productData);
         if($ChangeInfo == 'true'){
-            header('Location: ../../admin/dashboard/?status=success');
+            header('Location: ../../admin/dashboard/?status=successM');
             exit();
         }else{
-            header('Location: ../../admin/dashboard/?status=failed');
+            header('Location: ../../admin/dashboard/?status=failedM');
             exit();
         }
-        header('Location: ../../admin/dashboard/?status=success');
+        // header('Location: ../../admin/dashboard/?status=error');
 
     } catch(Exception $e) {
         $_SESSION['error'] = '<br>'.'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getMessage();
         header("Location: error_logger.php");
         exit();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

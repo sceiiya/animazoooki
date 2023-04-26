@@ -124,6 +124,12 @@ try{
             case 'error':
                 echo '<script>toastr.error("Something went wrong", "Action Error!");</script>';
                 break;
+                case 'successM':
+                    echo '<script>toastr.success("Updated Succesfully, you can now view the product!", "Product Modified!");</script>';
+                    break;
+                case 'failedM':
+                    echo '<script>)toastr.warning("Something went wrong", "Updating Product Failed!");</script>';
+                    break;
             default: exit();
                 break;
         }

@@ -46,7 +46,7 @@
     $eCon = $ConDB->NewCon();
     if($eCon == true){
         try{
-        $GenGuest = $ConDB->Insert($eCon, 'guest', $newGuestDB);
+        $GenGuest = $ConDB->Insert($eCon, 'clients', $newGuestDB);
             if ($GenGuest == true){
                 return true;
             }else{

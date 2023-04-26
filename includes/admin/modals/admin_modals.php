@@ -199,7 +199,7 @@
             </div>
 
             <div class="modal-body">
-                <input id="indexer" style="display: none;" name="modId">
+                <input type="number" id="indexer" style="display: none;" name="modId">
 
                     <div class="form-outline mb-3">
                         <input type="text" id="productName" name="modName" class="form-control form-control-lg" maxlength="150" required/>
@@ -216,12 +216,10 @@
 
                     </div>
                     <div class="col-md-6 mb-4">
-
                         <div class="form-outline">
                             <input type="text" id="productSer" name="modSeries" class="form-control form-control-lg" maxlength="30" required/>
                             <label class="form-label" for="productSer">Product Series</label>
                         </div>
-
                     </div>
 
                 </div>
@@ -238,12 +236,10 @@
                     </div>
 
                     <div class="col-md-6 mb-4 pb-2">
-
                         <div class="form-outline">
                             <input type="number" id="productQuantity" name="modStocks" class="form-control form-control-lg" max='9999999' required/>
                             <label class="form-label" for="productQuantity">Product Stocks</label>
                         </div>
-
                     </div>
 
                     <div class="row">
@@ -312,7 +308,7 @@
 
             <div class="modal-footer flex-row d-flex justify-content-between">
                 <div class="">
-                    <button class="btn redbgwhitec" id="Modify">Modify</button>
+                    <div class="btn redbgwhitec" id="Modiffy">Modify</div>
                 </div>
                 <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
             </div>

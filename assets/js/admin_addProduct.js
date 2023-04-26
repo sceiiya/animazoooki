@@ -45,8 +45,66 @@ function addProduct() {
 }
 
 $("#saveProduct").on('click', () => {
-    $('#confirm-addProd').modal('show');
-})
+
+    
+    var sPcat = $("#adminProdCat").val();
+    var sPser = $("#adminProdSer").val();
+    var ssname = $("#adminProdName").val();
+    var sPprice = $("#adminProdPrice").val();
+    var sPquantity = $("#adminProdQty").val();
+    var sPsizes = $('#adminProdSizes').val();
+    var sPvar = $('#adminProdVar').val();
+    var sPdescription = $("#adminProdDesc").val();
+    var sPdesign = $('#adminProdDesig').val();
+    var sPmanu = $('#adminProdManuf').val();
+    console.log(sPcat, sPser, ssname, sPprice, sPquantity, sPsizes, sPvar, sPdescription, sPdesign, sPmanu);
+
+    if(sPmanu != '' && sPdesign != '' && sPdescription != '' && sPvar != '' && sPsizes != '' && sPquantity != '' && sPprice != '' && ssname != '' && sPser != '' && sPcat ){
+        ValidateProdNAme(ssname);
+    }else{
+        toastr.warning('Please compleatte all fields', 'Blank Field Detected');
+    }
+
+});
+
+function ValidateProdNAme(sPname){
+    var blobb = {
+        name: sPname
+    };
+    $.ajax({
+        type: 'POST',
+        url: "/controllers/admin/prodNameValidate.php",
+        data: blobb,
+        beforeSend: function () {
+            var x = document.querySelector('#adminSpinner');
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        },
+        success: (result) => {
+          if (result == "new") {
+            $('#confirm-addProd').modal('show');
+        } else if(result == "exist"){
+            toastr.warning('Please avoid duplication', 'Product Name Already Exist');
+        }else if(result == "error validating"){
+            toastr.error('Can\'t check if the product already exist', 'Error Validation');
+        }else{
+            toastr.error('Ask a Tech Support to Resolve', 'Something went wrong');
+            ERROR_logger(result);
+        }
+        },
+        complete: function () {
+          var x = document.querySelector('#adminSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+        },
+    });
+}
 
 // $("#SubmitNewProduct").on('submit', function(e){
 // // $("#addProductModal").on('submit', function(e){
@@ -272,9 +330,9 @@ function modify(nId) {
             sPquantity = $("#productQuantity").val(objRes.stocks);
             sPsizes = $('#productSizes').val(JSON.parse(objRes.sizes).join(', '));
             sPvar = $('#productVar').val(JSON.parse(objRes.variation).join(', '));
-            sPdescription = $("#productDescription").val(objRes.description);
-            sPdesign = $('#productDesig').val(objRes.designer);
-            sPmanu = $('#productManuf').val(objRes.manufacturer);
+            sPdescription = $("#modDescription").val(objRes.description);
+            sPdesign = $('#modDesign').val(objRes.designer);
+            sPmanu = $('#modManuf').val(objRes.manufacturer);
 
               $('#modifyModal').modal('show');                
           }
@@ -291,17 +349,16 @@ function modify(nId) {
 }
 
 // SAVE MODIFY PRODUCT
-$("#Modify").on('click', () => {
-
-    // if
-//   $('#confirm-modProd').modal('show');
-// })
-
+$("#Modiffy").on('click', () => {
+                $('#confirm-modProd').modal('show');
+            // $('#modifyModal').modal('show');    
+    // var nIndex = $("#indexer").val();
+});
 
 $("#yes-modProd").on('click', () => {
 
 // confirm na modify
-    var nIndex = $("#indexer").val();
+    // var nIndex = $("#indexer").val();
     var x = document.querySelector('#adminSpinner');
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -404,4 +461,4 @@ $("#yes-modProd").on('click', () => {
 //       },
 //   });
 
-});
+// });

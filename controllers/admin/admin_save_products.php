@@ -156,7 +156,7 @@
             // header('../../admin/dashboard/index.php');
             exit();
         }
-        header('Location: ../../admin/dashboard/?status=success');
+        // header('Location: ../../admin/dashboard/?status=error');
 
     } catch(Exception $e) {
         $_SESSION['error'] = '<br>'.'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getMessage();
