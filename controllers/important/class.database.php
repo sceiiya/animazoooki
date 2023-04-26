@@ -60,7 +60,7 @@ require_once("connect_DB.php");
         //requires 5 arguments
         public function GSelect($mysql, $table, $where, $order, $limit){
             try{
-                $dResult = [];
+                // $dResult = [];
                 $eSelect = "SELECT * FROM `".$table."`";
 
                 $sWhere = "";
@@ -120,13 +120,13 @@ require_once("connect_DB.php");
                     }
                     $qSelect .= $sOrder;
                 }else{
-                    exit();
+                    // exit();
                 }
 
                 if(!empty($limit)){
                     $qSelect .=" LIMIT ".$limit;
                 }else{
-                    exit();
+                    // exit();
                 }
 
                 // echo $qSelect;

@@ -11,6 +11,7 @@
     }
     
     include("../important/class.database.php");
+    require_once '../../vendor/autoload.php';
     require_once('../important/connect_AWS.php');
     
     use Aws\S3\S3Client;

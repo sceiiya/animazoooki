@@ -9,20 +9,23 @@ try{
     $eSelect = mysqli_query($dbConnection, $qSelect);
 
     $sugHTML = "";
+    $rowImg;
+    $imageFile;
     while($rows = mysqli_fetch_array($eSelect)) {
+
         try{
             $rowImg = json_decode($rows['images']);
             // json_decode($RANDITEM['images']);
-            if($rowImg == NULL)  {
+            if(!$rowImg)  {
                 $imageFile = "/admin/listing/product_img/animazoooki_onload.png";
             } else {
                 // $rowImg = $rowImg;
                 $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
             }
             $sugHTML.= '
-            <a class="suggest-card-attr card_light" href="/all-products/product_in_dynamic_template/index.php?id='.$rows['id'].'" title="'.$imageFile.'">
+            <a class="suggest-card-attr card_light" href="/all-products/product/index.php?id='.$rows['id'].'" title="'.$rows['name'].'">
             <div class="suggest-item-img-cont">
-                <img src="'.$imageFile.'" class="suggest-item-img-main"  onerror="DEFOimgPlaceholder(this)" alt="">
+                <img src="'.$imageFile.'" class="suggest-item-img-main" loading="lazy" onerror="DEFOimgPlaceholder(this)" alt="">
             </div>
             <div class=" suggest-item-inf-cont">
                 <div class="suggest-item-inf-tex-cont">
@@ -33,64 +36,17 @@ try{
             </div>
             </a>
             ';
-            echo $sugHTML;
+            // mysqli_close($dbConnection);
         }catch(Exception $e){
             $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
             header("Location: error_logger.php");
             exit();
         } 
     }
-    // $prod = new Product;
-    // $RANDITEM = $prod->fetchRandN(3);
+    echo $sugHTML;
 
-    // if($_GET['id']){
-    //     $GET_PInfo = new Product;
-    //     $prodInfo = $GET_PInfo->fetch($_GET['id']);
-    // }else{
-    //     header('Location: ../');
-    // }
-    // $ITEMS = $RANDITEM;
-
-    // while($ITEMS){
-    //     try {
-    //         echo $RANDITEM['name'];
-    //     }catch(Exception $e){
-    //         $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
-    //         header("Location: error_logger.php");
-    //         exit();
-    //     } 
-    // }
-
-
-    // $prod = new Product;
-    // $RANDITEM = $prod->fetchRandN(3);
-
-    // $SuggestHTML ="<br/>";
-    // foreach ($RANDITEM) {
-    //     $SuggestHTML .= $RANDITEM['name'];
-    //     $SuggestHTML .= $RANDITEM['images'];
-    // }
-    // echo $SuggestHTML;
-
-                // foreach (json_decode($ImgData['images']) as $key => $value) {
-                //     echo "link is: ".$value."  from the  ".($key+1)."<br/>";
-                // }
-
-    // foreach ($RANDITEM as $key => $value) {
-    //         echo 
-    //         'key : '.$key.'<br>
-    //         '.'value : '.$value.'<br>
-            
-    //         ';
-    //     }
-    
-    // json_decode($RANDITEM['images']);
-    // if($rowImg == NULL)  {
-    //     $imageFile = "/admin/listing/product_img/animazoooki_onload.png";
-    // } else {
-    //     // $rowImg = $rowImg;
-    //     $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
-    // }
+    mysqli_close($dbConnection);
+    exit();
 }catch(Exception $e){
     $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
     header("Location: error_logger.php");

@@ -1,6 +1,9 @@
 <?php
     include("../important/connect_DB.php");
 
+    include("../important/class.database.php");
+    require_once '../../vendor/autoload.php';
+    require_once('../important/connect_AWS.php');
     session_start();
 
     if(!isset($_SESSION['admusername'])){
