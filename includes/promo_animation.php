@@ -1,5 +1,5 @@
 <div class="txt promo">
-        <a href='/vouchers/' class="sliding-text-promo p-1 bg-light-inv">GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF
+        <a href='/vouchers/' class="sliding-text-promo p-1 bg-light-inv" style="color: #fffbf2;">GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF
             VOUCHER FOR YOUR
             FIRST TIME ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME
             ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET 10%-OFF VOUCHER FOR YOUR FIRST TIME ORDER | GET
