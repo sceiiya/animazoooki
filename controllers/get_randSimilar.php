@@ -22,26 +22,40 @@ try{
                 $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
             }
             $sugHTML.= 
-                '<a class="card-attr card_light" href="/all-products/product?id='.$rows['id'].' title='.$rows['name'].'>
+                '<a class="card-attr card_light" href="/all-products/product?id='
+                .$rows['id'].
+                '" title='
+                .$rows['name'].
+                '>
                     <div class="item-img-cont">
-                        <img src="'.$imageFile.'" class="item-img-main" alt="'.$rows['name'].'" onerror="DEFOimgPlaceholder(this)">
+                        <img src="'
+                        .$imageFile.
+                        '" class="item-img-main" alt="'
+                        .$rows['name'].
+                        '" onerror="DEFOimgPlaceholder(this)">
                     </div>
                     <div class=" item-inf-cont">
                         <div class="item-inf-tex-cont">
                             <p class="item-name txt-light-inv">
-                                '.$rows["name"].'
+                                '
+                                .$rows["name"].
+                                '
                             </p>
                         </div>
                         <div class="item-inf-tex-cont mb-0 pt-0">
-                            <p class="item-price">$'.number_format($rows["price"]).'</p>
+                            <p class="item-price">$'
+                            .number_format($rows["price"]).
+                            '</p>
                         </div>
                         <div class="item-inf-tex-cont mt-0 pt-0">
-                            <p class="item-sold-count">'.number_format($rows["sold"]).' sold</p>
+                            <p class="item-sold-count">'
+                            .number_format($rows["sold"]).
+                            ' sold</p>
                         </div>
                         <div class="item-inf-tex-cont">
                             <p class="rating-cont txt-light-inv">';
 
-                                    switch ($prodInfo['ratings']) {
+                                    switch ($rows['ratings']) {
                                         case '5': $sugHTML.= '<i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i>';
                                             break;
                                         case '4': $sugHTML.= '<i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star rated"></i><i class="fas fa-star unrated"></i>';
@@ -65,7 +79,7 @@ try{
 
 
 
-                $sugHTML.= '</div></section>';
+
 
 
 
@@ -77,6 +91,7 @@ try{
             exit();
         } 
     }
+    $sugHTML.= '</div></section>';
     echo $sugHTML;
 
     mysqli_close($dbConnection);

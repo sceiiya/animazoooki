@@ -139,7 +139,19 @@
                     <div class="clflx txtl">
                         <strong><label class="item-price">$<?php try{echo number_format($prodInfo['price']);}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?></label></strong>
                         <div><label>Shipping:</label>&nbsp;&nbsp;<label>From Overseas</label></div>
-                        <div><label>Availability:</label>&nbsp;&nbsp;<label>In-stock</label></div>
+                        <div><label>Availability:</label>&nbsp;&nbsp;
+                        <label>
+                        <?php try{
+                            if(!is_numeric($prodInfo['stocks'])){
+                                echo 'out of stocks! please notice our support';
+                            }elseif($prodInfo['stocks'] == 0){
+                                echo 'out of stocks! please notice our support';
+                            }elseif($prodInfo['stocks'] <= 20){
+                                echo 'Limited stocks! only '.$prodInfo['stocks'].' left!';
+                            }else
+                            echo 'In-stock';              
+                            }catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
+                        </label></div>
                     </div>
                     <div>&nbsp;</div>
                     <div class="txtl">
@@ -212,9 +224,8 @@
                 <br/>
                 Designer: <?php try{echo $prodInfo['designer'];}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                 <br/>
-                Specifications: Cotton<br/>
                 <br/><br/>
-                <?php try{echo wordwrap($prodInfo['description'], 120, "<br/>");}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
+                <?php try{echo str_replace("  ", "<br>", wordwrap($prodInfo['description'], 120, "<br/>"));}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?>
                 <br/><br/>
 
             </div>

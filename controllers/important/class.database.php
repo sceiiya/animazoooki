@@ -224,7 +224,7 @@ require_once("connect_DB.php");
         //make a class pub func for thos type
         // $qSelect = "SELECT * FROM $dbDatabase .`products` WHERE `date_archived` IS NULL ORDER BY `id` DESC";
 
-        //method update data
+        //method Fetch num data
         //requires 4 arguments
         public function FetchNum($mysql, $table, $column, $value){
             if(empty($column) and empty($value)){

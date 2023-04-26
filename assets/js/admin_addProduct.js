@@ -252,45 +252,56 @@ function modify(nId) {
           } else {
               x.style.display = "none";
           }
-      },
-      success: (result) => {
-          if (result == "error") {
+    },
+    success: (result) => {
+        if (result == "error") {
               alert("Please call system admnistrator");
-          } else {
-              var objRes = JSON.parse(result);
+        } else {
+            var objRes = JSON.parse(result);
             //   console.log(JSON.parse(objRes.sizes).join(', '));
-              sPcat = $("#productCat").val(objRes.category);
-              sPname = $("#productName").val(objRes.name);
-              sPprice = $("#productPrice").val(objRes.price);
-              sPquantity = $("#productQuantity").val(objRes.stocks);
-              sPsizes = $('#productSizes').val(JSON.parse(objRes.sizes).join(', '));
-              sPvar = $('#productVar').val(JSON.parse(objRes.variation).join(', '));
-              sPdescription = $("#productDescription").val(objRes.description);
-              sPdesign = $('#productDesig').val(objRes.designer);
-              sPmanu = $('#productManuf').val(objRes.manufacturer);
-              sPphoto = $("productPhoto").val(objRes.image);
+            sPphoto = $("#modPrevImg1").attr('src', JSON.parse(objRes.images)[0]);
+            sPphoto = $("#modPrevImg2").attr('src', JSON.parse(objRes.images)[1]);
+            sPphoto = $("#modPrevImg3").attr('src', JSON.parse(objRes.images)[2]);
+            sPphoto = $("#modPrevImg4").attr('src', JSON.parse(objRes.images)[3]);
+
+            // console.log(JSON.parse(objRes.images)[0]);
+            sPcat = $("#productCat").val(objRes.category);
+            sPser = $("#productSer").val(objRes.series);
+            sPname = $("#productName").val(objRes.name);
+            sPprice = $("#productPrice").val(objRes.price);
+            sPquantity = $("#productQuantity").val(objRes.stocks);
+            sPsizes = $('#productSizes').val(JSON.parse(objRes.sizes).join(', '));
+            sPvar = $('#productVar').val(JSON.parse(objRes.variation).join(', '));
+            sPdescription = $("#productDescription").val(objRes.description);
+            sPdesign = $('#productDesig').val(objRes.designer);
+            sPmanu = $('#productManuf').val(objRes.manufacturer);
 
               $('#modifyModal').modal('show');                
           }
-      },
-      complete: function () {
-          var x = document.querySelector('#adminSpinner');
-          if (x.style.display === "none") {
-              x.style.display = "block";
-          } else {
-              x.style.display = "none";
-          }
-      },
+    },
+    complete: function () {
+        var x = document.querySelector('#adminSpinner');
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    },
   });
 }
 
 // SAVE MODIFY PRODUCT
 $("#Modify").on('click', () => {
+
+    // if
 //   $('#confirm-modProd').modal('show');
 // })
 
 
 $("#yes-modProd").on('click', () => {
+
+// confirm na modify
+    var nIndex = $("#indexer").val();
     var x = document.querySelector('#adminSpinner');
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -352,45 +363,45 @@ $("#yes-modProd").on('click', () => {
 
 
 
-  iImage = $("#productPhoto").prop('files')[0];
-  var form_data = new FormData();
-  form_data.append('name', sPname);
-  form_data.append('image', iImage);
+//   iImage = $("#productPhoto").prop('files')[0];
+//   var form_data = new FormData();
+//   form_data.append('name', sPname);
+//   form_data.append('image', iImage);
 
-  $.ajax({
-      url: "/controllers/admin/admin_modify_save_img.php",
-      type: 'POST',
-      data: form_data,
-      contentType: false,
-      processData: false,
-      beforeSend: function () {
-          var x = document.querySelector('#adminSpinner');
-          if (x.style.display === "none") {
-              x.style.display = "block";
-          } else {
-              x.style.display = "none";
-          }
-      },
-      success: (result) => {
-          if (result == "Missing image file!") {
-              alert(result);
-          } else if (result == "Image file saved!") {
-              console.log(result);
-          } else if (result == "Failed to save image!") {
-              alert(result);
-              console.log(result);
-          } else {
-              console.log(result);
-          }
-      },
-      complete: function () {
-          var x = document.querySelector('#adminSpinner');
-          if (x.style.display === "none") {
-              x.style.display = "block";
-          } else {
-              x.style.display = "none";
-          }
-      },
-  });
+//   $.ajax({
+//       url: "/controllers/admin/admin_modify_save_img.php",
+//       type: 'POST',
+//       data: form_data,
+//       contentType: false,
+//       processData: false,
+//       beforeSend: function () {
+//           var x = document.querySelector('#adminSpinner');
+//           if (x.style.display === "none") {
+//               x.style.display = "block";
+//           } else {
+//               x.style.display = "none";
+//           }
+//       },
+//       success: (result) => {
+//           if (result == "Missing image file!") {
+//               alert(result);
+//           } else if (result == "Image file saved!") {
+//               console.log(result);
+//           } else if (result == "Failed to save image!") {
+//               alert(result);
+//               console.log(result);
+//           } else {
+//               console.log(result);
+//           }
+//       },
+//       complete: function () {
+//           var x = document.querySelector('#adminSpinner');
+//           if (x.style.display === "none") {
+//               x.style.display = "block";
+//           } else {
+//               x.style.display = "none";
+//           }
+//       },
+//   });
 
 });

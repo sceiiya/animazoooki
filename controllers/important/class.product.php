@@ -91,9 +91,24 @@ class Product{
 
     // }
 
-    // public function modify(){
-
-    // }
+    public function modify($of, $changes){
+        try{
+            $ConDB = new ClassDbConn;
+            $eCon = $ConDB->NewCon();
+            if($eCon == true){
+                $eUpdate = $ConDB->Update($eCon, $this->Table, $changes, $of);
+                    if($eUpdate == "true"){
+                        return "true";
+                    }else{
+                        return "false";
+                    }
+            }
+        }catch(Exception $e){
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: ../..all-products/error_logger.php");
+            exit();
+        }
+    }
 
     // public function NewOrder(){
 
