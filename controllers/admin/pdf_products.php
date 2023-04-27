@@ -24,10 +24,10 @@ if(!isset($_SESSION['admusername'])){
 
             try{
                 $pdf =  new FPDF('L');
-                $pdf->AddPage('L');
+                $pdf->AddPage('L', 'LEGAL');
 
                 $pdf->SetFont('Arial','',24);
-                $pdf->Cell(280,20,"PRODUCTS REPORT", 0, 1, 'C');
+                $pdf->Cell(320,20,"PRODUCTS REPORT", 0, 1, 'C');
                 $pdf->Ln(10);
                 $pdf->SetFont('Arial','',10);
                 $pdf->Cell(40,10,"Image", 1, 0, 'C');
@@ -51,23 +51,37 @@ if(!isset($_SESSION['admusername'])){
                         // $pdf->Image('C:\Users\Cesar\Downloads\profile.png', $x, $y, 10, 0, 'PNG');
                         $imgFile = json_decode($rows['images']);
                         // $img1 = $imgFile[0];
+                        // print_r($imgFile);
+                        // echo "<br>";
+                        // echo "<br>";
+                        $img = "";
                         if(empty ($imgFile)) {
-                            $img1 = "https://d1k3w7ix829ymi.cloudfront.net/products/64494584377912.57404639.png";
+                            $img1[0] = 'C:\laragon\www\animazooki\admin\listing\product_img\animazoooki_onload.png';
                         } else {
                             $img1 = $imgFile;
                         }
-                        print_r($img1);
-                        $x += 1;
-                        echo "counter :" . $x;
-                        $pdf->Image($img1[0], $x, $y, 10, 0, 'PNG');
+
+                        // ["https://d1k3w7ix829ymi.cloudfront.net/products/644916069ade89.72616403.jpg","https://d1k3w7ix829ymi.cloudfront.net/products/644916069ade89.72616403.jpg","https://d1k3w7ix829ymi.cloudfront.net/products/644916069ade89.72616403.jpg","https://d1k3w7ix829ymi.cloudfront.net/products/644916069ade89.72616403.jpg"]
+
+                        $ext = pathinfo($img1[0], PATHINFO_EXTENSION);
+                        // echo $ext;
+                        // echo '<br>';
+                        // echo '<br>';
+                        // https://d1k3w7ix829ymi.cloudfront.net/products/6449160535b1a9.62041984.png
+                        // print_r($imgFile);
+                        // $x += 1;
+                        // echo "counter :" . $x;
+                        // echo $img1[0];
+                        $pdf->Image($img1[0], $x, $y, 10, 0, strtoUpper($ext));
+                        // $pdf->Image($img1[1], 37, $y, 10, 0, strtoUpper($ext));
                         $pdf->Cell(40,10,'', 1, 0, 'L');
                         $pdf->Cell(15,10,$rows['id'], 1, 0, 'L');
                         $pdf->Cell(40,10,$rows['name'], 1, 0, 'L');
                         $pdf->Cell(40,10,$rows['category'], 1, 0, 'L');
                         $pdf->Cell(40,10,$rows['series'], 1, 0, 'L');
-                        $pdf->Cell(20,10,$rows['price'], 1, 0, 'L');
-                        $pdf->Cell(25,10,$rows['stocks'], 1, 0, 'L');
-                        $pdf->Cell(15,10,$rows['sold'], 1, 0, 'L');
+                        $pdf->Cell(20,10,$rows['price'], 1, 0, 'C');
+                        $pdf->Cell(25,10,$rows['stocks'], 1, 0, 'C');
+                        $pdf->Cell(15,10,$rows['sold'], 1, 0, 'C');
                         $pdf->Cell(45,10,$rows['designer'], 1, 0, 'L');
                         $pdf->Cell(40,10,$rows['manufacturer'], 1, 1, 'L');
                         $y += 10;
@@ -76,7 +90,7 @@ if(!isset($_SESSION['admusername'])){
 
                 $pdf->Output('F', '../../reports/pdf/products.pdf', true);
             } catch(Exception $e) {
-                echo "error";
+                echo $e;
             }
         } else {
             echo "Failed to connect, please call system administrator!";
