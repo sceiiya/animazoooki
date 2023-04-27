@@ -46,34 +46,16 @@ if(!isset($_SESSION['admusername'])){
                     $y = 50;
                     while($rows = mysqli_fetch_assoc($eSelect)) {
 
-                        // $image = 'C:\Users\Cesar\Downloads\profile.png';
-
-                        // $pdf->Image('C:\Users\Cesar\Downloads\profile.png', $x, $y, 10, 0, 'PNG');
                         $imgFile = json_decode($rows['images']);
-                        // $img1 = $imgFile[0];
-                        // print_r($imgFile);
-                        // echo "<br>";
-                        // echo "<br>";
                         $img = "";
                         if(empty ($imgFile)) {
                             $img1[0] = '../../admin/listing/product_img/animazoooki_onload.png';
                         } else {
                             $img1 = $imgFile;
                         }
-
-                        // ["https://d1k3w7ix829ymi.cloudfront.net/products/644916069ade89.72616403.jpg","https://d1k3w7ix829ymi.cloudfront.net/products/644916069ade89.72616403.jpg","https://d1k3w7ix829ymi.cloudfront.net/products/644916069ade89.72616403.jpg","https://d1k3w7ix829ymi.cloudfront.net/products/644916069ade89.72616403.jpg"]
-
                         $ext = pathinfo($img1[0], PATHINFO_EXTENSION);
-                        // echo $ext;
-                        // echo '<br>';
-                        // echo '<br>';
-                        // https://d1k3w7ix829ymi.cloudfront.net/products/6449160535b1a9.62041984.png
-                        // print_r($imgFile);
-                        // $x += 1;
-                        // echo "counter :" . $x;
-                        // echo $img1[0];
+
                         $pdf->Image($img1[0], $x, $y, 10, 0, strtoUpper($ext));
-                        // $pdf->Image($img1[1], 37, $y, 10, 0, strtoUpper($ext));
                         $pdf->Cell(40,10,'', 1, 0, 'L');
                         $pdf->Cell(15,10,$rows['id'], 1, 0, 'L');
                         $pdf->Cell(40,10,$rows['name'], 1, 0, 'L');
@@ -89,6 +71,37 @@ if(!isset($_SESSION['admusername'])){
                 }
 
                 $pdf->Output('F', '../../reports/pdf/products.pdf', true);
+
+                require_once('../../phpmailer/class.phpmailer.php');
+
+                $mail = new PHPMailer();
+                
+                $mail->IsSMTP();
+                $mail->SMTPAuth 	= true;
+            
+                $mail->Host 	  = 'smtp.hostinger.com';
+                include("../important/connect_Email.php");
+                $mail->FromName   = "System Administrator";
+                $mail->SMTPSecure = 'ssl';
+                $mail->Port 	  = 465;                        
+                
+                $mail->AddAddress($admEmail, $admUsername);
+                $mail->AddAttachment("../../reports/pdf/products.pdf");
+            
+                $mail->Subject = "Products Report";
+                $mail->Body = nl2br("
+                See attached document for the report.
+                
+                ");
+                
+                $mail->IsHTML(true);
+
+                if(!$mail->Send()) {
+                    echo "Email not sent!";
+                } else {
+                    echo "Email sent!";
+                }
+                mysqli_close($dbConnection);
             } catch(Exception $e) {
                 echo $e;
             }
