@@ -60,7 +60,7 @@ require_once("connect_DB.php");
         //requires 5 arguments
         public function GSelect($mysql, $table, $where, $order, $limit){
             try{
-                $dResult = [];
+                // $dResult = [];
                 $eSelect = "SELECT * FROM `".$table."`";
 
                 $sWhere = "";
@@ -105,28 +105,40 @@ require_once("connect_DB.php");
                             case (strtoupper($value) == 'DATE'):
                                 $sOrder .= ' ORDER BY DATE('.$colname.') ';
                                 break;  
+                            case (strtoupper($value) == 'DDATE'):
+                                $sOrder .= ' ORDER BY DATE('.$colname.') DESC ';
+                                break;  
                             case (strtoupper($value) == 'TIME'):
                                 $sOrder .= ' ORDER BY TIME('.$colname.') ';
+                                break;  
+                            case (strtoupper($value) == 'DTIME'):
+                                $sOrder .= ' ORDER BY TIME('.$colname.') DESC ';
                                 break;  
                             case (strtoupper($value) == 'YEAR'):
                                 $sOrder .= ' ORDER BY YEAR('.$colname.') ';
                                 break;  
+                            case (strtoupper($value) == 'DYEAR'):
+                                $sOrder .= ' ORDER BY YEAR('.$colname.') DESC ';
+                                break;  
                             case (strtoupper($value) == 'ABS'):
                                 $sOrder .= ' ORDER BY ABS('.$colname.') ';
                                 break;  
+                            case (strtoupper($value) == 'DABS'):
+                                $sOrder .= ' ORDER BY ABS('.$colname.') DESC ';
+                                break; 
                             default: exit();
                                 break;
                         }
                     }
                     $qSelect .= $sOrder;
                 }else{
-                    exit();
+                    // exit();
                 }
 
                 if(!empty($limit)){
                     $qSelect .=" LIMIT ".$limit;
                 }else{
-                    exit();
+                    // exit();
                 }
 
                 // echo $qSelect;
@@ -191,9 +203,9 @@ require_once("connect_DB.php");
                 // }
                 $rows = mysqli_fetch_array($Result);
                 //store the data value
-                $dResult[] = $rows;
+                // $dResult[] = $rows;
+                $dResult[] = $Result;
                 
-
                 //return the data value from query
                 // return $rows['id'];
 
@@ -212,7 +224,7 @@ require_once("connect_DB.php");
         //make a class pub func for thos type
         // $qSelect = "SELECT * FROM $dbDatabase .`products` WHERE `date_archived` IS NULL ORDER BY `id` DESC";
 
-        //method update data
+        //method Fetch num data
         //requires 4 arguments
         public function FetchNum($mysql, $table, $column, $value){
             if(empty($column) and empty($value)){
@@ -314,6 +326,24 @@ require_once("connect_DB.php");
         // public function ValidateGuest(){
 
         // }
+
+
+        public function General($mysql, $Query){
+            $Result = mysqli_query($mysql, $Query);
+
+            //store the data value
+            // $rows = mysqli_fetch_assoc($Result);
+            // $rows = mysqli_fetch_array($Result);
+            
+            //store the data value
+            // $dResult = $rows;
+            $dResult = $Result;
+
+            //return the data value from query
+            return $dResult;
+            mysqli_close($mysql);
+
+        }
 
     }
 

@@ -1,7 +1,8 @@
 <?php
 
 require_once('class.database.php');
-// require_once('connect_AWS.php');
+
+require_once('connect_AWS.php');
 
 
 // $hostname = getenv('HTTP_HOST');
@@ -76,7 +77,7 @@ class Product{
             $eCon = $ConDB->NewCon();
             if($eCon == true){
                 $Pid = [ 'id' => $PID];
-               $PJSON = $ConDB->Select($eCon, $this->Table, $Pid);
+               $PJSON = $ConDB->GSelect($eCon, $this->Table, $Pid, '', '');
                return $PJSON; 
             }
         }catch(Exception $e){
@@ -90,9 +91,24 @@ class Product{
 
     // }
 
-    // public function modify(){
-
-    // }
+    public function modify($of, $changes){
+        try{
+            $ConDB = new ClassDbConn;
+            $eCon = $ConDB->NewCon();
+            if($eCon == true){
+                $eUpdate = $ConDB->Update($eCon, $this->Table, $changes, $of);
+                    if($eUpdate == "true"){
+                        return "true";
+                    }else{
+                        return "false";
+                    }
+            }
+        }catch(Exception $e){
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: ../..all-products/error_logger.php");
+            exit();
+        }
+    }
 
     // public function NewOrder(){
 
@@ -106,9 +122,24 @@ class Product{
 
     // }
 
-    // public function fetchReview(){
 
-    // }
+    public function fetchReview($PID){
+        try{
+            $ConDB = new ClassDbConn;
+            $eCon = $ConDB->NewCon();
+            if($eCon == true){
+                $Q = 'SELECT u.username, r.rating, r.rating_comment, r.date_reviewed FROM reviews r JOIN products p ON r.product_id = p.id JOIN clients u ON r.user_id = u.id WHERE p.id = '.$PID;
+                // ($mysql, $table, $where, $order, $limit)
+               $PJSON = $ConDB->General($eCon, $Q);
+                //echo json_encode($PJSON); 
+               return $PJSON; 
+            }
+        }catch(Exception $e){
+            $_SESSION['error'] = $e->getMessage();
+            header("Location: ../..all-products/error_logger.php");
+            exit();
+        }
+    }
 
     public function fetchRandN($N){
        

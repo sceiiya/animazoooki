@@ -45,8 +45,66 @@ function addProduct() {
 }
 
 $("#saveProduct").on('click', () => {
-    $('#confirm-addProd').modal('show');
-})
+
+    
+    var sPcat = $("#adminProdCat").val();
+    var sPser = $("#adminProdSer").val();
+    var ssname = $("#adminProdName").val();
+    var sPprice = $("#adminProdPrice").val();
+    var sPquantity = $("#adminProdQty").val();
+    var sPsizes = $('#adminProdSizes').val();
+    var sPvar = $('#adminProdVar').val();
+    var sPdescription = $("#adminProdDesc").val();
+    var sPdesign = $('#adminProdDesig').val();
+    var sPmanu = $('#adminProdManuf').val();
+    console.log(sPcat, sPser, ssname, sPprice, sPquantity, sPsizes, sPvar, sPdescription, sPdesign, sPmanu);
+
+    if(sPmanu != '' && sPdesign != '' && sPdescription != '' && sPvar != '' && sPsizes != '' && sPquantity != '' && sPprice != '' && ssname != '' && sPser != '' && sPcat ){
+        ValidateProdNAme(ssname);
+    }else{
+        toastr.warning('Please compleatte all fields', 'Blank Field Detected');
+    }
+
+});
+
+function ValidateProdNAme(sPname){
+    var blobb = {
+        name: sPname
+    };
+    $.ajax({
+        type: 'POST',
+        url: "/controllers/admin/prodNameValidate.php",
+        data: blobb,
+        beforeSend: function () {
+            var x = document.querySelector('#adminSpinner');
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        },
+        success: (result) => {
+          if (result == "new") {
+            $('#confirm-addProd').modal('show');
+        } else if(result == "exist"){
+            toastr.warning('Please avoid duplication', 'Product Name Already Exist');
+        }else if(result == "error validating"){
+            toastr.error('Can\'t check if the product already exist', 'Error Validation');
+        }else{
+            toastr.error('Ask a Tech Support to Resolve', 'Something went wrong');
+            ERROR_logger(result);
+        }
+        },
+        complete: function () {
+          var x = document.querySelector('#adminSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+        },
+    });
+}
 
 // $("#SubmitNewProduct").on('submit', function(e){
 // // $("#addProductModal").on('submit', function(e){
@@ -81,7 +139,14 @@ $("#saveProduct").on('click', () => {
 //   });
 // });
 
-
+$("#yes-addProd").on('click', () => {
+        var x = document.querySelector('#adminSpinner');
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+});
 // $("#yes-addProd").on('click', () => {
 //     iCode = $("#adminProdCode").val();
 //     iName = $("#adminProdName").val();
@@ -245,43 +310,62 @@ function modify(nId) {
           } else {
               x.style.display = "none";
           }
-      },
-      success: (result) => {
-          if (result == "error") {
+    },
+    success: (result) => {
+        if (result == "error") {
               alert("Please call system admnistrator");
-          } else {
-              var objRes = JSON.parse(result);
+        } else {
+            var objRes = JSON.parse(result);
             //   console.log(JSON.parse(objRes.sizes).join(', '));
-              sPcat = $("#productCat").val(objRes.category);
-              sPname = $("#productName").val(objRes.name);
-              sPprice = $("#productPrice").val(objRes.price);
-              sPquantity = $("#productQuantity").val(objRes.stocks);
-              sPsizes = $('#productSizes').val(JSON.parse(objRes.sizes).join(', '));
-              sPvar = $('#productVar').val(JSON.parse(objRes.variation).join(', '));
-              sPdescription = $("#productDescription").val(objRes.description);
-              sPdesign = $('#productDesig').val(objRes.designer);
-              sPmanu = $('#productManuf').val(objRes.manufacturer);
-              sPphoto = $("productPhoto").val(objRes.image);
+            sPphoto = $("#modPrevImg1").attr('src', JSON.parse(objRes.images)[0]);
+            sPphoto = $("#modPrevImg2").attr('src', JSON.parse(objRes.images)[1]);
+            sPphoto = $("#modPrevImg3").attr('src', JSON.parse(objRes.images)[2]);
+            sPphoto = $("#modPrevImg4").attr('src', JSON.parse(objRes.images)[3]);
+
+            // console.log(JSON.parse(objRes.images)[0]);
+            sPcat = $("#productCat").val(objRes.category);
+            sPser = $("#productSer").val(objRes.series);
+            sPname = $("#productName").val(objRes.name);
+            sPprice = $("#productPrice").val(objRes.price);
+            sPquantity = $("#productQuantity").val(objRes.stocks);
+            sPsizes = $('#productSizes').val(JSON.parse(objRes.sizes).join(', '));
+            sPvar = $('#productVar').val(JSON.parse(objRes.variation).join(', '));
+            sPdescription = $("#modDescription").val(objRes.description);
+            sPdesign = $('#modDesign').val(objRes.designer);
+            sPmanu = $('#modManuf').val(objRes.manufacturer);
 
               $('#modifyModal').modal('show');                
           }
-      },
-      complete: function () {
-          var x = document.querySelector('#adminSpinner');
-          if (x.style.display === "none") {
-              x.style.display = "block";
-          } else {
-              x.style.display = "none";
-          }
-      },
+    },
+    complete: function () {
+        var x = document.querySelector('#adminSpinner');
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    },
   });
 }
 
 // SAVE MODIFY PRODUCT
-$("#Modify").on('click', () => {
-//   $('#confirm-modProd').modal('show');
-// })
+$("#Modiffy").on('click', () => {
+                $('#confirm-modProd').modal('show');
+            // $('#modifyModal').modal('show');    
+    // var nIndex = $("#indexer").val();
+});
 
+$("#yes-modProd").on('click', () => {
+
+// confirm na modify
+    // var nIndex = $("#indexer").val();
+    var x = document.querySelector('#adminSpinner');
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+});
 // $("#yes-modProd").on('click', () => {
 
 //   var nIndex = $("#indexer").val();
@@ -336,45 +420,45 @@ $("#Modify").on('click', () => {
 
 
 
-  iImage = $("#productPhoto").prop('files')[0];
-  var form_data = new FormData();
-  form_data.append('name', sPname);
-  form_data.append('image', iImage);
+//   iImage = $("#productPhoto").prop('files')[0];
+//   var form_data = new FormData();
+//   form_data.append('name', sPname);
+//   form_data.append('image', iImage);
 
-  $.ajax({
-      url: "/controllers/admin/admin_modify_save_img.php",
-      type: 'POST',
-      data: form_data,
-      contentType: false,
-      processData: false,
-      beforeSend: function () {
-          var x = document.querySelector('#adminSpinner');
-          if (x.style.display === "none") {
-              x.style.display = "block";
-          } else {
-              x.style.display = "none";
-          }
-      },
-      success: (result) => {
-          if (result == "Missing image file!") {
-              alert(result);
-          } else if (result == "Image file saved!") {
-              console.log(result);
-          } else if (result == "Failed to save image!") {
-              alert(result);
-              console.log(result);
-          } else {
-              console.log(result);
-          }
-      },
-      complete: function () {
-          var x = document.querySelector('#adminSpinner');
-          if (x.style.display === "none") {
-              x.style.display = "block";
-          } else {
-              x.style.display = "none";
-          }
-      },
-  });
+//   $.ajax({
+//       url: "/controllers/admin/admin_modify_save_img.php",
+//       type: 'POST',
+//       data: form_data,
+//       contentType: false,
+//       processData: false,
+//       beforeSend: function () {
+//           var x = document.querySelector('#adminSpinner');
+//           if (x.style.display === "none") {
+//               x.style.display = "block";
+//           } else {
+//               x.style.display = "none";
+//           }
+//       },
+//       success: (result) => {
+//           if (result == "Missing image file!") {
+//               alert(result);
+//           } else if (result == "Image file saved!") {
+//               console.log(result);
+//           } else if (result == "Failed to save image!") {
+//               alert(result);
+//               console.log(result);
+//           } else {
+//               console.log(result);
+//           }
+//       },
+//       complete: function () {
+//           var x = document.querySelector('#adminSpinner');
+//           if (x.style.display === "none") {
+//               x.style.display = "block";
+//           } else {
+//               x.style.display = "none";
+//           }
+//       },
+//   });
 
-});
+// });

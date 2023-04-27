@@ -24,6 +24,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" onerror="GetCDNFailed()"/>
     <title>Animazooki Dashboard</title>
 
 </head>
@@ -107,6 +108,39 @@ session_start();
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="/assets/js/jquery-3.6.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" onerror="GetCDNFailed()"></script>
 <script src="/assets/js/adminscripts.js"></script>
 <script src="/assets/js/admin_addProduct.js"></script>
+<?php
+try{          
+    if(isset($_GET['status'])){
+        switch ($_GET['status']) {
+            case 'success':
+                echo '<script>toastr.success("Saved Succesfully, you can now view the product!", "Product Listed!");</script>';
+                break;
+            case 'failed':
+                echo '<script>)toastr.warning("Something went wrong", "Product Listing Failed!");</script>';
+                break;
+            case 'error':
+                echo '<script>toastr.error("Something went wrong", "Action Error!");</script>';
+                break;
+                case 'successM':
+                    echo '<script>toastr.success("Updated Succesfully, you can now view the product!", "Product Modified!");</script>';
+                    break;
+                case 'failedM':
+                    echo '<script>)toastr.warning("Something went wrong", "Updating Product Failed!");</script>';
+                    break;
+            default: exit();
+                break;
+        }
+    }else{
+        exit();
+        // header('Location: ../');
+    }
+}catch(Exception $e){
+    $_SESSION['error'] = '<br>'.$e->getMessage();
+    header("Location: ../error_logger.php");
+    exit();
+} 
+
+?>

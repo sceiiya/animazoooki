@@ -1,6 +1,7 @@
-$(document).ready(()=>{
-    suggestItems(3);
+$(document).ready(async()=>{
+  suggestItems();
 });
+
 
 async function suggestItems(){
     try{

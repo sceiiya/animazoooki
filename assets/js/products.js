@@ -1,37 +1,37 @@
-$(document).ready(()=>{
-  const ThisProdID = $('#pID').val();
-  getProdInfo(ThisProdID);
-});
+// $(document).ready(()=>{
+//   const ThisProdID = $('#pID').val();
+//   getProdInfo(ThisProdID);
+// });
 
-function getProdInfo(id) {
-  try {
-    $.get('/controllers/get_productInfo.php?id=' + id, (data, status) => {
-      if (status === "success") {
-        const prodInfo = JSON.parse(data);
-        // $('#').val() = prodInfo.id;
-        $('#PRODUCT_TITLE').text(prodInfo.name + ' | Animazoooki Merch Co.');
-        $('.product-name').text() = prodInfo.name;
-        $('#pCateg').text() = 'Series'+prodInfo.category;
-        $('#pSeries').text() = 'Series'+prodInfo.series;
-        $('.item-price').text() = '$'+prodInfo.price;
-        // $('#').val() = prodInfo.images;
-        $('.product-stocks-count').text() = prodInfo.stocks+' left';
-        $('.product-rating-count').text() = prodInfo.reviews+' reviews';
-        // $('#').text() = prodInfo.ratings;
-        // $('#').val() = prodInfo.sizes;
-        // $('#').val() = prodInfo.variation;
-        $('.product-sold-count').text() = prodInfo.sold+' sold';
-        // $('#').text() = prodInfo.description;
-        // $('#').text() = prodInfo.designer;
-        // $('#').text() = prodInfo.manufacturer;
-      } else {
-        ERROR_logger(status + "<br>" + data);
-      }
-    });
-  } catch (error) {
-    ERROR_logger(error);
-  }
-}
+// function getProdInfo(id) {
+//   try {
+//     $.get('/controllers/get_productInfo.php?id=' + id, (data, status) => {
+//       if (status === "success") {
+//         const prodInfo = JSON.parse(data);
+//         // $('#').val() = prodInfo.id;
+//         $('#PRODUCT_TITLE').text(prodInfo.name + ' | Animazoooki Merch Co.');
+//         $('.product-name').text() = prodInfo.name;
+//         $('#pCateg').text() = 'Series'+prodInfo.category;
+//         $('#pSeries').text() = 'Series'+prodInfo.series;
+//         $('.item-price').text() = '$'+prodInfo.price;
+//         // $('#').val() = prodInfo.images;
+//         $('.product-stocks-count').text() = prodInfo.stocks+' left';
+//         $('.product-rating-count').text() = prodInfo.reviews+' reviews';
+//         // $('#').text() = prodInfo.ratings;
+//         // $('#').val() = prodInfo.sizes;
+//         // $('#').val() = prodInfo.variation;
+//         $('.product-sold-count').text() = prodInfo.sold+' sold';
+//         // $('#').text() = prodInfo.description;
+//         // $('#').text() = prodInfo.designer;
+//         // $('#').text() = prodInfo.manufacturer;
+//       } else {
+//         ERROR_logger(status + "<br>" + data);
+//       }
+//     });
+//   } catch (error) {
+//     ERROR_logger(error);
+//   }
+// }
 const imgMainCont = document.querySelector(".product-img-cont");
 const imgMainElm = document.querySelector(".product-img-cont img");
 const imgSub = document.querySelector(".product-img-sub");
@@ -156,3 +156,24 @@ function cngeHeight() {
 
 cngeHeight();
 window.addEventListener('resize', cngeHeight);
+
+
+
+
+
+$(document).ready(async()=>{
+  similarItems();
+});
+
+
+async function similarItems(){
+    try{
+      $.get('/controllers/get_randSimilar.php', (data, status)=>{
+        if (status === "success"){
+            $('#sim-prods').append(data);
+        }
+      });
+    }catch(error){
+      ERROR_logger(error);
+    }
+    }

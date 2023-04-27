@@ -911,3 +911,17 @@ $('#yes-sendRep').on('click', () => {
         $('#confirm-sendRep').modal('hide');
     }
 })
+
+toastr.options.progressBar = true;
+toastr.options.timeOut = 3000; // How long the toast will display without user interaction
+toastr.options.extendedTimeOut = 2000; // How long the toast will display after a user hovers over it
+toastr.options.closeButton = true;
+toastr.options.closeMethod = 'fadeOut';
+// toastr.options.closeDuration = 350;
+toastr.options.closeEasing = 'swing';
+toastr.options.newestOnTop = false;
+
+
+toastr.options.showEasing = 'swing';
+toastr.options.hideEasing = 'linear';
+toastr.options.closeEasing = 'linear';
