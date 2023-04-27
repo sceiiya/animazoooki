@@ -117,6 +117,7 @@ try{
               status: guestCred.status,
               log: "new"
             }));
+            hideBTNS();
             // console.log(JSON.parse(localStorage.getItem('user')));
     }
   });
@@ -124,6 +125,14 @@ try{
   ERROR_logger(error);
 }
 }
+
+//Function for otp modal
+$('#verifOTPBttn').on('click', () => {
+  $('#myOTPModal').modal('show');
+});
+// $('#myOTPModal').on('click', () => {
+//   $('#myOTPModal').modal('hide');
+// });
 
 //Function for login modal
 $('.btn-login').on('click', () => {
@@ -212,6 +221,7 @@ $.get('/controllers/fetch_userCreds.php', (data, status)=>{
             status: guestCred.status,
             log: guestCred.log
           }));
+          hideBTNS();
           // console.log(JSON.parse(localStorage.getItem('user')));
   }
 });
@@ -533,17 +543,19 @@ $('#myCartBttn').on('click', ()=>{
 //     if(currAcc.log == 'new'){$('#lgOutBttn').hide;$('#verifOTPBttn').hide;}
 // });
 
+
 // $(document).ready(function() {
 //   // Hide the login and signup buttons
 //   $("#SgUpBttn").addClass("btnxHide");
 // });
 
-$(document).ready(async()=>{
+function hideBTNS(){
   const userCred = JSON.parse(localStorage.getItem("user"));
     switch (true) {
       case (userCred.status == 'spectating'):
         $('#OTPBttn').hide();
         $('#lgOutBttn').hide();
+        $('#OTPBttn').hide();
         break;
       case (userCred.status == 'inactive'):
         $('#loginBttn').hide();
@@ -555,8 +567,24 @@ $(document).ready(async()=>{
         $('#OTPBttn').hide();
         break;
     }
-});
+}
 
+
+// $(document).ready(()=>{
+//   try{
+//     const userCred = JSON.parse(localStorage.getItem("user"));
+//     if (!userCred) {
+//       setTimeout(hideBTNS(), 6000);
+//       // hideBTNS();
+//     } else {
+//       hideBTNS();
+//       // setTimeout(hideBTNS(), 6000);
+//     }
+//   } catch(error) {
+//     console.log(error);
+//     ERROR_logger(error);
+//   }
+// });
 // fetching the theme and updating depends on the user preference
 $(document).ready(function(){
   try{

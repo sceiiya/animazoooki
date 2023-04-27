@@ -1,3 +1,57 @@
+<!-- <div id="login-container">
+        <div id="login-wrapper">
+            <h5>A One Time Password was sent to your email.
+                Please verify here.
+            </h5>
+
+            <form class="position-relative">
+                <div class="form-outline mb-4">
+                    <input type="number" id="OTP" class="form-control" />
+                    <label class="form-label" for="form2Example1">Enter OTP</label>
+                </div>
+
+            </form>
+            <button type="button" id="verifyOTP" class="btn btn-primary btn-block mb-4">Verify</button>
+
+            <div class="text-center">
+                <p>Send new OTP? <a href="#!" id="resendOTP">Resend</a></p>
+            </div>
+        </div>
+
+    </div> -->
+
+
+<div class="modal" id="myOTPModal">
+  <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
+    <div class="modal-content bg-transparent">
+
+      <div class="animazooki-log-cont txtc bg-light-in">
+
+        <div class="form-outline mb-0">
+          <input type="number" id="OTPcode" class="form-control" />
+        </div>
+
+        <div class="row mb-1">
+          <div class="col d-flex justify-content-center">
+            <div class="text-center pt-2">
+                <p>Send new OTP? <a href="#!" id="resendOTP">Resend</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" id="confirmOTP" class="btn btn-primary btn-block mb-4 inbg-red rwflx txtc"><a
+            class="txt-light">Verify</a>
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
 <div class="modal" id="myLoginModal">
   <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
     <div class="modal-content bg-transparent">

@@ -298,6 +298,8 @@ require_once("connect_DB.php");
             //execute the query
             $Result = mysqli_query($mysql, $qSelect);
             $nTotalRows = mysqli_num_rows($Result);
+            $ftcasc = mysqli_fetch_assoc($Result);
+            $ftcarr = mysqli_fetch_array($Result);
             // while($rows = mysqli_fetch_assoc($Result)){
             //     //store the data value
             //     $dResult[] = $rows;
@@ -307,11 +309,17 @@ require_once("connect_DB.php");
             // echo $nTotalRows;
             $dResult = [
                 'result' => "true",
-                'total' => $nTotalRows
+                'total' => $nTotalRows,
+                'data' => $Result,
+                'assoc' => $ftcasc,
+                'array' => $ftcarr
             ];
             $dnResult = [
                 'result' => "false",
-                'total' => $nTotalRows
+                'total' => $nTotalRows,
+                'data' => $Result,
+                'assoc' => $ftcasc,
+                'array' => $ftcarr
             ];
             if($nTotalRows > 0){
                 return $dResult;
