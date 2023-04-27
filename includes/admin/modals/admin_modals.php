@@ -115,25 +115,25 @@
                     <div class="preview-container">
                         <div>
                             <!-- <label for="file1">Choose an image:</label> -->
-                            <input type="file" name="file[]" id="prodimg1" accept="image/*" class="file-input" required>
+                            <input type="file" name="file[]" id="prodimg1" accept="image/*" class="file-input" loading="lazy" onerror="defaultimg(this);" required>
                             <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
                         </div>
 
                         <div>
                             <!-- <label for="file2">Choose an image:</label> -->
-                            <input type="file" name="file[]" id="prodimg2" accept="image/*" class="file-input">
+                            <input type="file" name="file[]" id="prodimg2" accept="image/*" class="file-input" loading="lazy" onerror="defaultimg(this);">
                             <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
                         </div>
 
                         <div>
                             <!-- <label for="file3">Choose an image:</label> -->
-                            <input type="file" name="file[]" id="prodimg3" accept="image/*" class="file-input">
+                            <input type="file" name="file[]" id="prodimg3" accept="image/*" class="file-input" loading="lazy" onerror="defaultimg(this);">
                             <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
                         </div>
 
                         <div>
                             <!-- <label for="file4">Choose an image:</label> -->
-                            <input type="file" name="file[]" id="prodimg4" accept="image/*" class="file-input">
+                            <input type="file" name="file[]" id="prodimg4" accept="image/*" class="file-input" loading="lazy" onerror="defaultimg(this);">
                             <div class="preview"><img src="/controllers/important/animazoooki_onload.png"></div>
                         </div>
                     </div>
@@ -280,25 +280,25 @@
                         <div>
                             <!-- <label for="file1">Choose an image:</label> -->
                             <input type="file" name="file[]" id="modprodimg1" accept="image/*" class="file-input">
-                            <div class="preview"><img id="modPrevImg1" src="/controllers/important/animazoooki_onload.png"></div>
+                            <div class="preview"><img id="modPrevImg1" src="/controllers/important/animazoooki_onload.png" loading="lazy" onerror="defaultimg(this);"></div>
                         </div>
 
                         <div>
                             <!-- <label for="file2">Choose an image:</label> -->
                             <input type="file" name="file[]" id="modprodimg2" accept="image/*" class="file-input">
-                            <div class="preview"><img id="modPrevImg2" src="/controllers/important/animazoooki_onload.png"></div>
+                            <div class="preview"><img id="modPrevImg2" src="/controllers/important/animazoooki_onload.png" loading="lazy" onerror="defaultimg(this);"></div>
                         </div>
 
                         <div>
                             <!-- <label for="file3">Choose an image:</label> -->
                             <input type="file" name="file[]" id="modprodimg3" accept="image/*" class="file-input">
-                            <div class="preview"><img id="modPrevImg3" src="/controllers/important/animazoooki_onload.png"></div>
+                            <div class="preview"><img id="modPrevImg3" src="/controllers/important/animazoooki_onload.png" loading="lazy" onerror="defaultimg(this);"></div>
                         </div>
 
                         <div>
                             <!-- <label for="file4">Choose an image:</label> -->
                             <input type="file" name="file[]" id="modprodimg4" accept="image/*" class="file-input">
-                            <div class="preview"><img id="modPrevImg4" src="/controllers/important/animazoooki_onload.png"></div>
+                            <div class="preview"><img id="modPrevImg4" src="/controllers/important/animazoooki_onload.png" loading="lazy" onerror="defaultimg(this);"></div>
                         </div>
                     </div>
                     <!-- must edit this for modification -->
@@ -310,7 +310,7 @@
                 <div class="">
                     <div class="btn redbgwhitec" id="Modiffy">Modify</div>
                 </div>
-                <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                <button type="button" id='modClose' class="btn" data-bs-dismiss="modal">Close</button>
             </div>
 
         </div>
