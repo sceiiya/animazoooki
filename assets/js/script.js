@@ -172,6 +172,7 @@ $('#login__btn').on('click', (e) => {
                     }else{
                       ERROR_logger(result);
                       toastr.error("Something went wrong", "Error Login");
+                      ModalLoader;
                     }
                   }
                 })
@@ -185,7 +186,7 @@ $('#login__btn').on('click', (e) => {
               // }else if(result == "user does not exist"){
               //   toastr.error("Please create an account!", "User not Found");
               }else{
-                  // console.log(result);
+                  console.log(result);
                   ERROR_logger(result);
               }   
       },
@@ -626,11 +627,13 @@ $(document).ready(function(){
 // });
 
 function ERROR_logger(nERROR){
-  var errrorr ={
-    error: nERROR
-  };
-  $.post("/controllers/error_logger.php", errrorr, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
-  );
+$.post("/controllers/error_logger.php", nERROR, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
+);
+  // var errrorr ={
+  //   error: nERROR
+  // };
+  // $.post("/controllers/error_logger.php", errrorr, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
+  // );
 }
 
 

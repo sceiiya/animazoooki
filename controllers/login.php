@@ -21,7 +21,7 @@
                 echo "Login Success";
                     // session_destroy();
                     $getData = ['username' => $_POST['username']];
-                    $Data = $ConDB->Select($eCon, 'clients', $getData);
+                    $Data = $ConDB->GSelect($eCon, 'clients', $getData, '', '');
                     
                     $_SESSION['username'] = $_POST['username'];
                     $_SESSION['userid'] = $Data['id'];    
@@ -29,6 +29,7 @@
                     $_SESSION['email'] = $Data['email'];
                     $_SESSION['theme'] = $Data['theme'];
                     $_SESSION['status'] = $Data['status'];
+                    $_SESSION['profile_img'] = $Data['profile_img'];
 
                     $of = ['username' => $_POST['username']];
                     $getDate=['date_last_login' => date("Y-m-d H:i:s")];
@@ -36,10 +37,19 @@
 
             }elseif($validU["result"] == "false"){
                 echo "wrong username";
+                $_SESSION['error'] = $validU;
+                header("Location: error_logger.php");
+                exit();
             }elseif($validU["result"] == "true" && $valueP !== $DData["password"]){
                 echo "wrong password";
+                $_SESSION['error'] = $validU;
+                header("Location: error_logger.php");
+                exit();
             }else{
                 echo "user does not exist";
+                $_SESSION['error'] = $validU;
+                header("Location: error_logger.php");
+                exit();
             }
         }catch(Exception $e){
             $_SESSION['error'] = $e->getMessage();
