@@ -502,7 +502,61 @@ $('#myCartBttn').on('click', ()=>{
   cartURL();
 })
 
-// $(document).ready():
+// $(document).ready(async()=>{
+//   const currAcc = JSON.parse(localStorage.getItem("user"));
+//     switch (true) {
+//       case (currAcc.status == 'spectating'):
+//         $('#OTPBttn').style.display = "none";
+//         $('#lgOutBttn').style.display = "none";
+//         // $('#verifOTPBttn').hide;
+//         break;
+//       case (currAcc.status == 'inactive'):
+//         $('#loginBttn').style.display = "none";
+//         $('#SgUpBttn').style.display = "none";
+//         break;
+//       case (currAcc.status == 'active'):
+//         $('#lgInBttn').style.display = "none";
+//         $('#SgUpBttn').style.display = "none";
+//         $('#OTPBttn').style.display = "none";
+//         break;
+//       case (currAcc.log == ''):
+//         $('#OTPBttn').style.display = "none";
+//         break;
+
+//       default:
+//         break;
+//     }
+// });
+
+// $(document).ready(async()=>{
+//   const currAcc = JSON.parse(localStorage.getItem("user"));
+//     if(currAcc.log == 'new'){$('#lgOutBttn').hide;$('#verifOTPBttn').hide;}
+// });
+
+// $(document).ready(function() {
+//   // Hide the login and signup buttons
+//   $("#SgUpBttn").addClass("btnxHide");
+// });
+
+$(document).ready(async()=>{
+  const userCred = JSON.parse(localStorage.getItem("user"));
+    switch (true) {
+      case (userCred.status == 'spectating'):
+        $('#OTPBttn').hide();
+        $('#lgOutBttn').hide();
+        break;
+      case (userCred.status == 'inactive'):
+        $('#loginBttn').hide();
+        $('#SgUpBttn').hide();
+        break;
+      case (userCred.status == 'active'):
+        $('#lgInBttn').hide();
+        $('#SgUpBttn').hide();
+        $('#OTPBttn').hide();
+        break;
+    }
+});
+
 // fetching the theme and updating depends on the user preference
 $(document).ready(function(){
   try{
