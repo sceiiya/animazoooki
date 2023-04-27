@@ -823,7 +823,7 @@ $('#yes-sendRep').on('click', () => {
                 }
             },
             success: (result) => {
-                if (result == " Email sent!") {
+                if (result == "Email sent!") {
                     alert(result);
                     $('#confirm-sendRep').modal('hide');
                     $('#reportList').val("Select Report");
