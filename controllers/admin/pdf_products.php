@@ -56,7 +56,7 @@ if(!isset($_SESSION['admusername'])){
                         // echo "<br>";
                         $img = "";
                         if(empty ($imgFile)) {
-                            $img1[0] = 'C:\laragon\www\animazooki\admin\listing\product_img\animazoooki_onload.png';
+                            $img1[0] = '../../admin/listing/product_img/animazoooki_onload.png';
                         } else {
                             $img1 = $imgFile;
                         }

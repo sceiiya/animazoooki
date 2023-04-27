@@ -27,7 +27,7 @@ if(!isset($_SESSION['admusername'])){
                 $pdf->AddPage('L', 'Legal');
 
                 $pdf->SetFont('Arial','',24);
-                $pdf->Cell(380,20,"CUSTOMERS REPORT", 0, 1, 'C');
+                $pdf->Cell(340,20,"CUSTOMERS REPORT", 0, 1, 'C');
                 $pdf->Ln(10);
                 $pdf->SetFont('Arial','',10);
                 $pdf->Cell(15,10,"ID", 1, 0, 'C');
@@ -40,7 +40,7 @@ if(!isset($_SESSION['admusername'])){
                 $pdf->Cell(40,10,"Billing Address", 1, 0, 'C');
                 $pdf->Cell(30,10,"Total Orders", 1, 0, 'C');
                 $pdf->Cell(20,10,"Status", 1, 0, 'C');
-                $pdf->Cell(30,10,"Date Added", 1, 1, 'C');
+                $pdf->Cell(35,10,"Date Added", 1, 1, 'C');
 
                 if ($eSelect == true) {
 
@@ -56,7 +56,7 @@ if(!isset($_SESSION['admusername'])){
                         $pdf->Cell(40,10,$rows['billing_address'], 1, 0, 'L');
                         $pdf->Cell(30,10,$rows['total_orders'], 1, 0, 'C');
                         $pdf->Cell(20,10,$rows['status'], 1, 0, 'L');
-                        $pdf->Cell(30,10,$rows['date_added'], 1, 1, 'L');
+                        $pdf->Cell(35,10,$rows['date_added'], 1, 1, 'L');
                     }
                 }
 
