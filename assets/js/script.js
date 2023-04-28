@@ -587,11 +587,17 @@ function hideBTNS(){
 //   }
 // });
 // fetching the theme and updating depends on the user preference
+$(document).ready(()=>{
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  if (userCred) {
+    hideBTNS();
+  }
+})
+
 $(document).ready(function(){
   try{
     const userCred = JSON.parse(localStorage.getItem("user"));
     if (userCred) {
-      hideBTNS();
       if (userCred.theme == "dark") {
         AzsettingDarkTheme();
       } else {
