@@ -906,6 +906,102 @@ $('#yes-sendRep').on('click', () => {
                 }
             }
         });
+    } else if (sReport == "Products PDF") {
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/pdf_products.php",
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Email sent!") {
+                    alert(result);
+                    $('#confirm-sendRep').modal('hide');
+                    $('#reportList').val("Select Report");
+                    dashboardFetch();
+                } else {
+                    alert("Unknown: " + result);
+                    $('#confirm-sendRep').modal('hide');
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        });
+    } else if (sReport == "Customers PDF") {
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/pdf_customers.php",
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Email sent!") {
+                    alert(result);
+                    $('#confirm-sendRep').modal('hide');
+                    $('#reportList').val("Select Report");
+                    dashboardFetch();
+                } else {
+                    alert("Unknown: " + result);
+                    $('#confirm-sendRep').modal('hide');
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        });
+    } else if (sReport == "Orders PDF") {
+        $.ajax({
+            type: 'POST',
+            url: "/controllers/admin/pdf_orders.php",
+            beforeSend: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            },
+            success: (result) => {
+                if (result == "Email sent!") {
+                    alert(result);
+                    $('#confirm-sendRep').modal('hide');
+                    $('#reportList').val("Select Report");
+                    dashboardFetch();
+                } else {
+                    alert("Unknown: " + result);
+                    $('#confirm-sendRep').modal('hide');
+                }
+            },
+            complete: function () {
+                var x = document.querySelector('#adminSpinner');
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        });
     } else {
         alert("Please select a report");
         $('#confirm-sendRep').modal('hide');
