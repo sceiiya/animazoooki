@@ -31,7 +31,7 @@
 
         <div class="profile-cont-l bg-light-in">
             <div class="clflx txtc">
-                <img class="profile-img" src="<? echo $_SESSION['profile_img']; ?>" alt="Sceiiya">
+                <img class="profile-img" src="<?php echo $_SESSION['profile_img']; ?>" alt="<?php echo 'profile of '.$_SESSION['username'];?>">
                 <strong class="profile-uname"><?php echo $_SESSION['username'];?></strong>
             </div>
             <div class="profile-label-cont">

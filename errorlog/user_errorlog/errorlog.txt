@@ -783,3 +783,191 @@ Date: 2023-04-27 21:14:55
 Error: TypeError: Cannot read properties of null (reading 'status') 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-28 15:16:13
+Error: {"result":"false","total":0,"data":{},"assoc":null,"array":null} 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-28 15:17:22
+Error: {"result":"false","total":0,"data":{},"assoc":null,"array":null} 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-28 15:20:09
+Error: 
+
+
+Warning
+:  Undefined array key "id" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+12
+
+
+
+
+
+Warning
+:  Undefined array key "name" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+13
+
+
+
+
+
+Warning
+:  Undefined array key "email" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+14
+
+
+
+
+
+Warning
+:  Undefined array key "contactno" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+15
+
+
+
+
+
+Warning
+:  Undefined array key "default_shipping_address" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+16
+
+
+
+
+
+Warning
+:  Undefined array key "billing_address" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+17
+
+
+
+
+
+Warning
+:  Undefined array key "total_orders" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+18
+
+
+
+
+
+Warning
+:  Undefined array key "total_reviews" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+19
+
+
+success 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-28 15:25:41
+Error: 
+
+
+Warning
+:  Undefined array key "id" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+12
+
+
+
+
+
+Warning
+:  Undefined array key "name" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+13
+
+
+
+
+
+Warning
+:  Undefined array key "email" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+14
+
+
+
+
+
+Warning
+:  Undefined array key "contactno" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+15
+
+
+
+
+
+Warning
+:  Undefined array key "default_shipping_address" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+16
+
+
+
+
+
+Warning
+:  Undefined array key "billing_address" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+17
+
+
+
+
+
+Warning
+:  Undefined array key "total_orders" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+18
+
+
+
+
+
+Warning
+:  Undefined array key "total_reviews" in 
+C:\laragon\www\animazooki\controllers\get_userCreds.php
+ on line 
+19
+
+
+success 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+

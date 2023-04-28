@@ -551,18 +551,18 @@ $('#myCartBttn').on('click', ()=>{
 // });
 
 function hideBTNS(){
-  const userCred = JSON.parse(localStorage.getItem("user"));
+  const uCred = JSON.parse(localStorage.getItem("user"));
     switch (true) {
-      case (userCred.status == 'spectating'):
+      case (uCred.status == 'spectating'):
         $('#OTPBttn').hide();
         $('#lgOutBttn').hide();
         $('#OTPBttn').hide();
         break;
-      case (userCred.status == 'inactive'):
+      case (uCred.status == 'inactive'):
         $('#loginBttn').hide();
         $('#SgUpBttn').hide();
         break;
-      case (userCred.status == 'active'):
+      case (uCred.status == 'active'):
         $('#lgInBttn').hide();
         $('#SgUpBttn').hide();
         $('#OTPBttn').hide();
@@ -591,6 +591,7 @@ $(document).ready(function(){
   try{
     const userCred = JSON.parse(localStorage.getItem("user"));
     if (userCred) {
+      hideBTNS();
       if (userCred.theme == "dark") {
         AzsettingDarkTheme();
       } else {
@@ -627,8 +628,17 @@ $(document).ready(function(){
 // });
 
 function ERROR_logger(nERROR){
-$.post("/controllers/error_logger.php", nERROR, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
-);
+  var errr ={
+    error: nERROR
+  }
+  $.ajax({
+    type: 'POST',
+    url: "/controllers/error_logger.php",
+    data: errr,
+  });
+
+// $.post("/controllers/error_logger.php", nERROR, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
+// );
   // var errrorr ={
   //   error: nERROR
   // };

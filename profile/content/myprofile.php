@@ -16,7 +16,7 @@
         </div>
         <div class="mb-3 w-75 profile-data">
             <label>Contact Number</label>
-            <input type="text" class="form-control" id="contactNo" value="<?php echo $_SESSION['cellno'];?>" readonly="true">
+            <input type="number" class="form-control" id="contactNo" value="<?php echo $_SESSION['cellno'];?>" readonly="true">
         </div>
         <div class="mb-3 w-75 profile-data">
             <label>Shipping Address</label>

@@ -7,7 +7,7 @@
     if($eCon == true){
         try{  
             $getData = ['username' => $_SESSION['username']];
-            $Data = $ConDB->Select($eCon, 'clients', $getData);
+            $Data = $ConDB->GSelect($eCon, 'clients', $getData, '', '');
             
             $_SESSION['userid'] = $Data['id'];
             $_SESSION['fullname'] = $Data['name'];    
