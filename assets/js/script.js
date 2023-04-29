@@ -130,6 +130,13 @@ try{
 $('#verifOTPBttn').on('click', () => {
   $('#myOTPModal').modal('show');
 });
+
+$('#confirmOTP').on('click', ()=>{
+  var InOTP = $('#OTPcode');
+
+  var dOTP = InOTP.val();
+  $.ajax
+});
 // $('#myOTPModal').on('click', () => {
 //   $('#myOTPModal').modal('hide');
 // });
