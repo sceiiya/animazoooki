@@ -29,7 +29,11 @@
 
         <div class="form-outline mb-0">
           <input type="number" id="OTPcode" class="form-control" min="100000" max="999999" value="
-          <?php if($_GET['otp']){ echo $_GET['otp']; echo '<script>isOTPget();</script>'; }else{exit();} ?>
+          <?php try{if($_GET['otp']){ echo $_GET['otp']; echo '<script>isOTPget();</script>'; }else{exit();}}catch(Exception $e){
+                $_SESSION['error'] = $e->getMessage();
+                header("Location: ../../controllers/error_logger.php");
+                exit();
+          } ?>
           "/>
         </div>
 

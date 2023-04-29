@@ -1,3 +1,21 @@
+// var varifcont ="";
+function updateprofpic() {
+  
+  $.ajax({
+      type: 'POST',
+      url: content,
+      success: (result) => {
+          var element = $('<div/>');
+          element.html(result);
+          container.empty();
+          container.prepend(element);
+          myProfileEdit();
+          // varifcont = content;
+      }
+  })
+
+}
+
 // Customer Profile
 
 var container = $('.profile-cont-r');
