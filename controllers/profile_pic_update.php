@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $_SESSION['userid'];
+    // $_SESSION['userid'];
     
     include("important/class.database.php");
     require_once '../vendor/autoload.php';
@@ -21,16 +21,16 @@
     
     // Check if files are uploaded
     try{
-    if(isset($_FILES['file'])) {
-        $files = $_FILES['file'];
-    
+    if(isset($_FILES['profile_picture'])) {
+        // $files = $_FILES['file'];
+    FinURL
         // Loop through up to 4 files
         // for ($i = 0; $i < min(4, count($files['name'])); $i++) {
             // Check if file is an image
             $profilePic = $_FILES['profile_picture'];
             if (substr($profilePic['type'], 0, 5) === 'image') {
-                $fileName = $files['name'];
-                $fileTmpName = $files['tmp_name'][$i];
+                $fileName = $profilePic['name'];
+                $fileTmpName = $profilePic['tmp_name'];
     
                 // Generate a unique file name
                 $newFileName = uniqid('', true) . '.' . strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
@@ -42,7 +42,7 @@
                 // Upload file to S3 bucket with metadata
                 $result = $client->putObject([
                     'Bucket' => $bucketName,
-                    'Key' => 'products/' .$newFileName,
+                    'Key' => 'profile/' .$newFileName,
                     'Body' => fopen($fileTmpName, 'rb'),
                     'ACL' => 'public-read',
                     'ContentType' => $contentType,

@@ -126,6 +126,11 @@ try{
 }
 }
 
+function isOTPget(){
+  $('#myOTPModal').modal('show');
+  // var InOTP = $('#OTPcode');
+}
+
 //Function for otp modal
 $('#verifOTPBttn').on('click', () => {
   $('#myOTPModal').modal('show');
@@ -133,7 +138,6 @@ $('#verifOTPBttn').on('click', () => {
 
 $('#confirmOTP').on('click', ()=>{
   var InOTP = $('#OTPcode');
-
   var dOTP = {
     otp_code: InOTP.val()
   };
@@ -150,12 +154,13 @@ $('#confirmOTP').on('click', ()=>{
       }
       },
     success: (result) => {
-      if (result == "new") {
-        $('#confirm-addProd').modal('show');
-      } else if(result == "exist"){
-          toastr.warning('Please avoid duplication', 'Product Name Already Exist');
-      }else if(result == "error validating"){
-          toastr.error('Can\'t check if the product already exist', 'Error Validation');
+      if (result == "true") {
+        $('#myOTPModal').modal('hide');
+        toastr.success('You may now purchase without restrictions!', 'Account verified succesfully!');
+      } else if(result == "expired"){
+          toastr.warning('Please get a new OTP', 'OTP expired!');
+      }else if(result == "false"){
+          toastr.warning('Please check your Email for accurate passcode', 'Wrong passcode!');
       }else{
         toastr.error('Ask a Tech Support to Resolve', 'Something went wrong');
         ERROR_logger(result);
@@ -169,9 +174,9 @@ $('#confirmOTP').on('click', ()=>{
           x.style.display = "none";
       }
     },
-},
-  })
+  });
 });
+// });
 // $('#myOTPModal').on('click', () => {
 //   $('#myOTPModal').modal('hide');
 // });
