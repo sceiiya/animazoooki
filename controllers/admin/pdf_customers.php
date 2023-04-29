@@ -61,6 +61,37 @@ if(!isset($_SESSION['admusername'])){
                 }
 
                 $pdf->Output('F', '../../reports/pdf/customers.pdf', true);
+
+                require_once('../../phpmailer/class.phpmailer.php');
+
+                $mail = new PHPMailer();
+                
+                $mail->IsSMTP();
+                $mail->SMTPAuth 	= true;
+            
+                $mail->Host 	  = 'smtp.hostinger.com';
+                include("../important/connect_Email.php");
+                $mail->FromName   = "System Administrator";
+                $mail->SMTPSecure = 'ssl';
+                $mail->Port 	  = 465;                        
+                
+                $mail->AddAddress($admEmail, $admUsername);
+                $mail->AddAttachment("../../reports/pdf/customers.pdf");
+            
+                $mail->Subject = "Customers Report";
+                $mail->Body = nl2br("
+                See attached document for the report.
+                
+                ");
+                
+                $mail->IsHTML(true);
+
+                if(!$mail->Send()) {
+                    echo "Email not sent!";
+                } else {
+                    echo "Email sent!";
+                }
+                mysqli_close($dbConnection);
             } catch(Exception $e) {
                 echo "error";
             }
