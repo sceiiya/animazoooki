@@ -30,8 +30,14 @@
 
 
         <div class="profile-cont-l bg-light-in">
+        <!-- profile_picture -->
             <div class="clflx txtc">
-                <img class="profile-img" src="<?php echo $_SESSION['profile_img']; ?>" alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+                <!-- <label for="file4">Choose an image:</label> -->
+                <input type="file" name="profile_picture" id="profpic" accept="image/*" class="file-input" style="display: none;">
+                <div class="preview">
+                    <img class="profile-img" id="profpicprev" src="<?php echo $_SESSION['profile_img']; ?>" loading="lazy" onerror="defaultimg(this);"  alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+                </div>
+                <!-- <img class="profile-img" src="<?php //echo $_SESSION['profile_img']; ?>" alt="<?php //echo 'profile of '.$_SESSION['username'];?>"> -->
                 <strong class="profile-uname"><?php echo $_SESSION['username'];?></strong>
             </div>
             <div class="profile-label-cont">
