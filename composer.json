@@ -1,0 +1,8 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "mpdf/mpdf": "^8.1",
+        "fpdf/fpdf": "^1.85",
+        "aws/aws-sdk-php": "^3.269"
+    }
+}

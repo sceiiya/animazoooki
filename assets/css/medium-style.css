@@ -750,7 +750,8 @@ hr{
     max-width: 189px !important;
     margin-right: 7px;
     /* min-height: 189px; */
-    height: fit-content !important;
+    min-height:inherit;
+    /* height: fit-content !important; */
     background-color: #fffbf2;
 }
 
@@ -1538,7 +1539,91 @@ footer>*>*{
 /* *{
     background-color: #5c52ec42;
 } */
-/*----- product page -----*/
+
+
+/*----- cart page -----*/
+.cart-main{
+height: 100%;
+width: 76%;
+background-position: top;
+background-repeat: no-repeat;
+background-size: cover;
+box-shadow: 0 0px 0px 0px rgba(255, 255, 255, 0), 0 -15px 16px 8px #a501146b, 0px 0 0px 0px #ffffff00, 0 -15px 16px 8px #a501146b;
+box-sizing: border-box;
+text-align: center;
+z-index: 4;
+}
+.cart-cont{
+    background-color: #fffbf2;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+}
+/*----- cart page -----*/
+
+
+
+/*----- checkout page -----*/
+
+/*----- checkout page -----*/
+
+.admin-nav{
+    top: 0;
+    left: 0;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+    padding: 8px;
+    /* position: fixed; */
+    box-sizing: border-box;
+}
+
+.admin-main{
+    overflow-wrap: break-word;
+    flex-wrap: wrap;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.admin-inners{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.admin-innerstat{
+    width: 350px;
+    height: 250px;
+    background-color: #242424;
+    color: #fff;
+}
+
+.admin-innerstat>label{
+    margin: 30px 10px 0 10px;
+    padding: 5px;
+    background-color: #a50113;
+    border-radius: 7px;
+    
+}
+
+/* phase one clear */
+
+/* added in mp2 */
+
+.header_floater{
+    text-shadow: 0px 0px 2px #fffbf2;
+}
+
+.header_floater_d{
+    text-shadow: 0px 0px 2px #0c0c0c;
+}
+
+/* ================================= PHASE TWO optimizations ================================== */
+
+/*------------------------------- product page --------------------*/
 .ind-product-cont{
     background-color: #fffbf2;
     padding-left: 1.3rem;
@@ -1553,6 +1638,7 @@ footer>*>*{
 
 .product-imgs-cont{
     width: 40%;
+    height: fit-content;
 }
 
 .product-img-cont{
@@ -1560,27 +1646,57 @@ footer>*>*{
     overflow: hidden;
     border: 2px solid #a50113;
     height: fit-content;
+    border-radius: 3px;
+    box-sizing: inherit;
+    position: relative;
 }
 
 .product-img-main{
     width: 100%;
+    border-radius: 3px;
+    display: block;
+    position:relative;
+    transition: all 0.1s linear;
+}
+
+.product-img-main:hover{
+    display: block;
+    cursor: zoom-in;
 }
 
 .product-img-sub-cont-holder{
+    padding-left: 0;
+    list-style: none;
     display: flex;
     flex-direction: row;
     gap: 5px;
     margin: 5px;
+    margin-top: 1rem;
 }
 
 .product-img-sub-cont{
     object-fit: cover;
-    background-color:#fff;
-    width: 70px;
+    /* background-color:#fff; */
+    max-width: 70px;
+    max-height: 70px;
     height: fit-content;
-    border: 2px solid #a50113;
+    /* border: 2px solid #a50113; */
     overflow: hidden;
     object-fit: cover;
+    border-radius: 3px;
+    border-radius: 3px;
+    transition: all 0.1s linear;
+}
+
+.product-img-sub-cont:hover{
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+
+.product-img-sub-cont-holder .active{
+    padding: 5px;
+    border:unset;
+    opacity: 0.5;
 }
 
 .product-img-sub{
@@ -1589,9 +1705,10 @@ footer>*>*{
     transition: .3s all ease-out;
     object-fit: cover;
     aspect-ratio: 1;
+    border-radius: 3px;
 }
 
-.product-img-sub:hover{
+/* .product-img-sub:hover{
     position: fixed;
     overflow: hidden;
     top:80px;
@@ -1600,7 +1717,7 @@ footer>*>*{
     width: 45%;
     height: auto;
     object-fit: contain;
-}
+} */
 
 .product-inf-cont{
     width: 60%;
@@ -1768,86 +1885,6 @@ input:disabled{
     box-shadow: 0px 3px 3px -3px #1d1d1d;
     margin-bottom: 1rem;
 }
-/*----- product page -----*/
+/*------------------------------- product page --------------------*/
 
-
-
-/*----- cart page -----*/
-.cart-main{
-height: 100%;
-width: 76%;
-background-position: top;
-background-repeat: no-repeat;
-background-size: cover;
-box-shadow: 0 0px 0px 0px rgba(255, 255, 255, 0), 0 -15px 16px 8px #a501146b, 0px 0 0px 0px #ffffff00, 0 -15px 16px 8px #a501146b;
-box-sizing: border-box;
-text-align: center;
-z-index: 4;
-}
-.cart-cont{
-    background-color: #fffbf2;
-    padding-left: 1.3rem;
-    padding-right: 1.3rem;
-}
-/*----- cart page -----*/
-
-
-
-/*----- checkout page -----*/
-
-/*----- checkout page -----*/
-
-.admin-nav{
-    top: 0;
-    left: 0;
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    height: 100% !important;
-    padding: 8px;
-    /* position: fixed; */
-    box-sizing: border-box;
-}
-
-.admin-main{
-    overflow-wrap: break-word;
-    flex-wrap: wrap;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-
-.admin-inners{
-    display: flex;
-    flex-flow: row wrap;
-    gap: 20px;
-}
-
-.admin-innerstat{
-    width: 350px;
-    height: 250px;
-    background-color: #242424;
-    color: #fff;
-}
-
-.admin-innerstat>label{
-    margin: 30px 10px 0 10px;
-    padding: 5px;
-    background-color: #a50113;
-    border-radius: 7px;
-    
-}
-
-/* phase one clear */
-
-/* added in mp2 */
-
-.header_floater{
-    text-shadow: 0px 0px 2px #fffbf2;
-}
-
-.header_floater_d{
-    text-shadow: 0px 0px 2px #0c0c0c;
-}
+/* ================================= PHASE TWO optimizations ================================== */

@@ -6,22 +6,27 @@
                 <h3 class="txtc mb-4">Create Account</h3>
 
                 <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control"
+                    <input type="text" id="NewName" class="form-control"
                         placeholder="Enter Name" />
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="email" id="form3Example3cg" class="form-control form-control"
+                    <input type="text" id="NewUsername" class="form-control"
+                        placeholder="Enter Username" />
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="email" id="NewEmail" class="form-control"
                         placeholder="Enter Email" />
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4cg" class="form-control form-control"
+                    <input type="password" id="NewPass" class="form-control"
                         placeholder="Enter Password" />
                 </div>
 
                 <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4cdg" class="form-control form-control"
+                    <input type="password" id="NewVPass" class="form-control"
                         placeholder="Re-enter Password" />
                 </div>
 
@@ -49,13 +54,13 @@
 
                 <div class="form-check d-flex justify-content-center mt-3 mb-0">
                     <input class="form-check-input me-2 inbg-red" type="checkbox" value="" id="form2Example3cg" />
-                    <label class="form-check-label cb-sgn-txt" for="form2Example3g">
-                        I agree to all statements in <a href="#!" class="text-body" onclick="popdev()"><u>Terms of
+                    <label class="form-check-label cb-sgn-txt txt-light-in" for="form2Example3g">
+                        I agree to all statements in <a href="#!" class="text-body txt-light-inv" onclick="popdev()"><u>Terms of
                                 service</u></a>
                     </label>
                 </div>
 
-                <p class="text-center text-muted mb-0">Already have an account? <a 
+                <p class="text-center text-muted mb-0 txt-light-inv">Already have an account? <a 
                         class="text-body txtred btn-login"><u>Login here</u></a></p>
 
             </form>

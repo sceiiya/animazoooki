@@ -1,249 +1,146 @@
+<?php
+
+session_start();
+
+    if(!isset($_SESSION['admusername'])){
+        header('Location: /admin/login/index.php');
+    }else{
+        $admAccess = $_SESSION['admaccess'];
+        $admUsername = $_SESSION['admusername'];
+        $admId = $_SESSION['admid'];    
+        $admFirstName = $_SESSION['admfirstname'];
+        $admLastName = $_SESSION['admlastname'];
+        $admEmail = $_SESSION['admemail'];
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" onerror="GetCDNFailed()"/>
     <title>Animazooki Dashboard</title>
 
 </head>
 
-<body>
-    <div class="container">
-        <div class="navigation">
+<body style="display:flex; width: 100%; justify-content:space-between; flex-direction:row">
+    <input id="accessChecker" value="<?php echo $admAccess ?>" style="display: none;">
+    <div class="containerr">
+        <div class="navigation ADMINNavCont ADMINNavCont-out">
             <ul>
                 <li>
-                    <a href="#">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                    <span class="title">Animazooki Admin</span>
+                    <a id='TOGicon' href="#">
+                        <span class="icon" style="z-index: 50;"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title ADMINheadNavs">Animazooki Admin</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                    <span class="icon"><ion-icon name="speedometer-outline"></ion-icon></span>
-                    <span class="title">Dashboard</span>
+                    <a id="adminDashboard">
+                        <span class="icon"><ion-icon name="speedometer-outline"></ion-icon></span>
+                        <span class="title ADMINheadNavs">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                    <span class="icon"><ion-icon name="layers-outline"></ion-icon></span>
-                    <span class="title">Products</span>
+                    <a id="adminProducts">
+                        <span class="icon"><ion-icon name="layers-outline"></ion-icon></span>
+                        <span class="title ADMINheadNavs">Products</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                    <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
-                    <span class="title">Customers</span>
+                    <a id="adminCustomers">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="title ADMINheadNavs">Customers</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                    <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
-                    <span class="title">Orders</span>
+                    <a id="adminOrders">
+                        <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
+                        <span class="title ADMINheadNavs">Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                    <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
-                    <span class="title">Admin Users</span>
+                    <a id="adminUsers">
+                        <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
+                        <span class="title ADMINheadNavs">Admin Users</span>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a id="adminAccess">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <span class="title">Access</span>
+                    </a>
+                </li> -->
+                <li>
+                    <a id="adminChangePass">
+                        <span class="icon"><ion-icon name="key-outline"></ion-icon></span>
+                        <span class="title ADMINheadNavs">Change Password</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <span class="title">Access</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                    <span class="title">Sign Out</span>
+                    <a id="adminSignout">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title ADMINheadNavs">Sign Out</span>
                     </a>
                 </li>
             </ul>
 
         </div>
 
-<!-- main -->
+        <!-- main -->
         <div class="mainAdmin">
-            <div class="topbar">
-                <div class="toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
-                <div class="user">
-                    <img src="/assets/img/profile.png" alt="userimage">
-                </div>
-            </div>
 
-            <div class="cardBox">
-                <div class="card">
-                    <div>
-                        <div class="numbers">1,504</div>
-                        <div class="cardName">Total Product Count</div>
-                    </div>
-                    <div class="iconBox">
-                        <ion-icon name="albums-outline"></ion-icon>
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Sales</div>
-                    </div>
-                    <div class="iconBox">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <div class="numbers">284</div>
-                        <div class="cardName">Registered Customers</div>
-                    </div>
-                    <div class="iconBox">
-                        <ion-icon name="person-add-outline"></ion-icon>
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <div class="numbers">₱7,342</div>
-                        <div class="cardName">Earnings</div>
-                    </div>
-                    <div class="iconBox">
-                        <ion-icon name="cash-outline"></ion-icon>
-                    </div>
-                </div>
-            </div>
-
-            <div class="details">
-                <!-- order details list -->
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Recent Orders</h2>
-                        <a href="#" class="btn-csv">Products CSV</a>
-                        <a href="#" class="btn-csv">Sales CSV</a>
-                        <a href="#" class="btn-csv">Customers CSV</a>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Payment</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Product 1</td>
-                                <td>₱1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-                            <tr>
-                                <td>Product 2</td>
-                                <td>₱1200</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>Product 3</td>
-                                <td>₱1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-                            <tr>
-                                <td>Product 4</td>
-                                <td>₱1200</td>
-                                <td>Due</td>
-                                <td><span class="status inprogress">In Progress</span></td>
-                            </tr>
-                            <tr>
-                                <td>Product 5</td>
-                                <td>₱1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-                            <tr>
-                                <td>Product 6</td>
-                                <td>₱1200</td>
-                                <td>Paid</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>Product 7</td>
-                                <td>₱1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-                            <tr>
-                                <td>Product 8</td>
-                                <td>₱1200</td>
-                                <td>Due</td>
-                                <td><span class="status inprogress">In Progress</span></td>
-                            </tr>
-                            <tr>
-                                <td>Product 9</td>
-                                <td>₱1200</td>
-                                <td>Paid</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>Product 10</td>
-                                <td>₱1200</td>
-                                <td>Due</td>
-                                <td><span class="status inprogress">In Progress</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="recentCustomers">
-                    <div class="cardHeader">
-                        <h2>Recent Customers</h2>
-                    </div>
-                    <table>
-                        <tr>
-                            <td width="60px"><div class="imgBox"><img src="/assets/img/profile.png" alt="Customer Photo"></div></td>
-                            <td><h4>Pedro<br><span>Philippines</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBox"><img src="/assets/img/profile.png" alt="Customer Photo"></div></td>
-                            <td><h4>Pedro<br><span>Philippines</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBox"><img src="/assets/img/profile.png" alt="Customer Photo"></div></td>
-                            <td><h4>Pedro<br><span>Philippines</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBox"><img src="/assets/img/profile.png" alt="Customer Photo"></div></td>
-                            <td><h4>Pedro<br><span>Philippines</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBox"><img src="/assets/img/profile.png" alt="Customer Photo"></div></td>
-                            <td><h4>Pedro<br><span>Philippines</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBox"><img src="/assets/img/profile.png" alt="Customer Photo"></div></td>
-                            <td><h4>Pedro<br><span>Philippines</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBox"><img src="/assets/img/profile.png" alt="Customer Photo"></div></td>
-                            <td><h4>Pedro<br><span>Philippines</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="60px"><div class="imgBox"><img src="/assets/img/profile.png" alt="Customer Photo"></div></td>
-                            <td><h4>Pedro<br><span>Philippines</span></h4></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
         </div>
     </div>
-    
+
+    <?php include("../../includes/admin/modals/admin_modals.php"); ?>
+
 </body>
 
 </html>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="/assets/js/jquery-3.6.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" onerror="GetCDNFailed()"></script>
 <script src="/assets/js/adminscripts.js"></script>
+<script src="/assets/js/admin_addProduct.js"></script>
+<?php
+try{          
+    if(isset($_GET['status'])){
+        switch ($_GET['status']) {
+            case 'success':
+                echo '<script>toastr.success("Saved Succesfully, you can now view the product!", "Product Listed!");</script>';
+                break;
+            case 'failed':
+                echo '<script>)toastr.warning("Something went wrong", "Product Listing Failed!");</script>';
+                break;
+            case 'error':
+                echo '<script>toastr.error("Something went wrong", "Action Error!");</script>';
+                break;
+                case 'successM':
+                    echo '<script>toastr.success("Updated Succesfully, you can now view the product!", "Product Modified!");</script>';
+                    break;
+                case 'failedM':
+                    echo '<script>)toastr.warning("Something went wrong", "Updating Product Failed!");</script>';
+                    break;
+            default: exit();
+                break;
+        }
+    }else{
+        exit();
+        // header('Location: ../');
+    }
+}catch(Exception $e){
+    $_SESSION['error'] = '<br>'.$e->getMessage();
+    header("Location: ../error_logger.php");
+    exit();
+} 
+
+?>

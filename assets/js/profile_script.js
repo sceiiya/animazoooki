@@ -1,47 +1,61 @@
 // Customer Profile
 
 var container = $('.profile-cont-r');
-var linkAccount = document.querySelector('#myAccount');
-var linkPurchases = document.querySelector('#myPurchases');
-var linkCart = document.querySelector('#mycart');
-var linkVouchers = document.querySelector('#myVouchers');
-var linkPassword = document.querySelector('#changePass');
-var linkSettings = document.querySelector('#mySettings');
+var linkAccount = $('#myAccount');
+var linkPurchases = $('#myPurchases');
+var linkCart = $('#mycart');
+var linkVouchers = $('#myVouchers');
+var linkPassword = $('#changePass');
+var linkSettings = $('#mySettings');
+// myProfileEdit();
+// setTimeout(myProfileEdit, 2000);
 
+
+// var varifcont ="";
 function loadContent(content) {
-    // AJAX request in Javascript
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', content, true);
-    xhr.onload = function() {
-      var el = document.createElement('div');
-      el.innerHTML = this.response;
-      container.empty();
-      container.prepend(el);
-    }
-    xhr.send();
+  $.ajax({
+      type: 'POST',
+      url: content,
+      success: (result) => {
+          var element = $('<div/>');
+          element.html(result);
+          container.empty();
+          container.prepend(element);
+          myProfileEdit();
+          // varifcont = content;
+      }
+  })
+
 }
 
-linkAccount.addEventListener('click', function(e){
+$(document).ready(()=>{
+  loadContent('/profile/content/myprofile.php');
+  // setTimeout( ()=>{myProfileEdit()}, 2000);
+  // myProfileEdit();
+});
+linkAccount.on('click', function(e){
   loadContent('/profile/content/myprofile.php');
   e.preventDefault() ;
+  // setTimeout(myProfileEdit, 2000);
+  // myProfileEdit();
 });
-linkPurchases.addEventListener('click', function(e){
+linkPurchases.on('click', function(e){
   loadContent('/profile/content/mypurchases.php');
   e.preventDefault() ;
 });
-linkCart.addEventListener('click', function(e){
+linkCart.on('click', function(e){
   loadContent('/profile/content/mycart.php');
   e.preventDefault() ;
 });
-linkVouchers.addEventListener('click', function(e){
+linkVouchers.on('click', function(e){
   loadContent('/profile/content/myvouchers.php');
   e.preventDefault() ;
 });
-linkPassword.addEventListener('click', function(e){
+linkPassword.on('click', function(e){
   loadContent('/profile/content/changepass.php');
   e.preventDefault() ;
 });
-linkSettings.addEventListener('click', function(e){
+linkSettings.on('click', function(e){
   loadContent('/profile/content/mysettings.php');
   e.preventDefault() ;
 });
@@ -54,3 +68,89 @@ function activelink() {
 }
 list.forEach((item) =>
 item.addEventListener('mouseover', activelink));
+
+
+
+function myProfileEdit() {
+  var editBTN = $("#editBtn");
+  // const restoreButton = $("#restoreReadonly");
+
+  const Un = $("#userName");
+  const Nm = $("#Name");
+  const Em = $("#emailAdd");
+  const Cell = $("#contactNo");
+  const DefSA = $("#shippingAdd");
+  const DefBA = $("#billingAdd");
+
+
+  editBTN.on('click', function() {
+    switch (editBTN.text()) {
+      case "EDIT":
+        $("#userName").prop("readonly", false);
+        $("#Name").prop("readonly", false);
+        Em.prop("readonly", false);
+        Cell.prop("readonly", false);
+        DefSA.prop("readonly", false);
+        DefBA.prop("readonly", false);
+        editBTN.text("SAVE");
+        break;
+    
+      default:
+        try{
+          var iUn = $("#userName").val();
+          var iNm = $("#Name").val();
+          var iEm = $("#emailAdd").val();
+          var iCell = $("#contactNo").val();
+          var iDefSA = $("#shippingAdd").val();
+          var iDefBA = $("#billingAdd").val();
+          // var iDUn = $("#profile-uname").text();
+        
+          var UserUpdate = {
+            username: iUn,
+            name: iNm,
+            email: iEm,
+            cellno: iCell,
+            ShipAd: iDefSA,
+            BillAd:iDefBA
+          };
+        $.ajax({
+          type: 'POST',
+          url: "/controllers/profile_update.php",
+          data: UserUpdate,
+          success: (result) => {
+            if(result == "updated"){
+            toastr.success("Profile Updated");
+            editBTN.text("EDIT");
+            $(".profile-uname").text(iUn);
+          }else{
+            ERROR_logger(result);
+          }
+        }
+      })}catch(error){
+        ERROR_logger(error);
+      }
+
+        Un.prop("readonly", true);
+        Nm.prop("readonly", true);
+        Em.prop("readonly", true);
+        Cell.prop("readonly", true);
+        DefSA.prop("readonly", true);
+        DefBA.prop("readonly", true);
+        editBTN.text("EDIT");
+        break;
+    }
+    // if(editBTN.text() == "EDIT"){
+    // Un.prop("readonly", false);
+    // N.prop("readonly", false);
+    // Em.prop("readonly", false);
+    // Cell.prop("readonly", false);
+    // DefSA.prop("readonly", false);
+    // DefBA.prop("readonly", false);
+    // editBTN.text() = "SAVE"
+    // }
+  });
+  
+  // restoreButton.click(function() {
+  //   myInput.prop("readonly", true);
+  // });
+};
