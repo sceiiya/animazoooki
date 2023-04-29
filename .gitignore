@@ -102,3 +102,14 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+#animazooki files to not read by git
+connect_DB.php
+connect_Email.php
+connect_AWS.php
+
+zzzz.php
+
+zsampling.php
+

@@ -1,0 +1,380 @@
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-24 22:53:01
+Error: saieeeeeeeeeeeeeeeeeeeevuyeww 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-24 22:54:04
+Error: [object Object]parsererrorSyntaxError: Unexpected end of JSON input 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-24 23:02:05
+
+Level : System Admin
+ Admin User : admin
+
+Error: saieeeeeeeeeeeeeeeeeeeevuyeww 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-24 23:12:48
+Error: [object Object]parsererrorSyntaxError: Unexpected end of JSON input 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-24 23:14:48
+Error: [object Object]parsererrorSyntaxError: Unexpected end of JSON input 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-24 23:15:59
+Error: [object Object]parsererrorSyntaxError: Unexpected end of JSON input 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-25 18:51:42
+Error: Array
+Admin User : 
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-25 21:57:56
+Error: Level : System Admin
+Admin User : admin
+RequestTimeTooSkewed
+Your device time is behind, Please update to real time or sync time
+RequestTimeTooSkewed 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-25 22:00:13
+Error: Level : System Admin
+Admin User : admin
+RequestTimeTooSkewed
+Your device time is behind, Please update to real time or sync time
+RequestTimeTooSkewed 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-25 22:03:02
+Error: 
+Level : System Admin
+Admin User : admin
+Request Time Too Skewed
+Your device time is behind, Please update to real time or sync time
+RequestTimeTooSkewed 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-25 22:05:01
+Error: 
+Level : System Admin
+Admin User : admin
+Request Time Too Skewed
+Your device time is behind, Please update to real time or sync time
+RequestTimeTooSkewed 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-26 19:52:35
+Error: 
+Level : System Admin
+Admin User : admin
+Request Time Too Skewed
+Your device time is behind, Please update to real time or sync time
+RequestTimeTooSkewed 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 00:48:36
+Error: 
+
+
+Warning
+:  require_once(important/class.database.php): Failed to open stream: No such
+file or directory in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+
+
+
+Fatal error
+:  Uncaught Error: Failed opening required 'important/class.database.php'
+(include_path='.;C:/laragon/etc/php/pear') in
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php:3
+Stack trace:
+#0 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 00:51:25
+Error: 
+
+
+Warning
+:  require_once(important/class.database.php): Failed to open stream: No such
+file or directory in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+
+
+
+Fatal error
+:  Uncaught Error: Failed opening required 'important/class.database.php'
+(include_path='.;C:/laragon/etc/php/pear') in
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php:3
+Stack trace:
+#0 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 00:51:28
+Error: 
+
+
+Warning
+:  require_once(important/class.database.php): Failed to open stream: No such
+file or directory in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+
+
+
+Fatal error
+:  Uncaught Error: Failed opening required 'important/class.database.php'
+(include_path='.;C:/laragon/etc/php/pear') in
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php:3
+Stack trace:
+#0 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 00:51:39
+Error: 
+
+
+Warning
+:  require_once(important/class.database.php): Failed to open stream: No such
+file or directory in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+
+
+
+Fatal error
+:  Uncaught Error: Failed opening required 'important/class.database.php'
+(include_path='.;C:/laragon/etc/php/pear') in
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php:3
+Stack trace:
+#0 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 00:51:56
+Error: 
+
+
+Warning
+:  require_once(important/class.database.php): Failed to open stream: No such
+file or directory in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+
+
+
+Fatal error
+:  Uncaught Error: Failed opening required 'important/class.database.php'
+(include_path='.;C:/laragon/etc/php/pear') in
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php:3
+Stack trace:
+#0 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+3
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 00:58:17
+Error: 
+
+
+Warning
+:  Undefined array key "name" in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+11
+
+
+exist 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 01:01:52
+Error: 
+
+
+Warning
+:  Undefined array key "name" in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+11
+
+
+exist 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 01:05:19
+Error: 
+
+
+Warning
+:  Undefined array key "name" in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+11
+
+
+exist 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 01:05:25
+Error: 
+
+
+Warning
+:  Undefined array key "name" in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+11
+
+
+exist 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 01:07:13
+Error: 
+
+
+Warning
+:  Undefined array key "name" in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+11
+
+
+exist 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-04-27 01:08:23
+Error: 
+
+
+Warning
+:  Undefined array key "name" in 
+C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
+ on line 
+11
+
+
+exist 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+

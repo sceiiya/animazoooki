@@ -10,13 +10,14 @@
 <div class="sticky-top navic-cont ic-r px-2"> <!-- <i class="bi bi-moon"></i> -->
     <a class="nav-button" id="Az_theme"><i class="fas fa-moon mx-2 txt-light-inv header_floater"></i></button>
     <a class="nav-button"><i class="fas fa-search mx-2 txt-light-inv header_floater" type="button" id="btn-search"></i></a>
-    <a class="nav-button" href="/profile/cart/"><i class="fas fa-shopping-cart mx-2 txt-light-inv header_floater"></i></a>
+    <a class="nav-button" id="myCartBttn"><i class="fas fa-shopping-cart mx-2 txt-light-inv header_floater"></i></a>
     <a class="nav-button" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle mx-2 txt-light-inv header_floater"></i></a>
     <ul class="dropdown-menu bg-light-in">
-        <li><a class="dropdown-item txt-light-invb btn-login" id="loginBttn">Log in</a></li>
-        <li><a class="dropdown-item txt-light-invb btn-signup" id="signupBttn">Sign up</a></li>
-        <li><a class="dropdown-item txt-light-invb" href="/profile/">My Profile</a></li>
-        <li><a class="dropdown-item txt-light-invb" href="#" onclick="popdev()">Log out</a></li>
+        <li id="lgInBttn"><a class="dropdown-item txt-light-invb btn-login" id="loginBttn">Log in</a></li>
+        <li id="SgUpBttn"><a class="dropdown-item txt-light-invb btn-signup" id="signupBttn">Sign up</a></li>
+        <li id=""><a class="dropdown-item txt-light-invb" id="myProfileBttn">My Profile</a></li>
+        <li id="lgOutBttn"><a class="dropdown-item txt-light-invb" id="logoutBttn" >Log out</a></li>
+        <li id="OTPBttn"><a class="dropdown-item txt-light-invb" id="verifOTPBttn" >Verify account</a></li>
     </ul>
 </div>
 

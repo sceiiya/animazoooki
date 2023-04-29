@@ -37,7 +37,7 @@
         <!--left side of the main--->
 
         <!--content of the main--->
-        <main class="ind-product-cont">
+        <main class="ind-product-cont bg-light-in">
 
             <div class="product-main-inf">
                 <div class="product-imgs-cont">
@@ -45,24 +45,24 @@
                         <img class="product-img-main" src="/all-products/Usada-Pekora_t-shirt/1.jpg"
                             alt="">
                     </div>
-                    <div class="product-img-sub-cont-holder">
-                        <div class="product-img-sub-cont">
+                    <ul class="product-img-sub-cont-holder">
+                        <li class="product-img-sub-cont active">
                             <img class="product-img-sub" src="/all-products/Usada-Pekora_t-shirt/1.jpg"
                                 alt="">
-                        </div>
-                        <div class="product-img-sub-cont">
+                        </li>
+                        <li class="product-img-sub-cont">
                             <img class="product-img-sub" src="/all-products/Usada-Pekora_t-shirt/2.jpg"
                                 alt="">
-                        </div>
-                        <div class="product-img-sub-cont">
+                        </li>
+                        <li class="product-img-sub-cont">
                             <img class="product-img-sub" src="/all-products/Usada-Pekora_t-shirt/3.jpg"
                                 alt="">
-                        </div>
-                        <div class="product-img-sub-cont">
+                        </li>
+                        <li class="product-img-sub-cont">
                             <img class="product-img-sub" src="/all-products/Usada-Pekora_t-shirt/4.jpg"
                                 alt="">
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="product-inf-cont">
                     <div class="product-name txtl">
@@ -169,10 +169,10 @@
 
 <!-- footer -->
 <?php include("../../includes/footer.php"); ?>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/0de39995d2.js" crossorigin="anonymous"></script>
-    <script src="/assets/js/script.js"></script>
 </body>
-
 </html>
+<!-- scripts libries -->
+<?php include("../../includes/scripts_library.php"); ?>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/products.js"></script>
+<?php include("../../includes/validatorControl.php"); ?>
