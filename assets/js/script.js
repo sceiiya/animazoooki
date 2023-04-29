@@ -134,8 +134,43 @@ $('#verifOTPBttn').on('click', () => {
 $('#confirmOTP').on('click', ()=>{
   var InOTP = $('#OTPcode');
 
-  var dOTP = InOTP.val();
-  $.ajax
+  var dOTP = {
+    otp_code: InOTP.val()
+  };
+  $.ajax({
+    type: 'POST',
+    url: "/controllers/validate_OTP.php",
+    data: dOTP,
+    beforeSend: function () {
+      var x = document.querySelector('#adminSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+      },
+    success: (result) => {
+      if (result == "new") {
+        $('#confirm-addProd').modal('show');
+      } else if(result == "exist"){
+          toastr.warning('Please avoid duplication', 'Product Name Already Exist');
+      }else if(result == "error validating"){
+          toastr.error('Can\'t check if the product already exist', 'Error Validation');
+      }else{
+        toastr.error('Ask a Tech Support to Resolve', 'Something went wrong');
+        ERROR_logger(result);
+      }
+    },
+    complete: function () {
+      var x = document.querySelector('#adminSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+    },
+},
+  })
 });
 // $('#myOTPModal').on('click', () => {
 //   $('#myOTPModal').modal('hide');
