@@ -28,10 +28,44 @@
 
     <section class="profile-cont">
 
+<style>
+  .profprevv {
+    position: relative;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .profprevv label {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .profprevv:hover label {
+    opacity: 1;
+  }
+
+  .profprevv:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0.3;
+    transition: all 0.2s ease-in-out;
+  }
+</style>
 
         <div class="profile-cont-l bg-light-in">
+        <!-- profile_picture -->
             <div class="clflx txtc">
-                <img class="profile-img" src="<?php echo $_SESSION['profile_img']; ?>" alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+                <div class="preview clflx txtc profprevv">
+                    <label for="profile_picture">Change Profile</label>
+                    <input type="file" name="profile_picture" id="profpicc" accept="image/*" class="file-input" style="display: none;">
+                    <img class="profile-img" id="profpicprev" src="<?php echo $_SESSION['profile_img']; ?>" loading="lazy" onerror="defaultimg(this);"  alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+                </div>
+                <!-- <img class="profile-img" src="<?php //echo $_SESSION['profile_img']; ?>" alt="<?php //echo 'profile of '.$_SESSION['username'];?>"> -->
                 <strong class="profile-uname"><?php echo $_SESSION['username'];?></strong>
             </div>
             <div class="profile-label-cont">
