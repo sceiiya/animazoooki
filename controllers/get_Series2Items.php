@@ -76,13 +76,6 @@ try{
                     </div>
                 </a>';
 
-
-
-
-
-
-
-
             // mysqli_close($dbConnection);
         }catch(Exception $e){
             $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
