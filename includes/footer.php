@@ -60,6 +60,6 @@
         <div class="footer-copyright txtc py-1 px-4 footer-box txt-light">
             <h6>©2023 Animazooki.&nbsp;All Rights Reserved.</h6>
             <br />
-            <h6 class="author">&nbsp;Designed and Developed by the Jay Fourth and Sceiiya</h6>
+            <h6 class="author">&nbsp;Designed and Developed by Jay Fourth and Sceiiya</h6>
         </div>
     </footer>

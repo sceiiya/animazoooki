@@ -18,7 +18,7 @@
         $index = $_POST['index'];
 
         $dateTime = date("Y-m-d H:i:s");
-        $qUpdate = "UPDATE $dbDatabase .`adminusers` SET `date_deactivated` = '{$dateTime}', `status` = 'Inactive', `deactivated_by` = '{$admUsername}' WHERE `adminid` = '{$index}'";
+        $qUpdate = "UPDATE $dbDatabase .`adminusers` SET `date_deactivated` = '{$dateTime}', `status` = 'inactive', `deactivated_by` = '{$admUsername}' WHERE `adminid` = '{$index}'";
         $eUpdate = mysqli_query($dbConnection, $qUpdate);
 
         if ($eUpdate == true) {

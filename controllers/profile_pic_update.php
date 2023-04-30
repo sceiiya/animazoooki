@@ -23,7 +23,7 @@
     try{
     if(isset($_FILES['profile_picture'])) {
         // $files = $_FILES['file'];
-    FinURL
+    // FinURL
         // Loop through up to 4 files
         // for ($i = 0; $i < min(4, count($files['name'])); $i++) {
             // Check if file is an image

@@ -126,6 +126,43 @@ try{
 }
 }
 
+$('#resendOTP').on('click', ()=>{
+  NewOTP();
+})
+function NewOTP(){
+  $.ajax({
+    type: 'POST',
+    url: "/controllers/get_otp.php",
+    data: dOTP,
+    beforeSend: function () {
+      var x = document.querySelector('#adminSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+      },
+    success: (result) => {
+      if (result == "true") {
+        toastr.success('Please open your email to get your passcode', 'New OTP Code Sent');
+      }else if(result == "false"){
+          toastr.warning('Failed to get new OTP code', 'Something went wrong!');
+      }else{
+        toastr.error('Ask a Tech Support to Resolve', 'Something went wrong');
+        ERROR_logger(result);
+      }
+    },
+    complete: function () {
+      var x = document.querySelector('#adminSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+    },
+  });
+}
+
 function isOTPget(){
   $('#myOTPModal').modal('show');
   // var InOTP = $('#OTPcode');
@@ -133,7 +170,8 @@ function isOTPget(){
 
 //Function for otp modal
 $('#verifOTPBttn').on('click', () => {
-  $('#myOTPModal').modal('show');
+  isOTPget();
+  // $('#myOTPModal').modal('show');
 });
 
 $('#confirmOTP').on('click', ()=>{
@@ -156,6 +194,7 @@ $('#confirmOTP').on('click', ()=>{
     success: (result) => {
       if (result == "true") {
         $('#myOTPModal').modal('hide');
+        GETUserinfo();
         toastr.success('You may now purchase without restrictions!', 'Account verified succesfully!');
       } else if(result == "expired"){
           toastr.warning('Please get a new OTP', 'OTP expired!');

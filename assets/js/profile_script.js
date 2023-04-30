@@ -16,6 +16,44 @@ function updateprofpic() {
 
 }
 
+// $(document).ready(function() {
+// $('.prof-prevv').click(function() {
+//   // const picInput = $(this).parent().find('#profpicc');
+// $('#profpicc').click();
+  
+//   // picInput.click();
+// });
+// });
+
+//for profile pic change
+// $('.profprevv').on('click', function() {
+//   const fileInput = $(this).parent().find('.file-input');
+  
+//   fileInput.click();
+// });
+
+//for profile pic change
+// $('#profpicc').on('change', function() {
+//   const previewContainer = $(this).parent();
+//   const preview = previewContainer.find('#profpicprev');
+//   preview.html('');
+//   const files = $(this).files;
+
+//       const file = files;
+//       const reader = new FileReader();
+//       const fileType = file.type;
+
+//       if (fileType.match('image.*')) {
+//           reader.addEventListener('load', () => {
+//               const img = $('<img>').attr('src', reader.result);
+//               preview.html(img);
+//           });
+//           reader.readAsDataURL(file);
+      
+//   }
+// });
+
+
 // Customer Profile
 
 var container = $('.profile-cont-r');
