@@ -117,7 +117,7 @@
             "stocks" => $_POST['modStocks'],
             "sizes" => $sizez,
             "variation" => $variation,
-            "description" => $_POST['modDescription'],
+            "description" => addslashes($_POST['modDescription']),
             "designer" => $_POST['modDesigner'],
             "manufacturer" => $_POST['modManufacturer'],
             "images" => $AllImgs,

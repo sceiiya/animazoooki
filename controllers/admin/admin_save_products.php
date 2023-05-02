@@ -123,7 +123,7 @@
             "stocks" => $_POST['stocks'],
             "sizes" => $sizez,
             "variation" => $variation,
-            "description" => $_POST['description'],
+            "description" => addslashes($_POST['description']),
             "designer" => $_POST['designer'],
             "manufacturer" => $_POST['manufacturer'],
             "images" => $AllImgs,
