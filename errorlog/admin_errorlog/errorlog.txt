@@ -378,3 +378,15 @@ C:\laragon\www\animazooki\controllers\admin\prodNameValidate.php
 exist 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-05-02 08:16:18
+Error: 
+Level : System Admin
+Admin User : admin
+You have an error in your SQL syntax; check the manual that corresponds to your
+MariaDB server version for the right syntax to use near 'Peko! peko!
+peko!'','Sceiiya','Animazoooki','["https:\/\/d1k3w7ix829ymi.cloud...' at line 1 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+

@@ -133,9 +133,8 @@ function NewOTP(){
   $.ajax({
     type: 'POST',
     url: "/controllers/get_otp.php",
-    data: dOTP,
     beforeSend: function () {
-      var x = document.querySelector('#adminSpinner');
+      var x = document.querySelector('#LoadingSpinner');
       if (x.style.display === "none") {
           x.style.display = "block";
       } else {
@@ -143,6 +142,7 @@ function NewOTP(){
       }
       },
     success: (result) => {
+      console.log(result);
       if (result == "true") {
         toastr.success('Please open your email to get your passcode', 'New OTP Code Sent');
       }else if(result == "false"){
@@ -153,7 +153,7 @@ function NewOTP(){
       }
     },
     complete: function () {
-      var x = document.querySelector('#adminSpinner');
+      var x = document.querySelector('#LoadingSpinner');
       if (x.style.display === "none") {
           x.style.display = "block";
       } else {
@@ -163,28 +163,34 @@ function NewOTP(){
   });
 }
 
-function isOTPget(){
-  $('#myOTPModal').modal('show');
-  // var InOTP = $('#OTPcode');
-}
+// function isOTPget(){
+//   $('#myOTPModal').modal('show');
+//   }
 
-//Function for otp modal
+  // function isOTPget(){
+  //   $(document).ready(()=>{
+  //   $('#myOTPModal').modal('show');
+  //   // $('#OTPcode').val('<?php echo $linkedOTP; ?>');
+  //   });
+  // }
+
+  //Function for otp modal
 $('#verifOTPBttn').on('click', () => {
   isOTPget();
-  // $('#myOTPModal').modal('show');
+  $('#myOTPModal').modal('show');
 });
 
 $('#confirmOTP').on('click', ()=>{
   var InOTP = $('#OTPcode');
   var dOTP = {
-    otp_code: InOTP.val()
+    otp: InOTP.val()
   };
   $.ajax({
     type: 'POST',
     url: "/controllers/validate_OTP.php",
     data: dOTP,
     beforeSend: function () {
-      var x = document.querySelector('#adminSpinner');
+      var x = document.querySelector('#LoadingSpinner');
       if (x.style.display === "none") {
           x.style.display = "block";
       } else {
@@ -192,6 +198,7 @@ $('#confirmOTP').on('click', ()=>{
       }
       },
     success: (result) => {
+      console.log(result);
       if (result == "true") {
         $('#myOTPModal').modal('hide');
         GETUserinfo();
@@ -206,7 +213,7 @@ $('#confirmOTP').on('click', ()=>{
       }
     },
     complete: function () {
-      var x = document.querySelector('#adminSpinner');
+      var x = document.querySelector('#LoadingSpinner');
       if (x.style.display === "none") {
           x.style.display = "block";
       } else {
@@ -789,3 +796,28 @@ function ERROR_logger(nERROR){
 // toastr.success('We do have the Kapua suite available.', 'Turtle Bay Resort', {timeOut: 5000});
 // toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!');
 // toastr.error('I do not think that word means what you think it means.', 'Inconceivable!');
+
+
+// $(document).ready(() => {
+//   function isOTPget() {
+//     const otpModal = $('#myOTPModal');
+//     const otpInput = $('#OTPcode');
+//     const otpValue = new URLSearchParams(window.location.search).get('otp');
+//     if (otpValue) {
+//       otpInput.val(otpValue);
+//       otpModal.modal('show');
+//     }
+//   }
+//   const otpValue = new URLSearchParams(window.location.search).get('otp');
+//   if (otpValue) {
+//     isOTPget();
+//   }
+// });
+
+$(document).ready(() => {
+  const otpValue = new URLSearchParams(window.location.search).get('otp');
+  if (otpValue) {
+    $('#myOTPModal').modal('show');
+    $('#confirmOTP').click();
+  }
+});

@@ -20,7 +20,6 @@
 
     </div> -->
 
-
 <div class="modal" id="myOTPModal">
   <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
     <div class="modal-content bg-transparent">
@@ -28,14 +27,7 @@
       <div class="animazooki-log-cont txtc bg-light-in">
 
         <div class="form-outline mb-0">
-        <?php
-        //  try{if($_GET['otp']){ echo $_GET['otp']; echo '<script>isOTPget();</script>'; }}catch(Exception $e){
-        //         $_SESSION['error'] = $e->getMessage();
-        //         header("Location: ../controllers/error_logger.php");
-        //         exit();
-        //   } 
-          ?>
-          <input type="number" id="OTPcode" class="form-control" min="100000" max="999999" value=""/>
+          <input type="number" id="OTPcode" class="form-control" min="100000" max="999999" value="<?php echo isset($_GET['otp']) ? $_GET['otp'] : '' ?>"/>
         </div>
 
         <div class="row mb-1">
@@ -56,8 +48,6 @@
     </div>
   </div>
 </div>
-
-
 
 <div class="modal" id="myLoginModal">
   <div class="modal-dialog position-absolute top-50 start-50 translate-middle">
