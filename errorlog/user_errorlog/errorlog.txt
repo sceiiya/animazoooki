@@ -971,3 +971,87 @@ C:\laragon\www\animazooki\controllers\get_userCreds.php
 success 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-05-01 19:03:31
+Error: true
+
+
+Warning
+:  require(vendor/autoload.php): Failed to open stream: No such file or
+directory in 
+C:\laragon\www\animazooki\controllers\get_otp.php
+ on line 
+39
+
+
+
+
+
+Fatal error
+:  Uncaught Error: Failed opening required 'vendor/autoload.php'
+(include_path='.;C:/laragon/etc/php/pear') in
+C:\laragon\www\animazooki\controllers\get_otp.php:39
+Stack trace:
+#0 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\get_otp.php
+ on line 
+39
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-05-02 06:04:05
+Error: 
+
+
+Warning
+:  Undefined array key "otp" in 
+C:\laragon\www\animazooki\controllers\validate_OTP.php
+ on line 
+13
+
+
+false 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-05-02 06:04:40
+Error: 
+
+
+Warning
+:  Undefined array key "otp" in 
+C:\laragon\www\animazooki\controllers\validate_OTP.php
+ on line 
+13
+
+
+false 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-05-02 06:05:32
+Error: 
+
+
+Warning
+:  Undefined array key "otp" in 
+C:\laragon\www\animazooki\controllers\validate_OTP.php
+ on line 
+13
+
+
+false 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+

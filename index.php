@@ -621,8 +621,32 @@
 </body>
 
 </html>
+
 <!-- scripts libries -->
 <?php include("includes/scripts_library.php"); ?>
 <script src="/assets/js/script.js"></script>
 <script src="/assets/js/Give_ItemsHome.js"></script>
 <?php include("includes/validatorControl.php"); ?>
+<script>
+// $(document).ready(()=>{
+// function isOTPget() {
+// //   document.addEventListener('DOMContentLoaded', function() {
+//     var otpModal = document.querySelector('#myOTPModal');
+//     var otpInput = document.querySelector('#OTPcode');
+//       otpInput.value = '<?php if(isset($_GET['otp']) && !empty($_GET['otp'])){echo $_GET['otp'];}else echo ' ' ?>';
+  
+// }
+// });
+</script>
+
+<?php
+//   try {
+//     if(isset($_GET['otp']) && !empty($_GET['otp'])) {
+//       echo "<script>isOTPget();$('#myOTPModal').modal('show');</script>";
+//     }
+//   } catch(Exception $e) {
+//     $_SESSION['error'] = $e->getMessage();
+//     header("Location: ../controllers/error_logger.php");
+//     exit();
+//   } 
+?>

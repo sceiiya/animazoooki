@@ -167,13 +167,53 @@ $(document).ready(async()=>{
 
 
 async function similarItems(){
-    try{
-      $.get('/controllers/get_randSimilar.php', (data, status)=>{
-        if (status === "success"){
-            $('#sim-prods').append(data);
-        }
-      });
-    }catch(error){
+  try{
+    $.get('/controllers/get_randSimilar.php', (data, status)=>{
+      if (status === "success"){
+        $('#sim-prods').append(data);
+      }
+    });
+  }catch(error){
       ERROR_logger(error);
-    }
-    }
+  }
+}
+
+const ThisPID = $('#pID');
+$('#CARTbtn').on('click', ()=>{
+  var pId = {id: ThisPID.val()};
+  $.ajax({
+    type: 'POST',
+    url: "/controllers/add_cart.php",
+    data: pId,
+    beforeSend: function () {
+      var x = document.querySelector('#adminSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+      },
+    success: (result) => {
+      if (result == "true") {
+        toastr.success('You can now view this product in your cart <a href="/profile/cart/">here!<a/>', 'Product Added to Cart');
+      }else if(result == "false"){
+          toastr.warning('Failed to add product in your cart', 'Something went wrong!');
+      }else{
+        toastr.error('Ask a Tech Support to Resolve', 'Something went wrong');
+        ERROR_logger(result);
+      }
+    },
+    complete: function () {
+      var x = document.querySelector('#adminSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+    },
+  });
+});
+
+$('#BUYbtn').on('click', ()=>{
+  ThisPID.val()
+});

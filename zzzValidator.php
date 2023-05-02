@@ -47,14 +47,14 @@
 // echo $asdw;
 
 
-// $sizez = "XS, S, m, L, xL, xl sfd, saw, sad wd as, as";
-// $sizez = explode(', ', strtoupper($sizez));
-// print_r($sizez);
-// // echo $sizez;
-// echo '<br/>';
-// $sizez = "[".$sizez."]";
-// print_r($sizez);
-// // echo $sizez;
+$sizez = "XS, S, m, L, xL, xl sfd, saw, sad wd as, as";
+$sizez = explode(', ', strtoupper($sizez));
+print_r($sizez);
+// echo $sizez;
+echo '<br/>';
+$sizez = "[".$sizez."]";
+print_r($sizez);
+// echo $sizez;
 
 
 // $sizez = "XS";

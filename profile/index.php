@@ -55,6 +55,13 @@
     opacity: 0.3;
     transition: all 0.2s ease-in-out;
   }
+
+  .profprevv div img{
+    border: 1px #a50113 !important; 
+    border-radius: 50%;
+    /* width: 45%; */
+    margin-top:20px !important;
+  }
 </style>
 
         <div class="profile-cont-l bg-light-in">
@@ -63,7 +70,8 @@
                 <div class="preview clflx txtc profprevv">
                     <label for="profile_picture">Change Profile</label>
                     <input type="file" name="profile_picture" id="profpicc" accept="image/*" class="file-input" style="display: none;">
-                    <img class="profile-img" id="profpicprev" src="<?php echo $_SESSION['profile_img']; ?>" loading="lazy" onerror="defaultimg(this);"  alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+                    <div class="preview"><img class="profile-img" id="profpicprev" src="<?php echo $_SESSION['profile_img']; ?>" loading="lazy" onerror="defaultimg(this);"  alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+                    </div>
                 </div>
                 <!-- <img class="profile-img" src="<?php //echo $_SESSION['profile_img']; ?>" alt="<?php //echo 'profile of '.$_SESSION['username'];?>"> -->
                 <strong class="profile-uname"><?php echo $_SESSION['username'];?></strong>

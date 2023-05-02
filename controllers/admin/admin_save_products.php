@@ -16,8 +16,6 @@
     require_once '../../vendor/autoload.php';
     require_once('../important/connect_AWS.php');
     
-
-    
     use Aws\S3\S3Client;
     
     // S3 client configuration
@@ -125,7 +123,7 @@
             "stocks" => $_POST['stocks'],
             "sizes" => $sizez,
             "variation" => $variation,
-            "description" => $_POST['description'],
+            "description" => addslashes($_POST['description']),
             "designer" => $_POST['designer'],
             "manufacturer" => $_POST['manufacturer'],
             "images" => $AllImgs,
