@@ -334,23 +334,24 @@ function modify(nId) {
             var imageUrls = JSON.parse(objRes.images);
             var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
     
-            for (let i = 0; i < imageUrls.length; i++) {
-                console.log(imageUrls[i]);
-            }
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //     console.log(imageUrls[i]);
+            // }
 
 
-
-            for (let i = 0; i < imageUrls.length; i++) {
-              fetch(imageUrls[i])
-                .then(response => response.blob())
-                .then(blob => {
-                  const file = new File([blob], `image_${i}.jpg`, { type: 'image/jpeg' });
-                  $(fileInputs[i]).val(file);
-                })
-                .catch(error => {
-                  console.log(`Failed to fetch image: ${error}`);
-                });
-            }
+//to make the image data insert to the input value
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //   fetch(imageUrls[i])
+            //     .then(response => response.blob())
+            //     .then(blob => {
+            //       const file = new File([blob], `image_${i}.jpg`, { type: 'image/jpeg' });
+            //       $(fileInputs[i]).val(file);
+            //     })
+            //     .catch(error => {
+            //     //   console.log(`Failed to fetch image: ${error}`);
+            //     ERROR_logger(error);
+            //     });
+            // }
 
 
 
@@ -379,8 +380,6 @@ function modify(nId) {
           }
     },
     complete: function () {
-        alert(result);
-        alert(imageUrls);
         var x = document.querySelector('#adminSpinner');
         if (x.style.display === "none") {
             x.style.display = "block";
