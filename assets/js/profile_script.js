@@ -25,7 +25,7 @@
 // });
 // });
 
-document.querySelector('.profprevv').addEventListener('click', function() {
+  document.querySelector('.profprevv').addEventListener('click', function() {
   document.querySelector('#profpicc').click();
   });
 
@@ -39,7 +39,7 @@ document.querySelector('.profprevv').addEventListener('click', function() {
 //for profile pic change
 $('#profpicc').on('change', function() {
   const previewContainer = $(this).parent();
-  const preview = previewContainer.find('.preview');
+  const preview = previewContainer.find('div');
   preview.html('');
   const files = $(this)[0].files;
 

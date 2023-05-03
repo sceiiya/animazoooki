@@ -129,6 +129,7 @@ try{
 $('#resendOTP').on('click', ()=>{
   NewOTP();
 })
+
 function NewOTP(){
   $.ajax({
     type: 'POST',
@@ -176,7 +177,6 @@ function NewOTP(){
 
   //Function for otp modal
 $('#verifOTPBttn').on('click', () => {
-  isOTPget();
   $('#myOTPModal').modal('show');
 });
 
@@ -654,31 +654,36 @@ function hideBTNS(){
       case (uCred.status == 'inactive'):
         $('#loginBttn').hide();
         $('#SgUpBttn').hide();
+        $('#lgOutBttn').show();
+
         break;
       case (uCred.status == 'active'):
         $('#lgInBttn').hide();
         $('#SgUpBttn').hide();
         $('#OTPBttn').hide();
+        $('#lgOutBttn').show();
+
         break;
     }
 }
 
 
-// $(document).ready(()=>{
-//   try{
-//     const userCred = JSON.parse(localStorage.getItem("user"));
-//     if (!userCred) {
-//       setTimeout(hideBTNS(), 6000);
-//       // hideBTNS();
-//     } else {
-//       hideBTNS();
-//       // setTimeout(hideBTNS(), 6000);
-//     }
-//   } catch(error) {
-//     console.log(error);
-//     ERROR_logger(error);
-//   }
-// });
+$(document).ready(()=>{
+  try{
+    const userCred = JSON.parse(localStorage.getItem("user"));
+    if (!userCred) {
+      setTimeout(hideBTNS(), 3000);
+      // hideBTNS();
+    } else {
+      hideBTNS();
+      // setTimeout(hideBTNS(), 6000);
+    }
+  } catch(error) {
+    console.log(error);
+    ERROR_logger(error);
+  }
+});
+
 // fetching the theme and updating depends on the user preference
 $(document).ready(()=>{
   const userCred = JSON.parse(localStorage.getItem("user"));

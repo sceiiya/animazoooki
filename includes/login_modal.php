@@ -62,25 +62,24 @@
         </div>
 
         <!-- Password input -->
-        <div class="form-outline mb-0">
+        <div class="form-outline mb-4">
           <input type="password" id="LogPass" class="form-control" placeholder="Password" />
         </div>
 
         <!-- 2 column grid layout for inline styling -->
-        <div class="row mb-1">
+        <!-- <div class="row mb-1">
           <div class="col d-flex justify-content-center">
-            <!-- Checkbox -->
+
             <div class="form-check">
               <input class="form-check-input inbg-red" type="checkbox" value="" id="form2Example31" checked />
               <label class="form-check-label cb-sgn-txt mt-0" for="form2Example31"> Remember me </label>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col">
-            <!-- Simple link -->
+          <!-- <div class="col">
             <a href="#!" class="txtred cb-sgn-txt mt-0" onclick="popdev()">Forgot password?</a>
           </div>
-        </div>
+        </div> -->
 
         <!-- Submit button -->
         <button type="button" id="login__btn" class="btn btn-primary btn-block mb-4 inbg-red rwflx txtc"><a
@@ -89,7 +88,7 @@
         <!-- Register buttons -->
         <div class="text-center">
           <p>Not a member? <a class="txtred btn-signup">Create account</a></p>
-          <p>or sign up with:</p>
+          <!-- <p>or sign up with:</p>
           <button type="button" class="btn btn-link btn-floating mx-1">
             <i class="fab fa-facebook-f txtred" onclick="popdev()"></i>
           </button>
@@ -100,7 +99,7 @@
 
           <button type="button" class="btn btn-link btn-floating mx-1">
             <i class="fab fa-twitter txtred" onclick="popdev()"></i>
-          </button>
+          </button> -->
         </div>
       </form>
 

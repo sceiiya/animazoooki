@@ -1456,6 +1456,7 @@ a{
 .profile-uname{
     margin-top: 2px;
     white-space: nowrap;
+    transform: translateY(-50px);
 }
 
 .profile-label{

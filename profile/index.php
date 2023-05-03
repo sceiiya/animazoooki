@@ -28,49 +28,16 @@
 
     <section class="profile-cont">
 
-<style>
-  .profprevv {
-    position: relative;
-    border-radius: 50%;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .profprevv label {
-    position: absolute;
-    color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.2s ease-in-out;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  .profprevv:hover label {
-    opacity: 1;
-  }
-
-  .profprevv:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0.3;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .profprevv div img{
-    border: 1px #a50113 !important; 
-    border-radius: 50%;
-    /* width: 45%; */
-    margin-top:20px !important;
-  }
-</style>
-
         <div class="profile-cont-l bg-light-in">
         <!-- profile_picture -->
-            <div class="clflx txtc">
-                <div class="preview clflx txtc profprevv">
-                    <label for="profile_picture">Change Profile</label>
-                    <input type="file" name="profile_picture" id="profpicc" accept="image/*" class="file-input" style="display: none;">
-                    <div class="preview"><img class="profile-img" id="profpicprev" src="<?php echo $_SESSION['profile_img']; ?>" loading="lazy" onerror="defaultimg(this);"  alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+            <div class="clflx txtc mt-0 pt-0">
+                <div class="preview clflx txtc mt-0 pt-0">
+                    <div class="preview profprevv mb-4 mt-1 pt-1">
+                        <label class="mt-1" for="profile_picture">Change Profile</label>
+                        <input type="file" name="profile_picture" id="profpicc" accept="image/*" class="file-input" style="display: none;">
+                        <div>
+                        <img class="profile-img" id="profpicprev" src="<?php echo $_SESSION['profile_img']; ?>" loading="lazy" onerror="defaultimg(this);"  alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+                        </div>
                     </div>
                 </div>
                 <!-- <img class="profile-img" src="<?php //echo $_SESSION['profile_img']; ?>" alt="<?php //echo 'profile of '.$_SESSION['username'];?>"> -->

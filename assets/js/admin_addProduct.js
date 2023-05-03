@@ -332,7 +332,7 @@ function modify(nId) {
         } else {
             var objRes = JSON.parse(result);
             var imageUrls = JSON.parse(objRes.images);
-            var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
+            // var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
     
             // for (let i = 0; i < imageUrls.length; i++) {
             //     console.log(imageUrls[i]);
