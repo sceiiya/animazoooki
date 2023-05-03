@@ -330,48 +330,69 @@ function modify(nId) {
             var objRes = JSON.parse(result);
             var imageUrls = JSON.parse(objRes.images);
             var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
-            
+    
             for (let i = 0; i < imageUrls.length; i++) {
-              console.log(imageUrls[i]);
+                console.log(imageUrls[i]);
             }
-            
+
             for (let i = 0; i < imageUrls.length; i++) {
               fetch(imageUrls[i])
                 .then(response => response.blob())
                 .then(blob => {
-                  // Create an invisible form element
-                  const form = document.createElement('form');
-                  form.style.display = 'none';
-            
-                  // Create a file input element and append it to the form
-                  const fileInput = document.createElement('input');
-                  fileInput.type = 'file';
-                  fileInput.name = 'image';
-                  form.appendChild(fileInput);
-            
-                  // Create a new FormData object and append the file object to it
-                  const formData = new FormData();
-                  formData.append('image', blob, `image_${i}.png`);
-            
-                  // Set the form's action and method attributes
-                  form.action = 'tempomedium.php'; // Replace with your upload URL
-                  form.method = 'POST';
-            
-                  // Set the value of the file input element to the file object
-                  fileInput.files = formData.getAll('image');
-            
-                  // Append the form to the document and submit it
-                  document.body.appendChild(form);
-                  form.submit();
-            
-                  // Set the value of the file input element to an empty string after submission
-                  $(fileInputs[i]).val('');
+                  const file = new File([blob], `image_${i}.png`, { type: 'image/jpeg' });
+                  $(fileInputs[i]).val(file);
                 })
                 .catch(error => {
                   console.log(`Failed to fetch image: ${error}`);
                 });
             }
+
+
+
+            // var objRes = JSON.parse(result);
+            // var imageUrls = JSON.parse(objRes.images);
+            // var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
             
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //   console.log(imageUrls[i]);
+            // }
+            
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //   fetch(imageUrls[i])
+            //     .then(response => response.blob())
+            //     .then(blob => {
+            //       // Create an invisible form element
+            //       const form = document.createElement('form');
+            //       form.style.display = 'none';
+            
+            //       // Create a file input element and append it to the form
+            //       const fileInput = document.createElement('input');
+            //       fileInput.type = 'file';
+            //       fileInput.name = 'image';
+            //       form.appendChild(fileInput);
+            
+            //       // Create a new FormData object and append the file object to it
+            //       const formData = new FormData();
+            //       formData.append('image', blob, `image_${i}.png`);
+            
+            //       // Set the form's action and method attributes
+            //       form.action = 'tempomedium.php'; // Replace with your upload URL
+            //       form.method = 'POST';
+            
+            //       // Set the value of the file input element to the file object
+            //       fileInput.files = formData.getAll('image');
+            
+            //       // Append the form to the document and submit it
+            //       document.body.appendChild(form);
+            //       form.submit();
+            
+            //       // Set the value of the file input element to an empty string after submission
+            //       $(fileInputs[i]).val('');
+            //     })
+            //     .catch(error => {
+            //       console.log(`Failed to fetch image: ${error}`);
+            //     });
+            // }
 
 
 
