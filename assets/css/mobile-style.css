@@ -1774,6 +1774,11 @@ a:hover{
     box-sizing: inherit;
     position: relative;
     margin-top: .5rem;
+    max-width: 300px;
+    max-height: 300px;
+    /* width: 400px; */
+    /* height: 299px; */
+    height: fit-content;
 }
 
 .product-img-cont:hover{

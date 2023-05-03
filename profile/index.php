@@ -57,12 +57,12 @@
                             <span class="title">My Purchases</span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#" class="profile-nav mx-1" id="mycart">
                             <span class="icon"><i class="fas fa-shopping-cart"></i></span>
                             <span class="title">My Cart</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#" class="profile-nav mx-1" id="myVouchers">
                             <span class="icon"><i class="fas fa-ticket-alt"></i></span>

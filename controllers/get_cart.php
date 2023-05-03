@@ -1,14 +1,16 @@
 <?php
     include("important/class.database.php");
-
+    require_once("important/connect_DB.php");
     session_start();
-
-    $of = $_SESSION['userid'];
-    $qSelect = "SELECT * FROM .$dbDatabase. clientcart WHERE `client_id` = .$of. AND `date_removed` IS NULL ORDER BY `date_added` DESC";
-    $eSelect = mysqli_query($dbConnection, $qSelect);
 
     $getInfo = new ClassDbConn;
     $DB = $getInfo->NewCon();
+    $of = $_SESSION['userid'];
+    $qSelect = "SELECT * FROM `clientcart` WHERE `client_id` = $of AND `date_removed` IS NULL ORDER BY `date_added` DESC";
+    echo $qSelect;
+
+    $eSelect = mysqli_query($DB, $qSelect);
+
     if ($eSelect == true) {
         try{ 
             // $rowsz = mysqli_fetch_array($eSelect);
@@ -43,7 +45,6 @@
                     $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
                 }
                 // print_r($rowImg[0]);
-
                 
                 $sHtml .= "<tr>
                         <td style='display:none'>".$pInfo['id']."</td>
@@ -63,7 +64,7 @@
             }
 
             $sHtml .= "</table>
-                <button id='addProduct' style='display: $display;' onclick='addProduct()'>Add Product</button>
+                <button id='addProduct' style='display:' onclick='addProduct()'>Add Product</button>
                 ";
             
             echo $sHtml;
@@ -72,5 +73,5 @@
             mysqli_close($dbConnection);
         }
     } else {
-        echo "Failed to connect, please call system administrator!";
+        echo "no connect";
     }
