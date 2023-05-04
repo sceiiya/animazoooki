@@ -329,27 +329,31 @@ function modify(nId) {
         } else {
             var objRes = JSON.parse(result);
             var imageUrls = JSON.parse(objRes.images);
-            var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
+            // var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
     
-            for (let i = 0; i < imageUrls.length; i++) {
-                console.log(imageUrls[i]);
-            }
-
             // for (let i = 0; i < imageUrls.length; i++) {
-            //     $(fileInputs[i]).val(`${imageUrls[i]}`);
+            //     console.log(imageUrls[i]);
             // }
 
-            for (let i = 0; i < imageUrls.length; i++) {
-              fetch(imageUrls[i])
-                .then(response => response.blob())
-                .then(blob => {
-                  const file = new File([blob], `image_${i}.png`, { type: 'image/jpeg' });
-                  $(fileInputs[i]).val(file);
-                })
-                .catch(error => {
-                  console.log(`Failed to fetch image: ${error}`);
-                });
-            }
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //     try{
+            //         $(fileInputs[i]).val(`${imageUrls[i]}`);
+            //     }catch(error){
+            //         ERROR_logger(error);
+            //     }
+            // }
+
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //   fetch(imageUrls[i])
+            //     .then(response => response.blob())
+            //     .then(blob => {
+            //       const file = new File([blob], `image_${i}.png`, { type: 'image/jpeg' });
+            //       $(fileInputs[i]).val(file);
+            //     })
+            //     .catch(error => {
+            //       console.log(`Failed to fetch image: ${error}`);
+            //     });
+            // }
 
 
 

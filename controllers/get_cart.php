@@ -48,12 +48,12 @@
                     
                     $sHtml .= "<tr>
                             <td style='display:none'>".$pInfo['id']."</td>
-                            <td valign='middle'><input type='checkbox' name='".$pInfo['name']."' value='".$pInfo['id']."'></td>
+                            <td valign='middle'><input onclick='getSubNTotal()' type='checkbox' name='".$pInfo['name']."' value='".$pInfo['id']."'></td>
                             <td><a class='adPListImgCont' title='".$pInfo['name']."' href='/all-products/product/?id=".$pInfo['id']."' target='_blank'><img class='adPListImg' loading='lazy' id='imgtest' src='".$imageFile."' onerror='defaultimg(this);'></td>     
                             <td valign='middle' class='txt-light-inv'>".$pInfo['name']."</td>
                             <th valign='middle' class='txt-light-inv'>
                             <div class='d-flex' style='max-width: 80px; min-width: 70px;'>
-                                <input style='color:black;' id='form1' min='0' name='quantity' value='".number_format($rows['qnty'])."' type='number' class='form-control' />
+                                <input style='color:black;' id='meqty' min='0' name='quantity' value='".number_format($rows['qnty'])."' type='number' class='form-control' />
                                 <div class='clflx'>
                                 <button style='color:#a50113;' class='btn btn-link px-2' >
                                         <i class='fas fa-arrow-up'></i>
@@ -64,7 +64,7 @@
                                 </div>
                              </div>
                             </th>
-                            <td valign='middle' class='txt-light-inv'>$ ".number_format($pInfo['price'])."</td>
+                            <td valign='middle' class='priceee txt-light-inv'>$ ".number_format($pInfo['price'])."</td>
                             <td valign='middle' class='txt-light-inv'>
                                 <button class='btn redbgwhitec' onclick=remove('".$pInfo['id']."')>Remove</button>
                             </td>
@@ -81,14 +81,6 @@
             <div class='total-price'>
 
                 <table>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td id='cartsubTotal'>$ 0.00</td>
-                    </tr>
-                    <tr>
-                        <td>Discounts</td>
-                        <td>$ 0.00</td>
-                    </tr>
                     <tr>
                         <td>Total</td>
                         <td id='cartTotal'>$ 0.00</td>
@@ -112,3 +104,13 @@
     // if(mysqli_fetch_array($eSelect) == 0){
     //     $sHtml .= '<div>Cart is empty! You may browse Products and add to cart products you like!</div>';
     // }
+
+
+    // <tr>
+    //     <td>Subtotal</td>
+    //     <td id='cartsubTotal'>$ 0.00</td>
+    // </tr>
+    // <tr>
+    //     <td>Discounts</td>
+    //     <td>$ 0.00</td>
+    // </tr>

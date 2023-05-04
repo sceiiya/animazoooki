@@ -1,3 +1,22 @@
+function ERROR_logger(nERROR){
+    var errr ={
+      error: nERROR
+    }
+    $.ajax({
+      type: 'POST',
+      url: "/controllers/admin/error_logger.php",
+      data: errr,
+    });
+  
+  // $.post("/controllers/error_logger.php", nERROR, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
+  // );
+    // var errrorr ={
+    //   error: nERROR
+    // };
+    // $.post("/controllers/error_logger.php", errrorr, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
+    // );
+  }
+
 //menu toggle
 // let toggle = document.querySelector('.toggle');
 // let navigation = document.querySelector('.navigation');
