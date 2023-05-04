@@ -49,6 +49,17 @@ $('#Az_theme').click(function() {
 }
 });
 
+function retheme() {
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  if (userCred.theme == "dark") {
+    AzsettingDarkTheme();
+    // AzsettingLightTheme();
+  } else {
+    // AzsettingDarkTheme();
+    AzsettingLightTheme();
+}
+};
+
 //function for replacing class theme to light
 function AzsettingLightTheme(){
   $("#headAzlogo").attr("src", "/assets/img/animazooki-b.png");

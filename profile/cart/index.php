@@ -31,7 +31,7 @@
         <!--left side of the main--->
         <aside class="side-l"> </aside> <!--left side of the main--->
         <!--content of the main--->
-        <main class="cartmain main">
+        <main class="cartmain main bg-light-in">
 
 
             <!-- <section class="h-100 w100 bg-light-in" style="background-color: #eee;">

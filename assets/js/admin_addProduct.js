@@ -68,13 +68,13 @@ $("#saveProduct").on('click', () => {
 });
 
 function ValidateProdNAme(sPname){
-    var blobb = {
+    var nameprod = {
         name: sPname
     };
     $.ajax({
         type: 'POST',
         url: "/controllers/admin/prodNameValidate.php",
-        data: blobb,
+        data: nameprod,
         beforeSend: function () {
             var x = document.querySelector('#adminSpinner');
             if (x.style.display === "none") {
@@ -325,7 +325,7 @@ function modify(nId) {
     },
     success: (result) => {
         if (result == "error") {
-              alert("Please call system admnistrator");
+            //   alert("Please call system admnistrator");
         } else {
             var objRes = JSON.parse(result);
             var imageUrls = JSON.parse(objRes.images);
@@ -334,6 +334,10 @@ function modify(nId) {
             for (let i = 0; i < imageUrls.length; i++) {
                 console.log(imageUrls[i]);
             }
+
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //     $(fileInputs[i]).val(`${imageUrls[i]}`);
+            // }
 
             for (let i = 0; i < imageUrls.length; i++) {
               fetch(imageUrls[i])

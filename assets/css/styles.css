@@ -770,14 +770,7 @@ body {
     object-fit: cover;
 }
 .file-input {
-    /* position: absolute; */
-    /* top: 0;
-    left: 0;
-    opacity: 0; */
     display: none;
-    /* width: 100%; */
-    /* height: 100%; */
-    /* z-index: 1; */
 }
 
 .profprevv{
@@ -837,6 +830,57 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.file-input {
-    display: none;
+input{
+    caret-color: auto !important;
+}
+
+/* input[type=checkbox] {
+    transform: scale(2);
+    margin: 10px;
+    cursor: pointer;
+    color: #a50113;
+  }
+   */
+
+   input[type='checkbox']{
+    width: 14px !important;
+    height: 14px !important;
+    margin: 5px;
+    vertical-align: middle;
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none; */
+    outline: 1px solid gray;
+    box-shadow: none;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 1em;
+  }
+  
+  /* input[type='checkbox']:checked:after {
+    content: '✔';
+    color: white;
+    background: #a50113;
+  } */
+
+  .total-price {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 35px;
+}
+
+.total-price table {
+    border-top: 3px solid #a50113;
+    width: 100%;
+    max-width: 330px;
+    text-align: right;
+}
+
+.total-price table td:last-child {
+    text-align: right;
+}
+
+.total-price table th:last-child {
+    text-align: right;
 }
