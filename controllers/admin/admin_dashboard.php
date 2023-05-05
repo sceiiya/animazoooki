@@ -163,7 +163,7 @@ if ($dbConnection == true) {
     // FOR DATA IN RECENT BUYERS BASED ON DATE ORDERED IN DATABASE
 
     // RETRIEVE CUSTOMERS USERNAME FROM TWO TABLES JOINED, BASED ON ID
-    $qRecentSelect = "SELECT DISTINCT `username`, `country` FROM $dbDatabase.`clients` INNER JOIN $dbDatabase.`orders` ON `clients`.`id` = `orders`.`user_id` ORDER BY `orders`.`date_ordered` DESC LIMIT 6";
+    $qRecentSelect = "SELECT DISTINCT `username`, `country` FROM $dbDatabase.`clients` INNER JOIN $dbDatabase.`orders` ON `clients`.`id` = `orders`.`user_id` WHERE `status` = 'Active' ORDER BY `orders`.`date_ordered` DESC LIMIT 6";
     $eRecentSelect = mysqli_query($dbConnection, $qRecentSelect);
     while ($totalRecentRows = mysqli_fetch_assoc($eRecentSelect)) {
 
