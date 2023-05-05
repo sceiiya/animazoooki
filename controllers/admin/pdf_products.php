@@ -119,7 +119,7 @@ $pdf->Output('F', '../../reports/pdf/products.pdf', true);
                 $mail->addAddress($admEmail, $admUsername);
                 $mail->addAttachment('../../reports/pdf/products.pdf');
                 $mail->isHTML(true);
-                $mail->Subject = "Products Report";
+                $mail->Subject = "Products Report as PDF File";
                 $mail->Body    = nl2br("
                              See attached document for the report.
                             
