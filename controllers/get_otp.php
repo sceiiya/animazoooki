@@ -61,7 +61,7 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('support@animazoooki.wd49p.com', 'Animazoooki');
+    $mail->setFrom('support@animazoooki.wd49p.com', 'Animazoooki Verify User');
     $mail->addBCC($_SESSION['email'], $_SESSION['username']);
 
     //Content

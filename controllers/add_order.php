@@ -22,7 +22,7 @@
         margin: 10px 3px 10px 3px !important;
         padding: 2px !important;
     }</style>';
-    $orderCode = substr(sha1(mt_rand()),17,12);
+    $orderCode = 'ORD'.strtoupper(substr(sha1(mt_rand()),17,8)).'ZOOKI';
     $orderQuantity=0;
     $productCodes=[];
     $oneCode='';
