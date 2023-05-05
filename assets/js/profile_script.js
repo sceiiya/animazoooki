@@ -274,3 +274,57 @@ function myProfileEdit() {
   //   myInput.prop("readonly", true);
   // });
 };
+
+
+// CLIENT CHANGE PASSWORD
+
+function userSaveNewPass () {
+  $('#userChangePassModal').modal('show');
+}
+
+$('#yes-userChangePass').on('click', () => {
+
+  var sCurrentPass = $('#userOldPass').val();
+  var sNewPass = $('#userNewPass').val();
+  var sConfirmPass = $('#userConfirmPass').val();
+
+  var sJsonData = {
+      currentpassword: sCurrentPass,
+      newpassword: sNewPass,
+      confirmpassword: sConfirmPass
+  }
+
+  $.ajax({
+      type:'POST',
+      url: "/controllers/user_changepass.php",
+      data: sJsonData,
+      beforeSend: function () {
+          var x = document.querySelector('#userSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      },
+      success: (result) => {
+          if( result == "Password saved!") {
+              alert(result);
+              $('#userChangePassModal').modal('hide');
+              loadContent('/profile/content/changepass.php');
+
+          } else {
+              alert(result);
+              $('#userChangePassModal').modal('hide');
+
+          }
+      },
+      complete: function () {
+          var x = document.querySelector('#userSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      }
+  })
+})

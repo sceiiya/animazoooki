@@ -14,6 +14,12 @@
         $admUsername = $_SESSION['admusername'];
     }
 
+    require '../../vendor/autoload.php';
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
     if ($dbConnection == true) {
         $sFirstName = addslashes($_POST['regfirstname']);
         $sLastName = addslashes($_POST['reglastname']);
@@ -43,24 +49,22 @@
                         ('{$sFirstName}', '{$sLastName}', 'Agent', '{$sUsername}', '{$sEmail}', '{$nPassword}', 'Active', '".date("Y-m-d H:i:s")."', '{$admUsername}')";        
                     $eInsert = mysqli_query($dbConnection, $qInsert);
 
+
+
                     if ($eInsert == true) {
                         echo "User added!";
-                        require_once('../../phpmailer/class.phpmailer.php');
 
-                        $mail = new PHPMailer();
-                        
-                        $mail->IsSMTP();
-                        // $mail->SMTPDebug = 2;
-                        $mail->SMTPAuth 	= true;
-                    
-                        $mail->Host 	  = 'smtp.hostinger.com';
-                        include("../important/connect_Email.php");
-                        $mail->FromName   = "System Administrator";
-                        $mail->SMTPSecure = 'ssl';
-                        $mail->Port 	  = 465;                        
-                        
-                        $mail->AddAddress($sEmail, $sFirstName);
-                    
+                        $mail = new PHPMailer(true);
+
+                        $mail->isSMTP();
+                        $mail->Host       = 'smtp.hostinger.com';
+                        $mail->SMTPAuth   = true;                  
+                        include('../important/connect_Email.php');
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                        $mail->Port       = 465;
+                        $mail->setFrom('support@animazoooki.wd49p.com', 'System Administrator');
+                        $mail->addAddress($sEmail, $sFirstName);
+                        $mail->isHTML(true);
                         $mail->Subject = "New dashboard user";
                         $mail->Body = nl2br("
                         Dashboard user account created!
@@ -80,15 +84,12 @@
                         Click <a href='https://".getenv('HTTP_HOST')."/admin/index.php'>here<a> to log in.
 
                         ");
-                        
-                        $mail->IsHTML(true);
 
                         if(!$mail->Send()) {
-                            echo " Email not sent!";
+                            echo "Email not sent!";
                         } else {
                             echo " Email sent!";
                         }
-
                         mysqli_close($dbConnection);
                     } else {
                         echo "Failed to add new user";
@@ -98,7 +99,6 @@
             } catch(Exception $e) {
                 echo 'Error: ' .$e->getMessage();
             }
-
         }
 
     } else {

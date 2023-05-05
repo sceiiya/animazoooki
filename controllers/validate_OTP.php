@@ -26,7 +26,7 @@
                     if(($timestamp - $valid['new_otp_dt']) > 600){
                         echo 'expired';
                     }else{
-                        $upd = ['status' => 'active', 'otp_code' => ''];
+                        $upd = ['status' => 'Active', 'otp_code' => ''];
                         $eUpdate = $ConDB->Update($eCon, 'clients', $upd, $of);
                         echo "true";
                     }

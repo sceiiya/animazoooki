@@ -81,7 +81,7 @@
         } else {
             x.type = 'password';
             y.type = 'password';
-            z.type = 'text';
+            z.type = 'password';
         }
     }
 </script>

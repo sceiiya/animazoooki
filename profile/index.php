@@ -103,16 +103,48 @@
 
     </section>
 
+    <!-- CHANGE PASSWORD MODAL -->
+
+<div class="modal" id="userChangePassModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">CHANGE PASSWORD</h4>
+            </div>
+
+
+            <div class="modal-body">
+                WARNING! You are about to change the password.
+                <br>
+                <br>
+                Are you sure of this change?
+            </div>
+
+
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-userChangePass" class="btn redbgwhitec">YES</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Spinner Modal -->
+<div id="userSpinner" class="spinner-border text-danger" style="display: none;"></div>
+
     <!-- footer -->
     <?php include("../includes/footer.php"); ?>
 
 </body>
 </html>
 <!-- scripts libries -->
+<!-- <script src="/assets/js/jquery-3.6.3.min.js"></script> -->
 <?php include("../includes/scripts_library.php"); ?>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://kit.fontawesome.com/0de39995d2.js" crossorigin="anonymous"></script> -->
-<!-- <script src="/assets/js/jquery-3.6.3.min.js"></script> -->
 <script src="/assets/js/script.js"></script>
 <script src="/assets/js/profile_script.js"></script>
 <?php include("../includes/validatorControl.php"); ?>
