@@ -234,9 +234,31 @@ function confirmOrder(){
     url: "/controllers/add_order.php",
     type: "POST",
     data: order,
+    beforeSend: ()=>{
+      var x = document.querySelector('#LoadingSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+    },
     success: (status) =>{
-      if(status == true){
+      if(status == 'true'){
+        getCART();
+        $('#confirmOrder').modal('hide');
+        $('#checkoutModal').modal('hide');
         toastr.info('We have sent the details to your email', 'Placed Order')
+      }else{
+        ERROR_logger(status);
+        console.log(status);
+      }
+    },
+    complete: function () {
+      var x = document.querySelector('#LoadingSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
       }
     },
   });

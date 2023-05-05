@@ -51,10 +51,10 @@
                                     <label class="mb-2 mt-2" for="number">Contact Number:  </label>
                                 </div>
                                 <div class="mb-1 mt-2 clflx w-75">
-                                    <input type="name" class="form-control" id="checkName" name="name" value="<?php echo $_SESSION['fullname']; ?>">
-                                    <input type="text" class="form-control" id="checkaddress" placeholder="Enter Shipping Address" name="address" value="<?php echo $_SESSION['shipping_add']?>">
-                                    <input type="number" class="form-control" id="checkNumber" placeholder="Enter Contact Number" name="number" value="<?php echo $_SESSION['billing_add'];?>">
-                                    <input type="email" class="form-control" id="checkEmail" name="email" value="<?php echo $_SESSION['email']; ?>">
+                                    <input type="name" class="form-control" id="checkName"  placeholder="Enter Name" name="name" value="<?php echo $_SESSION['fullname']; ?>">
+                                    <input type="text" class="form-control" id="checkEmail" placeholder="Enter Email Address" name="email" value="<?php echo $_SESSION['email'] ?>">
+                                    <input type="text" class="form-control" id="checkaddress" placeholder="Enter Shipping Address" name="address" value="<?php echo $_SESSION['shipping_add']; ?>">
+                                    <input type="number" class="form-control" id="checkNumber" placeholder="Enter Contact Number" name="number" value="<?php echo $_SESSION['cellno']; ?>">
                                 </div>
                             </div>
                         </div>

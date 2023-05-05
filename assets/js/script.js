@@ -237,10 +237,11 @@ $('#confirmOTP').on('click', ()=>{
       }
       },
     success: (result) => {
-      console.log(result);
       if (result == "true") {
+        const userCred = JSON.parse(localStorage.getItem("user"));
+        userCred.status = "Active";
+        localStorage.setItem("user", JSON.stringify(userCred));
         $('#myOTPModal').modal('hide');
-        GETUserinfo();
         toastr.success('You may now purchase without restrictions!', 'Account verified succesfully!');
       } else if(result == "expired"){
           toastr.warning('Please get a new OTP', 'OTP expired!');

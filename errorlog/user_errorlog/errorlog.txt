@@ -1136,3 +1136,62 @@ Date: 2023-05-05 11:50:03
 Error: TypeError: Cannot read properties of null (reading 'status') 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-05-06 06:30:47
+Error: 
+
+
+Fatal error
+:  Uncaught TypeError: Unsupported operand types: string + int in
+C:\laragon\www\animazooki\controllers\add_order.php:48
+Stack trace:
+#0 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\add_order.php
+ on line 
+48
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-05-06 06:56:53
+Error: 
+
+
+Warning
+:  Undefined variable $ConDB in 
+C:\laragon\www\animazooki\controllers\add_order.php
+ on line 
+54
+
+
+
+
+
+Fatal error
+:  Uncaught Error: Call to a member function Update() on null in
+C:\laragon\www\animazooki\controllers\add_order.php:54
+Stack trace:
+#0 {main}
+  thrown in 
+C:\laragon\www\animazooki\controllers\add_order.php
+ on line 
+54
+
+
+ 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Date: 2023-05-06 06:58:08
+Error: true 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+

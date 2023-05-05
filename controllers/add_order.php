@@ -23,7 +23,7 @@
         padding: 2px !important;
     }</style>';
     $orderCode = substr(sha1(mt_rand()),17,12);
-    $orderQuantity='';
+    $orderQuantity=0;
     $productCodes=[];
     $oneCode='';
     $oneName='';
@@ -45,7 +45,13 @@
             $prod_id = $cart_item['prod_id'];
             $oneCode = $prod_id;
             $quantity = intval($cart_item['quantity']);
-            $orderQuantity += intval($quantity);
+            $orderQuantity = intval($orderQuantity) + intval($quantity);
+
+            $cartI = [
+                'date_removed' => date("Y-m-d H:i:s"),
+            ];
+            $ofcart = ['id' => $cart_id];
+            $remCart = $getInfo->Update($DB, 'clientcart', $cartI, $ofcart);
 
             $of = ['id' => $prod_id];
             $pInfo = $getInfo->GSelect($DB, 'products', $of, '', '');
@@ -60,7 +66,7 @@
                 'sold' => $newSold,
             ];
             $UPpInfo = $getInfo->Update($DB, 'products', $newOrder,$of);
-
+            
             $rowImg = json_decode($pInfo['images']);
                 if($rowImg == NULL)  {
                     $imageFile = "https://".getenv("HTTP_HOST")."/admin/listing/product_img/animazoooki_onload.png";
@@ -71,7 +77,7 @@
             $productCodes[$prod_id] = $quantity;
             $sHtml .= "
                 <tr>
-                    <td><a class='adPListImgCont' title='".$pInfo['name']."' href='https://".getenv("HTTP_HOST")."/all-products/product/?id=".$pInfo['id']."' target='_blank'><img class='adPListImg' loading='lazy' id='imgtest' src='".$imageFile."' ></td>     
+                    <td><a class='adPListImgCont' title='".$pInfo['name']."' href='https://".getenv("HTTP_HOST")."/all-products/product/?id=".$pInfo['id']."' target='_blank'><img style='width:75px; height:75px;' class='adPListImg' loading='lazy' id='imgtest' src='".$imageFile."' ></td>     
                     <td valign='middle' class='txt-light-inv'>".$pInfo['name']."</td>
                     <th valign='middle' class='txt-light-inv'>".$quantity."</th>
                     <td valign='middle' class='priceee txt-light-inv'>$ ".number_format($pInfo['price']*$quantity)."</td>
@@ -83,8 +89,8 @@
             <div class='total-price'>
                     <div>Subtotal: $ ".$_POST['subtotal']."</div><br/>
                     <div>Shipping Fee: $ ".$_POST['shiptotal']."</div><br/>
-                    Please prepare this amout of money for faster transaction the time you will receive your merch!
-                    <div>Total: $ ".$_POST['total']."</div><br/>
+                    <strong>Please prepare this amout of money for faster transaction the time you will receive your merch!
+                    <div>Total: $ ".$_POST['total']."</div></strong><br/>
             </div>
                 ";
             
@@ -146,7 +152,7 @@
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
                 
             $mail->send();
-            // echo 'Message has been sent';
+            echo 'true';
         } catch (Exception $e) {
             $_SESSION['error'] = $e->getMessage().'<br>'.$mail->ErrorInfo;
             header("Location: error_logger.php");
