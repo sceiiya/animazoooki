@@ -6,7 +6,7 @@
     $getInfo = new ClassDbConn;
     $DB = $getInfo->NewCon();
     $of = $_SESSION['userid'];
-    $qSelect = "SELECT * FROM `clientcart` WHERE `client_id` = $of AND `date_removed` IS NULL ORDER BY `date_added` DESC";
+    $qSelect = "SELECT * FROM `clientcart` WHERE `date_removed` IS NULL AND `client_id` = $of ORDER BY `date_added` DESC";
 
     $eSelect = mysqli_query($DB, $qSelect);
 
@@ -68,7 +68,7 @@
                             </th>
                             <td valign='middle' class='priceee txt-light-inv'>$ ".number_format($pInfo['price'])."</td>
                             <td valign='middle' class='txt-light-inv'>
-                                <button class='btn redbgwhitec' onclick=remove('".$pInfo['id']."')>Remove</button>
+                                <button class='btn redbgwhitec' onclick=itemRemove(".$rows['id'].")>Remove</button>
                             </td>
                         ";
                     } catch(Exception $e) {

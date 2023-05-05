@@ -20,7 +20,7 @@
         </div>
         <div class="mb-3 w-75 profile-data">
             <label>Shipping Address</label>
-            <input type="text" class="form-control" id="shippingAdd" value="<?php echo $_SESSION['billing_add'];?>" readonly="true">
+            <input type="text" class="form-control" id="shippingAdd" value="<?php echo $_SESSION['shipping_add'];?>" readonly="true">
         </div>
         <div class="mb-3 w-75 profile-data">
             <label>Billing Address</label>
