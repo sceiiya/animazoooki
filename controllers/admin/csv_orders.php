@@ -54,7 +54,7 @@
                         $mail->addAddress($admEmail, $admUsername);
                         $mail->addAttachment('../../reports/csv/orders.csv');
                         $mail->isHTML(true);
-                        $mail->Subject = "Orders Report";
+                        $mail->Subject = "Orders Report as CSV File";
                         $mail->Body    = nl2br("
                                      See attached document for the report.
                                     
