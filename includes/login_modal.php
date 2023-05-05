@@ -33,7 +33,7 @@
         <div class="row mb-1">
           <div class="col d-flex justify-content-center">
             <div class="text-center pt-2">
-                <p>Send new OTP? <a href="#!" id="resendOTP">Resend</a></p>
+                <p>Send new OTP? <a href="#!" id="resendOTP">get otp</a></p>
             </div>
           </div>
         </div>

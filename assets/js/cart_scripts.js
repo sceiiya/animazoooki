@@ -96,7 +96,7 @@ function getSubNTotal(){
     let subtotal = 0;
     let totshipfee = 0;
     // product row
-    $("table#admin_prod_tbl tr").not(":first").each(function() {
+    $("table#check_prod_tbl tr").not(":first").each(function() {
       if ($(this).find("input[type='checkbox']").is(":checked")) {
         // get quantity and price
         let quantity = parseInt($(this).find("input[name='quantity']").val());
@@ -125,8 +125,87 @@ function getSubNTotal(){
 
 
   function readyCheck() {
-  $("#AddOrderBttn").click(function() {
-    let checking =[];
+    $("#AddOrderBttn").click(function() {
+      // Check if any checkboxes are checked
+      if ($("input[type='checkbox']:checked").length === 0) {
+        toastr.warning('Please select a product first to checkout.');
+        return;
+      }else{
+  
+      let checking =[];
+  
+      $("input[type='checkbox']:checked").each(function() {
+        var cart_id = $(this).closest("tr").find(".CARTsessID").text();
+        var prod_id = $(this).closest("tr").find(".CARTprodID").text();
+        var quantity = $(this).closest("tr").find("input[name='quantity']").val();
+  
+        checking.push({
+          "cart_id": cart_id,
+          "prod_id": prod_id,
+          "quantity": quantity
+        });
+      });
+  
+      let cchecking ={
+          checking: JSON.stringify(checking),
+          subtotal: OsubTotal,
+          shiptotal: OshipFee,
+          total: Ototal
+      };
+  
+      $.ajax({
+        url: "/controllers/get_checkout.php",
+        type: "POST",
+        data: cchecking,
+        success: (items) =>{
+          $('#previewOrder').empty();
+          $('#previewOrder').append(items);
+        },
+      });
+      $('#checkoutModal').modal('show');
+    }
+    });
+    
+  };
+  
+
+
+$('#PurchaseOrderBttn').on('click', ()=>{
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  if (userCred && userCred.status == "Inactive") {
+    toastr.warning('Please Verify your Account First!', 'Unverified Account!')
+  } else {
+    $('#confirmOrder').modal('show');
+}
+})
+
+// $("#checkout").click(function() {
+  confirmOrder();
+// }
+
+function confirmOrder(){
+      var allFieldsFilled = true;
+      $('#checkout-container input').each(function() {
+        if ($(this).val() === '') {
+          allFieldsFilled = false;
+          return false;
+        }
+      });
+      if (!$("input[name='optradio']:checked").val()) {
+        allFieldsFilled = false;
+      }
+      if (!allFieldsFilled) {
+        toastr.warning('Please complete all fields to proceed.');
+        return false;
+      }
+      var Name = $('#checkName').val();
+      var Address = $('#checkaddress').val();
+      var Number = $('#checkNumber').val();
+      var Email = $('#checkEmail').val();
+      var pMethod = $("input[name='optradio']:checked").val();
+      // console.log(contactName, contactAddress, contactNumber, contactEmail, paymentMethod);
+
+  let checking =[];
 
     $("input[type='checkbox']:checked").each(function() {
       var cart_id = $(this).closest("tr").find(".CARTsessID").text();
@@ -140,31 +219,24 @@ function getSubNTotal(){
       });
     });
 
-    let cchecking ={
+    let order ={
         checking: JSON.stringify(checking),
         subtotal: OsubTotal,
         shiptotal: OshipFee,
-        total: Ototal
+        total: Ototal,
+        name: Name,
+        address: Address,
+        cellno: Number,
+        email: Email,
+        paymeth: pMethod
     };
-
-    $.ajax({
-      url: "/controllers/get_checkout.php",
-      type: "POST",
-      data: cchecking,
-      success: (items) =>{
-        $('#previewOrder').empty();
-        $('#previewOrder').append(items);
-      },
-    });
-    $('#checkoutModal').modal('show');
+  $.ajax({
+    url: "/controllers/get_checkout.php",
+    type: "POST",
+    data: order,
+    success: (items) =>{
+      $('#previewOrder').empty();
+      $('#previewOrder').append(items);
+    },
   });
-};
-
-
-$('#PurchaseOrderBttn').on('click', ()=>{
-  $('#confirmOrder').modal('show');
-})
-
-// function confitmOrder(){
-
-// }
+}

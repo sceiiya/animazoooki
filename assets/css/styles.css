@@ -493,6 +493,17 @@ body {
     height: 140px;
 }
 
+#check_prod_tbl tr td img {
+    width: 140px;
+    height: 140px;
+}
+
+#check_prod_tbl{
+    width: calc(95%-50px) !important;
+    box-sizing: border-box;
+    margin: 10px 3px 10px 3px !important;
+    padding: 2px !important;
+}
 #addProduct, #addAdmin{
     background-color: var(--red);
     border: 0;
