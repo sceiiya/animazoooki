@@ -27,6 +27,8 @@
     <?php include("../../includes/main_navbar_header.php"); ?>
     <!-- navigation bar heading -->
 
+    
+
     <section class="wrapper">
         <!--left side of the main--->
         <aside class="side-l"> </aside> <!--left side of the main--->

@@ -15,6 +15,7 @@ $(document).ready(async()=>{
         $('.cartmain').append(data);
         retheme();
         getSubNTotal();
+        readyCheck();
         // setTimeout(getSubNTotal(), 8000)
         var x = document.querySelector('#LoadingSpinner');
         if (x.style.display === "none") {
@@ -69,24 +70,75 @@ $(document).ready(async()=>{
 //     getSubNTotal();
 // });
 // });
-
+const shipfee = 3.75;   
+let OsubTotal = '';
+let OshipFee ='';
+let Ototal ='';
 function getSubNTotal(){
-    var subtotal = 0;
+    let subtotal = 0;
+    let totshipfee = 0;
     // product row
     $("table#admin_prod_tbl tr").not(":first").each(function() {
       if ($(this).find("input[type='checkbox']").is(":checked")) {
         // get quantity and price
-        var quantity = parseInt($(this).find("input[name='quantity']").val());
+        let quantity = parseInt($(this).find("input[name='quantity']").val());
         // console.log(quantity);
-        var price = parseInt($(this).find(".priceee").text().replace("$ ", ""));
+        let price = parseInt($(this).find(".priceee").text().replace("$ ", ""));
         // console.log(price);
         // calculate total price add subtotal
-        var total = quantity * price;
+        let total = quantity * price;
+        totshipfee += quantity * shipfee;
         subtotal += total;
       }
     });
     // $("#cartsubTotal").text("$ " + subtotal.toFixed(2));
-    var total = subtotal;
-    $("#cartTotal").text("$ " + total.toFixed(2));
+    // $("#cartshipTotal").text("$ " + totshipfee.toFixed(2));
+
+    let total = subtotal + totshipfee;
+    // $("#cartTotal").text("$ " + total.toFixed(2));
+    OsubTotal = subtotal.toFixed(2);
+    OshipFee =  totshipfee.toFixed(2);
+    Ototal =    total.toFixed(2);
+
+    $("#cartsubTotal").text("$ " + OsubTotal);
+    $("#cartshipTotal").text("$ " + OshipFee);
+    $("#cartTotal").text("$ " + Ototal);
   }
-  
+
+
+  function readyCheck() {
+  $("#AddOrderBttn").click(function() {
+    let checking =[];
+
+    $("input[type='checkbox']:checked").each(function() {
+      var cart_id = $(this).closest("tr").find(".CARTsessID").text();
+      var prod_id = $(this).closest("tr").find(".CARTprodID").text();
+      var quantity = $(this).closest("tr").find("input[name='quantity']").val();
+
+      checking.push({
+        "cart_id": cart_id,
+        "prod_id": prod_id,
+        "quantity": quantity
+      });
+    });
+
+    let cchecking ={
+        checking: JSON.stringify(checking),
+        subtotal: OsubTotal,
+        shiptotal: OshipFee,
+        total: Ototal
+    };
+
+    $.ajax({
+      url: "/controllers/get_checkout.php",
+      type: "POST",
+      data: cchecking,
+      success: (response) =>{
+        console.log(response);
+      },
+      error: function(xhr) {
+        alert("Error: " + xhr.responseText);
+      }
+    });
+  });
+};
