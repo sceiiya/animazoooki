@@ -62,7 +62,7 @@ $("#saveProduct").on('click', () => {
     if(sPmanu != '' && sPdesign != '' && sPdescription != '' && sPvar != '' && sPsizes != '' && sPquantity != '' && sPprice != '' && ssname != '' && sPser != '' && sPcat ){
         ValidateProdNAme(ssname);
     }else{
-        toastr.warning('Please compleatte all fields', 'Blank Field Detected');
+        toastr.warning('Please complete all fields', 'Blank Field Detected');
     }
 
 });

@@ -116,7 +116,7 @@
 
         $AllImgs = json_encode($AllImgs);
         $productData = [
-            "name" => $_POST['name'],
+            "name" =>addslashes($_POST['name']),
             "category" => $_POST['category'],
             "series" => $_POST['series'],
             "price" => $_POST['price'],
