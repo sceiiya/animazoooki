@@ -19,12 +19,13 @@
             $sHtml = "
                     <table id='admin_prod_tbl' class='table table-striped table-hover'>
                         <tr>
+                            <th style='display:none'>Cart ID</th>
                             <th style='display:none'>Product ID</th>
                             <th class='txt-light-inv'>Select</th> 
                             <th class='txt-light-inv'>Image</th>
                             <th class='txt-light-inv'>Product Name</th>
                             <th class='txt-light-inv'>Qty</th>
-                            <th class='txt-light-inv'>Price</th>
+                            <th class='txt-light-inv'>Unit Price</th>
                             <th class='txt-light-inv'>Action</th>
                         </tr>
                 ";
@@ -47,13 +48,14 @@
                     // print_r($rowImg[0]);
                     
                     $sHtml .= "<tr>
-                            <td style='display:none'>".$pInfo['id']."</td>
+                            <td style='display:none' class='CARTsessID'>".$rows['id']."</td>
+                            <td style='display:none' class='CARTprodID'>".$pInfo['id']."</td>
                             <td valign='middle'><input onclick='getSubNTotal()' type='checkbox' name='".$pInfo['name']."' value='".$pInfo['id']."'></td>
                             <td><a class='adPListImgCont' title='".$pInfo['name']."' href='/all-products/product/?id=".$pInfo['id']."' target='_blank'><img class='adPListImg' loading='lazy' id='imgtest' src='".$imageFile."' onerror='defaultimg(this);'></td>     
                             <td valign='middle' class='txt-light-inv'>".$pInfo['name']."</td>
                             <th valign='middle' class='txt-light-inv'>
                             <div class='d-flex' style='max-width: 80px; min-width: 70px;'>
-                                <input style='color:black;' id='meqty' min='0' name='quantity' value='".number_format($rows['qnty'])."' type='number' class='form-control' />
+                                <input style='color:black;' id='meqty' min='1' readonly name='quantity' value='".number_format($rows['qnty'])."' type='number' class='form-control' />
                                 <div class='clflx'>
                                 <button style='color:#a50113;' class='btn btn-link px-2' >
                                         <i class='fas fa-arrow-up'></i>
@@ -82,13 +84,21 @@
 
                 <table>
                     <tr>
+                        <td>Subtotal</td>
+                        <td id='cartsubTotal'>$ 0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping Fee</td>
+                        <td id='cartshipTotal'>$ 0.00</td>
+                    </tr>
+                    <tr>
                         <td>Total</td>
                         <td id='cartTotal'>$ 0.00</td>
                     </tr>
                 </table>
             </div>
-            <div id='btnDiv'>
-                <button id='AddOrderBttn'>Checkout</button>
+            <div class='txtr' >
+                <button style='margin-right: 38px;' id='AddOrderBttn' class='btn mt-3 mb-5 redbgwhitec'>Checkout</button>
             </div>
                 ";
             
@@ -111,6 +121,6 @@
     //     <td id='cartsubTotal'>$ 0.00</td>
     // </tr>
     // <tr>
-    //     <td>Discounts</td>
+    //     <td>Shipping Fee</td>
     //     <td>$ 0.00</td>
     // </tr>

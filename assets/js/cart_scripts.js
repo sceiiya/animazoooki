@@ -69,24 +69,37 @@ $(document).ready(async()=>{
 //     getSubNTotal();
 // });
 // });
-
+const shipfee = 3.75;   
+let OsubTotal = '';
+let OshipFee ='';
+let Ototal ='';
 function getSubNTotal(){
-    var subtotal = 0;
+    let subtotal = 0;
+    let totshipfee = 0;
     // product row
     $("table#admin_prod_tbl tr").not(":first").each(function() {
       if ($(this).find("input[type='checkbox']").is(":checked")) {
         // get quantity and price
-        var quantity = parseInt($(this).find("input[name='quantity']").val());
+        let quantity = parseInt($(this).find("input[name='quantity']").val());
         // console.log(quantity);
-        var price = parseInt($(this).find(".priceee").text().replace("$ ", ""));
+        let price = parseInt($(this).find(".priceee").text().replace("$ ", ""));
         // console.log(price);
         // calculate total price add subtotal
-        var total = quantity * price;
+        let total = quantity * price;
+        totshipfee += quantity * shipfee;
         subtotal += total;
       }
     });
     // $("#cartsubTotal").text("$ " + subtotal.toFixed(2));
-    var total = subtotal;
-    $("#cartTotal").text("$ " + total.toFixed(2));
+    // $("#cartshipTotal").text("$ " + totshipfee.toFixed(2));
+
+    let total = subtotal + totshipfee;
+    // $("#cartTotal").text("$ " + total.toFixed(2));
+    OsubTotal = subtotal.toFixed(2);
+    OshipFee =  totshipfee.toFixed(2);
+    Ototal =    total.toFixed(2);
+
+    $("#cartsubTotal").text("$ " + OsubTotal);
+    $("#cartshipTotal").text("$ " + OshipFee);
+    $("#cartTotal").text("$ " + Ototal);
   }
-  
