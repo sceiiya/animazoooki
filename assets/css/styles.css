@@ -551,7 +551,7 @@ body {
 
 /* SPINNER */
 
-#adminSpinner {
+#adminSpinner, #userSpinner {
     position: fixed;
     top: 40%;
     left: 50%;
@@ -823,8 +823,8 @@ body {
 }
 
 .profprevv img {
-    width: 90% ;
-    height: 90%;
+    width: 75% ;
+    height: 75%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     transition: all 0.2s ease-in-out;
@@ -851,7 +851,7 @@ input{
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none; */
-    outline: 1px solid gray;
+    /* outline: 1px solid gray; */
     box-shadow: none;
     font-size: 0.8em;
     text-align: center;

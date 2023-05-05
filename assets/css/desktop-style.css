@@ -1456,7 +1456,7 @@ a{
 .profile-uname{
     margin-top: 2px;
     white-space: nowrap;
-    transform: translateY(-50px);
+    transform: translateY(-90px);
 }
 
 .profile-label{
@@ -1469,6 +1469,7 @@ a{
     margin-bottom: .8rem;
     color: #242424;
 }
+
 /*----- profile page -----*/
 
 /* debug mode */

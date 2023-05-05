@@ -12,7 +12,7 @@
         'name' => $nGuestN,
         'email' => 'Register to Enter Email',
         'theme' => 'light',
-        'status' => 'Spectating'
+        'status' => 'spectating'
     ];
 
     $_SESSION['username'] = $newGuest['username'];   

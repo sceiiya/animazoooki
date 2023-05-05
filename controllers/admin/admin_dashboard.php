@@ -29,7 +29,7 @@ $etotalPSelect = mysqli_query($dbConnection, $qtotalPSelect);
 $totalProdRows = mysqli_fetch_assoc($etotalPSelect);
 
 // FOR NUMBER OF PRODUCTS TAGGED AS DELIVERED IN DATABASE
-$qtotalSalesSelect = "SELECT COUNT(orderid) AS TotalSales FROM $dbDatabase.`orders` WHERE `order_status` = 'Delivered'";
+$qtotalSalesSelect = "SELECT SUM(product_quantity) AS TotalSales FROM $dbDatabase.`orders` WHERE `order_status` = 'Delivered'";
 $etotalSalesSelect = mysqli_query($dbConnection, $qtotalSalesSelect);
 $totalSalesRows = mysqli_fetch_assoc($etotalSalesSelect);
 

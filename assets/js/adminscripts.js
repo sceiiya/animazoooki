@@ -692,12 +692,12 @@ $('#yes-changePass').on('click', () => {
 
 // PASSWORD CHECKER IF MATCH
 
-$('#admNewPass, #admConfirmPass').on('keyup', function () {
-    if ($('#admNewPass').val() == $('#admConfirmPass').val()) {
-      $('#admPassMessage').html('Passwords match').css('color', 'green');
-    } else 
-      $('#admPassMessage').html('Passwords does not match').css('color', 'red');
-  });
+// $('#admNewPass, #admConfirmPass').on('keyup', function () {
+//     if ($('#admNewPass').val() == $('#admConfirmPass').val()) {
+//       $('#admPassMessage').html('Passwords match').css('color', 'green');
+//     } else 
+//       $('#admPassMessage').html('Passwords does not match').css('color', 'red');
+//   });
 
 // LOGIN AND REGISTER
 
