@@ -1,8 +1,25 @@
-$(document).ready(async()=>{
+$(document).ready(()=>{
     getCART();
   });
 
-  async function getCART(){
+  function itemRemove(id){
+    let of = {
+      cID: id
+    }
+    $.ajax({
+      url: "/controllers/remove_cart.php",
+      type: "POST",
+      data: of,
+      success: (result) =>{
+        console.log(result);
+        if(result == 'updated'){
+          getCART();
+        }
+      },
+    });
+  }
+
+   function getCART(){
     try{
       var x = document.querySelector('#LoadingSpinner');
       if (x.style.display === "none") {
@@ -12,6 +29,7 @@ $(document).ready(async()=>{
       }
     $.get('/controllers/get_cart.php', (data, status)=>{
       if (status === "success"){
+        $('.cartmain').empty();
         $('.cartmain').append(data);
         retheme();
         getSubNTotal();
@@ -133,12 +151,20 @@ function getSubNTotal(){
       url: "/controllers/get_checkout.php",
       type: "POST",
       data: cchecking,
-      success: (response) =>{
-        console.log(response);
+      success: (items) =>{
+        $('#previewOrder').empty();
+        $('#previewOrder').append(items);
       },
-      error: function(xhr) {
-        alert("Error: " + xhr.responseText);
-      }
     });
+    $('#checkoutModal').modal('show');
   });
 };
+
+
+$('#PurchaseOrderBttn').on('click', ()=>{
+  $('#confirmOrder').modal('show');
+})
+
+// function confitmOrder(){
+
+// }

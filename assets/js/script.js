@@ -44,14 +44,30 @@ $('#Az_theme').click(function() {
   const userCred = JSON.parse(localStorage.getItem("user"));
   if (userCred.theme == "dark") {
     AzsetLightTheme();
+    let theme ={
+      theme: 'light'
+    }
+    $.ajax({
+      type: 'POST',
+      url: "/controllers/up_theme.php",
+      data: theme
+    });
   } else {
     AzsetDarkTheme();
+    let theme ={
+      theme: 'dark'
+    }
+    $.ajax({
+      type: 'POST',
+      url: "/controllers/up_theme.php",
+      data: theme
+    });
 }
 });
 
 function retheme() {
   const userCred = JSON.parse(localStorage.getItem("user"));
-  if (userCred.theme == "dark") {
+  if (userCred && userCred.theme == "dark") {
     AzsettingDarkTheme();
     // AzsettingLightTheme();
   } else {
@@ -342,6 +358,7 @@ $.get('/controllers/fetch_userCreds.php', (data, status)=>{
           // console.log(JSON.parse(localStorage.getItem('user')));
   }
 });
+// retheme();
 }catch(error){
   ERROR_logger(error);
 }
@@ -370,7 +387,7 @@ function reloadLog(){
         const userCred = JSON.parse(data);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         localStorage.setItem("user", JSON.stringify({ username: userCred.username,}));
         const UserrCred = JSON.parse(localStorage.getItem("user"));
-        setTimeout(toastr.success(`Welcome aboard ${UserrCred.username}!`,"Logged In!"), 2000);
+        toastr.success(`Welcome aboard ${UserrCred.username}!`,"Logged In!");
       }
     });
     UserCred.log = "logged";
@@ -674,13 +691,13 @@ function hideBTNS(){
         $('#lgOutBttn').hide();
         $('#OTPBttn').hide();
         break;
-      case (uCred.status == 'inactive'):
+      case (uCred.status == 'Inactive'):
         $('#loginBttn').hide();
         $('#SgUpBttn').hide();
         $('#lgOutBttn').show();
 
         break;
-      case (uCred.status == 'active'):
+      case (uCred.status == 'Active'):
         $('#lgInBttn').hide();
         $('#SgUpBttn').hide();
         $('#OTPBttn').hide();
@@ -691,21 +708,16 @@ function hideBTNS(){
 }
 
 
-$(document).ready(()=>{
-  try{
-    const userCred = JSON.parse(localStorage.getItem("user"));
-    if (!userCred) {
-      setTimeout(hideBTNS(), 3000);
-      // hideBTNS();
-    } else {
-      hideBTNS();
-      // setTimeout(hideBTNS(), 6000);
-    }
-  } catch(error) {
-    console.log(error);
-    ERROR_logger(error);
-  }
-});
+// $(document).ready(()=>{
+//     const userCred = JSON.parse(localStorage.getItem("user"));
+//     if (!userCred) {
+//       setTimeout(hideBTNS(), 3000);
+//       // hideBTNS();
+//     } else {
+//       hideBTNS();
+//       // setTimeout(hideBTNS(), 6000);
+//     }
+// });
 
 // fetching the theme and updating depends on the user preference
 $(document).ready(()=>{

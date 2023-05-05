@@ -95,7 +95,7 @@ addPDFheader($pdf);
                 $mail->addAddress($admEmail, $admUsername);
                 $mail->addAttachment('../../reports/pdf/orders.pdf');
                 $mail->isHTML(true);
-                $mail->Subject = "Orders Report";
+                $mail->Subject = "Orders Report as PDF File";
                 $mail->Body    = nl2br("
                              See attached document for the report.
                             
