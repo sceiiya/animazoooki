@@ -26,7 +26,7 @@
     $qSelect = "SELECT * FROM `clientcart` WHERE `client_id` = $of AND `date_removed` IS NULL ORDER BY `date_added` DESC";
 
     $eSelect = mysqli_query($DB, $qSelect);
-
+ 
     if ($eSelect == true) {
         try{ 
             // $rowsz = mysqli_fetch_array($eSelect);
