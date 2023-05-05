@@ -77,7 +77,7 @@
                         Email: {$sEmail}
                         Temporary Password: {$nPassword}
                     
-                        Click <a href='http://localhost/admin/index.php'>here<a> to log in.
+                        Click <a href='https://".getenv('HTTP_HOST')."/admin/index.php'>here<a> to log in.
 
                         ");
                         

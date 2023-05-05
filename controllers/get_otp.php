@@ -30,6 +30,7 @@ try{
             }
     }    
 }catch(Exception $e){
+    echo 'error';
     $_SESSION['error'] = $e->getMessage();
     header("Location: error_logger.php");
     exit();
@@ -72,7 +73,7 @@ try {
     <br/><br/>
     <strong styles="font-size:120px; text-align: center; font-weight:800; width:100%; background-color:##a50113; color:#fffbf2;">'.$OTP.'</strong>
     <br/><br/>
-    You may enter this OTP on the page or click this <a href="https://animazoooki.wd49p.com/?otp='.$OTP.'">link</a> to verify your account.<br/>
+    You may enter this OTP on the page or click this <a href="https://'.getenv("HTTP_HOST").'/?otp='.$OTP.'">link</a> to verify your account.<br/>
      ';
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

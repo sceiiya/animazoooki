@@ -20,7 +20,7 @@
             <form class="position-relative">
                 <!-- Email input -->
                 <div class="form-outline mb-3">
-                    <input type="email" id="admLoginUsername" class="form-control" />
+                    <input type="text" id="admLoginUsername" class="form-control" />
                     <label class="form-label mt-2 ms-1" for="form2Example1">Username</label>
                 </div>
 

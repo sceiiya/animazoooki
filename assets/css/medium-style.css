@@ -1642,13 +1642,18 @@ z-index: 4;
 }
 
 .product-img-cont{
-    width: 100%;
+    /* width: 100%; */
     overflow: hidden;
     border: 2px solid #a50113;
     height: fit-content;
     border-radius: 3px;
     box-sizing: inherit;
     position: relative;
+    max-width: 380px;
+    max-height: 380px;
+    /* width: 400px; */
+    height: fit-content;
+
 }
 
 .product-img-main{

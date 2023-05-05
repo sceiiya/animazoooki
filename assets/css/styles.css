@@ -770,12 +770,117 @@ body {
     object-fit: cover;
 }
 .file-input {
-    /* position: absolute; */
-    /* top: 0;
-    left: 0;
-    opacity: 0; */
     display: none;
-    /* width: 100%; */
-    /* height: 100%; */
-    /* z-index: 1; */
+}
+
+.profprevv{
+    border-radius: 50%;
+}
+
+.profprevv label {
+    display: block;
+    position: relative;
+    color: white;
+      text-shadow: -1px -1px 3px black;
+  z-index: 50;
+  font-size: x-large;
+    top: 50%;
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.profprevv:hover label {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.profprevv div img{
+  border: 1px #a50113 !important; 
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  margin-top:20px !important;
+}
+
+.profprevv:hover img{
+    filter: blur(3px);
+    opacity: 0.6;
+    transition: all 0.2s ease-in-out;
+}
+
+.profprevv {
+    flex-wrap: wrap; 
+    justify-content: center;
+    padding: 0;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-60px);
+}
+
+.profprevv img {
+    width: 90% ;
+    height: 90%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+}
+
+input{
+    caret-color: auto !important;
+}
+
+/* input[type=checkbox] {
+    transform: scale(2);
+    margin: 10px;
+    cursor: pointer;
+    color: #a50113;
+  }
+   */
+
+   input[type='checkbox']{
+    width: 14px !important;
+    height: 14px !important;
+    margin: 5px;
+    vertical-align: middle;
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none; */
+    outline: 1px solid gray;
+    box-shadow: none;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 1em;
+  }
+  
+  /* input[type='checkbox']:checked:after {
+    content: '✔';
+    color: white;
+    background: #a50113;
+  } */
+
+  .total-price {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 35px;
+}
+
+.total-price table {
+    border-top: 3px solid #a50113;
+    width: 100%;
+    max-width: 330px;
+    text-align: right;
+}
+
+.total-price table td:last-child {
+    text-align: right;
+}
+
+.total-price table th:last-child {
+    text-align: right;
 }

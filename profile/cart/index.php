@@ -31,10 +31,10 @@
         <!--left side of the main--->
         <aside class="side-l"> </aside> <!--left side of the main--->
         <!--content of the main--->
-        <main class="cartmain">
+        <main class="cartmain main bg-light-in">
 
 
-            <section class="h-100 w100 bg-light-in" style="background-color: #eee;">
+            <!-- <section class="h-100 w100 bg-light-in" style="background-color: #eee;">
                 <div class="container h-100 py-5">
                     <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col-10">
@@ -223,62 +223,9 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
 
-            <!-- <section>
-    <div>cart hero header</div>
-    <div w100>
-        <label>
-            Product Name
-        </label>
-        <label>
-            Availability
-        </label>
-        <label>
-            Unit Price
-        </label>
-        <label>
-            Quantity
-        </label>
-        <label>
-            Action
-        </label>
-    </div>
-</section> -->
-
-            <!-- <div>
-    <div>
-        <input checkbox>
-    </div>
-    <div>
-        Product Name
-    </div>
-    <div>
-        Availability
-    </div>
-    <div>
-        Unit Price
-    </div>
-    <label>
-        Quantity
-    </label>
-    <div>
-        Action
-    </div>
-</div> -->
-
-            <!-- <section>
-    <div>
-        use voucher
-    </div>
-    <div>
-        <input> <div>select all</div>
-        <div>remove all selected</div>
-        <div>total price</div>
-        <a href="">Check Out</a>
-    </div>
-</section> -->
 
         </main>
         <!--right side of the main--->
@@ -303,5 +250,6 @@
 <!-- scripts libries -->
 <?php include("../../includes/scripts_library.php"); ?>
 <script src="/assets/js/script.js"></script>
+<script src="/assets/js/cart_scripts.js"></script>
 <?php include("../../includes/validatorControl.php"); ?>
 <?php include('../../controllers/forbidGuest.php'); ?>

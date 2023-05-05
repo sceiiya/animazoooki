@@ -7,19 +7,19 @@
         <form>
 
             <div class="form-outline mb-5">
-                <input type="text" id="oldPass" class="form-control w-50" />
-                <label class="form-label position-absolute start-0" for="form2Example1">Current Password</label>
+                <input type="text" id="oldPass" class="form-control w-50" placeholder="Current Password"/>
+                <!-- <label class="form-label position-absolute start-0" for="form2Example1">Current Password</label> -->
             </div>
 
 
             <div class="form-outline mb-5">
-                <input type="text" id="newPass" class="form-control w-50" />
-                <label class="form-label position-absolute start-0" for="form2Example2">New Password</label>
+                <input type="text" id="newPass" class="form-control w-50" placeholder="New Password"/>
+                <!-- <label class="form-label position-absolute start-0" for="form2Example2">New Password</label> -->
             </div>
 
             <div class="form-outline mb-5">
-                <input type="text" id="confirmPass" class="form-control w-50" />
-                <label class="form-label position-absolute start-0" for="form2Example3">Confirm New Password</label> </br>
+                <input type="text" id="confirmPass" class="form-control w-50" placeholder="Confirm New Password"/>
+                <!-- <label class="form-label position-absolute start-0" for="form2Example3">Confirm New Password</label> </br> -->
                 <span id='message'></span>
             </div>
 

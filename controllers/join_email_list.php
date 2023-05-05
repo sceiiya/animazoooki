@@ -1,4 +1,4 @@
- <?php
+<?php
     require_once("important/class.database.php");
     session_start();
 
@@ -21,7 +21,7 @@
                                 $of = ['email' => $_POST['email']];
                                 $eUpdate = $ConDB->Update($eCon, 'clients', $data, $of);     
                             }else{
-                                return false;
+                                // return false;
                             }
                         }catch(Exception $e) {
                             $_SESSION['error'] = $e->getMessage();
@@ -42,8 +42,6 @@
             header("Location: error_logger.php");
             exit();
         }
-
-
     }else{
         echo "not connected";
     }

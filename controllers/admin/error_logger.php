@@ -61,6 +61,7 @@ $wError = fopen("../../errorlog/admin_errorlog/errorlog.txt", "a");
 fwrite($wError,"\n
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Date: ".date('Y-m-d H:i:s')."
+Access: ".$admAccess." Admin: ".$admUsername."
 Error: ".wordwrap(str_replace($br, $spc, $ERROR), 80, "\n")." 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 \n");

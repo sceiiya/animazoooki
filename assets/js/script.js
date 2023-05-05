@@ -1,9 +1,21 @@
-// gumagana na to ng maayos.. need lang iset ng condition from database ayusing ko rin
-//for testing purpose muna ngayon.. activate once.. tapos after mavisit sa localhost browser..
-//paki comment out yung line na nasa baba.. save then shift refresh sa browser.. gumagana sya even maglipat ng pages
+function ERROR_logger(nERROR){
+  var errr ={
+    error: nERROR
+  }
+  $.ajax({
+    type: 'POST',
+    url: "/controllers/error_logger.php",
+    data: errr,
+  });
 
-//for logging out this one should be included 
-// localStorage.clear();
+// $.post("/controllers/error_logger.php", nERROR, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
+// );
+  // var errrorr ={
+  //   error: nERROR
+  // };
+  // $.post("/controllers/error_logger.php", errrorr, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
+  // );
+}
 
 toastr.options.progressBar = true;
 toastr.options.timeOut = 3000; // How long the toast will display without user interaction
@@ -36,6 +48,17 @@ $('#Az_theme').click(function() {
     AzsetDarkTheme();
 }
 });
+
+function retheme() {
+  const userCred = JSON.parse(localStorage.getItem("user"));
+  if (userCred.theme == "dark") {
+    AzsettingDarkTheme();
+    // AzsettingLightTheme();
+  } else {
+    // AzsettingDarkTheme();
+    AzsettingLightTheme();
+}
+};
 
 //function for replacing class theme to light
 function AzsettingLightTheme(){
@@ -129,6 +152,7 @@ try{
 $('#resendOTP').on('click', ()=>{
   NewOTP();
 })
+
 function NewOTP(){
   $.ajax({
     type: 'POST',
@@ -176,7 +200,6 @@ function NewOTP(){
 
   //Function for otp modal
 $('#verifOTPBttn').on('click', () => {
-  isOTPget();
   $('#myOTPModal').modal('show');
 });
 
@@ -529,11 +552,11 @@ $('#SubmitEmail').on('click', ()=>{
       data: joinElist,
       beforeSend: ModalLoader,
       success: (result) =>{
-          if(result == " added"){
+          if(result == "added"){
             toastr.success("Joined Newsletter Successfully","Congrats!");
-          }else if(result == " subcribed"){
+          }else if(result == "subcribed"){
             toastr.warning("You are Already Subscribed", "Notice");
-          }else if(result == " failed"){
+          }else if(result == "failed"){
             toastr.warning("Failed joining newsletter");
           }else{
             // console.log(result);
@@ -654,31 +677,36 @@ function hideBTNS(){
       case (uCred.status == 'inactive'):
         $('#loginBttn').hide();
         $('#SgUpBttn').hide();
+        $('#lgOutBttn').show();
+
         break;
       case (uCred.status == 'active'):
         $('#lgInBttn').hide();
         $('#SgUpBttn').hide();
         $('#OTPBttn').hide();
+        $('#lgOutBttn').show();
+
         break;
     }
 }
 
 
-// $(document).ready(()=>{
-//   try{
-//     const userCred = JSON.parse(localStorage.getItem("user"));
-//     if (!userCred) {
-//       setTimeout(hideBTNS(), 6000);
-//       // hideBTNS();
-//     } else {
-//       hideBTNS();
-//       // setTimeout(hideBTNS(), 6000);
-//     }
-//   } catch(error) {
-//     console.log(error);
-//     ERROR_logger(error);
-//   }
-// });
+$(document).ready(()=>{
+  try{
+    const userCred = JSON.parse(localStorage.getItem("user"));
+    if (!userCred) {
+      setTimeout(hideBTNS(), 3000);
+      // hideBTNS();
+    } else {
+      hideBTNS();
+      // setTimeout(hideBTNS(), 6000);
+    }
+  } catch(error) {
+    console.log(error);
+    ERROR_logger(error);
+  }
+});
+
 // fetching the theme and updating depends on the user preference
 $(document).ready(()=>{
   const userCred = JSON.parse(localStorage.getItem("user"));
@@ -725,26 +753,6 @@ $(document).ready(function(){
 //     ERROR_logger(error);
 //   }
 // });
-
-function ERROR_logger(nERROR){
-  var errr ={
-    error: nERROR
-  }
-  $.ajax({
-    type: 'POST',
-    url: "/controllers/error_logger.php",
-    data: errr,
-  });
-
-// $.post("/controllers/error_logger.php", nERROR, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
-// );
-  // var errrorr ={
-  //   error: nERROR
-  // };
-  // $.post("/controllers/error_logger.php", errrorr, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
-  // );
-}
-
 
 
 // function ERROR_logger(nERROR){

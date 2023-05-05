@@ -25,7 +25,7 @@
 // });
 // });
 
-document.querySelector('.profprevv').addEventListener('click', function() {
+  document.querySelector('.profprevv').addEventListener('click', function() {
   document.querySelector('#profpicc').click();
   });
 
@@ -39,7 +39,7 @@ document.querySelector('.profprevv').addEventListener('click', function() {
 //for profile pic change
 $('#profpicc').on('change', function() {
   const previewContainer = $(this).parent();
-  const preview = previewContainer.find('.preview');
+  const preview = previewContainer.find('div');
   preview.html('');
   const files = $(this)[0].files;
 
@@ -123,7 +123,7 @@ $('#profpicc').on('change', function() {
 var container = $('.profile-cont-r');
 var linkAccount = $('#myAccount');
 var linkPurchases = $('#myPurchases');
-var linkCart = $('#mycart');
+// var linkCart = $('#mycart');
 var linkVouchers = $('#myVouchers');
 var linkPassword = $('#changePass');
 var linkSettings = $('#mySettings');
@@ -163,10 +163,10 @@ linkPurchases.on('click', function(e){
   loadContent('/profile/content/mypurchases.php');
   e.preventDefault() ;
 });
-linkCart.on('click', function(e){
-  loadContent('/profile/content/mycart.php');
-  e.preventDefault() ;
-});
+// linkCart.on('click', function(e){
+//   loadContent('/profile/content/mycart.php');
+//   e.preventDefault() ;
+// });
 linkVouchers.on('click', function(e){
   loadContent('/profile/content/myvouchers.php');
   e.preventDefault() ;
