@@ -179,9 +179,9 @@ $('#PurchaseOrderBttn').on('click', ()=>{
 }
 })
 
-// $("#checkout").click(function() {
+$("#yes-ORDER").on('click',() =>{
   confirmOrder();
-// }
+});
 
 function confirmOrder(){
       var allFieldsFilled = true;
@@ -231,12 +231,13 @@ function confirmOrder(){
         paymeth: pMethod
     };
   $.ajax({
-    url: "/controllers/get_checkout.php",
+    url: "/controllers/add_order.php",
     type: "POST",
     data: order,
-    success: (items) =>{
-      $('#previewOrder').empty();
-      $('#previewOrder').append(items);
+    success: (status) =>{
+      if(status == true){
+        toastr.info('We have sent the details to your email', 'Placed Order')
+      }
     },
   });
 }
