@@ -27,7 +27,7 @@
                         "name"=> addslashes($_POST['name']),
                         "username"=> $_POST['username'],
                         "email"=> $_POST['email'],
-                        "password"=> $_POST['password'],
+                        "password"=> md5($_POST['password']),
                         "date_added" => date("Y-m-d H:i:s"),
                         "contactno" => '99999999999',
                         "billing_address" => "Enter your Billing Address",

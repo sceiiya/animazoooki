@@ -14,7 +14,7 @@
             $DData = $ConDB->GSelect($eCon, 'clients', $ggetData, '', '');
 
             // $columnP = "password";
-            $valueP = $_POST['password'];
+            $valueP = md5($_POST['password']);
             // $validP = $ConDB->ValidateExist($eCon, 'clients', $columnP, $valueP);
 
             if($validU["result"] == "true" && $DData["password"] == $valueP){
