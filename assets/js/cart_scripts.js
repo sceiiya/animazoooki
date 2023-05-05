@@ -15,6 +15,7 @@ $(document).ready(async()=>{
         $('.cartmain').append(data);
         retheme();
         getSubNTotal();
+        readyCheck();
         // setTimeout(getSubNTotal(), 8000)
         var x = document.querySelector('#LoadingSpinner');
         if (x.style.display === "none") {
@@ -103,3 +104,41 @@ function getSubNTotal(){
     $("#cartshipTotal").text("$ " + OshipFee);
     $("#cartTotal").text("$ " + Ototal);
   }
+
+
+  function readyCheck() {
+  $("#AddOrderBttn").click(function() {
+    let checking =[];
+
+    $("input[type='checkbox']:checked").each(function() {
+      var cart_id = $(this).closest("tr").find(".CARTsessID").text();
+      var prod_id = $(this).closest("tr").find(".CARTprodID").text();
+      var quantity = $(this).closest("tr").find("input[name='quantity']").val();
+
+      checking.push({
+        "cart_id": cart_id,
+        "prod_id": prod_id,
+        "quantity": quantity
+      });
+    });
+
+    let cchecking ={
+        checking: JSON.stringify(checking),
+        subtotal: OsubTotal,
+        shiptotal: OshipFee,
+        total: Ototal
+    };
+
+    $.ajax({
+      url: "/controllers/get_checkout.php",
+      type: "POST",
+      data: cchecking,
+      success: (response) =>{
+        console.log(response);
+      },
+      error: function(xhr) {
+        alert("Error: " + xhr.responseText);
+      }
+    });
+  });
+};
