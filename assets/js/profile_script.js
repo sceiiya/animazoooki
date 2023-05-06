@@ -1,29 +1,33 @@
 // var varifcont ="";
-function updateprofpic() {
+// function updateprofpic() {
   
-  $.ajax({
-      type: 'POST',
-      url: content,
-      success: (result) => {
-          var element = $('<div/>');
-          element.html(result);
-          container.empty();
-          container.prepend(element);
-          myProfileEdit();
-          // varifcont = content;
-      }
-  })
+//   $.ajax({
+//       type: 'POST',
+//       url: content,
+//       success: (result) => {
+//           var element = $('<div/>');
+//           element.html(result);
+//           container.empty();
+//           container.prepend(element);
+//           myProfileEdit();
+//           // varifcont = content;
+//       }
+//   })
 
-}
-
+// }
+// mynewpicModal
 // $(document).ready(function() {
-// $('.prof-prevv').click(function() {
+// $('.profprevv').on('click', ()=> {
 //   // const picInput = $(this).parent().find('#profpicc');
 // $('#profpicc').click();
   
-//   // picInput.click();
+  // picInput.click();
 // });
 // });
+
+  document.querySelector('.profprevv').addEventListener('click', function() {
+  document.querySelector('#profpicc').click();
+  });
 
 //for profile pic change
 // $('.profprevv').on('click', function() {
@@ -33,6 +37,66 @@ function updateprofpic() {
 // });
 
 //for profile pic change
+$('#profpicc').on('change', function() {
+  const previewContainer = $(this).parent();
+  const preview = previewContainer.find('div');
+  preview.html('');
+  const files = $(this)[0].files;
+
+  for (let i = 0; i < files.length && i < 4; i++) {
+      const file = files[i];
+      const reader = new FileReader();
+      const fileType = file.type;
+
+      if (fileType.match('image.*')) {
+          reader.addEventListener('load', () => {
+              const img = $('<img>').attr('src', reader.result);
+              preview.html(img);
+          });
+          reader.readAsDataURL(file);
+      }
+  }
+
+  var file = $('#profpicc')[0].files[0];
+  var formData = new FormData();
+  formData.append('file', file);
+
+  $.ajax({
+      url: '/controllers/profile_pic_update.php',
+      type: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      beforeSend: function () {
+        var x = document.querySelector('#LoadingSpinner');
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+      },
+      success: (result)=>{
+        if(result == 'true'){
+          toastr.success("Profile Picture Updated");
+        }else if(result == "false"){
+          toastr.warning("Failed to upload profie picture", "Something went wrong");
+        }else{
+          console.log(result);
+          toastr.error("Please ask for technical assistant to resolve this!", "Something went wrong");
+        }
+      },
+      complete: function () {
+        var x = document.querySelector('#LoadingSpinner');
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    },
+  });
+});
+
+
 // $('#profpicc').on('change', function() {
 //   const previewContainer = $(this).parent();
 //   const preview = previewContainer.find('#profpicprev');
@@ -59,7 +123,7 @@ function updateprofpic() {
 var container = $('.profile-cont-r');
 var linkAccount = $('#myAccount');
 var linkPurchases = $('#myPurchases');
-var linkCart = $('#mycart');
+// var linkCart = $('#mycart');
 var linkVouchers = $('#myVouchers');
 var linkPassword = $('#changePass');
 var linkSettings = $('#mySettings');
@@ -99,10 +163,10 @@ linkPurchases.on('click', function(e){
   loadContent('/profile/content/mypurchases.php');
   e.preventDefault() ;
 });
-linkCart.on('click', function(e){
-  loadContent('/profile/content/mycart.php');
-  e.preventDefault() ;
-});
+// linkCart.on('click', function(e){
+//   loadContent('/profile/content/mycart.php');
+//   e.preventDefault() ;
+// });
 linkVouchers.on('click', function(e){
   loadContent('/profile/content/myvouchers.php');
   e.preventDefault() ;
@@ -210,3 +274,73 @@ function myProfileEdit() {
   //   myInput.prop("readonly", true);
   // });
 };
+
+
+// CLIENT CHANGE PASSWORD
+
+function userSaveNewPass () {
+  $('#userChangePassModal').modal('show');
+}
+
+$('#yes-userChangePass').on('click', () => {
+
+  var sCurrentPass = $('#userOldPass').val();
+  var sNewPass = $('#userNewPass').val();
+  var sConfirmPass = $('#userConfirmPass').val();
+
+  var sJsonData = {
+      currentpassword: sCurrentPass,
+      newpassword: sNewPass,
+      confirmpassword: sConfirmPass
+  }
+
+  $.ajax({
+      type:'POST',
+      url: "/controllers/user_changepass.php",
+      data: sJsonData,
+      beforeSend: function () {
+          var x = document.querySelector('#userSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      },
+      success: (result) => {
+          if( result == "Password saved!") {
+              alert(result);
+              $('#userChangePassModal').modal('hide');
+              loadContent('/profile/content/changepass.php');
+
+          } else {
+              alert(result);
+              $('#userChangePassModal').modal('hide');
+
+          }
+      },
+      complete: function () {
+          var x = document.querySelector('#userSpinner');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      }
+  })
+})
+
+function receiveOrder(id){
+  let of = {
+    cID: id
+  }
+  $.ajax({
+    url: "/controllers/up_delivered.php",
+    type: "POST",
+    data: of,
+    success: (result) =>{
+      if(result == 'updated'){
+        toastr.info('Order Received!');
+      }
+    },
+  });
+}

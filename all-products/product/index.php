@@ -208,8 +208,8 @@
                             <!-- <span class="minus">-</span>
                             <input type="number" class="count" name="qty" value="1">
                             <span class="plus">+</span> -->
-                            <button type="button" class="product cart-button" id="liveToastBtn">Add to Cart</button>
-                            <button class="product buy-button"><a href="/all-products/checkout/">Buy Now</a></button>
+                            <button type="button" class="product cart-button" id="CARTbtn">Add to Cart</button>
+                            <button class="product buy-button" id="BUYbtn">Buy Now</button>
                         </div>
                     </div>
                 </div>

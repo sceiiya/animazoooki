@@ -32,6 +32,8 @@
 //     ERROR_logger(error);
 //   }
 // }
+
+
 const imgMainCont = document.querySelector(".product-img-cont");
 const imgMainElm = document.querySelector(".product-img-cont img");
 const imgSub = document.querySelector(".product-img-sub");
@@ -39,7 +41,6 @@ const imgSubCont = document.querySelector(".product-img-sub-cont-holder");
 
 const ZOOM = 300;
 
-// debugged
 let isMoving = false;
 let animationFrame;
 
@@ -87,6 +88,24 @@ imgMainCont.addEventListener("mouseenter", () => {
 imgMainCont.addEventListener("mouseleave", onMouseLeave);
 
 imgMainCont.addEventListener("mousemove", onMouseMove);
+
+Array.from(imgSubCont.children).forEach((productElm, i, list) => {
+  productElm.addEventListener("click", () => {
+    const newSrc = productElm.querySelector("img").src;
+    imgMainElm.src = newSrc;
+
+    list.forEach(prod => prod.classList.remove("active"));
+    productElm.classList.add("active");
+  });
+});
+
+// function cngeHeight() {
+//   imgMainCont.style.height = imgMainCont.clientHeight + 'px';
+// }
+
+// cngeHeight();
+// window.addEventListener('resize', cngeHeight);
+
 
 //origin
 // imgMainCont.addEventListener("mouseenter", () => {
@@ -140,26 +159,6 @@ imgMainCont.addEventListener("mousemove", onMouseMove);
 // });
 
 
-Array.from(imgSubCont.children).forEach((productElm, i, list) => {
-  productElm.addEventListener("click", () => {
-    const newSrc = productElm.querySelector("img").src;
-    imgMainElm.src = newSrc;
-
-    list.forEach(prod => prod.classList.remove("active"));
-    productElm.classList.add("active");
-  });
-});
-
-function cngeHeight() {
-  imgMainCont.style.height = imgMainCont.clientHeight + 'px';
-}
-
-cngeHeight();
-window.addEventListener('resize', cngeHeight);
-
-
-
-
 
 $(document).ready(async()=>{
   similarItems();
@@ -167,13 +166,53 @@ $(document).ready(async()=>{
 
 
 async function similarItems(){
-    try{
-      $.get('/controllers/get_randSimilar.php', (data, status)=>{
-        if (status === "success"){
-            $('#sim-prods').append(data);
-        }
-      });
-    }catch(error){
+  try{
+    $.get('/controllers/get_randSimilar.php', (data, status)=>{
+      if (status === "success"){
+        $('#sim-prods').append(data);
+      }
+    });
+  }catch(error){
       ERROR_logger(error);
-    }
-    }
+  }
+}
+
+const ThisPID = $('#pID');
+$('#CARTbtn').on('click', ()=>{
+  var pId = {id: ThisPID.val()};
+  $.ajax({
+    type: 'POST',
+    url: "/controllers/add_cart.php",
+    data: pId,
+    beforeSend: function () {
+      var x = document.querySelector('#LoadingSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+      },
+    success: (result) => {
+      if (result == "true") {
+        toastr.success('You can now view this product in your cart <a href="/profile/cart/">here!<a/>', 'Product Added to Cart');
+      }else if(result == "false"){
+          toastr.warning('Failed to add product in your cart', 'Something went wrong!');
+      }else{
+        toastr.error('Ask a Tech Support to Resolve', 'Something went wrong');
+        ERROR_logger(result);
+      }
+    },
+    complete: function () {
+      var x = document.querySelector('#LoadingSpinner');
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+    },
+  });
+});
+
+$('#BUYbtn').on('click', ()=>{
+  ThisPID.val()
+});

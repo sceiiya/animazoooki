@@ -27,258 +27,108 @@
     <?php include("../../includes/main_navbar_header.php"); ?>
     <!-- navigation bar heading -->
 
+    <div class="modal" id="checkoutModal">
+        <div class="modal-dialog modal-lg txtl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Checkout</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                <input id="xedni" value="<?php echo $_SESSION['userid']; ?>" style="display: none;">
+                    <div id="checkout-container" class="container">
+                        <div class="container mt-3 row justify-content-center align-items-center text-align-left">
+                            <h2>Contact and Shipping Information</h2>
+                            <div class="rwflx">
+                                <div class="mb-1 mt-1 clflx w-25 txtr">
+                                    <label class="mb-2 mt-2" for="name">Name:  </label>
+                                    <label class="mb-2 mt-2" for="email">Email:  </label>
+                                    <label class="mb-2 mt-2" for="address">Address:  </label>
+                                    <label class="mb-2 mt-2" for="number">Contact Number:  </label>
+                                </div>
+                                <div class="mb-1 mt-2 clflx w-75">
+                                    <input type="name" class="form-control" id="checkName"  placeholder="Enter Name" name="name" value="<?php echo $_SESSION['fullname']; ?>">
+                                    <input type="text" class="form-control" id="checkEmail" placeholder="Enter Email Address" name="email" value="<?php echo $_SESSION['email'] ?>">
+                                    <input type="text" class="form-control" id="checkaddress" placeholder="Enter Shipping Address" name="address" value="<?php echo $_SESSION['shipping_add']; ?>">
+                                    <input type="number" class="form-control" id="checkNumber" placeholder="Enter Contact Number" name="number" value="<?php echo $_SESSION['cellno']; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container mt-3 align-items-center">
+                            <h2>Payment Method</h2>
+                                <div style="left: 50; right: 50; margin:auto; align-self:center;" allign="center" class="txtl clflx w-25">
+                                <div class="form-check  mt-2">
+                                    <input type="radio" class="form-check-input" id="payPaypal" name="optradio" value="Paypal">
+                                    <label class="form-check-label" for="paygcash">Paypal</label>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input type="radio" class="form-check-input" id="payCod" name="optradio" value="Cash On Delivery">
+                                    <label class="form-check-label" for="paycod">Cash On Delivery</label>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input type="radio" class="form-check-input" id="payBank" name="optradio" value="Bank">
+                                    <label class="form-check-label" for="paycod">Bank</label>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input type="radio" class="form-check-input" id="payCard" name="optradio" value="VISA/MasterCard">
+                                    <label class="form-check-label" for="paycod">VISA/MasterCard</label>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="mt-3 justify-content-center allign-items-center">
+                            <h2>Order Preview</h2>
+                            <div id="previewOrder" class="mb-3 mt-3 w-100">
+                                
+                            </div>
+                        </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        
+                        <!-- <input type="text" class="form-control" id="modalTotal"> -->
+                        <div class="">
+                            <!-- <input class="btn btn-primary btn-lg" type="submit" value="Register" /> -->
+                            <button id='PurchaseOrderBttn' class='btn redbgwhitec'>Place Order</button>
+                            <!-- <button class="btn btn-primary" id="purchase">Purchase</button> -->
+                        </div>
+                        <button type="button" class="btn " data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="confirmOrder">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" style="z-index: 999">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirm Order</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    Please make sure that your Shipping details is accurate avoid further issues.
+                </div>
+
+                <div class="modal-footer flex-row d-flex justify-content-between">
+                    <button type="button" id="yes-ORDER" class="btn redbgwhitec">Proceed</button>
+                    <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <section class="wrapper">
         <!--left side of the main--->
         <aside class="side-l"> </aside> <!--left side of the main--->
         <!--content of the main--->
-        <main class="cartmain">
-
-
-            <section class="h-100 w100 bg-light-in" style="background-color: #eee;">
-                <div class="container h-100 py-5">
-                    <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col-10">
-
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h3 class="fw-normal mb-0 text-black">My Cart</h3>
-                                <div>
-                                    <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
-                                </div>
-                            </div>
-
-                            <div class="card rounded-3 mb-4">
-                                <div class="card-body p-4">
-                                    <div class="row d-flex justify-content-between align-items-center">
-                                        <div class="form-check mb-2 ms-2">
-                                            <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>
-                                        </div>
-                                        <div class="col-md-2 col-lg-2 col-xl-2">
-                                            <img src="/all-products/Enna-Alouette_t-shirt/3.jpg" class="img-fluid rounded-3" alt="Cotton T-shirt">
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-3">
-                                            <p class="lead fw-normal mb-2">Enna Alouette NIJISANJI EN inspired T-shirt</p>
-                                            <p><span class="text-muted">Size: </span>M <span class="text-muted">Variation:
-                                                </span>Black n White v1</p>
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-
-                                            <input id="form1" min="0" name="quantity" value="3" type="number" class="form-control form-control-sm" />
-
-                                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                            <h5 class="mb-0">$69.00</h5>
-                                        </div>
-                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                            <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card rounded-3 mb-4">
-                                <div class="card-body p-4">
-                                    <div class="row d-flex justify-content-between align-items-center">
-                                        <div class="form-check mb-2 ms-2">
-                                            <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>
-                                        </div>
-                                        <div class="col-md-2 col-lg-2 col-xl-2">
-                                            <img src="/all-products/Usada-Pekora_t-shirt/1.jpg" class="img-fluid rounded-3" alt="Cotton T-shirt">
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-3">
-                                            <p class="lead fw-normal mb-2">Usada Pekora HOLOLIVE JP inspired T-shirt</p>
-                                            <p><span class="text-muted">Size: </span>S <span class="text-muted">Variation:
-                                                </span>White n Black v1</p>
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-
-                                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
-
-                                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                            <h5 class="mb-0">$69.00</h5>
-                                        </div>
-                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                            <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card rounded-3 mb-4">
-                                <div class="card-body p-4">
-                                    <div class="row d-flex justify-content-between align-items-center">
-                                        <div class="form-check mb-2 ms-2">
-                                            <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>
-                                        </div>
-                                        <div class="col-md-2 col-lg-2 col-xl-2">
-                                            <img src="/all-products/Shalltear-Bloodfallen_t-shirt/4.jpg" class="img-fluid rounded-3" alt="Cotton T-shirt">
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-3">
-                                            <p class="lead fw-normal mb-2">Shalltear Bloodfallen OVERLORD Anime Series inspired T-shirt</p>
-                                            <p><span class="text-muted">Size: </span>XXL <span class="text-muted">Variation:
-                                                </span>Red n White v2</p>
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-
-                                            <input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm" />
-
-                                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                            <h5 class="mb-0">$69.00</h5>
-                                        </div>
-                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                            <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card rounded-3 mb-4">
-                                <div class="card-body p-4">
-                                    <div class="row d-flex justify-content-between align-items-center">
-                                        <div class="form-check mb-4 ms-2">
-                                            <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>
-                                        </div>
-                                        <div class="col-md-2 col-lg-2 col-xl-2">
-                                            <img src="/all-products/minato-aqua-scale-figurine/1.jpg" class="img-fluid rounded-3" alt="Cotton T-shirt">
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-3">
-                                            <p class="lead fw-normal mb-2">Minato Aqua: Aqua Iro Super Dream Ver. 1/7 Scale Figure</p>
-                                            <p><span class="text-muted">Size: </span>1/7 scale <span class="text-muted">Variatin:
-                                                </span>White</p>
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-
-                                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
-
-                                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                            <h5 class="mb-0">$199.00</h5>
-                                        </div>
-                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                            <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card mb-4 d-flex flex-row">
-                                <div class="card-body p-4 d-flex flex-column justify-content-center">
-                                    <div class="form-outline flex-fill  justify-content-center">
-                                        <input type="text" id="form1" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form1">Voucher code</label>
-                                    </div>
-                                    <div>
-                                    <button type="button" class="btn btn-outline-warning btn-sm inbg-red w-25">Apply</button>
-                                    </div>
-                                </div>
-                                <div class="card-body p-4 d-flex flex-column">
-                                    <fieldset disabled>
-                                    <div class="form-outline d-flex flex-row justify-content-end">
-                                        <label class="form-label mt-3 pe-2" for="form1">SUBTOTAL:</label>
-                                        <input type="text" id="form1" class="form-control form-control-sm mt-2 w-50" />
-                                    </div>
-                                    <div class="form-outline d-flex flex-row justify-content-end">
-                                        <label class="form-label mt-3 pe-2" for="form1">DISCOUNT:</label>
-                                        <input type="text" id="form1" class="form-control form-control-sm mt-2 w-50" />
-                                    </div>
-                                    <div class="form-outline d-flex flex-row justify-content-end">
-                                        <label class="form-label mt-3 pe-2" for="form1">TOTAL:</label>
-                                        <input type="text" id="form1" class="form-control form-control-sm mt-2 w-50 " />
-                                    </div>
-                                    </fieldset>
-                                </div>                               
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <button type="button" class="btn btn-warning btn-block btn-lg inbg-red"><a class="txt-light" href="/all-products/checkout">Proceed to Pay</a></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- <section>
-    <div>cart hero header</div>
-    <div w100>
-        <label>
-            Product Name
-        </label>
-        <label>
-            Availability
-        </label>
-        <label>
-            Unit Price
-        </label>
-        <label>
-            Quantity
-        </label>
-        <label>
-            Action
-        </label>
-    </div>
-</section> -->
-
-            <!-- <div>
-    <div>
-        <input checkbox>
-    </div>
-    <div>
-        Product Name
-    </div>
-    <div>
-        Availability
-    </div>
-    <div>
-        Unit Price
-    </div>
-    <label>
-        Quantity
-    </label>
-    <div>
-        Action
-    </div>
-</div> -->
-
-            <!-- <section>
-    <div>
-        use voucher
-    </div>
-    <div>
-        <input> <div>select all</div>
-        <div>remove all selected</div>
-        <div>total price</div>
-        <a href="">Check Out</a>
-    </div>
-</section> -->
+        <main class="cartmain main bg-light-in">
 
         </main>
         <!--right side of the main--->
@@ -303,5 +153,6 @@
 <!-- scripts libries -->
 <?php include("../../includes/scripts_library.php"); ?>
 <script src="/assets/js/script.js"></script>
+<script src="/assets/js/cart_scripts.js"></script>
 <?php include("../../includes/validatorControl.php"); ?>
 <?php include('../../controllers/forbidGuest.php'); ?>

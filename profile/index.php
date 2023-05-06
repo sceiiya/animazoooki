@@ -28,42 +28,17 @@
 
     <section class="profile-cont">
 
-<style>
-  .profprevv {
-    position: relative;
-    border-radius: 50%;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .profprevv label {
-    position: absolute;
-    color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.2s ease-in-out;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  .profprevv:hover label {
-    opacity: 1;
-  }
-
-  .profprevv:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0.3;
-    transition: all 0.2s ease-in-out;
-  }
-</style>
-
         <div class="profile-cont-l bg-light-in">
         <!-- profile_picture -->
-            <div class="clflx txtc">
-                <div class="preview clflx txtc profprevv">
-                    <label for="profile_picture">Change Profile</label>
-                    <input type="file" name="profile_picture" id="profpicc" accept="image/*" class="file-input" style="display: none;">
-                    <img class="profile-img" id="profpicprev" src="<?php echo $_SESSION['profile_img']; ?>" loading="lazy" onerror="defaultimg(this);"  alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+            <div class="clflx txtc mt-0 pt-0">
+                <div class="preview clflx txtc mt-0 pt-0">
+                    <div class="preview profprevv mb-4 mt-1 pt-1">
+                        <label class="mt-1" for="profile_picture">Change Profile</label>
+                        <input type="file" name="profile_picture" id="profpicc" accept="image/*" class="file-input" style="display: none;">
+                        <div>
+                        <img class="profile-img" id="profpicprev" src="<?php echo $_SESSION['profile_img']; ?>" loading="lazy" onerror="defaultimg(this);"  alt="<?php echo 'profile of '.$_SESSION['username'];?>">
+                        </div>
+                    </div>
                 </div>
                 <!-- <img class="profile-img" src="<?php //echo $_SESSION['profile_img']; ?>" alt="<?php //echo 'profile of '.$_SESSION['username'];?>"> -->
                 <strong class="profile-uname"><?php echo $_SESSION['username'];?></strong>
@@ -82,12 +57,12 @@
                             <span class="title">My Purchases</span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#" class="profile-nav mx-1" id="mycart">
                             <span class="icon"><i class="fas fa-shopping-cart"></i></span>
                             <span class="title">My Cart</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#" class="profile-nav mx-1" id="myVouchers">
                             <span class="icon"><i class="fas fa-ticket-alt"></i></span>
@@ -128,16 +103,48 @@
 
     </section>
 
+    <!-- CHANGE PASSWORD MODAL -->
+
+<div class="modal" id="userChangePassModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">CHANGE PASSWORD</h4>
+            </div>
+
+
+            <div class="modal-body">
+                WARNING! You are about to change the password.
+                <br>
+                <br>
+                Are you sure of this change?
+            </div>
+
+
+            <div class="modal-footer flex-row d-flex justify-content-between">
+                <button type="button" id="yes-userChangePass" class="btn redbgwhitec">YES</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">NO</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Spinner Modal -->
+<div id="userSpinner" class="spinner-border text-danger" style="display: none;"></div>
+
     <!-- footer -->
     <?php include("../includes/footer.php"); ?>
 
 </body>
 </html>
 <!-- scripts libries -->
+<!-- <script src="/assets/js/jquery-3.6.3.min.js"></script> -->
 <?php include("../includes/scripts_library.php"); ?>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://kit.fontawesome.com/0de39995d2.js" crossorigin="anonymous"></script> -->
-<!-- <script src="/assets/js/jquery-3.6.3.min.js"></script> -->
 <script src="/assets/js/script.js"></script>
 <script src="/assets/js/profile_script.js"></script>
 <?php include("../includes/validatorControl.php"); ?>
