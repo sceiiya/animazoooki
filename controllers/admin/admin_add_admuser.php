@@ -43,10 +43,11 @@
                     echo "Username already used!";
                     mysqli_close($dbConnection);
                 } else {
+                    $cryptPass = md5($nPassword);
                     $qInsert = "INSERT INTO $dbDatabase.`adminusers` 
                         (`adminfirstname`, `adminlastname`, `accesslevel`, `adminusername`, `adminemail`, `adminpassword`, `status` ,`date_created`, `created_by`) 
                         VALUES 
-                        ('{$sFirstName}', '{$sLastName}', 'Agent', '{$sUsername}', '{$sEmail}', '{$nPassword}', 'Active', '".date("Y-m-d H:i:s")."', '{$admUsername}')";        
+                        ('{$sFirstName}', '{$sLastName}', 'Agent', '{$sUsername}', '{$sEmail}', '{$cryptPass}', 'Active', '".date("Y-m-d H:i:s")."', '{$admUsername}')";        
                     $eInsert = mysqli_query($dbConnection, $qInsert);
 
 

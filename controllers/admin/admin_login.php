@@ -4,7 +4,7 @@
 
     if ($dbConnection == true) {
         $sUsername = $_POST['username'];
-        $sPassword = $_POST['password'];
+        $sPassword = md5($_POST['password']);
 
         if ($sUsername == "" || $sPassword == "") {
             echo "Incomplete, please fill out all fields!";
