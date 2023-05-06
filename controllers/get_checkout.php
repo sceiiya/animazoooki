@@ -107,32 +107,3 @@
     } else {
         echo "no connect";
     }
-
-    // if(mysqli_fetch_array($eSelect) == 0){
-    //     $sHtml .= '<div>Cart is empty! You may browse Products and add to cart products you like!</div>';
-    // }
-
-
-    // <tr>
-    //     <td>Subtotal</td>
-    //     <td id='cartsubTotal'>$ 0.00</td>
-    // </tr>
-    // <tr>
-    //     <td>Shipping Fee</td>
-    //     <td>$ 0.00</td>
-    // </tr>
-
-
-
-
-
-
-
-
-    // // $itemz = $_POST['cart_items']; 
-    // $itemz = "[{\"cart_id\":\"3\",\"quantity\":\"1\"},{\"cart_id\":\"1\",\"quantity\":\"3\"}]";
-    // $items = json_decode($itemz);
-    // echo $itemz;
-    // foreach ($itemz as $key => $value) {
-    //     # code...
-    // }

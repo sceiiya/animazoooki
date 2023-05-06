@@ -328,3 +328,19 @@ $('#yes-userChangePass').on('click', () => {
       }
   })
 })
+
+function receiveOrder(id){
+  let of = {
+    cID: id
+  }
+  $.ajax({
+    url: "/controllers/up_delivered.php",
+    type: "POST",
+    data: of,
+    success: (result) =>{
+      if(result == 'updated'){
+        toastr.info('Order Received!');
+      }
+    },
+  });
+}
