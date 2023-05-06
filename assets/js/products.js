@@ -32,6 +32,8 @@
 //     ERROR_logger(error);
 //   }
 // }
+
+
 const imgMainCont = document.querySelector(".product-img-cont");
 const imgMainElm = document.querySelector(".product-img-cont img");
 const imgSub = document.querySelector(".product-img-sub");
@@ -39,7 +41,6 @@ const imgSubCont = document.querySelector(".product-img-sub-cont-holder");
 
 const ZOOM = 300;
 
-// debugged
 let isMoving = false;
 let animationFrame;
 
@@ -87,6 +88,24 @@ imgMainCont.addEventListener("mouseenter", () => {
 imgMainCont.addEventListener("mouseleave", onMouseLeave);
 
 imgMainCont.addEventListener("mousemove", onMouseMove);
+
+Array.from(imgSubCont.children).forEach((productElm, i, list) => {
+  productElm.addEventListener("click", () => {
+    const newSrc = productElm.querySelector("img").src;
+    imgMainElm.src = newSrc;
+
+    list.forEach(prod => prod.classList.remove("active"));
+    productElm.classList.add("active");
+  });
+});
+
+// function cngeHeight() {
+//   imgMainCont.style.height = imgMainCont.clientHeight + 'px';
+// }
+
+// cngeHeight();
+// window.addEventListener('resize', cngeHeight);
+
 
 //origin
 // imgMainCont.addEventListener("mouseenter", () => {
@@ -140,26 +159,6 @@ imgMainCont.addEventListener("mousemove", onMouseMove);
 // });
 
 
-Array.from(imgSubCont.children).forEach((productElm, i, list) => {
-  productElm.addEventListener("click", () => {
-    const newSrc = productElm.querySelector("img").src;
-    imgMainElm.src = newSrc;
-
-    list.forEach(prod => prod.classList.remove("active"));
-    productElm.classList.add("active");
-  });
-});
-
-function cngeHeight() {
-  imgMainCont.style.height = imgMainCont.clientHeight + 'px';
-}
-
-cngeHeight();
-window.addEventListener('resize', cngeHeight);
-
-
-
-
 
 $(document).ready(async()=>{
   similarItems();
@@ -186,7 +185,7 @@ $('#CARTbtn').on('click', ()=>{
     url: "/controllers/add_cart.php",
     data: pId,
     beforeSend: function () {
-      var x = document.querySelector('#adminSpinner');
+      var x = document.querySelector('#LoadingSpinner');
       if (x.style.display === "none") {
           x.style.display = "block";
       } else {
@@ -204,7 +203,7 @@ $('#CARTbtn').on('click', ()=>{
       }
     },
     complete: function () {
-      var x = document.querySelector('#adminSpinner');
+      var x = document.querySelector('#LoadingSpinner');
       if (x.style.display === "none") {
           x.style.display = "block";
       } else {

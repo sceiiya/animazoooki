@@ -38,7 +38,7 @@
                             <th>Series</th>
                             <th>Image</th>
                             <th>Product Name</th>    
-                            <th>Price</th>
+                            <th> Price </th>
                             <th>Stocks</th>
                             <th>Action</th>
                         </tr>
@@ -64,7 +64,7 @@
                         <td class='prod_desc'>".$rows['series']."</td>      
                         <td><a class='adPListImgCont' href='/all-products/product/?id=".$rows['id']."' target='_blank'><img class='adPListImg' loading='lazy' id='imgtest' src='".$imageFile."' onerror='defaultimg(this);'></td>
                         <td>".$rows['name']."</td>
-                        <td>$ ".number_format($rows['price'])."</td>
+                        <td>$".number_format($rows['price'])."</td>
                         <td>".number_format($rows['stocks'])."</td>
                         <td>
                             <button class='btn btn-light $class' onclick=modify('".$rows['id']."')>Modify</button>&nbsp;

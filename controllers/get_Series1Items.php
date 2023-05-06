@@ -4,10 +4,10 @@
 require_once("important/class.product.php");
 
 try{          
-    $qSelect = "SELECT * FROM $dbDatabase .`products` WHERE `category` = 'Hololive' AND`date_archived` IS NULL ORDER BY RAND() LIMIT 3";
+    $qSelect = "SELECT * FROM $dbDatabase .`products` WHERE `series` LIKE 'Hololive%' AND`date_archived` IS NULL ORDER BY RAND() LIMIT 3";
     $eSelect = mysqli_query($dbConnection, $qSelect);
 
-    $sugHTML = ' ';
+    $sugHTML = '<div class="card-cont-attr-featured-coll">';
     while($rows = mysqli_fetch_array($eSelect)) {
         $rowImg='';
         $imageFile='';
@@ -21,7 +21,7 @@ try{
                 $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
             }
             $sugHTML.= 
-                '<a class="card-attr card_light" href="/all-products/product?id='
+                '<a class="card-attr-featured-coll card_light" href="/all-products/product?id='
                 .$rows['id'].
                 '" title='
                 .$rows['name'].
@@ -90,7 +90,7 @@ try{
             exit();
         } 
     }
-    // $sugHTML.= '</div></section>';
+    $sugHTML.= '</div>';
     echo $sugHTML;
 
     mysqli_close($dbConnection);

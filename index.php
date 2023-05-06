@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="8000">
-                <img src="https://media.tenor.com/iMeKS77VlEgAAAAd/anime.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
+                <img src="https://d1k3w7ix829ymi.cloudfront.net/images/anime.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Two</h5>
                     <p>This is some featured series.</p>
@@ -55,7 +55,7 @@
             </div>
             <!-- template here -->
             <div class="carousel-item" data-bs-interval="12000">
-                <img src="https://media.tenor.com/9_ygK1r8OFkAAAAd/d4dj-meme.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
+                <img src="https://d1k3w7ix829ymi.cloudfront.net/images/d4dj-meme.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Three</h5>
                     <p>This is some featured series.</p>
@@ -63,28 +63,28 @@
             </div>
             <!-- template here -->
             <div class="carousel-item" data-bs-interval="16000">
-                <img src="https://media.tenor.com/7EVOYN2fDOcAAAAC/haikyuu-anime.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
+                <img src="https://d1k3w7ix829ymi.cloudfront.net/images/haikyuu-anime.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Four</h5>
                     <p>This is some featured series.</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="20000">
-                <img src="https://media.tenor.com/wEko9Isabc8AAAAd/nijisanji-vtuber.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
+                <img src="https://d1k3w7ix829ymi.cloudfront.net/images/nijisanji-vtuber.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Five</h5>
                     <p>This is some featured series.</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="24000">
-                <img src="https://media.tenor.com/MzTypOGKvlEAAAAd/toradora-minecraft.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
+                <img src="https://d1k3w7ix829ymi.cloudfront.net/images/toradora-minecraft.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Six</h5>
                     <p>This is some featured series.</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="28000">
-                <img src="https://media.tenor.com/cz7GtnlG7M8AAAAd/lazulight-nijisanji.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
+                <img src="https://d1k3w7ix829ymi.cloudfront.net/images/lazulight-nijisanji.gif" class="d-block w-100" alt="..." onerror="DEFOimgPlaceholder(this)">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Series Seven</h5>
                     <p>This is some featured series.</p>

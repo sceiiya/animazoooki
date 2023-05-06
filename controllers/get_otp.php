@@ -30,6 +30,7 @@ try{
             }
     }    
 }catch(Exception $e){
+    echo 'error';
     $_SESSION['error'] = $e->getMessage();
     header("Location: error_logger.php");
     exit();
@@ -60,7 +61,7 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('support@animazoooki.wd49p.com', 'Animazoooki');
+    $mail->setFrom('support@animazoooki.wd49p.com', 'Animazoooki Verify User');
     $mail->addBCC($_SESSION['email'], $_SESSION['username']);
 
     //Content
@@ -72,7 +73,7 @@ try {
     <br/><br/>
     <strong styles="font-size:120px; text-align: center; font-weight:800; width:100%; background-color:##a50113; color:#fffbf2;">'.$OTP.'</strong>
     <br/><br/>
-    You may enter this OTP on the page or click this <a href="https://'.getenv("HTTP_HOST").'/?otp='.$OTP.'">link</a> to verify your account.<br/>
+    You may click this <a href="https://'.getenv("HTTP_HOST").'/?otp='.$OTP.'">link</a> to verify your account quickly.<br/>
      ';
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
@@ -82,7 +83,6 @@ try {
     $_SESSION['error'] = $e->getMessage().'<br>'.$mail->ErrorInfo;
     header("Location: error_logger.php");
     exit();
-    // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
 

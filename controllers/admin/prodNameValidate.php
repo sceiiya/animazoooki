@@ -8,7 +8,7 @@
     if ($eCon == true){
         try{
             $column = "name";
-            $value = $_POST['name'];
+            $value = addslashes($_POST['name']);
             $valid = $ConDB->ValidateExist($eCon, 'products', $column, $value);
 
             if($valid["result"] == "true"){

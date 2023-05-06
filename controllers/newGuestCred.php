@@ -31,7 +31,7 @@
         'username' =>  addslashes($newGuest['username']),
         'name' =>  addslashes($newGuest['name']),
         'email' => addslashes($newGuest['email']),
-        'theme' => addslashes($newGuest['theme']),
+        'theme' => $newGuest['theme'],
         'status' => addslashes($newGuest['status']),
         'date_added' => addslashes(date("Y-m-d H:i:s"))
     ];

@@ -62,19 +62,19 @@ $("#saveProduct").on('click', () => {
     if(sPmanu != '' && sPdesign != '' && sPdescription != '' && sPvar != '' && sPsizes != '' && sPquantity != '' && sPprice != '' && ssname != '' && sPser != '' && sPcat ){
         ValidateProdNAme(ssname);
     }else{
-        toastr.warning('Please compleatte all fields', 'Blank Field Detected');
+        toastr.warning('Please complete all fields', 'Blank Field Detected');
     }
 
 });
 
 function ValidateProdNAme(sPname){
-    var blobb = {
+    var nameprod = {
         name: sPname
     };
     $.ajax({
         type: 'POST',
         url: "/controllers/admin/prodNameValidate.php",
-        data: blobb,
+        data: nameprod,
         beforeSend: function () {
             var x = document.querySelector('#adminSpinner');
             if (x.style.display === "none") {
@@ -291,9 +291,6 @@ $(document).ready(function() {
     });
   });
 
-
-
-
   const modPrevImg1 = $("#modPrevImg1");
   const modPrevImg2 = $("#modPrevImg2");
   const modPrevImg3 = $("#modPrevImg3");
@@ -328,28 +325,80 @@ function modify(nId) {
     },
     success: (result) => {
         if (result == "error") {
-              alert("Please call system admnistrator");
+            //   alert("Please call system admnistrator");
         } else {
             var objRes = JSON.parse(result);
             var imageUrls = JSON.parse(objRes.images);
-            var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
+            // var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
     
             // for (let i = 0; i < imageUrls.length; i++) {
             //     console.log(imageUrls[i]);
             // }
 
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //     try{
+            //         $(fileInputs[i]).val(`${imageUrls[i]}`);
+            //     }catch(error){
+            //         ERROR_logger(error);
+            //     }
+            // }
 
-//to make the image data insert to the input value
             // for (let i = 0; i < imageUrls.length; i++) {
             //   fetch(imageUrls[i])
             //     .then(response => response.blob())
             //     .then(blob => {
-            //       const file = new File([blob], `image_${i}.jpg`, { type: 'image/jpeg' });
+            //       const file = new File([blob], `image_${i}.png`, { type: 'image/jpeg' });
             //       $(fileInputs[i]).val(file);
             //     })
             //     .catch(error => {
-            //     //   console.log(`Failed to fetch image: ${error}`);
-            //     ERROR_logger(error);
+            //       console.log(`Failed to fetch image: ${error}`);
+            //     });
+            // }
+
+
+
+            // var objRes = JSON.parse(result);
+            // var imageUrls = JSON.parse(objRes.images);
+            // var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
+            
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //   console.log(imageUrls[i]);
+            // }
+            
+            // for (let i = 0; i < imageUrls.length; i++) {
+            //   fetch(imageUrls[i])
+            //     .then(response => response.blob())
+            //     .then(blob => {
+            //       // Create an invisible form element
+            //       const form = document.createElement('form');
+            //       form.style.display = 'none';
+            
+            //       // Create a file input element and append it to the form
+            //       const fileInput = document.createElement('input');
+            //       fileInput.type = 'file';
+            //       fileInput.name = 'image';
+            //       form.appendChild(fileInput);
+            
+            //       // Create a new FormData object and append the file object to it
+            //       const formData = new FormData();
+            //       formData.append('image', blob, `image_${i}.png`);
+            
+            //       // Set the form's action and method attributes
+            //       form.action = 'tempomedium.php'; // Replace with your upload URL
+            //       form.method = 'POST';
+            
+            //       // Set the value of the file input element to the file object
+            //       fileInput.files = formData.getAll('image');
+            
+            //       // Append the form to the document and submit it
+            //       document.body.appendChild(form);
+            //       form.submit();
+            
+            //       // Set the value of the file input element to an empty string after submission
+            //       $(fileInputs[i]).val('');
+            //     })
+            //     .catch(error => {
+            //       console.log(`Failed to fetch image: ${error}`);
             //     });
             // }
 
@@ -390,8 +439,8 @@ function modify(nId) {
   });
 }
 
-// $('#modClose').on('click', () => {
-$('#modifyModal').on('click', () => {
+$('#modClose').on('click', () => {
+// $('#modifyModal').on('click', () => {
     modPrevImg1.attr('src', '');
     modPrevImg2.attr('src', '');
     modPrevImg3.attr('src', '');

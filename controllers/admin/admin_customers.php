@@ -21,7 +21,7 @@
         $class = 'disabled';
     }
 
-    $qSelect = "SELECT * FROM $dbDatabase .`clients` ORDER BY `id` DESC";
+    $qSelect = "SELECT * FROM $dbDatabase .`clients` WHERE `status` != 'spectating' ORDER BY `id` DESC";
     $eSelect = mysqli_query($dbConnection, $qSelect);
 
     if ($eSelect == true) {
