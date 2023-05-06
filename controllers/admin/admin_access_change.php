@@ -20,7 +20,7 @@ if ($dbConnection == true) {
     // $email = $_POST['email'];
     $adminId = $_POST['index'];
     $accessLevel = $_POST['access'];
-    $accessPass = $_POST['accesspass'];
+    $accessPass = md5($_POST['accesspass']);
 
     if ($accessPass == "") {
         echo "Invalid password!";

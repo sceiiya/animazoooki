@@ -12,9 +12,9 @@
 
 
     if ($dbConnection == true) {
-        $sCurrentPass = $_POST['currentpassword'];
-        $sNewPass = $_POST['newpassword'];
-        $sConfirmPass = $_POST['confirmpassword'];
+        $sCurrentPass = md5($_POST['currentpassword']);
+        $sNewPass = md5($_POST['newpassword']);
+        $sConfirmPass = md5($_POST['confirmpassword']);
 
         try {
             $qSelect = "SELECT `adminpassword` FROM $dbDatabase.`adminusers` WHERE `adminusername` = '$admUsername'";
