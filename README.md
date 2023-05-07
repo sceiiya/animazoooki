@@ -1,5 +1,7 @@
 # animazooki<br />
 
+Edit: This read me file is created as the initial ReadME of this project before starting to integrate Backend features to the site.
+Hence I will not change it to a proper one as a legacy as well as my very first project that showcased what I learned (HTML & CSS).<br /><br />
 This website is designed and developed by Sceiiya.<br />
 
 Limitations: This project is developed to cater only the design/UI/UX of the website and lack function yet.<br />
