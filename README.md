@@ -1,7 +1,8 @@
-# animazooki<br />
-
+### Animazooki
+<br />
 This website is designed and developed by Sceiiya.<br />
-
+![Visits](https://img.shields.io/github/watchers/sceiiya/animazooki?label=Visits&style=flat-square)
+<br/>
 Limitations: This project is developed to cater only the design/UI/UX of the website and lack function yet.<br />
 I have not updated this repository and the live site, but the updated site is should now be in php instead of html files. Navbars and Footer are now migrated in php to cater easy edit and code neatness as well as to some elements integrated and deemed as 'repeating for most of the pages in website.<br /><br />
 
