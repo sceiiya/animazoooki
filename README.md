@@ -2,7 +2,7 @@
 <br />
 This website is designed and developed by Sceiiya.<br />
 <p>
-![Visits](https://img.shields.io/github/watchers/sceiiya/animazooki?label=Visits&style=flat-square)
+<img src="https://img.shields.io/github/watchers/sceiiya/animazooki?label=Visits&style=flat-square" alt="View Count">
  </p>
 
 <br/>
