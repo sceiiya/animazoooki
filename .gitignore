@@ -42,6 +42,15 @@ node_modules/
 jspm_packages/
 vendor/
 
+/node_modules
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+
 # TypeScript v1 declaration files
 typings/
 
