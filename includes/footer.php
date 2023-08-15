@@ -27,7 +27,7 @@
                         <h5 class="m-0 ms-2 txt-light">Email: &nbsp;&nbsp;</h5>
                     </div>
                     <div class="in-footer-mailinput">
-                        <input class="crnrclean" type="email" id="Az_join_emaillist" name="email" placeholder="animazoooki@gmail.com"
+                        <input class="crnrclean" type="email" id="Az_join_emaillist" name="email" placeholder="tanya@gmail.com"
                             style="width: auto;">
                     </div>
                     <div class="in-footer-mail-button txtc">
@@ -60,6 +60,6 @@
         <div class="footer-copyright txtc py-1 px-4 footer-box txt-light">
             <h6>©2023 Animazooki.&nbsp;All Rights Reserved.</h6>
             <br />
-            <h6 class="author">&nbsp;Designed and Developed by Jay Fourth and Sceiiya</h6>
+            <h6 class="author">&nbsp;Designed and Developed by Jayfourth and Sceiiya</h6>
         </div>
     </footer>
