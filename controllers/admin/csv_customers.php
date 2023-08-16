@@ -39,11 +39,9 @@
         try {
             $mail = new PHPMailer(true);
 
-            require_once('../../phpmailer/class.phpmailer.php');
-
                         $mail = new PHPMailer();
 
-                        $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
+                        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
                         $mail->isSMTP();
                         $mail->Host       = 'smtp.hostinger.com';
                         $mail->SMTPAuth   = true;                  
