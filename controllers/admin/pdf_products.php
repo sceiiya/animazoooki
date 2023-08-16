@@ -109,7 +109,7 @@ $pdf->Output('F', '../../reports/pdf/products.pdf', true);
             try{
                 $mail = new PHPMailer();
 
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
+                // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.hostinger.com';
                 $mail->SMTPAuth   = true;                  
