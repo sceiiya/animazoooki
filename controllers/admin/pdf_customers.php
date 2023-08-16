@@ -85,7 +85,7 @@ addPDFheader($pdf);
 
                 $mail = new PHPMailer();
 
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
+                // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.hostinger.com';
                 $mail->SMTPAuth   = true;                  
