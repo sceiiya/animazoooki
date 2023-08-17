@@ -9,7 +9,8 @@
     <link rel="icon" href="/assets/img/animazooki-b.png" type="image/svg+xml">
     <script>function GetCDNFailed(){const screenBlocker = document.getElementById("SlownNoInternet");screenBlocker.style.display = "block";}</script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" onerror="GetCDNFailed()"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" onerror="GetCDNFailed()"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" onerror="GetCDNFailed()"/> -->
+    <link rel="stylesheet" href="/assets/css/toastr.min.css">
     <link rel="stylesheet" media="screen and (min-device-width: 1200px)" href="/assets/css/desktop-style.css" />
     <link rel="stylesheet" media='screen and (min-width: 800px) and (max-width: 1199px)' href='/assets/css/medium-style.css' />
     <link rel="stylesheet" media='screen and (min-width: 100px) and (max-width: 799px)' href='/assets/css/mobile-style.css' />
