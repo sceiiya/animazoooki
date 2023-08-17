@@ -29,6 +29,8 @@ function ERROR_logger(nERROR){
 
 // fetch dashboard average stats
 
+// make some miracel
+
 // add hovered class on selected list items
 let navlist = document.querySelectorAll('.navigation li');
 function activelink() {
