@@ -37,29 +37,6 @@
                             class="txt-light">Create Account</a></button>
                 </div>
 
-                <!-- <div class="text-center mt-3">
-                    <p>or sign up with:</p>
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-facebook-f txtred" onclick="popdev()"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-google txtred" onclick="popdev()"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-twitter txtred" onclick="popdev()"></i>
-                    </button>
-                </div> -->
-
-                <!-- <div class="form-check d-flex justify-content-center mt-3 mb-0">
-                    <input class="form-check-input me-2 inbg-red" type="checkbox" value="" id="form2Example3cg" />
-                    <label class="form-check-label cb-sgn-txt txt-light-in" for="form2Example3g">
-                        I agree to all statements in <a href="#!" class="text-body txt-light-inv" onclick="popdev()"><u>Terms of
-                                service</u></a>
-                    </label>
-                </div> -->
-
                 <p class="text-center text-muted mb-0 txt-light-inv">Already have an account? <a 
                         class="text-body txtred btn-login"><u>Login here</u></a></p>
 

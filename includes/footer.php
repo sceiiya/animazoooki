@@ -19,9 +19,6 @@
                 </div>
             </div>
             <div class="in-footer-mail">
-                <!-- <div>
-                    <p>Join our mailing list for anime and merchandise news!</p>
-                </div> -->
                 <div class="w100 txtc rwflx">
                     <div class="in-footer-mail-label txtc">
                         <h5 class="m-0 ms-2 txt-light">Email: &nbsp;&nbsp;</h5>
@@ -39,8 +36,6 @@
             </div>
         </div>
 
-
-
         <div class="in-footer-links clflx w100 txtc my-3">
                 <div class="footer-links-label txt-light">
                     <h5>Helpful Links</h5>
@@ -55,7 +50,6 @@
                     <a class="footer_cs_list_i txt-light mx-2" href="" onclick="popdev()">Collab with us!</a>
                 </div>
             </div>
-
 
         <div class="footer-copyright txtc py-1 px-4 footer-box txt-light">
             <h6>©2023 Animazooki.&nbsp;All Rights Reserved.</h6>

@@ -107,11 +107,6 @@
                 </div>
                 <!-- <<<<<<<<<<< out div to row -->
 
-                <!-- <div class="form-outline mb-2">
-                    <label for="">Product Image</label>
-                    <input type="file" id="adminProdImage" class="form-control" accept="image/*" />
-                </div> -->
-
                     <div class="preview-container">
                         <div>
                             <!-- <label for="file1">Choose an image:</label> -->

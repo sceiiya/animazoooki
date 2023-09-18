@@ -29,22 +29,3 @@
          </div>
     </div>
 </div>
-
-
-    <!-- Button trigger modal -->
-
-    <!-- class="" data-bs-toggle="modal" data-bs-target="#searchmodal" -->
-    <!-- Modal -->
-    <!-- <div class="modal fade bg-light-in" id="searchmodal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-
-                <input class="w100" placeholder="search">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <button type="button" class="btn btn-secondary" onclick="popdev()" data-bs-dismiss="modal"><i
-                        class="fas fa-search mx-2"></i></button>
-            </div>
-        </div>
-    </div>
-    </div> -->
