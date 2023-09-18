@@ -20,38 +20,9 @@
             header("Location: ../error_logger.php");
             exit();
         } 
-            // $('#').val() = prodInfo.id;
-            // $('#PRODUCT_TITLE').text(prodInfo.name + ' | Animazoooki Merch Co.');
-            // $prodInfo['id'];
-            // prodInfo[name];
-            // prodInfo[name];
-            // prodInfo[category];
-            // prodInfo[series];
-            // prodInfo[price];
-            // prodInfo[images];
-            // prodInfo[stocks];
-            // prodInfo[reviews];
-            // prodInfo[ratings];
-            // prodInfo[sizes];
-            // prodInfo[variation];
-            // prodInfo[sold];
-            // prodInfo[description];
-            // prodInfo[designer];
-            // prodInfo[manufacturer];
     
     ?>
 
-
-
-    <?php
-
-
-    // try{echo $prodInfo['name'];
-    // }catch(Exception $e){
-    //     $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
-    //     header("Location: ../error_logger.php");
-    //     exit();} 
-    //     ?>
     <title id="PRODUCT_TITLE"><?php try{echo $prodInfo['name'].' | Animazoooki Merch Co.';}catch(Exception $e){$_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();header("Location: ../error_logger.php");exit();} ?></title>
 </head>
 
@@ -113,22 +84,6 @@
                             header('Location: ../error_logger.php');
                             exit();
                         } ?>
-                        <!-- <li class="product-img-sub-cont active">
-                            <img class="product-img-sub" loading='lazy' src="php script here"
-                                alt="" onerror="ProdimgPlaceholder(this);">
-                        </li>
-                        <li class="product-img-sub-cont">
-                            <img class="product-img-sub" loading='lazy' src="/all-products/Usada-Pekora_t-shirt/2.jpg"
-                                alt="" onerror="ProdimgPlaceholder(this);">
-                        </li>
-                        <li class="product-img-sub-cont">
-                            <img class="product-img-sub" loading='lazy' src="/all-products/Usada-Pekora_t-shirt/3.jpg"
-                                alt="" onerror="ProdimgPlaceholder(this);">
-                        </li>
-                        <li class="product-img-sub-cont">
-                            <img class="product-img-sub" loading='lazy' src="/all-products/Usada-Pekora_t-shirt/4.jpg"
-                                alt="" onerror="ProdimgPlaceholder(this);">
-                        </li> -->
                     </ul>
                 </div>
                 <div class="product-inf-cont">
@@ -201,10 +156,6 @@
                             header('Location: ../error_logger.php');
                             exit();
                         } ?>
-                            <!-- <button class="product-variation"><label for="product-name">White n Black v1</label></button>
-                            <button class="product-variation"><label for="product-name">White n Black v2</label></button>
-                            <button class="product-variation"><label for="product-name">Black n White v1</label></button>
-                            <button class="product-variation"><label for="product-name">Red n White v2</label></button> -->
                         </div>
                         <div>
                             Size:
@@ -223,17 +174,10 @@
                             header('Location: ../error_logger.php');
                             exit();
                         } ?>
-                            <!-- <button class="product-variation"><label for="product-name">Small</label></button>
-                            <button class="product-variation"><label for="product-name">Medium</label></button>
-                            <button class="product-variation"><label for="product-name">Large</label></button>
-                            <button class="product-variation"><label for="product-name">XXL</label></button> -->
                         </div>
                     </div>
                     <div class="rwflx txtl">
                         <div class="qty w100 mt-5 txtr me-1">
-                            <!-- <span class="minus">-</span>
-                            <input type="number" class="count" name="qty" value="1">
-                            <span class="plus">+</span> -->
                             <button type="button" class="product cart-button" id="liveToastBtn">Add to Cart</button>
                             <button class="product buy-button"><a href="/all-products/checkout/">Buy Now</a></button>
                         </div>

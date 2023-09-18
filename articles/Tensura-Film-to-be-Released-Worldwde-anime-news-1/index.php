@@ -26,10 +26,6 @@
 <!-- navigation bar heading -->
     <?php include("../../includes/main_navbar_header.php"); ?>
 
-    <!-------------------------playground starts here------------------>
-    <!-------------------------playground starts here------------------>
-    <!-------------------------playground starts here------------------>
-
     <section class="wrapper">
         <!--left side of the main--->
         <aside class="side-l article-aside">

@@ -83,22 +83,6 @@
                             header('Location: ../error_logger.php');
                             exit();
                         } ?>
-                        <!-- <li class="product-img-sub-cont active">
-                            <img class="product-img-sub" loading='lazy' src="php script here"
-                                alt="" onerror="ProdimgPlaceholder(this);">
-                        </li>
-                        <li class="product-img-sub-cont">
-                            <img class="product-img-sub" loading='lazy' src="/all-products/Usada-Pekora_t-shirt/2.jpg"
-                                alt="" onerror="ProdimgPlaceholder(this);">
-                        </li>
-                        <li class="product-img-sub-cont">
-                            <img class="product-img-sub" loading='lazy' src="/all-products/Usada-Pekora_t-shirt/3.jpg"
-                                alt="" onerror="ProdimgPlaceholder(this);">
-                        </li>
-                        <li class="product-img-sub-cont">
-                            <img class="product-img-sub" loading='lazy' src="/all-products/Usada-Pekora_t-shirt/4.jpg"
-                                alt="" onerror="ProdimgPlaceholder(this);">
-                        </li> -->
                     </ul>
                 </div>
                 <div class="product-inf-cont">

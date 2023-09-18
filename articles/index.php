@@ -26,10 +26,6 @@
 <!-- navigation bar heading -->
     <?php include("../includes/main_navbar_header.php"); ?>
 
-    <!-------------------------playground starts here------------------>
-    <!-------------------------playground starts here------------------>
-    <!-------------------------playground starts here------------------>
-
     <section class="wrapper"> <!--left side of the main--->
         <aside class="side-l"> <!-- <div class="chat-div"> chat assistant </div> --> </aside>
         <!--left side of the main---> <!--content of the main--->
