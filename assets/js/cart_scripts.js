@@ -34,7 +34,6 @@ $(document).ready(()=>{
         retheme();
         getSubNTotal();
         readyCheck();
-        // setTimeout(getSubNTotal(), 8000)
         var x = document.querySelector('#LoadingSpinner');
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -61,7 +60,7 @@ $(document).ready(()=>{
             var inputEl = $(this).closest('.d-flex').find('input');
             var currentValue = parseFloat(inputEl.val());
 
-            // plsu
+            // plus
             if (!isNaN(currentValue)) {
                 inputEl.val(currentValue + 1);
             }
@@ -109,11 +108,8 @@ function getSubNTotal(){
         subtotal += total;
       }
     });
-    // $("#cartsubTotal").text("$ " + subtotal.toFixed(2));
-    // $("#cartshipTotal").text("$ " + totshipfee.toFixed(2));
 
     let total = subtotal + totshipfee;
-    // $("#cartTotal").text("$ " + total.toFixed(2));
     OsubTotal = subtotal.toFixed(2);
     OshipFee =  totshipfee.toFixed(2);
     Ototal =    total.toFixed(2);
@@ -167,8 +163,6 @@ function getSubNTotal(){
     });
     
   };
-  
-
 
 $('#PurchaseOrderBttn').on('click', ()=>{
   const userCred = JSON.parse(localStorage.getItem("user"));

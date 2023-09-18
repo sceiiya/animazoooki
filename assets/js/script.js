@@ -7,22 +7,13 @@ function ERROR_logger(nERROR){
     url: "/controllers/error_logger.php",
     data: errr,
   });
-
-// $.post("/controllers/error_logger.php", nERROR, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
-// );
-  // var errrorr ={
-  //   error: nERROR
-  // };
-  // $.post("/controllers/error_logger.php", errrorr, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
-  // );
 }
 
 toastr.options.progressBar = true;
-toastr.options.timeOut = 3000; // How long the toast will display without user interaction
-toastr.options.extendedTimeOut = 2000; // How long the toast will display after a user hovers over it
+toastr.options.timeOut = 3000;
+toastr.options.extendedTimeOut = 2000; 
 toastr.options.closeButton = true;
 toastr.options.closeMethod = 'fadeOut';
-// toastr.options.closeDuration = 350;
 toastr.options.closeEasing = 'swing';
 toastr.options.newestOnTop = false;
 toastr.options.showEasing = 'swing';
@@ -30,7 +21,6 @@ toastr.options.hideEasing = 'linear';
 toastr.options.closeEasing = 'linear';
 
 function ModalLoader(){
-  // $('#LoadingSpinner').modal('show');
   var x = document.querySelector('#LoadingSpinner');
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -39,7 +29,6 @@ function ModalLoader(){
   }
 }
  
- // localStorage.setItem('theme', 'light')
 $('#Az_theme').click(function() {
   const userCred = JSON.parse(localStorage.getItem("user"));
   if (userCred.theme == "dark") {
@@ -69,9 +58,7 @@ function retheme() {
   const userCred = JSON.parse(localStorage.getItem("user"));
   if (userCred && userCred.theme == "dark") {
     AzsettingDarkTheme();
-    // AzsettingLightTheme();
   } else {
-    // AzsettingDarkTheme();
     AzsettingLightTheme();
 }
 };
@@ -131,38 +118,34 @@ function popdev(){
 const toastTrigger = document.getElementById('liveToastBtn')
 const toastLiveExample = document.getElementById('liveToast')
 if (toastTrigger) {
-toastTrigger.addEventListener('click', () => {
-  const toast = new bootstrap.Toast(toastLiveExample)
-
-  toast.show()
-})
+  toastTrigger.addEventListener('click', () => {
+    const toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
+  })
 }
-// script of ongoing deevelopment message
-
 
 //generate guest creds
 function newguest(){
-try{
-  $.get('/controllers/newGuestCred.php', (data, status)=>{
-    if (status === "success"){
-      const guestCred = JSON.parse(data);
-        localStorage.setItem(
-          "user", JSON.stringify(
-            { 
-              username: guestCred.username,
-              fullname: guestCred.name,
-              email: guestCred.email,
-              theme: guestCred.theme,
-              status: guestCred.status,
-              log: "new"
-            }));
-            hideBTNS();
-            // console.log(JSON.parse(localStorage.getItem('user')));
-    }
-  });
-}catch(error){
-  ERROR_logger(error);
-}
+  try{
+    $.get('/controllers/newGuestCred.php', (data, status)=>{
+      if (status === "success"){
+        const guestCred = JSON.parse(data);
+          localStorage.setItem(
+            "user", JSON.stringify(
+              { 
+                username: guestCred.username,
+                fullname: guestCred.name,
+                email: guestCred.email,
+                theme: guestCred.theme,
+                status: guestCred.status,
+                log: "new"
+              }));
+              hideBTNS();
+      }
+    });
+  }catch(error){
+    ERROR_logger(error);
+  }
 }
 
 $('#resendOTP').on('click', ()=>{
@@ -202,17 +185,6 @@ function NewOTP(){
     },
   });
 }
-
-// function isOTPget(){
-//   $('#myOTPModal').modal('show');
-//   }
-
-  // function isOTPget(){
-  //   $(document).ready(()=>{
-  //   $('#myOTPModal').modal('show');
-  //   // $('#OTPcode').val('<?php echo $linkedOTP; ?>');
-  //   });
-  // }
 
   //Function for otp modal
 $('#verifOTPBttn').on('click', () => {
@@ -262,10 +234,6 @@ $('#confirmOTP').on('click', ()=>{
     },
   });
 });
-// });
-// $('#myOTPModal').on('click', () => {
-//   $('#myOTPModal').modal('hide');
-// });
 
 //Function for login modal
 $('.btn-login').on('click', () => {
@@ -312,12 +280,6 @@ $('#login__btn').on('click', (e) => {
               }else if(result == "login failed" || result == "user does not exist" || result == "wrong password" || result == "wrong username"){
                 toastr.error("Please check your user credentials", "Log in Failed");
                 ModalLoader;
-              // }else if(result == "wrong username"){
-              //   toastr.error("Kindly check your input", "Incorrect Username");
-              // }else if(result == "wrong password"){
-              //   toastr.error("Kindly check your input", "Incorrect Password");
-              // }else if(result == "user does not exist"){
-              //   toastr.error("Please create an account!", "User not Found");
               }else{
                   console.log(result);
                   ERROR_logger(result);
@@ -356,7 +318,6 @@ $.get('/controllers/fetch_userCreds.php', (data, status)=>{
             log: guestCred.log
           }));
           hideBTNS();
-          // console.log(JSON.parse(localStorage.getItem('user')));
   }
 });
 // retheme();
@@ -378,7 +339,6 @@ function loginReload(){
 }
 
 //function for specific reloading after login
-// $(document).ready(()=>
 function reloadLog(){
   try{
   const UserCred = JSON.parse(localStorage.getItem("user"));
@@ -398,7 +358,6 @@ function reloadLog(){
   ERROR_logger(error);
 }
 };
-// );
 
 //Function for signup modal
 $('.btn-signup').on('click', () => { 
@@ -577,7 +536,6 @@ $('#SubmitEmail').on('click', ()=>{
           }else if(result == "failed"){
             toastr.warning("Failed joining newsletter");
           }else{
-            // console.log(result);
             ERROR_logger(result);
           }
         },
@@ -604,19 +562,6 @@ $('#NewEmail').on('keyup', function() {
     $('#Az_join_emaillist').css('border-color', 'green');
   }
 });
-
-// window.location.reload();
-
-//script for profile
-// function profileURL(){
-//   const userCred = JSON.parse(localStorage.getItem("user"));
-//   const userName = userCred.username;
-//   if ((userName.search(/guest/i) == 1)) {
-//     toastr.info("You have to log in first!");
-//   } else {
-//     window.location = "/profile/";x
-// }
-// }
 
 function profileURL() {
   const userCred = JSON.parse(localStorage.getItem("user"));
@@ -647,43 +592,6 @@ $('#myCartBttn').on('click', ()=>{
   cartURL();
 })
 
-// $(document).ready(async()=>{
-//   const currAcc = JSON.parse(localStorage.getItem("user"));
-//     switch (true) {
-//       case (currAcc.status == 'spectating'):
-//         $('#OTPBttn').style.display = "none";
-//         $('#lgOutBttn').style.display = "none";
-//         // $('#verifOTPBttn').hide;
-//         break;
-//       case (currAcc.status == 'inactive'):
-//         $('#loginBttn').style.display = "none";
-//         $('#SgUpBttn').style.display = "none";
-//         break;
-//       case (currAcc.status == 'active'):
-//         $('#lgInBttn').style.display = "none";
-//         $('#SgUpBttn').style.display = "none";
-//         $('#OTPBttn').style.display = "none";
-//         break;
-//       case (currAcc.log == ''):
-//         $('#OTPBttn').style.display = "none";
-//         break;
-
-//       default:
-//         break;
-//     }
-// });
-
-// $(document).ready(async()=>{
-//   const currAcc = JSON.parse(localStorage.getItem("user"));
-//     if(currAcc.log == 'new'){$('#lgOutBttn').hide;$('#verifOTPBttn').hide;}
-// });
-
-
-// $(document).ready(function() {
-//   // Hide the login and signup buttons
-//   $("#SgUpBttn").addClass("btnxHide");
-// });
-
 function hideBTNS(){
   const uCred = JSON.parse(localStorage.getItem("user"));
     switch (true) {
@@ -707,18 +615,6 @@ function hideBTNS(){
         break;
     }
 }
-
-
-// $(document).ready(()=>{
-//     const userCred = JSON.parse(localStorage.getItem("user"));
-//     if (!userCred) {
-//       setTimeout(hideBTNS(), 3000);
-//       // hideBTNS();
-//     } else {
-//       hideBTNS();
-//       // setTimeout(hideBTNS(), 6000);
-//     }
-// });
 
 // fetching the theme and updating depends on the user preference
 $(document).ready(()=>{
@@ -753,87 +649,6 @@ $(document).ready(function(){
     ERROR_logger(error);
   }
 });
-
-// $(document).ready(function(){
-//   try{
-//   const userCred = JSON.parse(localStorage.getItem("user"));
-//   if (userCred.theme == "dark") {
-//     AzsettingDarkTheme();
-//   } else {
-//     AzsettingLightTheme();
-// }
-//   }catch(error){
-//     ERROR_logger(error);
-//   }
-// });
-
-
-// function ERROR_logger(nERROR){
-//   var errrorr ={
-//     error: nERROR
-//   };
-// $.ajax({
-//   type: 'POST',
-//   url: '/controllers/error_logger.php',
-//   data: errrorr,
-//   success: (result) =>{
-//     alert("Data: " + JSON.stringify(errrorr) + "\nStatus: " + result);
-//     },
-// })
-// };
-
-// function ERROR_logger(nERROR){
-//   var errrorr ={
-//     error: nERROR
-//   };
-//   console.log("Error message: ", nERROR); // add this line to check if the function is being called
-//   $.ajax({
-//     type: 'POST',
-//     url: '/controllers/error_logger.php',
-//     data: errrorr,
-//     success: (result) =>{
-//       console.log("AJAX success: ", result); // add this line to check if the AJAX call is returning a success status
-//       alert("Data: " + JSON.stringify(errrorr) + "\nStatus: " + result);
-//     },
-//     error: (xhr, status, error) => { // add this block to check for AJAX errors
-//       console.log("AJAX error: ", error);
-//     }
-//   });
-// }
-
-// const userCred = JSON.parse(localStorage.getItem("user"));
-// userCred.username = "guest_test986";
-// localStorage.setItem("user", JSON.stringify(userCred));
-
-
-// const userName = userCred.username;
-// const bli = userName.search(/guest/i); //return 0 if wala
-// console.log("ucred = "+userCred);
-// console.log("uname = "+userName);
-// console.log("bli"+bli);
-
-// Display an toasterz
-// toastr.info('Are you the 6 fingered man?');
-// toastr.success('We do have the Kapua suite available.', 'Turtle Bay Resort', {timeOut: 5000});
-// toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!');
-// toastr.error('I do not think that word means what you think it means.', 'Inconceivable!');
-
-
-// $(document).ready(() => {
-//   function isOTPget() {
-//     const otpModal = $('#myOTPModal');
-//     const otpInput = $('#OTPcode');
-//     const otpValue = new URLSearchParams(window.location.search).get('otp');
-//     if (otpValue) {
-//       otpInput.val(otpValue);
-//       otpModal.modal('show');
-//     }
-//   }
-//   const otpValue = new URLSearchParams(window.location.search).get('otp');
-//   if (otpValue) {
-//     isOTPget();
-//   }
-// });
 
 $(document).ready(() => {
   const otpValue = new URLSearchParams(window.location.search).get('otp');

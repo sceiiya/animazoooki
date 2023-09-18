@@ -8,28 +8,7 @@ function ERROR_logger(nERROR){
       data: errr,
     });
   
-  // $.post("/controllers/error_logger.php", nERROR, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
-  // );
-    // var errrorr ={
-    //   error: nERROR
-    // };
-    // $.post("/controllers/error_logger.php", errrorr, ()=>{toastr.error("Please Report this to our support", "Something went wrong");}
-    // );
   }
-
-//menu toggle
-// let toggle = document.querySelector('.toggle');
-// let navigation = document.querySelector('.navigation');
-// let main = document.querySelector('.mainAdmin');
-
-// toggle.onclick = function() {
-//     navigation.classList.toggle('active');
-//     main.classList.toggle('active');
-// }
-
-// fetch dashboard average stats
-
-// make some miracel
 
 // add hovered class on selected list items
 let navlist = document.querySelectorAll('.navigation li');
@@ -96,7 +75,7 @@ $(document).ready(function () {
 
     // loadContent('/controllers/admin/admin_dashboard.php');
     var access = $('#accessChecker').val();
-    // console.log(access);
+
     if(access === "System Admin" || access === "Supervisor") {
         adminUsers.css('display', 'default');
     } else {
@@ -296,10 +275,7 @@ function adminusersFetch() {
     });
 }
 
-// DATABASE RELATED
-
-
-
+// ----------- DATABASE RELATED ----------------
 // REMOVE PRODUCT FROM LIST
 function archive(nId) {
     $('#confirm-delete').modal('show');
@@ -342,8 +318,6 @@ $("#yes-delete").on('click', () => {
         },
     });
 })
-
-
 
 // ACTIVATE CUSTOMER
 function cusAct(nId) {
@@ -514,7 +488,6 @@ $("#yes-admDeactivate").on('click', () => {
 })
 
 // ADD ADMIN
-
 function addAdmin() {
     $('#addAdminModal').modal('show');
 }
@@ -581,7 +554,6 @@ $('#yes-addUser').on('click', () => {
 })
 
 // CHANGE ACCESS LEVEL TO ADMIN USER
-
 function changeaccess(nId) {
     $('#confirm-access').modal('show');
     $('#accInd').val(nId);
@@ -640,7 +612,6 @@ $("#cancel-access").on('click', () => {
 })
 
 // CHANGE PASSWORD
-
 function admSaveNewPass () {
     $('#admChangePassModal').modal('show');
 }
@@ -693,7 +664,6 @@ $('#yes-changePass').on('click', () => {
 })
 
 // PASSWORD CHECKER IF MATCH
-
 // $('#admNewPass, #admConfirmPass').on('keyup', function () {
 //     if ($('#admNewPass').val() == $('#admConfirmPass').val()) {
 //       $('#admPassMessage').html('Passwords match').css('color', 'green');
@@ -702,8 +672,6 @@ $('#yes-changePass').on('click', () => {
 //   });
 
 // LOGIN AND REGISTER
-
-
 $("#loginClient").on('click', () => {
     var sUsername = $("#admLoginUsername").val();
     var sPassword = $("#admLoginPassword").val();
@@ -744,7 +712,6 @@ $("#loginClient").on('click', () => {
 });
 
 // LOGIN PASSVIEWER
-
 function loginPassViewer() {
     var x = document.getElementById('admLoginPassword');
 
@@ -756,9 +723,7 @@ function loginPassViewer() {
     }
 }
 
-
 // SIGNOUT
-
 $('#adminSignout').on('click', () => {
     $('#signoutModal').modal('show');
     $('#yes-signout').on('click', () => {
@@ -797,18 +762,11 @@ $('#adminSignout').on('click', () => {
 })
 
 // IMAGE PLACEHOLDER
-
 function defaultimg(img) {
     img.onerror = "";
     img.src ="/admin/listing/product_img/animazoooki_onload.png";
 }
 
-// Navigation toggle
-// $('.ADMINNavCont').click(function() {
-//     $('.ADMINheadNavs').toggle();
-//     $('.ADMINNavCont-out').toggle();
-// });
-// $('.TOGicon').click(function() {
 $('#TOGicon').on('click',colADMtoggle);
 
 function colADMtoggle(){
@@ -824,7 +782,6 @@ function colADMtoggle(){
 }
 
 // REPORTS
-
 function sendReport() {
     $('#confirm-sendRep').modal('show');
 }
@@ -1030,11 +987,10 @@ $('#yes-sendRep').on('click', () => {
 })
 
 toastr.options.progressBar = true;
-toastr.options.timeOut = 3000; // How long the toast will display without user interaction
-toastr.options.extendedTimeOut = 2000; // How long the toast will display after a user hovers over it
+toastr.options.timeOut = 3000;
+toastr.options.extendedTimeOut = 2000;
 toastr.options.closeButton = true;
 toastr.options.closeMethod = 'fadeOut';
-// toastr.options.closeDuration = 350;
 toastr.options.closeEasing = 'swing';
 toastr.options.newestOnTop = false;
 

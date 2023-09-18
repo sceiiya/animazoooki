@@ -10,16 +10,6 @@ $(document).ready(()=>{
        AllItems();
     }
   });
-
-  // window.onscroll = function() {
-  //   var scrollTop = (document.documentElement.scrollTop || document.body.scrollTop);
-  //   var scrollHeight = (document.documentElement.scrollHeight || document.body.scrollHeight);
-  //   var clientHeight = document.documentElement.clientHeight;
-  
-  //   if (scrollTop + clientHeight >= scrollHeight) {
-  //     AllItems();
-  //   }
-  // };
   
  function AllItems(){
       try{
@@ -27,7 +17,6 @@ $(document).ready(()=>{
           url: '/controllers/get_productsInfo.php',
           type: 'GET',
           beforeSend: function() {
-            // show spinner before sending AJAX request
             $('.main').append('<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>');
           },
           success: function(data, status) {

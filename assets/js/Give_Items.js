@@ -2,7 +2,6 @@ $(document).ready(async()=>{
   suggestItems();
 });
 
-
 async function suggestItems(){
     try{
       $.get('/controllers/get_randSuggestP.php', (data, status)=>{

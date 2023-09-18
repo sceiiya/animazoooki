@@ -1,17 +1,3 @@
-// $('input[type="number"]').on('keydown', function(e) {
-// // var invalidChars = ['-', '+', 'e', 'E'];
-// if (['-', '+', 'e', 'E'].includes(e.key)) {
-// e.preventDefault();
-// }
-// });
-
-// $('input[type="number"]').on('input', function() {
-//     var max = parseInt($(this).attr('max'));
-//     var value = parseInt($(this).val());
-//     if (value > max) {
-//       $(this).val(max);
-//     }
-// });
 
 function ERROR_logger(nERROR){
     var err={
@@ -35,8 +21,6 @@ $('input[type="number"]').on('keydown input', function(e) {
       alert('Maximum value exceeded');
     }
   });
-
-
 
 // SAVE PRODUCT
 
@@ -106,38 +90,6 @@ function ValidateProdNAme(sPname){
     });
 }
 
-// $("#SubmitNewProduct").on('submit', function(e){
-// // $("#addProductModal").on('submit', function(e){
-//   e.preventDefault(); // Prevent form from submitting normally
-  
-//   // Get form data
-//   var formData = new FormData(this);
-  
-//   // Send AJAX request
-//   $.ajax({
-//       url: '/controllers/admin/admin_save_products.php',
-//       type: 'POST',
-//       data: formData,
-//       dataType: 'json',
-//       cache: false,
-//       contentType: false,
-//       processData: false,
-//       success: function(response){
-//           // Handle success response
-//           ERROR_logger(response);
-//           console.log(response);
-//           ERROR_logger(formData);
-//           console.log(formData);
-//       },
-//       error: function(jqXHR, textStatus, errorThrown){
-//           // Handle error response
-//           console.log(textStatus, errorThrown);
-//           ERROR_logger(jqXHR + textStatus + errorThrown);
-//           ERROR_logger(formData);
-//           console.log(formData);
-//       }
-//   });
-// });
 
 $("#yes-addProd").on('click', () => {
         var x = document.querySelector('#adminSpinner');
@@ -147,102 +99,6 @@ $("#yes-addProd").on('click', () => {
             x.style.display = "none";
         }
 });
-// $("#yes-addProd").on('click', () => {
-//     iCode = $("#adminProdCode").val();
-//     iName = $("#adminProdName").val();
-//     iPrice = $("#adminProdPrice").val();
-//     iQty = $("#adminProdQty").val();
-//     iDescription = $("#adminProdDesc").val();
-
-//     var sJsonProduct = {
-//         code: iCode,
-//         name: iName,
-//         price: iPrice,
-//         qty: iQty,
-//         description: iDescription,
-//     };
-
-//     $.ajax({
-//         type: 'POST',
-//         url: "/controllers/admin/admin_save_products.php",
-//         data: sJsonProduct,
-//         beforeSend: function () {
-//             var x = document.querySelector('#adminSpinner');
-//             if (x.style.display === "none") {
-//                 x.style.display = "block";
-//             } else {
-//                 x.style.display = "none";
-//             }
-//         },
-//         success: (result) => {
-//             if (result == "Product info saved!") {
-//                 $('#confirm-addProd').modal('hide');
-//                 $('#addProductModal').modal('hide');
-//                 alert(result)
-//                 productsFetch();
-//             } else if (result == "Incomplete") {
-//                 alert("Please fill out all fields");
-//                 $('#confirm-addProd').modal('hide');
-//             } else if (result == "Failed to save!") {
-//                 alert(result);
-//                 $('#confirm-addProd').modal('hide');
-//             } else {
-//                 alert(result);
-//             }
-//         },
-//         complete: function () {
-//             var x = document.querySelector('#adminSpinner');
-//             if (x.style.display === "none") {
-//                 x.style.display = "block";
-//             } else {
-//                 x.style.display = "none";
-//             }
-//         },
-//     });
-
-//     iImage = $("#adminProdImage").prop('files')[0];
-//     var form_data = new FormData();
-//     form_data.append('name', iName);
-//     form_data.append('image', iImage);
-
-//     $.ajax({
-//         url: '/controllers/admin/admin_save_products_img.php',
-//         type: 'POST',
-//         data: form_data,
-//         contentType: false,
-//         processData: false,
-//         beforeSend: function () {
-//             var x = document.querySelector('#adminSpinner');
-//             if (x.style.display === "none") {
-//                 x.style.display = "block";
-//             } else {
-//                 x.style.display = "none";
-//             }
-//         },
-//         success: (result) => {
-//             if (result == "Missing image file!") {
-//                 alert(result);
-//             } else if (result == "Image file saved!") {
-//                 productsFetch();
-//                 console.log(result);
-//             } else if (result == "Failed to save image!") {
-//                 alert(result);
-//                 console.log(result);
-//             } else {
-//                 console.log(result);
-//             }
-//         },
-//         complete: function () {
-//             var x = document.querySelector('#adminSpinner');
-//             if (x.style.display === "none") {
-//                 x.style.display = "block";
-//             } else {
-//                 x.style.display = "none";
-//             }
-//         },
-//     });
-
-// });
 
 
 $(document).ready(function() {
@@ -273,10 +129,6 @@ $(document).ready(function() {
     });
 });
 
-
-// $(document).ready(function() {
-//     $('.autoNumeric').autoNumeric('init');
-// });
 
 $(document).ready(function() {
     // select all input elements of type number
@@ -329,91 +181,11 @@ function modify(nId) {
         } else {
             var objRes = JSON.parse(result);
             var imageUrls = JSON.parse(objRes.images);
-            // var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
-    
-            // for (let i = 0; i < imageUrls.length; i++) {
-            //     console.log(imageUrls[i]);
-            // }
-
-            // for (let i = 0; i < imageUrls.length; i++) {
-            //     try{
-            //         $(fileInputs[i]).val(`${imageUrls[i]}`);
-            //     }catch(error){
-            //         ERROR_logger(error);
-            //     }
-            // }
-
-            // for (let i = 0; i < imageUrls.length; i++) {
-            //   fetch(imageUrls[i])
-            //     .then(response => response.blob())
-            //     .then(blob => {
-            //       const file = new File([blob], `image_${i}.png`, { type: 'image/jpeg' });
-            //       $(fileInputs[i]).val(file);
-            //     })
-            //     .catch(error => {
-            //       console.log(`Failed to fetch image: ${error}`);
-            //     });
-            // }
-
-
-
-            // var objRes = JSON.parse(result);
-            // var imageUrls = JSON.parse(objRes.images);
-            // var fileInputs = ['#modprodimg1', '#modprodimg2', '#modprodimg3', '#modprodimg4'];
-            
-            // for (let i = 0; i < imageUrls.length; i++) {
-            //   console.log(imageUrls[i]);
-            // }
-            
-            // for (let i = 0; i < imageUrls.length; i++) {
-            //   fetch(imageUrls[i])
-            //     .then(response => response.blob())
-            //     .then(blob => {
-            //       // Create an invisible form element
-            //       const form = document.createElement('form');
-            //       form.style.display = 'none';
-            
-            //       // Create a file input element and append it to the form
-            //       const fileInput = document.createElement('input');
-            //       fileInput.type = 'file';
-            //       fileInput.name = 'image';
-            //       form.appendChild(fileInput);
-            
-            //       // Create a new FormData object and append the file object to it
-            //       const formData = new FormData();
-            //       formData.append('image', blob, `image_${i}.png`);
-            
-            //       // Set the form's action and method attributes
-            //       form.action = 'tempomedium.php'; // Replace with your upload URL
-            //       form.method = 'POST';
-            
-            //       // Set the value of the file input element to the file object
-            //       fileInput.files = formData.getAll('image');
-            
-            //       // Append the form to the document and submit it
-            //       document.body.appendChild(form);
-            //       form.submit();
-            
-            //       // Set the value of the file input element to an empty string after submission
-            //       $(fileInputs[i]).val('');
-            //     })
-            //     .catch(error => {
-            //       console.log(`Failed to fetch image: ${error}`);
-            //     });
-            // }
-
-
-
-            // if(!imageUrls[1]){
-            //     imageUrls[1] = '/animazoooki_onload.png';
-            // }
-            // objRes.images = '["https://d1k3w7ix829ymi.cloudfront.net/products/6449160535b1a9.62041984.png","https://d1k3w7ix829ymi.cloudfront.net/products/64491606185ff6.43672886.png","https://d1k3w7ix829ymi.cloudfront.net/products/6449160654ae39.82263980.png","https://d1k3w7ix829ymi.cloudfront.net/products/644916069ade89.72616403.jpg"]';
             modPrevImg1.attr('src', imageUrls[0]);
             modPrevImg2.attr('src', imageUrls[1]);
             modPrevImg3.attr('src', imageUrls[2]);
             modPrevImg4.attr('src', imageUrls[3]);
             
-            // console.log(JSON.parse(objRes.images)[0]);
                 productCat.val(objRes.category);
                 productSer.val(objRes.series);
                 productName.val(objRes.name);
@@ -440,7 +212,6 @@ function modify(nId) {
 }
 
 $('#modClose').on('click', () => {
-// $('#modifyModal').on('click', () => {
     modPrevImg1.attr('src', '');
     modPrevImg2.attr('src', '');
     modPrevImg3.attr('src', '');
@@ -461,14 +232,11 @@ $('#modClose').on('click', () => {
 // SAVE MODIFY PRODUCT
 $("#Modiffy").on('click', () => {
     $('#confirm-modProd').modal('show');
-            // $('#modifyModal').modal('show');    
-    // var nIndex = $("#indexer").val();
 });
 
 $("#yes-modProd").on('click', () => {
 
-// confirm na modify
-    // var nIndex = $("#indexer").val();
+// confirm modify
     var x = document.querySelector('#adminSpinner');
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -476,99 +244,3 @@ $("#yes-modProd").on('click', () => {
         x.style.display = "none";
     }
 });
-// $("#yes-modProd").on('click', () => {
-
-//   var nIndex = $("#indexer").val();
-//   var sPcat = $("#productCat").val();
-//   var sPname = $("#productName").val();
-//   var sPprice = $("#productPrice").val();
-//   var sPquantity = $("#productQuantity").val();
-//   var sPdescription = $("#productDescription").val();
-//   var sPphoto = $("#productPhoto").val();
-
-//   var sJsonData = {
-//       index: nIndex,
-//       pcat: sPcat,
-//       pname: sPname,
-//       pprice: sPprice,
-//       pquantity: sPquantity,
-//       pdescription: sPdescription,
-//       pphoto: sPphoto
-//   }
-
-//   $.ajax({
-//       type: 'POST',
-//       url: "/controllers/admin/admin_modify_save.php",
-//       data: sJsonData,
-//       beforeSend: function () {
-//           var x = document.querySelector('#adminSpinner');
-//           if (x.style.display === "none") {
-//               x.style.display = "block";
-//           } else {
-//               x.style.display = "none";
-//           }
-//       },
-//       success: (result) => {
-//           if (result == "updated") {
-//               $('#confirm-modProd').modal('hide');
-//               $('#modifyModal').modal('hide');
-//               productsFetch();
-//           } else {
-//               alert(result);
-//               $('#confirm-modProd').modal('hide');
-//           }
-//       },
-//       complete: function () {
-//           var x = document.querySelector('#adminSpinner');
-//           if (x.style.display === "none") {
-//               x.style.display = "block";
-//           } else {
-//               x.style.display = "none";
-//           }
-//       },
-//   });
-
-
-
-//   iImage = $("#productPhoto").prop('files')[0];
-//   var form_data = new FormData();
-//   form_data.append('name', sPname);
-//   form_data.append('image', iImage);
-
-//   $.ajax({
-//       url: "/controllers/admin/admin_modify_save_img.php",
-//       type: 'POST',
-//       data: form_data,
-//       contentType: false,
-//       processData: false,
-//       beforeSend: function () {
-//           var x = document.querySelector('#adminSpinner');
-//           if (x.style.display === "none") {
-//               x.style.display = "block";
-//           } else {
-//               x.style.display = "none";
-//           }
-//       },
-//       success: (result) => {
-//           if (result == "Missing image file!") {
-//               alert(result);
-//           } else if (result == "Image file saved!") {
-//               console.log(result);
-//           } else if (result == "Failed to save image!") {
-//               alert(result);
-//               console.log(result);
-//           } else {
-//               console.log(result);
-//           }
-//       },
-//       complete: function () {
-//           var x = document.querySelector('#adminSpinner');
-//           if (x.style.display === "none") {
-//               x.style.display = "block";
-//           } else {
-//               x.style.display = "none";
-//           }
-//       },
-//   });
-
-// });

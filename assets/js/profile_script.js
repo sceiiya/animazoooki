@@ -1,40 +1,6 @@
-// var varifcont ="";
-// function updateprofpic() {
-  
-//   $.ajax({
-//       type: 'POST',
-//       url: content,
-//       success: (result) => {
-//           var element = $('<div/>');
-//           element.html(result);
-//           container.empty();
-//           container.prepend(element);
-//           myProfileEdit();
-//           // varifcont = content;
-//       }
-//   })
-
-// }
-// mynewpicModal
-// $(document).ready(function() {
-// $('.profprevv').on('click', ()=> {
-//   // const picInput = $(this).parent().find('#profpicc');
-// $('#profpicc').click();
-  
-  // picInput.click();
-// });
-// });
-
-  document.querySelector('.profprevv').addEventListener('click', function() {
+document.querySelector('.profprevv').addEventListener('click', function() {
   document.querySelector('#profpicc').click();
-  });
-
-//for profile pic change
-// $('.profprevv').on('click', function() {
-//   const fileInput = $(this).parent().find('.file-input');
-  
-//   fileInput.click();
-// });
+});
 
 //for profile pic change
 $('#profpicc').on('change', function() {
@@ -96,42 +62,14 @@ $('#profpicc').on('change', function() {
   });
 });
 
-
-// $('#profpicc').on('change', function() {
-//   const previewContainer = $(this).parent();
-//   const preview = previewContainer.find('#profpicprev');
-//   preview.html('');
-//   const files = $(this).files;
-
-//       const file = files;
-//       const reader = new FileReader();
-//       const fileType = file.type;
-
-//       if (fileType.match('image.*')) {
-//           reader.addEventListener('load', () => {
-//               const img = $('<img>').attr('src', reader.result);
-//               preview.html(img);
-//           });
-//           reader.readAsDataURL(file);
-      
-//   }
-// });
-
-
 // Customer Profile
-
 var container = $('.profile-cont-r');
 var linkAccount = $('#myAccount');
 var linkPurchases = $('#myPurchases');
-// var linkCart = $('#mycart');
 var linkVouchers = $('#myVouchers');
 var linkPassword = $('#changePass');
 var linkSettings = $('#mySettings');
-// myProfileEdit();
-// setTimeout(myProfileEdit, 2000);
 
-
-// var varifcont ="";
 function loadContent(content) {
   $.ajax({
       type: 'POST',
@@ -145,42 +83,39 @@ function loadContent(content) {
           // varifcont = content;
       }
   })
-
 }
 
 $(document).ready(()=>{
   loadContent('/profile/content/myprofile.php');
-  // setTimeout( ()=>{myProfileEdit()}, 2000);
-  // myProfileEdit();
 });
+
 linkAccount.on('click', function(e){
   loadContent('/profile/content/myprofile.php');
   e.preventDefault() ;
-  // setTimeout(myProfileEdit, 2000);
-  // myProfileEdit();
 });
+
 linkPurchases.on('click', function(e){
   loadContent('/profile/content/mypurchases.php');
   e.preventDefault() ;
 });
-// linkCart.on('click', function(e){
-//   loadContent('/profile/content/mycart.php');
-//   e.preventDefault() ;
-// });
+
 linkVouchers.on('click', function(e){
   loadContent('/profile/content/myvouchers.php');
   e.preventDefault() ;
 });
+
 linkPassword.on('click', function(e){
   loadContent('/profile/content/changepass.php');
   e.preventDefault() ;
 });
+
 linkSettings.on('click', function(e){
   loadContent('/profile/content/mysettings.php');
   e.preventDefault() ;
 });
 
 let list = document.querySelectorAll('.profile-label-cont li');
+
 function activelink() {
     list.forEach((item) =>
     item.classList.remove('hovered'));
@@ -189,11 +124,8 @@ function activelink() {
 list.forEach((item) =>
 item.addEventListener('mouseover', activelink));
 
-
-
 function myProfileEdit() {
   var editBTN = $("#editBtn");
-  // const restoreButton = $("#restoreReadonly");
 
   const Un = $("#userName");
   const Nm = $("#Name");
@@ -201,7 +133,6 @@ function myProfileEdit() {
   const Cell = $("#contactNo");
   const DefSA = $("#shippingAdd");
   const DefBA = $("#billingAdd");
-
 
   editBTN.on('click', function() {
     switch (editBTN.text()) {
@@ -259,25 +190,11 @@ function myProfileEdit() {
         editBTN.text("EDIT");
         break;
     }
-    // if(editBTN.text() == "EDIT"){
-    // Un.prop("readonly", false);
-    // N.prop("readonly", false);
-    // Em.prop("readonly", false);
-    // Cell.prop("readonly", false);
-    // DefSA.prop("readonly", false);
-    // DefBA.prop("readonly", false);
-    // editBTN.text() = "SAVE"
-    // }
   });
-  
-  // restoreButton.click(function() {
-  //   myInput.prop("readonly", true);
-  // });
 };
 
 
 // CLIENT CHANGE PASSWORD
-
 function userSaveNewPass () {
   $('#userChangePassModal').modal('show');
 }
