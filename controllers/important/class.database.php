@@ -3,21 +3,19 @@
 // date_default_timezone_set('Asia/Manila');
 
 require_once("connect_DB.php");
+class ClassDbConn extends DBCred{
+    // properties
+    private $Host;
+    private $UName;
+    private $Pass;
+    private $DBName;
 
-    class ClassDbConn extends DBCred{
-         //mga properties
-
-         private $Host;
-         private $UName;
-         private $Pass;
-         private $DBName;
-
-         public function __construct(){
-            $this->Host = $this->getDbHN();
-            $this->UName = $this->getDbUN();
-            $this->Pass = $this->getDbPW();
-            $this->DBName = $this->getDbN(); 
-         }
+    public function __construct(){
+        $this->Host = $this->getDbHN();
+        $this->UName = $this->getDbUN();
+        $this->Pass = $this->getDbPW();
+        $this->DBName = $this->getDbN(); 
+    }
 
         //mga methods ng class na to
         public function NewCon(){

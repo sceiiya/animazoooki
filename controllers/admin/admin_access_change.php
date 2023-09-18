@@ -14,10 +14,6 @@
     }
 
 if ($dbConnection == true) {
-    // $firstName = $_POST['firstname'];
-    // $lastName = $_POST['lastname'];
-    // $userName = $_POST['username'];
-    // $email = $_POST['email'];
     $adminId = $_POST['index'];
     $accessLevel = $_POST['access'];
     $accessPass = md5($_POST['accesspass']);
