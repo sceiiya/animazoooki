@@ -1,8 +1,5 @@
 <?php
-
 session_start();
-
-
 if(!isset($_SESSION['admusername'])){
     header('Location: /admin/index.php');
 }else if($_SESSION['admaccess'] == 'Agent'){
@@ -16,18 +13,13 @@ if(!isset($_SESSION['admusername'])){
     $admEmail = $_SESSION['admemail'];
 }
 
-
-// require __DIR__ . '/vendor/autoload.php';
 require_once("../important/connect_DB.php");
 require_once ('../../vendor/autoload.php');
-
 
 $qSelect = "SELECT * FROM $dbDatabase .`products` ORDER BY `id` DESC";
 $eSelect = mysqli_query($dbConnection, $qSelect);
 
-
 use \Fpdf\Fpdf;
-
 
 // Instantiate the FPDF class and add a new page
 $pdf = new Fpdf('L');
@@ -48,10 +40,8 @@ function addPDFheader($pdf){
     $pdf->Cell(28,10,"Manufacturer", 1, 1, 'C');    
 }
 
-
 $pdf->AddPage('L', 'LEGAL');
 addPDFheader($pdf);
-
 
 $x = 11;
 $y = 50;
@@ -67,7 +57,6 @@ if ($eSelect == true) {
         } else {
             $img1 = $imgFile;
         }
-
 
         if ($nr == 13) {
             $pdf->PageNo();
@@ -95,11 +84,9 @@ if ($eSelect == true) {
     }
 }
 
-
 $pdf->Output('F', '../../reports/pdf/products.pdf', true);
 
         require '../../vendor/autoload.php';
-
         use PHPMailer\PHPMailer\PHPMailer;
         use PHPMailer\PHPMailer\SMTP;
         use PHPMailer\PHPMailer\Exception;
@@ -123,8 +110,7 @@ $pdf->Output('F', '../../reports/pdf/products.pdf', true);
                 $mail->Subject = "Products Report as PDF File";
                 $mail->Body    = nl2br("
                              See attached document for the report.
-                            
-                             ");
+                ");
 
                 if(!$mail->Send()) {
                     echo "Email not sent!";

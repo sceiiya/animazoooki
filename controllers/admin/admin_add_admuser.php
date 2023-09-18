@@ -1,8 +1,7 @@
 <?php
     include("../important/connect_DB.php");
-    
     session_start();
-
+    
     if(!isset($_SESSION['admusername'])){
         header('Location: /admin/index.php');
     }else if( $_SESSION['admaccess'] == 'Agent') {
@@ -101,7 +100,6 @@
                 echo 'Error: ' .$e->getMessage();
             }
         }
-
     } else {
         echo "Failed to connect, please call system administrator!";
     }

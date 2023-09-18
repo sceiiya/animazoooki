@@ -1,6 +1,5 @@
 <?php
     include("../important/connect_DB.php");
-
     session_start();
 
     if(!isset($_SESSION['admusername'])){
@@ -39,9 +38,7 @@
                     <td>".$rows['order_status']."</td>
                 ";
         }
-
         $sHtml .= "</table>";
-        
         echo $sHtml;
     } else {
         echo "not connected";

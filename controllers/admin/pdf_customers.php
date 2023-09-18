@@ -1,7 +1,5 @@
 <?php
 include("../important/connect_DB.php");
-include("../../fpdf/fpdf.php");
-
 session_start();
 
 if(!isset($_SESSION['admusername'])){
@@ -16,8 +14,6 @@ if(!isset($_SESSION['admusername'])){
     $admLastName = $_SESSION['admlastname'];
     $admEmail = $_SESSION['admemail'];
 }
-
-    // require __DIR__ . '/vendor/autoload.php';
     require_once("../important/connect_DB.php");
     require_once ('../../vendor/autoload.php');
 
@@ -80,11 +76,9 @@ addPDFheader($pdf);
                     $pdf->Cell(20,10,$rows['status'], 1, 0, 'L');
                     $pdf->Cell(35,10,$rows['date_added'], 1, 1, 'L');
                 }
-                
                 $pdf->Output('F', '../../reports/pdf/customers.pdf', true);
 
                 $mail = new PHPMailer();
-
                 // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.hostinger.com';
@@ -99,8 +93,7 @@ addPDFheader($pdf);
                 $mail->Subject = "Customers Report as PDF File";
                 $mail->Body    = nl2br("
                              See attached document for the report.
-                            
-                             ");
+                ");
 
                 if(!$mail->Send()) {
                     echo "Email not sent!";

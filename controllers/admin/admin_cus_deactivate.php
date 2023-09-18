@@ -1,6 +1,5 @@
 <?php
     include("../important/connect_DB.php");
-
     session_start();
 
     if(!isset($_SESSION['admusername'])){
@@ -23,7 +22,6 @@
         } else {
             echo "Failed to process, please call system administrator!";
          }
-         
     } else {
         echo "Failed to connect, please call system administrator!";
     }

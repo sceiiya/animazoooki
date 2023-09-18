@@ -1,6 +1,5 @@
 <?php
     include("../important/connect_DB.php");
-
     session_start();
 
     if(!isset($_SESSION['admusername'])){
@@ -24,7 +23,6 @@
     } else {
         $class = 'disabled';
         $display = 'none';
-
     }
 
     $qSelect = "SELECT * FROM $dbDatabase .`adminusers` ORDER BY `adminid` DESC";
@@ -71,7 +69,6 @@
         $adLPCode .= "</table>
                 <button id='addAdmin' style='display: $display;' onclick='addAdmin()'>Add User</button>
                 ";
-        
         echo $adLPCode;
     } else {
         echo "Failed to connect, please call system administrator!";

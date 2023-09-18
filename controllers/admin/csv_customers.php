@@ -1,6 +1,5 @@
 <?php
     include("../important/connect_DB.php");
-
     session_start();
 
     if(!isset($_SESSION['admusername'])){
@@ -15,7 +14,6 @@
         $admLastName = $_SESSION['admlastname'];
         $admEmail = $_SESSION['admemail'];
     }
-
 
     $qSelect = "SELECT * FROM $dbDatabase .`clients` ORDER BY `id` DESC";
     $eSelect = mysqli_query($dbConnection, $qSelect);

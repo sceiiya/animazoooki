@@ -1,6 +1,5 @@
 <?php
     include("../important/connect_DB.php");
-
     session_start();
 
     if(!isset($_SESSION['admusername'])){

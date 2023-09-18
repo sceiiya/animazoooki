@@ -58,15 +58,8 @@
     
                 // Generate the URL of the uploaded file
                 $url = $result->get('ObjectURL');
-    
-                // echo 'File uploaded successfully. URL: <a href="' . $url . '">link<a/><br/>';
-                // echo 'CDN URL: <a href="' . $distDomain .$s3Folder . $newFileName .'">cdn link</a><br/>';
                 $FinURL = $distDomain.$s3Folder.$newFileName;
-                // array_push($myArray, "apple");
-                // $AllImgs = $FinURL;
-                // echo $FinURL. '<br/>';
                 $strFinURL = $FinURL;
-                // echo 'string is'.$strFinURL. '<br/>';
                 array_push($AllImgs, $strFinURL);
             } else {
                 // return false;
@@ -93,14 +86,6 @@
         header("Location: error_logger.php");
         exit();
     }
-
-
-
-
-
-
-
-
 
     try{
         $ConDB = new ClassDbConn;
@@ -133,101 +118,14 @@
 
         $eInsert = $ConDB->Insert($eCon, "products", $productData);
         if($eInsert == 'true'){
-            // echo $productData;
-            // echo "Add Product Success";
-            // return "Add Product Success";
-            // header('http://localhost/admin/dashboard/index.php');
-            // header('Location: ../../admin/dashboard/');
             header('Location: ../../admin/dashboard/?status=success');
-
-
-            // header('../../admin/dashboard/index.php');
             exit();
         }else{
-            // echo "Add Product Failed";
-            // return "Add Product Failed";
-            // header('http://localhost/admin/dashboard/index.php');
-            // header('Location: ../../admin/dashboard/');
             header('Location: ../../admin/dashboard/?status=failed');
-
-
-            // header('../../admin/dashboard/index.php');
             exit();
         }
-        // header('Location: ../../admin/dashboard/?status=error');
-
     } catch(Exception $e) {
         $_SESSION['error'] = '<br>'.'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getMessage();
         header("Location: error_logger.php");
         exit();
     }
-
-
-    
-
-    // $ConDB = new ClassDbConn;
-    // $eCon = $ConDB->NewCon();
-
-    // $productData = [           
-    //     "series" => $_POST['series'],
-    //     "price" => $_POST['price'],
-    //      "image" => $AllImgs
-    //      ];
-    // $eInsert = $ConDB->Insert($eCon, "products", $productData);
-    // if($eInsert == "true"){
-    //     echo $productData;
-    //     // echo "Add Product Success";
-    // }else{
-    //     echo "Add Product Failed";
-    // }
-
-    // $productData = [
-    //     "series" => $_POST['series'],
-    //     "price" => $_POST['price'],
-    //     "image" => $AllImgs
-    // ];
-    
-    // $eInsert = $ConDB->Insert($eCon, "products", $productData);
-    // if($eInsert == "true"){
-    //     echo "Add Product Success";
-    // }else{
-    //     echo "Add Product Failed";
-    // }
-    
-
-    // if ($dbConnection == true) {
-    //     $Pcode = $_POST['code'];  
-    //     $Pname = $_POST['name'];
-    //     $Pprice = $_POST['price'];
-    //     $Pqty = $_POST['qty'];
-    //     $Pdesc = $_POST['description'];
-        
-    //     if( $Pcode == "" || $Pname == "" || $Pprice == "" || $Pqty == "" || $Pdesc == "") {
-    //         echo "Incomplete";
-    //         mysqli_close($dbConnection);
-    //     } else { 
-    //         try {
-    //                 $qInsert = "INSERT INTO $dbDatabase.`products` 
-    //                     (`category`, `name`, `price`, `stocks`, `description`, `date_added`, `added_by`) 
-    //                     VALUES 
-    //                     ('{$Pcode}', '{$Pname}', '{$Pprice}', '{$Pqty}', '{$Pdesc}','".date("Y-m-d H:i:s")."', '{$admUsername}')";
-        
-    //                 $eInsert = mysqli_query($dbConnection, $qInsert);
-                    
-    //                     if ($eInsert == true) {
-    //                         echo "Product info saved!";
-    //                         mysqli_close($dbConnection);
-    //                     } else {
-    //                         echo "Failed to save!";
-    //                         mysqli_close($dbConnection);
-    //                     }
-    //         } catch(Exception $e) {
-    //             echo 'Error: ' .$e->getMessage();
-    //             mysqli_close($dbConnection);
-    //         }
-
-    //     }
-
-    // } else {
-    //     echo "Failed to connect, please call system administrator!";
-    // }

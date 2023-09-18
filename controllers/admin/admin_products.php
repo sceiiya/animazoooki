@@ -1,6 +1,5 @@
 <?php
     include("../important/connect_DB.php");
-
     session_start();
 
     if(!isset($_SESSION['admusername'])){
@@ -18,7 +17,6 @@
     } else {
         $class = 'disabled';
         $display = 'none';
-
     }
 
     $qSelect = "SELECT * FROM $dbDatabase .`products` WHERE `date_archived` IS NULL ORDER BY `id` DESC";
@@ -26,10 +24,6 @@
 
     if ($eSelect == true) {
         try{ 
-            // $rowsz = mysqli_fetch_array($eSelect);
-            // $rowImgg = $rowsz['images'];
-            // $rowImg = json_decode($rowImgg);
-            // echo $rowImg[0];
             $sHtml = "
                     <table id='admin_prod_tbl' class='table table-striped table-hover'>
                         <tr>
@@ -43,20 +37,14 @@
                             <th>Action</th>
                         </tr>
                 ";
-                // print_r( $rows = mysqli_fetch_array($eSelect));
             while($rows = mysqli_fetch_array($eSelect)) {
                 try{
-                // $rowsz = mysqli_fetch_array($eSelect);
-                // $rowImgg = $rowsz['images'];
                 $rowImg = json_decode($rows['images']);
                 if($rowImg == NULL)  {
                     $imageFile = "/admin/listing/product_img/animazoooki_onload.png";
                 } else {
-                    // $rowImg = $rowImg;ERRpsuc()
                     $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
                 }
-                // print_r($rowImg[0]);
-
                 
                 $sHtml .= "<tr>
                         <td style='display:none'>".$rows['id']."</td>
@@ -77,11 +65,9 @@
                     exit();
                 }
             }
-
             $sHtml .= "</table>
                 <button id='addProduct' style='display: $display;' onclick='addProduct()'>Add Product</button>
                 ";
-            
             echo $sHtml;
         } catch (Exception $e){
             echo "error";

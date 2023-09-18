@@ -1,6 +1,5 @@
 <?php
     include("../important/connect_DB.php");
-
     session_start();
 
     if(!isset($_SESSION['admusername'])){
@@ -39,9 +38,7 @@
                 echo 'Error: ' .$e->getMessage();
                 mysqli_close($dbConnection);
             }
-
         }
-
     } else {
         echo "Failed to connect, please call system administrator!";
     }

@@ -1,6 +1,5 @@
 <?php
     include("../important/connect_DB.php");
-
     session_start();
 
     if(!isset($_SESSION['admusername'])){
@@ -9,7 +8,6 @@
         $admAccess = $_SESSION['admaccess'];
         $admUsername = $_SESSION['admusername'];
     }
-
 ?>
 
 <!DOCTYPE html>

@@ -1,6 +1,5 @@
 <?php
 include("../important/connect_DB.php");
-
 session_start();
 
 if (!isset($_SESSION['admusername'])) {
@@ -96,8 +95,6 @@ if ($dbConnection == true) {
                 </div>
             </div>
 
-
-
             <div class='details'>
                 <!-- order details list -->
                 <div class='recentOrders'>
@@ -118,6 +115,7 @@ if ($dbConnection == true) {
                       </div>
                     </div>
              ";
+             
     // FOR DATA IN RECENT ORDERS
     $qLatestOrdersSelect = "SELECT * FROM $dbDatabase.`orders` ORDER BY `orderid` DESC LIMIT 10;";
     $eLatestOrdersSelect = mysqli_query($dbConnection, $qLatestOrdersSelect);
@@ -161,7 +159,6 @@ if ($dbConnection == true) {
             ";
 
     // FOR DATA IN RECENT BUYERS BASED ON DATE ORDERED IN DATABASE
-
     // RETRIEVE CUSTOMERS USERNAME FROM TWO TABLES JOINED, BASED ON ID
     $qRecentSelect = "SELECT DISTINCT `username`, `country` FROM $dbDatabase.`clients` INNER JOIN $dbDatabase.`orders` ON `clients`.`id` = `orders`.`user_id` WHERE `status` = 'Active' ORDER BY `orders`.`date_ordered` DESC LIMIT 6";
     $eRecentSelect = mysqli_query($dbConnection, $qRecentSelect);
@@ -188,7 +185,6 @@ if ($dbConnection == true) {
             </div>
             </div>
             ";
-
     echo $sHtml;
 } else {
     echo "Failed to connect, please call system administrator!";

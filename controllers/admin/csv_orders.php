@@ -1,6 +1,5 @@
 <?php
     include("../important/connect_DB.php");
-
     session_start();
 
     if(!isset($_SESSION['admusername'])){
@@ -15,7 +14,6 @@
         $admLastName = $_SESSION['admlastname'];
         $admEmail = $_SESSION['admemail'];
     }
-
 
     $qSelect = "SELECT * FROM $dbDatabase .`orders` ORDER BY `orderid` DESC";
     $eSelect = mysqli_query($dbConnection, $qSelect);
@@ -37,34 +35,29 @@
 
     if ($eSelect == true) {
         try {
-
             $mail = new PHPMailer(true);
-
-                        $mail = new PHPMailer();
-
-                        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
-                        $mail->isSMTP();
-                        $mail->Host       = 'smtp.hostinger.com';
-                        $mail->SMTPAuth   = true;                  
-                        include('../important/connect_Email.php');
-                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                        $mail->Port       = 465;
-                        $mail->setFrom('support@animazoooki.wd49p.com', 'System Administrator');
-                        $mail->addAddress($admEmail, $admUsername);
-                        $mail->addAttachment('../../reports/csv/orders.csv');
-                        $mail->isHTML(true);
-                        $mail->Subject = "Orders Report as CSV File";
-                        $mail->Body    = nl2br("
-                                     See attached document for the report.
-                                    
-                                     ");
-
-                        if(!$mail->Send()) {
-                            echo "Email not sent!";
-                        } else {
-                            echo "Email sent!";
-                        }
-                        mysqli_close($dbConnection);
+                $mail = new PHPMailer();
+                // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
+                $mail->isSMTP();
+                $mail->Host       = 'smtp.hostinger.com';
+                $mail->SMTPAuth   = true;                  
+                include('../important/connect_Email.php');
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $mail->Port       = 465;
+                $mail->setFrom('support@animazoooki.wd49p.com', 'System Administrator');
+                $mail->addAddress($admEmail, $admUsername);
+                $mail->addAttachment('../../reports/csv/orders.csv');
+                $mail->isHTML(true);
+                $mail->Subject = "Orders Report as CSV File";
+                $mail->Body    = nl2br("
+                             See attached document for the report.
+                             ");
+                if(!$mail->Send()) {
+                    echo "Email not sent!";
+                } else {
+                    echo "Email sent!";
+                }
+                mysqli_close($dbConnection);
         } catch(Exception $e) {
             echo "error";
         }

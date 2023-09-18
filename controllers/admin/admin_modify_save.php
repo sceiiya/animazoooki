@@ -1,6 +1,5 @@
 <?php
     session_start();
-
     if(!isset($_SESSION['admusername'])){
         header('Location: /admin/');
         exit();
@@ -17,10 +16,7 @@
     require_once('../important/connect_AWS.php');
     include("../important/class.product.php");
 
-
-    
     use Aws\S3\S3Client;
-    
     // S3 client configuration
     $client = new S3Client([
         'version' => 'latest',
@@ -63,11 +59,7 @@
                 $url = $result->get('ObjectURL');
     
                 $FinURL = $distDomain.$s3Folder.$newFileName;
-                // array_push($myArray, "apple");
-                // $AllImgs = $FinURL;
-                // echo $FinURL. '<br/>';
                 $strFinURL = $FinURL;
-                // echo 'string is'.$strFinURL. '<br/>';
                 array_push($AllImgs, $strFinURL);
             } else {
                 // return false;
@@ -92,11 +84,6 @@
     }
 
     try{
-
-        // $ChangeProduct = new Product;
-        // $ChangeInfo = $ChangeProduct->modify();
-        // $ConDB = new ClassDbConn;
-        // $eCon = $ConDB->NewCon();
 
         $sizez = $_POST['modSizes'];
         $sizez = explode(', ', strtoupper($sizez));
@@ -125,10 +112,9 @@
             "modified_by" => $_SESSION['admusername'],
         ];
 
-        // ($mysql, $table, $values, $where)
         $ChangeProduct = new Product;
         $ChangeInfo = $ChangeProduct->modify($of, $productData);
-        // $eInsert = $ConDB->Update($eCon, "products", $productData);
+
         if($ChangeInfo == 'true'){
             header('Location: ../../admin/dashboard/?status=successM');
             exit();
@@ -136,72 +122,9 @@
             header('Location: ../../admin/dashboard/?status=failedM');
             exit();
         }
-        // header('Location: ../../admin/dashboard/?status=error');
 
     } catch(Exception $e) {
         $_SESSION['error'] = '<br>'.'Level : '.$admAccess.'<br>'.'Admin User : '.$admUsername.'<br>'.$e->getMessage();
         header("Location: error_logger.php");
         exit();
     }
-
-
-
-
-
-
-
-
-// <?php
-//     include("../important/connect_DB.php");
-
-//     include("../important/class.database.php");
-//     require_once '../../vendor/autoload.php';
-//     require_once('../important/connect_AWS.php');
-//     session_start();
-
-//     if(!isset($_SESSION['admusername'])){
-//         header('Location: /admin/index.php');
-//     }else if( $_SESSION['admaccess'] == 'Agent') {
-//         header('Location: /admin/index.php');
-//     }else {
-//         $admAccess = $_SESSION['admaccess'];
-//         $admUsername = $_SESSION['admusername'];
-//     }
-
-
-// if ($dbConnection == true) {
-//     $index = $_POST['index'];
-//     $sPcat = $_POST['pcat'];
-//     $sPname = $_POST['pname'];
-//     $sPprice = $_POST['pprice'];
-//     $sPquantity = $_POST['pquantity'];
-//     $sPdescription = $_POST['pdescription'];
-//     $sPphoto = $_POST['pphoto'];
-
-//     if ($sPcat == "" || $sPname == "" || $sPprice == "" || $sPquantity == "" || $sPdescription == "" || $sPphoto == "") {
-//         echo "Incomplete, please fill out all fields.";
-        
-//     } else {
-//         try {
-//             $dateTime = date("Y-m-d H:i:s");
-//             $qUpdate = "UPDATE $dbDatabase .`products` 
-//             SET `category` = '{$sPcat}', `name` = '{$sPname}', `price` = '{$sPprice}', `stocks` = '{$sPquantity}', `description` = '{$sPdescription}', `image` = '{$sPphoto}', `date_modified` = '{$dateTime}', `modified_by` = '{$admUsername}'
-//             WHERE `id` = '{$index}'
-//             ";
-
-//             $eUpdate = mysqli_query($dbConnection, $qUpdate);
-
-//             if ($eUpdate == true) {
-//                 echo "updated";
-//                 mysqli_close($dbConnection);
-//             } else {
-//                 echo "Failed to update, please call system administrator!";
-//                 mysqli_close($dbConnection);
-//             }
-//         } catch (Exception $e) {
-//             echo "error";
-//         }
-//     }
-// } else {
-//     echo "Failed to connect, please call system administrator!";
-// }

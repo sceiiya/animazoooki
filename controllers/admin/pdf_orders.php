@@ -1,7 +1,5 @@
 <?php
 include("../important/connect_DB.php");
-include("../../fpdf/fpdf.php");
-
 session_start();
 
 if(!isset($_SESSION['admusername'])){
@@ -16,8 +14,6 @@ if(!isset($_SESSION['admusername'])){
     $admLastName = $_SESSION['admlastname'];
     $admEmail = $_SESSION['admemail'];
 }
-
-    // require __DIR__ . '/vendor/autoload.php';
     require_once("../important/connect_DB.php");
     require_once ('../../vendor/autoload.php');
 
@@ -51,7 +47,6 @@ function addPDFheader($pdf){
 
 $pdf->AddPage('L', 'Legal');
 addPDFheader($pdf);
-
         if($eSelect == true) {
             try{
                 $rows = mysqli_fetch_assoc($eSelect);
@@ -99,8 +94,7 @@ addPDFheader($pdf);
                 $mail->Subject = "Orders Report as PDF File";
                 $mail->Body    = nl2br("
                              See attached document for the report.
-                            
-                             ");
+                ");
 
                 if(!$mail->Send()) {
                     echo "Email not sent!";
