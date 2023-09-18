@@ -31,13 +31,7 @@
         <aside class="side-l"> </aside> <!--left side of the main--->
         <!--content of the main--->
         <main class="main">
-
-
-
-
-
             <section class="w100 p-0 m-0">
-
                 <section class="my-hero-title m-0">
                     <h3 class="hero-h3"> Voucher Zone </h3>
                     <p class="hero-p"> Claim your tickets for discount as you order! </p>

@@ -57,12 +57,6 @@
                             <span class="title">My Purchases</span>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="#" class="profile-nav mx-1" id="mycart">
-                            <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                            <span class="title">My Cart</span>
-                        </a>
-                    </li> -->
                     <li>
                         <a href="#" class="profile-nav mx-1" id="myVouchers">
                             <span class="icon"><i class="fas fa-ticket-alt"></i></span>
@@ -82,18 +76,10 @@
                         </a>
                     </li>
                 </ul>
-                <!-- <a class="profile-nav mx-1" id="myAccount"><i class="fas fa-user"></i> My Account</a>
-                <a class="profile-nav mx-1" id="myPurchases"><i class="fas fa-shopping-bag"></i> My Purchases</a>
-                <a class="profile-nav mx-1" id="mycart"><i class="fas fa-shopping-cart"></i> My Cart</a>
-                <a class="profile-nav mx-1" id="myVouchers"><i class="fas fa-ticket-alt"></i> My Vouchers</a>
-                <a class="profile-nav mx-1" id="changePass"><i class="fas fa-lock"></i> Change Password</a>
-                <a class="profile-nav mx-1" id="mySettings"><i class="fas fa-user-cog"></i> Settings</a>
-                </div> -->
             </div>
         </div>
         <div class="profile-cont-r bg-light-in">
             <div class="container pt-5 w-75 bg-light-in" id="dataField">
-
 
             </div>
             <br>
@@ -104,7 +90,6 @@
     </section>
 
     <!-- CHANGE PASSWORD MODAL -->
-
 <div class="modal" id="userChangePassModal">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">

@@ -110,9 +110,6 @@
     <section class="wrapper">
         <!--left side of the main--->
         <aside class="side-l">
-            <!-- <div class="chat-div">
-            chat assistant
-           </div> -->
 
         </aside>
         <!--left side of the main--->
@@ -120,44 +117,32 @@
         <!--content of the main--->
         <main class="main">
 
-
             <section class="my-hero-home firsttopprods">
                 <section class="my-hero-title">
-
                     <h3 class="hero-h3">
                         PRODUCTS YOU MAY LIKE
                     </h3>
                     <p class="hero-p">
                         life is full of problems,<br />just watch anime
                     </p>
-
                 </section>
-
             </section>
-
-
 
             <section class="sec-divider">
                 <hr />
             </section>
 
-
-
             <!----------- featured collection heree ------------>
-
             <section class="my-hero-home">
                 <section class="my-hero-title">
-
                     <h3 class="hero-h3">
                         Featured Collection
                     </h3>
                     <p class="hero-p">
                         You won't like missing these collections
                     </p>
-
                 </section>
                 <section class="content-cards-container">
-
                     <div class="series-cont 100 rwflx m-0 p-0 bdbx">
                         <div class="w50 clflx m-0 p-0 bdbx">
                             <div class="featured-collection-header w100 txtc m-0 p-0">
@@ -180,63 +165,42 @@
                             </div>
                         </div>
                     </div>
-
                 </section>
             </section>
 
             <!----------- featured collection heree ------------>
 
-
-
-
-
-
-
-
             <section class="sec-divider">
                 <hr />
             </section>
 
-
-
-
             <section class="my-hero-home newarrive">
                 <section class="my-hero-title">
-
                     <h3 class="hero-h3">
                         NEW ARRIVALS
                     </h3>
                     <p class="hero-p">
                         beware of truck-kun,<br />you might get isekaid
                     </p>
-
                 </section>
-
             </section>
-
-
 
             <section class="sec-divider">
                 <hr />
             </section>
 
-
             <!----------- by series collection heree ------------>
-
             <section class="my-hero-home">
                 <section class="my-hero-title">
-
                     <h3 class="hero-h3">
                         TOP SERIES MERCH
                     </h3>
                     <p class="hero-p">
                         if you havn't watched these, you know what to do
                     </p>
-
                 </section>
                 <section class="content-cards-container">
                     <div class="card-cont-attr">
-
                         <a class="card-attr card_light">
                             <div class="series-img-cont">
                                 <img src="/all-products/series/mock/7.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
@@ -315,22 +279,18 @@
                             </div>
                         </a>
 
-
                     </div>
                 </section>
             </section>
 
             <!----------- end of by series collection heree ------------>
-
             <section class="sec-divider">
                 <hr />
             </section>
-
             <!----------- by categories collection heree ------------>
 
             <section class="my-hero-home">
                 <section class="my-hero-title">
-
                     <h3 class="hero-h3">
                         SHOP BY CATEGORY HERE
                     </h3>
@@ -339,11 +299,10 @@
                         <br />
                         check out here!
                     </p>
-
                 </section>
+
                 <section class="content-cards-container">
                     <div class="card-cont-attr">
-
                         <a class="card-attr card_light">
                             <div class="category-img-cont">
                                 <img src="/all-products/category/mock/1.jpg" class="series-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
@@ -427,28 +386,22 @@
             </section>
 
             <!----------- end of by categories collection heree ------------>
-
             <section class="sec-divider">
                 <hr />
             </section>
 
             <!----------- article collection heree ------------>
-
             <section class="my-hero-home">
                 <section class="my-hero-title">
-
                     <h3 class="hero-h3">
                         ANIME UPDATES THAT YOU SHOULD KNOW
                     </h3>
                     <p class="hero-p">
                         don't forget to watch 20 episodes per day!
                     </p>
-
                 </section>
                 <section class="content-cards-container">
                     <div class="card-cont-attr">
-
-
                         <a class="card-attr card_light" href="/articles/Tensura-Film-to-be-Released-Worldwde-anime-news-1/" target="_blank">
                             <div class="item-img-cont">
                                 <img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A20736-2172185775.1528434403.jpg" class="item-img-main" alt="..." onerror="DEFOimgPlaceholder(this)">
@@ -464,7 +417,6 @@
                                     <p class="article-tag p-0 ps-2 m-1">Isekai</p>
                                     <p class="article-tag p-0 ps-2 m-1 mb-2">Magic</p>
                                 </div>
-
                             </div>
                         </a>
 
@@ -483,7 +435,6 @@
                                     <p class="article-tag p-0 ps-2 m-1">Magic</p>
                                     <p class="article-tag p-0 ps-2 m-1 mb-2">Tragic</p>
                                 </div>
-
                             </div>
                         </a>
 <!-- article card template -->
@@ -502,7 +453,6 @@
                                     <p class="article-tag p-0 ps-2 m-1">Fantasy</p>
                                     <p class="article-tag p-0 ps-2 m-1 mb-2">Action</p>
                                 </div>
-
                             </div>
                         </a>
 <!-- article card template -->
@@ -521,7 +471,6 @@
                                     <p class="article-tag p-0 ps-2 m-1">Isekai</p>
                                     <p class="article-tag p-0 ps-2 m-1 mb-2">Magic</p>
                                 </div>
-
                             </div>
                         </a>
 
@@ -540,7 +489,6 @@
                                     <p class="article-tag p-0 ps-2 m-1">Magic</p>
                                     <p class="article-tag p-0 ps-2 m-1 mb-2">Tragic</p>
                                 </div>
-
                             </div>
                         </a>
 
@@ -559,40 +507,30 @@
                                     <p class="article-tag p-0 ps-2 m-1">Fantasy</p>
                                     <p class="article-tag p-0 ps-2 m-1 mb-2">Action</p>
                                 </div>
-
                             </div>
                         </a>
-
 
                     </div>
                 </section>
             </section>
 
             <!----------- end of article collection heree ------------>
-
-
             <section class="sec-divider">
                 <hr />
             </section>
 
             <!----------- picks for you collection heree ------------>
-
             <section class="my-hero-home dailies">
                 <section class="my-hero-title">
-
                     <h3 class="hero-h3">
                         DAILY HAUL
                     </h3>
                     <p class="hero-p">
                         always do your daily tasks!
                     </p>
-
                 </section>
-
             </section>
-
             <!----------- end of picks for you collection heree ------------>
-
 
             <section class="sec-divider">
                 <hr />
@@ -627,26 +565,3 @@
 <script src="/assets/js/script.js"></script>
 <script src="/assets/js/Give_ItemsHome.js"></script>
 <?php include("includes/validatorControl.php"); ?>
-<script>
-// $(document).ready(()=>{
-// function isOTPget() {
-// //   document.addEventListener('DOMContentLoaded', function() {
-//     var otpModal = document.querySelector('#myOTPModal');
-//     var otpInput = document.querySelector('#OTPcode');
-//       otpInput.value = '<?php if(isset($_GET['otp']) && !empty($_GET['otp'])){echo $_GET['otp'];}else echo ' ' ?>';
-  
-// }
-// });
-</script>
-
-<?php
-//   try {
-//     if(isset($_GET['otp']) && !empty($_GET['otp'])) {
-//       echo "<script>isOTPget();$('#myOTPModal').modal('show');</script>";
-//     }
-//   } catch(Exception $e) {
-//     $_SESSION['error'] = $e->getMessage();
-//     header("Location: ../controllers/error_logger.php");
-//     exit();
-//   } 
-?>

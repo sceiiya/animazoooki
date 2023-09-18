@@ -87,12 +87,6 @@
                     <div class="crnrclean ">
                         <img class="cs-logo" src="/assets/img/footer/paypal-logo.png" alt="">
                     </div>&nbsp;&nbsp;
-                    <!-- <div class="crnrclean ">
-                        <img class="cs-logo" src="/assets/img/footer/paymaya-logo.png" alt="">
-                    </div>&nbsp;&nbsp;
-                    <div class="crnrclean ">
-                        <img class="cs-logo" src="/assets/img/footer/gcash-logo.png" alt="">
-                    </div>&nbsp;&nbsp; -->
                 </div>
             </div>
         </div>
