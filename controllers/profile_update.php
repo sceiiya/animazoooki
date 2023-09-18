@@ -1,9 +1,6 @@
 <?php
-
 require_once("important/class.database.php");
-
 session_start();
-
 try{
     $ConDB = new ClassDbConn;
     $eCon = $ConDB->NewCon();
@@ -26,8 +23,6 @@ try{
                 $_SESSION['cellno'] = $_POST['cellno'];
                 $_SESSION['shipping_add'] = $_POST['ShipAd'];
                 $_SESSION['billing_add'] = $_POST['BillAd'];
-                // $_SESSION['ttl_ordrs'] = $Data['total_orders'];
-                // $_SESSION['ttl_rvws'] = $Data['total_reviews'];
                 echo "updated";
             }
     }    

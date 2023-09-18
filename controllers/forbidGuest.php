@@ -4,9 +4,6 @@
 
     ob_end_flush(); 
 
-    // session_start();
-    // $_SESSION['name'] = "guest";
-
     if(!isset($_SESSION['username'])){
         header('Location: /forbidden/');
         exit; 

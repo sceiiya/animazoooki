@@ -1,7 +1,5 @@
 <?php
     session_start();
-
-    // $_SESSION['userid'];
     
     include("important/class.database.php");
     require_once '../vendor/autoload.php';

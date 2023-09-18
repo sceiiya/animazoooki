@@ -1,5 +1,4 @@
 <?php
-
     session_start();
 
     $guestUN = 'guest_';
@@ -25,8 +24,6 @@
     $_SESSION['ttl_rvws'] = "Please log in to see info!";
     $_SESSION['status'] = $newGuest['status'];
 
-
-
     $newGuestDB = [
         'username' =>  addslashes($newGuest['username']),
         'name' =>  addslashes($newGuest['name']),
@@ -35,8 +32,6 @@
         'status' => addslashes($newGuest['status']),
         'date_added' => addslashes(date("Y-m-d H:i:s"))
     ];
-    // echo json_encode($newGuestDB);
-    // echo "<br/>";
     $ThrowData = json_encode($newGuest);
     echo $ThrowData;
 

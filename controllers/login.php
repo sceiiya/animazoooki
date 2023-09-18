@@ -13,9 +13,7 @@
             $ggetData = ['username' => $_POST['username']];
             $DData = $ConDB->GSelect($eCon, 'clients', $ggetData, '', '');
 
-            // $columnP = "password";
             $valueP = md5($_POST['password']);
-            // $validP = $ConDB->ValidateExist($eCon, 'clients', $columnP, $valueP);
 
             if($validU["result"] == "true" && $DData["password"] == $valueP){
                 echo "Login Success";
@@ -37,19 +35,10 @@
 
             }elseif($validU["result"] == "false"){
                 echo "wrong username";
-                // $_SESSION['error'] = json_encode($validU);
-                // header("Location: error_logger.php");
-                // exit();
             }elseif($validU["result"] == "true" && $valueP !== $DData["password"]){
                 echo "wrong password";
-                // $_SESSION['error'] = $validU;
-                // header("Location: error_logger.php");
-                // exit();
             }else{
                 echo "user does not exist";
-                // $_SESSION['error'] = $validU;
-                // header("Location: error_logger.php");
-                // exit();
             }
         }catch(Exception $e){
             $_SESSION['error'] = $e->getMessage();

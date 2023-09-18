@@ -1,7 +1,6 @@
 <?php
     require_once("important/class.database.php");
     session_start();
-
     $ConDB = new ClassDbConn;
     $eCon = $ConDB->NewCon();
     if ($eCon == true){
@@ -54,7 +53,6 @@
             header("Location: error_logger.php");
             exit();
         }
-
     }else{
         echo "not connected";
     }

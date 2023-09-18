@@ -1,14 +1,11 @@
 <?php
     include("important/connect_DB.php");
-
     session_start();
-
     if(!isset($_SESSION['username'])){
         header('Location: /index.php');
     }else{
         $clientUsername = $_SESSION['username'];
     }
-
 
     if ($dbConnection == true) {
         $sCurrentPass = md5($_POST['currentpassword']);
@@ -44,7 +41,6 @@
         } catch(Exception $e) {
             echo "error";
         }
-
     } else {
         echo "Failed to connect, please call system administrator!";
     }

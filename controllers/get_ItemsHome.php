@@ -1,6 +1,4 @@
 <?php 
-// $ruturl = getenv('HTTP_HOST')."/controllers/important/class.product.php";
-// require_once('"'.$ruturl.'"');
 require_once("important/class.product.php");
 
 try{          
@@ -13,11 +11,9 @@ try{
         $imageFile='';
         try{
             $rowImg = json_decode($rows['images']);
-            // json_decode($RANDITEM['images']);
             if(!$rowImg)  {
                 $imageFile = "/animazoooki_onload.png";
             } else {
-                // $rowImg = $rowImg;
                 $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
             }
             $sugHTML.= 
@@ -68,22 +64,12 @@ try{
                                         default: $sugHTML.= '<i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i><i class="fas fa-star unrated"></i>';
                                             break;
                                     }                        
-                            
-                                
                                 $sugHTML.='
                             </p>
                         </div>
                     </div>
                 </a>';
 
-
-
-
-
-
-
-
-            // mysqli_close($dbConnection);
         }catch(Exception $e){
             $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
             header("Location: error_logger.php");
@@ -92,7 +78,6 @@ try{
     }
     $sugHTML.= '</div></section>';
     echo $sugHTML;
-
     mysqli_close($dbConnection);
     exit();
 }catch(Exception $e){

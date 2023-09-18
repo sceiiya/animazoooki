@@ -149,7 +149,6 @@
             Thank you for shopping with us!
             <strong>with Animazoooki, your delusions are safe!</strong>
              ';
-            // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
                 
             $mail->send();
             echo 'true';

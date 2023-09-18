@@ -1,9 +1,6 @@
 <?php
-
 require_once("important/class.database.php");
-
 session_start();
-
 try{
     $ConDB = new ClassDbConn;
     $eCon = $ConDB->NewCon();

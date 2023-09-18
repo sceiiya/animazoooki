@@ -1,22 +1,14 @@
 <?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 require '../vendor/autoload.php';
 require('important/class.database.php');
-
 session_start();                    
     
-
 try{
     $OTP = rand(100000, 999999);
-    // $_SESSION['sesh_otp'] = $OTP;
     $timestamp =  $_SERVER["REQUEST_TIME"];  
-    // echo $timestamp;
-    // $timestamp = date("Y-m-d H:i:s");  
-    // $_SESSION['time'] = $timestamp;          
 
     $ConDB = new ClassDbConn;
     $eCon = $ConDB->NewCon();
@@ -69,7 +61,6 @@ try {
     <br/><br/>
     You may click this <a href="https://'.getenv("HTTP_HOST").'/?otp='.$OTP.'">link</a> to verify your account quickly.<br/>
      ';
-    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
     // echo 'Message has been sent';
@@ -78,38 +69,3 @@ try {
     header("Location: error_logger.php");
     exit();
 }
-
-
-
-    // if(!isset($_SESSION['usernamereg'])){
-    //     header('Location: /activity_website/register.php');
-    // }else{
-    //     $sUsername = $_SESSION['usernamereg'];
-    //     $sEmail = $_SESSION['emailreg'];
-    // }
-
-    // if ($dbConnection == true) {
-    //     $sOTP = $_POST['otp'];
-    //     try {
-    //         $qSelect = "SELECT `ClientOTP` FROM `u955154186_db_djstrading`.`clients` WHERE `ClientUsername` = '$sUsername' AND `ClientEmail` = '$sEmail'";
-    //         $eSelect = mysqli_query($dbConnection, $qSelect);
-    //         $rows = mysqli_fetch_assoc($eSelect);
-    //         $nTotalRows = mysqli_num_rows($eSelect);
-
-    //         if ($rows['ClientOTP'] == $sOTP) {
-    //             $qUpdate = "UPDATE `u955154186_db_djstrading`.`clients` SET `ClientStatus` = 'active' WHERE `ClientUsername` = '{$sUsername}' AND `ClientOTP` =  '{$sOTP}'";
-    //             $eUpdate = mysqli_query($dbConnection, $qUpdate);
-    //             echo "OTP Verified";
-    //             mysqli_close($dbConnection);
-    //         }else{
-    //             $qUpdate = "UPDATE `u955154186_db_djstrading`.`clients` SET `ClientStatus` = 'inactive' WHERE `ClientUsername` = '{$sUsername}' AND `ClientEmail` =  '{$sEmail}'";
-    //             $eUpdate = mysqli_query($dbConnection, $qUpdate);
-    //             echo "OTP Not Verified";
-    //             mysqli_close($dbConnection);
-    //         }
-    //     } catch(Exception $e) {
-    //         echo "error";
-    //     }
-    // } else {
-    //     echo "Failed to connect, please call system administrator!";
-    // }

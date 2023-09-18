@@ -1,9 +1,5 @@
 <?php 
-// $ruturl = getenv('HTTP_HOST')."/controllers/important/class.product.php";
-// require_once('"'.$ruturl.'"');
 require_once("important/class.product.php");
-
-
 try{          
     $qSelect = "SELECT * FROM $dbDatabase .`products` WHERE `date_archived` IS NULL ORDER BY RAND() LIMIT 3";
     $eSelect = mysqli_query($dbConnection, $qSelect);
@@ -14,11 +10,9 @@ try{
         $imageFile='';
         try{
             $rowImg = json_decode($rows['images']);
-            // json_decode($RANDITEM['images']);
             if(!$rowImg)  {
                 $imageFile = "/admin/listing/product_img/animazoooki_onload.png";
             } else {
-                // $rowImg = $rowImg;
                 $imageFile = $rowImg[rand(0,count(($rowImg))-1)];
             }
             $sugHTML.= '
@@ -35,7 +29,6 @@ try{
             </div>
             </a>
             ';
-            // mysqli_close($dbConnection);
         }catch(Exception $e){
             $_SESSION['error'] = 'Product ID : '.$prodInfo['id'].'<br>'.$e->getMessage();
             header("Location: error_logger.php");
@@ -43,7 +36,6 @@ try{
         } 
     }
     echo $sugHTML;
-
     mysqli_close($dbConnection);
     exit();
 }catch(Exception $e){
