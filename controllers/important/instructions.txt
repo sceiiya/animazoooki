@@ -1,1 +1,6 @@
 this is where the database credentials must be uploaded.. do not put the file on github.. make sure to include the file name+ext in the git ignre for security purposes
+
+supply the following files:
+connect_AWS.php
+connect_DB.php
+connect_Email.php
